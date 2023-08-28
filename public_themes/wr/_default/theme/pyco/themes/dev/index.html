@@ -1,0 +1,26 @@
+{% import 'g' as g with context %}
+<!DOCTYPE html>
+<html lang="{{lang}}">
+{% include '_head_.html' %}
+<body>
+  <div rel="webapp">
+    <section id="id-{{meta.slug}}"
+             data-anchor="{{meta.slug}}"
+             class="section {{meta.hero.preset or 'cover'}}
+                            {{meta.hero.class}}"
+             style="{{meta.hero.style}}">
+      <div class="container">
+        <h1>{{meta.title}}</h1>
+        <h3>{{meta.description}}</h3>
+      </div>
+    </section>
+
+    {% set pages = query('page', 0, 24, with_content=True).contents %}
+    {% for page in pages if page.template != meta.template %}
+      {% set _loop = loop %}
+      {% include page.template+'.html' ignore missing %}
+    {% endfor %}
+  </div>
+  {% include '_js_.html' %}
+</body>
+</html>

@@ -1,0 +1,27 @@
+{
+  "version": "1.8.1",
+  "slug": "spot",
+  "author": "Cheney",
+  "license": "MIT",
+  "title": "SPOT",
+  "type": "ws",
+  "capability": 0,
+  "icon": "icon.png",
+  "poster": "poster.jpg",
+  "previews": ["preview1.jpg",
+               "preview2.jpg",
+               "preview3.jpg",
+               "preview4.jpg"],
+
+  "templates": [
+    "page",
+    "team",
+    "services",
+    "portfolio",
+    "index"
+  ],
+
+  "options":{
+    "sortby": "date"
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "content_types": {
+    "article": "Articles"
+  },
+  "meta": {
+    "slug":"pyco",
+    "type":"photography",
+    "logo": "[%uploads%]/logo.png",
+    "favicon": "[%uploads%]/favicon.png",
+    "author": "redy",
+    "copyright": "2015 Made by Pyco.",
+    "description": "This is a simple photography theme for wechat article...",
+    "license": "MIT",
+    "locale": "en_US",
+    "title": "photography",
+    "bg": "",
+    "translates":{
+      "en_US": {
+        "name": "Engligh",
+        "url": "#"
+      },
+      "zh_CN": {
+        "name": "中文",
+        "url": "#"
+      }
+    }
+  }
+
+}

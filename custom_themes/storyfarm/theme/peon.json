@@ -1,0 +1,26 @@
+{
+  "watch":{
+    "src": "src",
+    "dest": "pyco/themes/default",
+    "clean": true,
+    "server": true,
+    "pyco": "pyco",
+    "skip_includes": "html"
+  },
+  "packing":{
+    "zip":{
+      "cwd":"src",
+      "dest":".",
+      "file":"theme.zip"
+    },
+    "upload":{
+      "cwd":".",
+      "file":"theme.zip",
+      "headers":{
+        "SecretKey":"storyfarm-787fe8908d8543f6ba"
+      },
+      "url":"http://api.soopro.io/app/storyfarm/develop/theme",
+      "delete": true
+    }
+  }
+}

@@ -1,0 +1,108 @@
+var get_lang, get_locale, i, lang_map, languages, len, load, locale_code, localizedDict, options, set_locale, trans_key, translate;
+
+languages = require('./languages.wxs');
+
+options = {
+  case_sensitive: false
+};
+
+locale_code = null;
+
+localizedDict = {};
+
+trans_key = function(key) {
+  key = options.case_sensitive ? key : key.toLowerCase();
+  return key;
+};
+
+load = function(loc, locale_texts) {
+  var i, len, locale_dict, t;
+  if (!loc || !locale_texts) {
+    return;
+  }
+  locale_dict = {};
+  for (i = 0, len = locale_texts.length; i < len; i++) {
+    t = locale_texts[i];
+    if (typeof t.msgid === 'string' && typeof t.msgstr === 'string') {
+      locale_dict[trans_key(t.msgid)] = t.msgstr;
+    }
+  }
+  return localizedDict[loc] = locale_dict;
+};
+
+for (i = 0, len = languages.length; i < len; i++) {
+  lang_map = languages[i];
+  load(lang_map.key, lang_map.texts);
+}
+
+set_locale = function(loc) {
+  if (typeof loc === 'string') {
+    locale_code = loc.replace('-', '_');
+  } else {
+    locale_code = null;
+  }
+  return locale_code;
+};
+
+get_locale = function() {
+  if (typeof locale_code === 'string') {
+    return locale_code || '';
+  } else {
+    return null;
+  }
+};
+
+get_lang = function() {
+  if (typeof locale_code === 'string') {
+    return locale_code.split('_')[0];
+  } else {
+    return null;
+  }
+};
+
+translate = function(text) {
+  var arg, args, j, k, key, lang, len1, len2, loc, locale, locale_map, ref, trans;
+  if (typeof text !== 'string') {
+    return text;
+  } else if (text.indexOf('$') === 0) {
+    switch (text) {
+      case '$set':
+        loc = arguments[1];
+        if (typeof loc === 'string') {
+          set_locale(loc);
+        }
+        return '';
+      case '$get':
+        return get_locale();
+      case '$lang':
+        return get_lang();
+    }
+  }
+  locale = get_locale();
+  lang = get_lang();
+  if (locale === null) {
+    // prevent unexcept translation before `locale` is given.
+    return '';
+  } else if (!locale) {
+    return text;
+  }
+  locale_map = localizedDict[lang] || localizedDict[locale] || [];
+  key = options.case_sensitive ? text : text.toLowerCase();
+  trans = locale_map[key] || text;
+  args = [];
+  for (j = 0, len1 = arguments.length; j < len1; j++) {
+    arg = arguments[j];
+    args.push(arg);
+  }
+  ref = args.slice(1);
+  for (k = 0, len2 = ref.length; k < len2; k++) {
+    arg = ref[k];
+    if (arg === void 0) {
+      arg = '';
+    }
+    trans = trans.replace("%s", arg);
+  }
+  return trans;
+};
+
+module.exports = translate;

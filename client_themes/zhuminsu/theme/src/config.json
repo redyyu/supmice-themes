@@ -1,0 +1,59 @@
+{
+    "slug": "zhuminsu",
+    "version": "1.1.0",
+    "author": "Redy",
+    "license": "MIT",
+    "title": {
+        "en":"Zhuminsu",
+        "zh":"住民宿"
+    },
+    "capability": ["ws"],
+    "thumbnail": "thumbnail.png",
+    "poster": "poster.jpg",
+    "previews": ["preview.png"],
+    "description": {
+        "en":"A Bed and Breakfast theme. You can write articles or create appointment forms.",
+        "zh":"一个民宿内容题材的主题，您可以在撰写文章或事创建预约表单。"
+    },
+
+    "templates": {
+        "index":{
+            "en":"Homepage",
+            "zh":"首页"
+        },
+        "page":{
+            "en":"Static Page",
+            "zh":"静态页面"
+        },
+        "post":{
+            "en":"Post",
+            "zh":"文章"
+        },
+        "posts-index":{
+            "en":"Posts Index",
+            "zh":"文章索引"
+        },
+        "form":{
+            "en":"Form",
+            "zh":"表单"
+        },
+        "error-404":{
+            "en":"Error 404",
+            "zh":"错误 404"
+        }
+    },
+
+    "content_types":{
+      "post": {"title": "Posts"}
+    },
+
+    "reserved_contents": {
+      "post/index": "posts-index",
+      "error-404": true
+    },
+
+    "options":{
+        "sortby": "date",
+        "perpage": 6
+    }
+}

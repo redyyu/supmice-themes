@@ -1,0 +1,23 @@
+{% if g and page %}
+<!-- Section -->
+<section id="{{page.alias}}" class="gallery dark">
+  <div class="container">
+    <article class="center-block text-center">
+      <header>
+        <h4 class="title-label">{{page.label}}</h4>
+        <h2 class="title">{{page.title}}</h2>
+      </header>
+    </article>
+    <div>
+      {% for pic in page.gallery %}
+      <figure>
+        <img src="{{pic.src}}" alt="{{pic.title}}">
+      </figure>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+<!-- #Section -->
+{% else %}
+  <script>window.location.replace('{{base_url}}/#/{{meta.alias}}');</script>
+{% endif %}

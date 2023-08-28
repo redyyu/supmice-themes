@@ -1,0 +1,54 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/index/promotion",
+    "pages/index/activity",
+    "pages/index/category",
+    "pages/search/search",
+    "pages/item/item",
+    "pages/user/user",
+    "pages/help/help",
+    "pages/error/error"
+  ],
+  "window": {
+    "navigationBarTitleText": "爱汇券",
+    "navigationBarTextStyle": "white",
+    "navigationBarBackgroundColor": "#5c6bc0",
+
+    "enablePullDownRefresh": true,
+    "backgroundColor": "#5c6bc0"
+  },
+  "tabBar": {
+    "position": "bottom",
+    "backgroundColor": "#5c6bc0",
+    "borderStyle": "white",
+    "color": "#fff",
+    "selectedColor": "#c5cae9",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "/img/tab_index.png",
+        "selectedIconPath": "/img/tab_index_on.png",
+        "text": "看好货"
+      },
+      {
+        "pagePath": "pages/search/search",
+        "iconPath": "/img/tab_search.png",
+        "selectedIconPath": "/img/tab_search_on.png",
+        "text": "搜宝贝"
+      },
+      {
+        "pagePath": "pages/user/user",
+        "iconPath": "/img/tab_list.png",
+        "selectedIconPath": "/img/tab_list_on.png",
+        "text": "购物单"
+      },
+      {
+        "pagePath": "pages/help/help",
+        "iconPath": "/img/tab_help.png",
+        "selectedIconPath": "/img/tab_help_on.png",
+        "text": "帮助"
+      }
+    ]
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "slug": "simba",
+  "version": "2.1.5",
+  "author": "Redy",
+  "license": "MIT",
+  "title": "SIMBA",
+  "type": "ws",
+  "capability": 0,
+  "icon": "icon.jpg",
+  "poster": "poster.jpg",
+  "previews": ["preview.jpg"],
+  "content_types": {
+    "post": {"title": "Posts", "templates": ["post"]}
+  },
+  "category": {
+    "name": "Categories",
+    "content_types": ["post"]
+  },
+  "templates": [
+    "^page",
+    "^services",
+    "^features",
+    "^articles",
+    "post",
+    "index"
+  ],
+  "reserves": {
+    "^articles": true
+  },
+  "options":{
+      "sortby": "date",
+      "perpage": 6
+  }
+}

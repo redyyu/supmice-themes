@@ -1,0 +1,31 @@
+{% import 'g' as g with context %}
+<!DOCTYPE html>
+<html lang="{{lang}}">
+{% include '_head_.html' %}
+<body>
+{% include '_header_.html' %}
+
+<div class="jumbotron {{meta.bg.class}}"
+     style="{{meta.bg.style or site_meta.bg.style}}"></div>
+
+<div class="container wrap-box">
+  <div class="post-box">
+    <span class="post-title">{{meta.title}}</span>
+    <div class="post-subtitle">
+      <span>{{meta.description}}</span>
+    </div>
+    {% if meta.featured_img.src %}
+    <img class="thumbnail-img"
+         src="{{theme_url}}/img/postbg.png"
+         style="{{meta.featured_img.src|bg_img}}" />
+    {% endif %}
+    <div class="content">
+      {{content}}
+    </div>
+  </div>
+</div>
+
+{% include '_footer_.html' %}
+{% include '_js_.html' %}
+</body>
+</html>

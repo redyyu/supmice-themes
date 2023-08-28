@@ -1,0 +1,191 @@
+html{
+  height: 100%;
+}
+html, body{
+  min-height: 100%;
+  position: relative;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+h1 > mark,
+h2 > mark,
+h3 > mark,
+h4 > mark,
+h5 > mark,
+h6 > mark{
+  color: #ef5f1f;
+  background: none;
+}
+article {
+  margin-bottom: 30px;
+}
+article header {
+  margin-bottom: 30px;
+}
+aside figure {
+  margin-top: 15px;
+}
+figure img {
+  max-width: 100%;
+  margin: 0 auto;
+}
+@media (max-width:480px) {
+  figure img{
+    width: 100%;
+  }
+}
+a,
+a:link,
+a:visited {
+  outline: 0 !important;
+  color: #ea5a21;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+.wrapper{
+  min-height: 100%;
+  position: relative;
+  padding-bottom: 130px;
+  box-sizing: border-box;
+}
+
+.carousel-inner {
+  min-height: 100px;
+}
+
+/* logo */
+.logo {
+  padding-top: 30px;
+  padding-bottom: 10px;
+}
+.logo > img {
+  width: 360px;
+  height: 60px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+/* nav */
+.nactive > a {
+  color: #fff;
+  background: #ea5a21;
+}
+
+#primary-navbar {
+  text-align: center;
+  background: url('line.png') repeat-x center center;
+}
+#primary-navbar .nav {
+  margin: 0 auto;
+  background: #fff;
+  float: none;
+  display: inline-block;
+}
+@media (max-width:768px) {
+  #primary-navbar {
+    background: none;
+  }
+  #primary-navbar .nav {
+    display: block;
+  }
+}
+
+#primary-navbar .nav > li > a{
+  margin: 5px;
+  color: #333;
+  border-radius: 5px;
+}
+#primary-navbar .nav > li.active > a {
+  color: #ea5a21;
+}
+#primary-navbar .nav > li > a:hover,
+#primary-navbar .nav > li.active > a:hover {
+  color: #fff;
+  background: #ea5a21;
+}
+
+.navbar-toggle {
+  border-color: #ddd;
+}
+.icon-bar {
+  background: #888;
+}
+.navbar-toggle:hover{
+  background-color: #ddd;
+}
+.navbar-brand{
+  color: #777;
+}
+
+/* carousel */
+.carousel-control,
+.carousel-control:link,
+.carousel-control:visited {
+  color: #fff;
+  width: 10%;
+}
+.carousel-holder {
+  min-height: 360px;
+}
+@media (max-width:768px) {
+  .carousel-control span {
+    top: auto !important;
+    bottom: 20px;
+  }
+}
+/* footer */
+.footer{
+  width: 100%;
+  background: #f0f0f0;
+  position: absolute;
+  bottom: 0;
+  padding: 30px 0;
+}
+
+/* elements */
+.thumbnail{
+  border: none;
+}
+.thumbnail > a > img {
+  margin: 20px auto;
+}
+
+.prd-container {
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+.prd {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  text-align: center;
+}
+.prd > a > img {
+  width:100%;
+}
+.prd > a {
+  display: block;
+}
+.prd > p {
+  margin-top: 15px;
+}
+
+
+.modal-body{
+  text-align: center;
+}
+
+/* content */
+.content mark{
+  background: #ef5f1f;
+}
+
+/* error */
+.error-header {
+  font-size: 48px;
+  padding: 30px;
+  text-align: center;
+}

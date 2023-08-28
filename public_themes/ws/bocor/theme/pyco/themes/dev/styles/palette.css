@@ -1,0 +1,75 @@
+a,
+a:visited,
+a:hover,
+a:focus {
+    color: #3dc9b3;
+}
+a:hover,
+a:focus,
+a.btn:hover {
+  opacity: 0.6;
+}
+
+#navigation {
+	border-top-color: #3dc9b3;
+}
+
+.tp-caption {
+	color: #3dc9b3;
+}
+.top-nav-collapse {
+	background-color: #3dc9b3;
+}
+
+.carousel-indicators .active {
+  background-color: #3dc9b3;
+}
+
+.header-text h2 span {
+  background-color: #3dc9b3;
+}
+
+
+.navbar-custom ul.nav ul.dropdown-menu li a:hover {
+	color: #3dc9b3;
+}
+
+
+.bg-skin {
+	background-color: #3dc9b3;
+}
+
+.highlight-color {
+	background-color: #3dc9b3;
+}
+
+.service-box:hover {
+	border-color: #3dc9b3;
+}
+
+.learn-more-btn {
+  background-color:  #3dc9b3;
+  -webkit-box-shadow: 0px 3px 0px 0px #3dc9b3;
+  -moz-box-shadow: 0px 3px 0px 0px #3dc9b3;
+  box-shadow: 0px 3px 0px 0px #3dc9b3;
+}
+.learn-more-btn:hover,
+.learn-more-btn:focus {
+  background-color: #3dc9b3;
+}
+
+/* footer */
+ul.footer-menu li a:hover {
+	color: #3dc9b3;
+}
+
+footer a.totop:hover {
+	color: #3dc9b3;
+}
+
+
+.btn-skin {
+  color: #fff;
+  background-color: #3dc9b3;
+  border-color: #3dc9b3;
+}

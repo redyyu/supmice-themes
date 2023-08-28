@@ -1,0 +1,72 @@
+{
+	"slug": "default",
+  "version": "1.0.0",
+  "license": "MIT",
+  "author": "Redy",
+	"title": "Pyco Test Theme",
+  "description": "This is a simple theme for testing pyco.",
+  "type": "ws",
+  "capability": 0,
+  "icon": "icon.png",
+	"previews": ["preview.jpg"],
+	"poster": "poster.jpg",
+
+  "templates": [
+    "index",
+    "page",
+    "post",
+    "category",
+    "customs"
+  ],
+
+  "slots": ["event"],
+
+  "category": {
+    "name":"Categories",
+    "content_types":["post"]
+  },
+
+  "content_types": {
+    "post": {"title": "Posts", "templates": ["post"]}
+  },
+
+  "reserves": {
+    "post/index": "posts-index",
+    "error-404": true
+  },
+
+	"options": {
+		"sortby": "date",
+		"perpage": 12
+	},
+
+  "custom_fields": {
+    "customs": {
+      "!": ["content", "tags", "description", "featured_img", "terms"],
+      "textttt": "lines",
+      "link-to": "link",
+      "features": {
+        "type": "series",
+        "label": {
+          "en": "List",
+          "zh": "序列"
+        }
+      },
+      "cover": {
+        "type": "media",
+        "label": {
+          "en": "Background Cover",
+          "zh-CN": "背景图"
+        }
+      },
+      "bg-img": "bg",
+      "text-1": "text",
+      "script-s": "script",
+      "unknow-f": ""
+    },
+    "page": {
+      "background": "media",
+      "button": "link"
+    }
+  }
+}

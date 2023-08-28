@@ -1,0 +1,574 @@
+/*
+-----------------------------------------------
+TinForce Styles
+http://www.tinforce.com
+
+Author:   redy
+Date:     15 nov 2013
+Version: 1.0
+----------------------------------------------- */
+
+/* REST: =Ovrride
+----------------------------------------------- */
+.form-control, .dropdown-toggle {
+  background: rgba(20,20,20,0.5);
+  border: 0;
+  box-shadow:none;
+  border-radius: 10px;
+  min-height: 58px;
+  font-size: 14pt;
+  color: #eee;
+}
+.caret {
+  color: #859e52;
+}
+.input-group .input-group-btn .dropdown-toggle {
+  margin-right: 0px;
+}
+
+.form-control:focus {
+  border-color: #66afe9;
+  outline: 0;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075),
+                      0 0 8px rgba(204, 255, 102, 0.6);
+  box-shadow: inset 0 1px 1px rgba(0,0,0,.075),
+              0 0 8px rgba(204, 255, 102, 0.6);
+}
+.dropdown-menu {
+  color: #eee;
+  padding: 20px 15px;
+  background: rgba(20,20,20,0.9);
+  border-radius: 10px;
+}
+
+.dropdown-menu li a:hover{
+  background: #690;
+}
+
+.btn-primary,
+.btn-primary:link,
+.btn-primary:visited,
+.btn-primary:active,
+.btn-primary:focus,
+.btn-primary:active:focus,
+.btn-primary[disabled],
+.btn-primary.disabled {
+  padding-top: 14px;
+  padding-bottom: 14px;
+  border-radius: 10px;
+  border: 0;
+  font-size: 16pt;
+  background: #859e52;
+  text-decoration: none;
+  outline: 0;
+}
+.btn-primary:hover {
+  background: #690;
+}
+.btn-primary:active,
+.btn-primary:focus,
+.btn-primary:active:focus {
+  background: #580;
+  opacity: 0.8;
+}
+.navbar-brand{
+	color:#fff;
+	display:none;
+}
+
+/* BASE: =Base
+----------------------------------------------- */
+html, body {
+	box-sizing: border-box;
+  background-color: #fff;
+}
+body, div, a, ul li, button, h1,h2,h3,h4,h5, p {
+  font-family: 'Lato',
+               'Helvetica Neue', Helvetica, Arial,
+               'Source Han Sans CN', 'Source Han Sans SC',
+               'Hiragino Sans GB', 'PingFang SC', 'STHeiti', 'SimHei',
+               sans-serif;
+	color:#333;
+}
+.cover {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+	background: #f5f5f5 url('bg.jpg') no-repeat center center;
+	background-size: cover;
+}
+h1 {
+  font-size: 48pt;
+  margin-bottom: 30px;
+}
+h2 {
+  font-size: 32pt;
+  margin-top: 0;
+  margin-bottom: 30px;
+}
+h3 {
+  font-size: 24pt;
+  margin-bottom: 15px;
+}
+p, li {
+  font-size: 12pt;
+  line-height: 1.4em;
+	margin-bottom: 15px;
+}
+
+a, a:link, a:visited {
+	color:#690;
+	text-decoration: none;
+	border: 0;
+}
+
+a:hover {
+	color: #333;
+	text-decoration: underline;
+}
+
+a.disabled {
+  cursor: default;
+  pointer-events: none;
+}
+
+hr {
+	border-top-color: #ccc;
+}
+
+mark {
+	color:#690;
+	background:none;
+}
+img,
+video,
+audio,
+embed,
+iframe {
+  max-width: 100%;
+}
+.shareto {
+  margin: 0 auto;
+  max-width: 400px;
+  text-align: center;
+  padding: 10px;
+}
+.shareto > * {
+  margin: 0 5px;
+}
+section,
+footer {
+  z-index: 1;
+  position: relative;
+}
+
+
+/* GRID: =Masthead
+----------------------------------------------- */
+.masthead {
+  min-height:40px;
+	position: fixed;
+	right: 0;
+	left: 0;
+	top: 0;
+	z-index: 1030;
+	-webkit-transform: translate3d(0, 0, 0);
+	transform: translate3d(0, 0, 0);
+	background: #333;
+}
+.masthead .container {
+  max-width: 940px;
+}
+
+.masthead a,
+.masthead a:link,
+.masthead a:visited {
+  color: #fff;
+}
+.masthead a:hover {
+  color: #690;
+  text-decoration: none;
+}
+
+.masthead .nav-primary {
+  margin: 0 auto;
+  padding: 10px;
+  text-align: center;
+  position: relative;
+}
+.masthead .nav-primary .language {
+  min-height: auto;
+  font-size: inherit;
+  background: none;
+}
+
+.masthead .nav-primary .navbar {
+  text-align:center;
+  min-height: 0;
+  margin: 0;
+}
+.masthead .navbar .navbar-nav {
+  display:inline-block; float:none;
+}
+.masthead .navbar .navbar-nav li {
+  padding: 0;
+  margin: 0 20px;
+}
+.masthead .navbar .navbar-nav>li>a {
+  padding: 0;
+  padding-bottom: 0;
+  border: none;
+  border-radius: 0;
+  background: none;
+}
+
+.masthead .navbar-toggle .icon-bar {
+  background: #CCC;
+}
+
+.masthead .language-menu {
+  left: -60px;
+  margin-top: 10px !important;
+  padding: 10px;
+  border-radius: 20px !important;
+}
+
+.masthead .language-menu a {
+  color: #fff;
+  text-align: center;
+  font-size: 1em;
+  padding: 5px !important;
+}
+
+.masthead .dropdown-toggle {
+  min-height: 0;
+}
+
+/* GRID: =Main
+----------------------------------------------- */
+/* The actual visual size of the page */
+.main-section {
+  text-align: center;
+  padding-top: 90px;
+}
+
+.main-section a,
+.main-section a:link,
+.main-section a:visited{
+	color: #fff;
+}
+
+.main-section a:hover{
+	color: #690;
+	text-decoration: none;
+}
+
+.main-section div,
+.main-section ul li,
+.main-section button,
+.main-section h1,
+.main-section h2,
+.main-section h3,
+.main-section h4,
+.main-section h5,
+.main-section p{
+	color: #f1f1f1;
+}
+
+
+/* MODULE: =Brand
+----------------------------------------------- */
+.brand {
+  margin-top: 15px;
+  margin-bottom: 40px;
+}
+.brand .logo {
+  display: block;
+  width: 128px;
+  height: 128px;
+  margin: 0 auto;
+  text-align: center;
+}
+.brand .logo img {
+  max-width: 100%;
+}
+
+/* typography */
+.brand h1 {
+  color:#f1f1f1;
+  padding-top: 16px;
+  padding-bottom: 12px;
+  line-height: 1em;
+  margin: 0;
+}
+.brand h2 {
+  display: block;
+  font-size: 16pt;
+  text-transform: uppercase;
+  color: #cf6;
+  line-height: 1em;
+  padding: 0;
+  margin: 0;
+}
+
+/* MODULE: =GetLink
+----------------------------------------------- */
+.get-link {
+  margin: 0 auto;
+  max-width: 500px;
+}
+
+.get-link .form-group > div {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+
+
+/* MODULE: =Excerpt
+----------------------------------------------- */
+.excerpt {
+  max-width: 400px;
+  margin: 25px auto;
+  text-align: center;
+}
+.excerpt p {
+  padding: 0;
+  margin: 0;
+}
+
+/* MODULE: =Badge
+----------------------------------------------- */
+.store {
+  max-width: 500px;
+  margin: 25px auto;
+}
+
+.store .flag {
+  display: inline-block;
+  margin: 5px auto;
+  font-size: 0;
+  text-align: center;
+  border-radius: 10px;
+  border: 0;
+  background-color: #555;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+.store .flag img {
+  margin: 0 auto;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+.store .flag.fade {
+  opacity: 0.2;
+  pointer-events: none;
+  background: rgba(50,50,50,0.9);
+}
+.store a:hover {
+  background: #690;
+}
+
+
+
+/* MODULE: =GoFeatures
+----------------------------------------------- */
+.learn-more {
+  margin: 0 auto;
+  padding: 30px 0 10px 0;
+}
+
+.learn-more .btn-more,
+.learn-more .btn-more:link,
+.learn-more .btn-more:visited{
+  margin: 0 auto;
+  display: block;
+  width: 220px;
+  height: 100px;
+  padding-top: 10px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 12pt;
+  color: #fff;
+  background: transparent url('learn_more.png') no-repeat center 0;
+}
+.learn-more .btn-more:hover{
+  background-position: center -200px;
+}
+
+/* GRID: =Block
+----------------------------------------------- */
+.content-block {
+  position: relative;
+  margin: 0 auto;
+  background-color: #fff;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  border-bottom: 1px solid #ccc;
+}
+.content-block.last {
+  border-bottom: 0;
+}
+.content-block > div {
+  min-height: 300px;
+  padding: 45px 0;
+}
+.content-block .bottom-less {
+  padding-bottom: 0;
+}
+.content-block .imgbox {
+  text-align: center;
+}
+.content-block .imgbox img {
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
+}
+.content-block .imgbox img.tie {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.content-block .item {
+	text-align: center;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.content-block .textbox {
+  padding-bottom: 30px;
+}
+
+.content-block .textbox.aside {
+  padding-top: 30px;
+}
+
+.content-block .textbox p {
+  font-size: 1.35em;
+  line-height: 1.8;
+}
+
+.content-block .caption {
+  padding: 0 8px;
+  height: 70px;
+  margin-bottom: 30px;
+}
+
+.content-block .client {
+  display: block;
+  padding: 30px;
+}
+
+.content-block .feature figure {
+  padding: 15px;
+}
+.content-block .feature img {
+  border-radius: 50%;
+  background-color: #859e52;
+}
+
+/* GRID: =Footer
+----------------------------------------------- */
+.footer {
+  position: relative;
+  margin: 0 auto 0 auto;
+  background: #859e52;
+}
+.footer .container {
+  padding: 30px;
+}
+.footer a:hover {
+	text-decoration: none;
+}
+.footer .copyright {
+  margin: 0 auto;
+  max-width: 400px;
+  text-align: center;
+  font-size: 9pt;
+  color: #fff;
+}
+.footer .copyright span {
+  display: block;
+}
+
+/* EDITOR
+----------------------------------------------- */
+.sup-editor-canvas .editor-gap-top {
+  padding-top: 60px;
+  border-bottom: 1px solid #ccc;
+}
+
+/* RESPONSIVE
+-----------------------------------------------
+Lastly, apply responsive CSS fixes as necessary
+----------------------------------------------- */
+@media screen and (max-width:991px){
+	.pull-left{float:none!important;}
+	.pull-right{float:none!important;}
+}
+@media screen and (max-width:767px){
+	.navbar-brand {
+		display:block;
+	}
+
+	.masthead .navbar .navbar-nav { display:block; float:none; }
+	.masthead .navbar .navbar-nav li{
+	  padding-bottom: 2px;
+	}
+	.masthead .navbar .navbar-nav>li>a,
+	.masthead .navbar .navbar-nav>li>a:link,
+	.masthead .navbar .navbar-nav>li>a:visited
+	{
+    padding: 10px 0;
+    border: none;
+    border-radius: 0;
+    background: #444;
+	}
+  .masthead .navbar .navbar-nav>li>a:hover {
+    color: #fff;
+    background: #690;
+  }
+  .masthead .navbar .language .caret {
+    display: block;
+    margin: 5px auto;
+  }
+  .masthead .navbar .navbar-nav>li>a.language {
+    color: #666;
+    background: #222;
+  }
+  .masthead .navbar .language-menu {
+    background: #222;
+    margin: 0;
+    border-radius: 0;
+    padding: 5px;
+  }
+  .masthead .navbar .language-menu a {
+    padding: 0;
+    font-size: 0.8em;
+  }
+
+  .content-block > div {
+    min-height: 50px;
+  }
+  .content-block .caption {
+    height: auto;
+  }
+	.shareto,
+  .get-link {
+		display:none;
+	}
+  h1{
+    font-size: 40pt;
+  }
+  h2{
+    font-size: 30pt;
+  }
+  h3 {
+    font-size: 20pt;
+  }
+  .content-block {
+    text-align: center;
+  }
+}

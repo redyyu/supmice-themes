@@ -1,0 +1,9 @@
+.sup-editor-canvas body {
+  height: 100%;
+}
+
+.sup-editor-canvas body > div,
+.sup-editor-canvas body > div > section,
+.sup-editor-canvas body > div > section > .slide {
+  height: 100%;
+}

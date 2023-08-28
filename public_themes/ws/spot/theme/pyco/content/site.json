@@ -1,0 +1,60 @@
+{
+  "content_types": {
+    "post": "Posts",
+    "page": "Pages",
+    "products": "Products",
+    "portfolio": "Portfolio"
+  },
+  "menus": {
+    "primary": [
+      {
+        "key": "home",
+        "meta": {},
+        "nodes": [],
+        "name": "Home",
+        "link": "/"
+      },
+      {
+        "key": "services",
+        "meta": {},
+        "nodes": [],
+        "name": "Services",
+        "link": "/services"
+      },
+      {
+        "key": "works",
+        "meta": {},
+        "nodes": [],
+        "name": "Works",
+        "link": "/works"
+      },
+      {
+        "key": "team",
+        "meta": {},
+        "nodes": [],
+        "name": "Team",
+        "link": "/team"
+      },
+      {
+        "key": "about",
+        "meta": {},
+        "nodes": [],
+        "name": "About",
+        "link": "/about"
+      }
+    ]
+
+  },
+  "meta": {
+    "slug":"pyco",
+    "type":"spot",
+    "favicon": "[%uploads%]/favicon.png",
+    "author": "redy",
+    "copyright": "2015 Made by Pyco.",
+    "description": "It doesn't take a rocket scientist ...",
+    "license": "MIT",
+    "locale": "en_US",
+    "title": "Spot"
+  }
+
+}

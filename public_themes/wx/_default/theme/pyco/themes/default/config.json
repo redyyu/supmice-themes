@@ -1,0 +1,11 @@
+{
+  "slug":"wx",
+  "version": "1.8.3",
+  "author":"Redy",
+  "license": "MIT",
+	"title": "Default Theme",
+  "type": "wx",
+
+  "templates": ["article"],
+  "stylesheets": {}
+}

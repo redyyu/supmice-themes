@@ -1,0 +1,25 @@
+{
+  "watch":{
+    "src": "src",
+    "dest": "pyco/themes/default",
+    "clean": true,
+    "server": "pyco",
+    "skip_includes": "html"
+  },
+  "packing":{
+    "zip":{
+      "cwd":"src",
+      "dest":".",
+      "file":"theme.zip"
+    },
+    "upload":{
+      "cwd":".",
+      "file":"theme.zip",
+      "headers":{
+        "SecretKey":"sup-f9b3bcddccb94497852ca2a7"
+      },
+      "url":"http://api.soopro.io/app/soopro/develop/theme",
+      "delete": true
+    }
+  }
+}

@@ -1,0 +1,12 @@
+<view class="flex-column centered fullscreen">
+  <view class="text-center">
+    <view>
+      <icon type="clear" size="96"/>
+    </view>
+    <text class="headline">404 找不到页面</text>
+    <text class="block text-center draft">也可能是网太卡了</text>
+    <view class="holder-sm"></view>
+    <button type="primary"
+            bind:tap="back">点这里刷新试试？</button>
+  </view>
+</view>

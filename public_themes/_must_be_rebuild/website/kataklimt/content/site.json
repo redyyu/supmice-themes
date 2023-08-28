@@ -1,0 +1,64 @@
+{
+  "content_types": {
+    "post": "Posts",
+    "page": "Pages",
+    "product": "Product"
+  },
+  "menus": {
+    "primary": [
+      {
+        "key": "about",
+        "meta": {},
+        "nodes": [],
+        "title": "About",
+        "link": "/index"
+      },
+      {
+        "key": "services",
+        "meta": {},
+        "nodes": [],
+        "title": "Services",
+        "link": "/services"
+      },
+      {
+        "key": "folio",
+        "meta": {},
+        "nodes": [],
+        "title": "Folio",
+        "link": "/folio"
+      },
+      {
+        "key": "blog",
+        "meta": {},
+        "nodes": [],
+        "title": "Blog",
+        "link": "/blog"
+      },
+      {
+        "key": "contact",
+        "meta": {},
+        "nodes": [],
+        "title": "Contact",
+        "link": "/contact"
+      }
+    ]
+
+  },
+  "meta": {
+    "slug":"pyco",
+    "type":"kataklimt",
+    "logo":"[%uploads%]/logo.gif",
+    "favicon": "[%uploads%]/favicon.png",
+    "author": "redy",
+    "copyright": "2015 Made by Pyco.",
+    "description": "It doesn't take a rocket scientist ...",
+    "license": "MIT",
+    "locale": "en_US",
+    "title": "Kataklimt",
+    "socials":{
+      "facebook":{"name":"Facebook","url":"#","code":"facebook"},
+      "twitter":{"name":"Twitter","url":"#","code":"twitter"}
+    }
+  }
+
+}

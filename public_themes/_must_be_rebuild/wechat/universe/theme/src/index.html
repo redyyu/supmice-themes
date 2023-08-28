@@ -1,0 +1,21 @@
+{% import "g" as g with context %}
+<!DOCTYPE html>
+<html lang="{{lang}}">
+{% include '_head.html' %}
+<body>
+<div class="wrapper">
+	<header class="bg-cover {{meta.background.class}}" style="{{meta.background.style or site_meta.bg.style}}">
+		<h1>{{meta.title or _('Title')}}</h1>
+		<div class="date">
+			{{meta.date_formatted}} | {{meta.author}}
+		</div>
+	</header>
+	<div class="container clearfix">
+		<article class="content clearfix">
+			{{content or _('$_CONTENT')}}
+		</article>
+	</div>
+	{% include '_footer.html' %}
+</div>
+</body>
+</html>

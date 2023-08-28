@@ -1,0 +1,14 @@
+{
+  "slug":"wx",
+  "version": "1.8.4",
+  "author":"Redy",
+  "license": "MIT",
+	"title": "Default Theme",
+  "type": "wx",
+
+  "templates": ["article"],
+  "stylesheets": {
+    "hr": "border: 1px solid rgba(0,0,0,0.1);",
+    "ul, ol": "@: list-paddingleft-2"
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "_id": "payload/content/site.json",
+  "slug": "pyco",
+  "locale": "zh-CN",
+  "content_types": {
+    "page": "Static Pages",
+    "profile": "Profile",
+    "service": "Products & Services",
+    "activity": "Course Activities"
+  },
+  "categories": {
+    "status": 0
+  },
+  "menus": {
+    "primary": [
+      {
+        "key": "guan-yu-wo-men",
+        "name": "关于我们",
+        "link": "/about-us",
+        "target": "",
+        "path_scope": "",
+        "fixed": "",
+        "class": "",
+        "meta": {},
+        "nodes": []
+      },
+      {
+        "key": "ke-cheng-huo-dong",
+        "name": "课程活动",
+        "link": "/activities",
+        "target": "",
+        "path_scope": "",
+        "fixed": "",
+        "class": "",
+        "meta": {},
+        "nodes": []
+      },
+      {
+        "key": "chan-pin-yu-fu-wu",
+        "name": "产品与服务",
+        "link": "/services-products",
+        "target": "",
+        "path_scope": "",
+        "fixed": "",
+        "class": "",
+        "meta": {},
+        "nodes": []
+      },
+      {
+        "key": "he-zuo-huo-ban",
+        "name": "合作伙伴",
+        "link": "/partners",
+        "target": "",
+        "path_scope": "",
+        "fixed": "",
+        "class": "",
+        "meta": {},
+        "nodes": []
+      }
+    ]
+  },
+  "slots": {
+    "miniapp": {
+      "route": "",
+      "src": "[%uploads%]/miniapp.jpg",
+      "status": true
+    }
+  },
+  "meta": {
+    "favicon": "",
+    "logo": "",
+    "bg": "",
+    "contact": "redy",
+    "copyright": "2019 Powered by Pyco.",
+    "description": "...",
+    "license": "MIT",
+    "title": "Aeroluxus",
+    "socials": [],
+    "languages": [
+      {
+        "key": "zh-CN",
+        "name": "汉",
+        "url": "#cn"
+      },
+      {
+        "key": "en-US",
+        "name": "En",
+        "url": "#en"
+      }
+    ],
+    "head_metadata": "",
+    "custom": {}
+  }
+}

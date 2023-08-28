@@ -1,0 +1,17 @@
+{
+  "slug": "modal-sample",
+  "version": "1.0.0",
+  "author": "Redy",
+  "license": "MIT",
+  "title": "MODAL SAMPLE",
+  "type": "ws",
+  "capability": 0,
+  "icon": "icon.jpg",
+  "poster": "poster.jpg",
+  "previews": ["preview.jpg"],
+
+  "templates": [
+    "index"
+  ],
+  "slots": ["banner"]
+}

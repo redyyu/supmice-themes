@@ -1,0 +1,87 @@
+{
+  "app_id": "59c12e838fa55546a4924acf",
+  "slug":"pyco",
+  "type":"ws",
+  "locale": "zh_CN",
+  "translates":{
+    "en_US": {
+      "name": "English",
+      "url": "#"
+    },
+    "zh_CN": {
+      "name": "中文",
+      "url": "#"
+    }
+  },
+
+  "content_types": {
+    "post": "Posts",
+    "page": "Pages",
+    "products": "Products",
+    "portfolio": "Portfolio"
+  },
+  "menus": {
+    "primary": [
+      {
+        "key": "home",
+        "meta": {},
+        "nodes": [],
+        "name": "Home",
+        "link": "/"
+      },
+      {
+        "key": "products",
+        "meta": {},
+        "name": "Products",
+        "link": "#",
+        "path_scope": "products",
+        "nodes": [
+          {
+            "key": "product-1",
+            "meta": {},
+            "name": "Product #1",
+            "link": "/products"
+          },
+          {
+            "key": "product-2",
+            "meta": {},
+            "name": "Product #2",
+            "link": "/products2"
+          }
+        ]
+      },
+      {
+        "key": "services",
+        "meta": {},
+        "nodes": [],
+        "name": "Services",
+        "link": "/services"
+      },
+      {
+        "key": "team",
+        "meta": {},
+        "nodes": [],
+        "name": "Team",
+        "link": "/team"
+      },
+      {
+        "key": "about",
+        "meta": {},
+        "nodes": [],
+        "name": "About",
+        "link": "/about"
+      }
+    ]
+
+  },
+  "meta": {
+    "logo": "",
+    "favicon": "",
+    "author": "redy",
+    "copyright": "2015 Made by Soopro.",
+    "description": "It doesn't take a rocket scientist ...",
+    "license": "MIT",
+    "title": "Travel"
+  }
+
+}

@@ -1,0 +1,44 @@
+{% import "g" as g with context %}
+<!DOCTYPE html>
+<html lang="{{ lang }}">
+{% include "_head.html" %}
+<body>
+  {% include "_header.html" %}
+  {% set sgement_pages = segments() %}
+
+  <div class="scroller position-fixed d-none d-md-block"
+       toggle-affix>
+    <a class="indicator" data-section="" href="#"></a>
+    {% for p in sgement_pages %}
+    <a class="indicator" data-section="{{p.slug}}" href="#{{p.slug}}"></a>
+    {% endfor %}
+  </div>
+
+  <!-- Hero -->
+  <section class="parallax-bg hero {{meta.hero.class}}"
+           style="{{meta.hero.style}}">
+    <div class="pb-4 parallax-fade">
+      <h1>
+        <a class="entrance" href="#"
+           style="{{meta.logo.src|bg_img}}">
+          {{meta.logo.title or site_meta.title}}
+        </a>
+      </h1>
+    </div>
+  </section>
+
+  {% for page in sgement_pages %}
+    <section id="{{page.slug}}" class="segment">
+      {% include page.template+'.html' ignore missing %}
+    </section>
+  {% endfor %}
+
+  <!-- Footer -->
+  <footer class="footer container text-center">
+    <span>{{site_meta.copyright}}</span>
+    <span>{{site_meta.license}}</span>
+  </footer>
+
+  {{g.scripts}}
+</body>
+</html>

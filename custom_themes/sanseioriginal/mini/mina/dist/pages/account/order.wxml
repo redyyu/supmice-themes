@@ -1,0 +1,204 @@
+<wxs src="../../translator.wxs" module="_"></wxs>
+<wxs src="../../filters.wxs" module="f"></wxs>
+{{_('$set', locale)}}
+
+
+<block wx:if="{{loaded}}">
+  <!-- order -->
+  <view class="container panel">
+    <view class="padding">
+      <view class="card"
+            data-order="{{order}}"
+            bind:tap="open">
+        <view class="card-title">
+          <view class="card-title-text">
+            <view class="body-text accent">
+              {{_('Trade ID')}} {{order.trade_id}}
+            </view>
+            <view class="title primary space-margin">
+              ¥ {{f.price(order.payment)}}
+            </view>
+          </view>
+          <view class="card-title-media align-items-end">
+            <block wx:if="{{order.status == -1}}">
+              <view class="body-text acctent">
+                {{_('Error')}}
+              </view>
+              <view class="ico lg ico-warn warn margin" />
+            </block>
+            <block wx:elif="{{order.status == 0}}">
+              <view class="body-text accent">
+                {{_('Pending')}}
+              </view>
+              <view class="ico lg ico-time primary margin" />
+            </block>
+            <block wx:elif="{{order.status == 1}}">
+              <view class="body-text accent">
+                {{_('Paid')}}
+              </view>
+              <view class="ico lg ico-paid primary margin"/>
+            </block>
+            <block wx:elif="{{order.status == 2}}">
+              <view class="body-text accent">
+                {{_('Delivered')}}
+              </view>
+              <view class="ico lg ico-delivery primary margin"/>
+            </block>
+            <block wx:elif="{{order.status == 3}}">
+              <view class="body-text accent">
+                {{_('Finished')}}
+              </view>
+              <view class="ico lg ico-complete primary margin"/>
+            </block>
+            <block wx:elif="{{order.status == 4}}">
+              <view class="body-text accent">
+                {{_('Refunded')}}
+              </view>
+              <view class="ico lg ico-refund primary margin"/>
+            </block>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class="container panel"
+        wx:if="{{order.status == -1}}">
+    <view class="padding hint warn">
+      {{_('Sorry! This order may have problem. Please DO NOT make purchase repeatedly. Contact customer service as soon as you can.')}}
+    </view>
+  </view>
+
+  <view class="container panel">
+    <view class="padding">
+
+      <view>
+        <label>{{_('Trade ID')}}</label>
+        <view class="indent-padding caption paragraph">
+          {{order.trade_id}}
+        </view>
+      </view>
+
+      <view>
+        <label>{{_('Transaction ID')}}</label>
+        <view class="indent-padding caption paragraph">
+          {{order.transaction_id ? order.transaction_id
+                                 : _('Transaction not confirmed')}}
+        </view>
+      </view>
+
+      <view wx:if="{{order.status == 4}}">
+        <label>{{_('Refund ID')}}</label>
+        <view class="indent-padding caption paragraph">
+          {{order.refund_id || '-'}}
+        </view>
+      </view>
+
+      <view wx:if="{{order.status == 2}}">
+        <label>{{_('Delivery Number')}}</label>
+        <view class="indent-padding caption paragraph">
+          <text selectable="true">{{order.delivery || '-'}}</text>
+          <button class="icon-btn"
+                  bind:tap="copy_delivery"
+                  data-delivery="{{order.delivery}}"
+                  data-toast-title="{{_('Copy Delivery Number')}}"
+                  data-toast-image="/img/copy.png">
+            <view class="ico ico-copy" />
+          </button>
+        </view>
+      </view>
+
+    </view>
+  </view>
+
+  <view class="container panel">
+    <view class="padding">
+
+      <view class="title primary">{{_('Order Items')}}</view>
+
+      <view wx:for="{{order.items}}"
+            wx:for-item="item"
+            wx:key="index">
+        <view class="padding caption">
+          {{item.name}}
+          {{item.detail}}
+          ¥{{f.price(item.price)}} x{{item.amount}}
+        </view>
+        <view class="indent-padding"
+              wx:if="{{item.discounts.length}}">
+          <view class="tag"
+                wx:for="{{item.discounts}}"
+                wx:for-item="discount_tagname"
+                wx:key="index">{{discount_tagname}}</view>
+        </view>
+        <view class="divider dotted"
+              wx:if="{{index < order.items.length - 1}}"></view>
+      </view>
+    </view>
+  </view>
+
+  <view class="container panel">
+    <view class="padding">
+      <view>
+        <label>{{_('Courier Fee')}}</label>
+        <view class="indent-padding primary caption paragraph">
+          ¥ {{order.courier_fee}}
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class="container panel"
+        wx:if="{{order.note}}">
+    <view class="padding">
+      <label>{{_('Note')}}</label>
+      <view class="indent-padding caption paragraph">
+        {{order.note}}
+      </view>
+    </view>
+  </view>
+
+  <!-- bottombar -->
+  <view class="bottombar">
+    <view class="bottombar-inner {{order_style}}">
+      <view class="row">
+        <button class="icon-btn"
+                type="{{order_style}}"
+                size="lg"
+                open-type="contact">
+          <view class="ico ico-chat" />
+        </button>
+        <button class="flex raised"
+                type="warn"
+                open-type="contact"
+                wx:if="{{order.status == -1}}">
+          {{_('Error, contact customer service')}}
+        </button>
+        <view class="flex text accent draft sider-left flex-row centered"
+              wx:if="{{order.status == 0}}">
+          {{_('Pending')}}
+        </view>
+        <view class="flex text primary sider-left flex-row centered"
+              wx:if="{{order.status == 1}}">
+          {{_('Preparing delivery ...')}}
+        </view>
+        <button class="flex raised"
+                type="accent"
+                bind:tap="complete_order"
+                wx:if="{{order.status == 2}}"
+                data-confirm-title="{{_('Did the package arrive?')}}">
+          {{_('Confirm receipt')}}
+        </button>
+        <view class="flex text accent draft sider-left flex-row centered"
+              wx:if="{{order.status == 3}}">
+          {{_('Order finished')}}
+        </view>
+        <view class="flex text accent draft sider-left flex-row centered"
+              wx:if="{{order.status == 4}}">
+          {{_('Order refunded')}}
+        </view>
+      </view>
+    </view>
+  </view>
+
+</block>

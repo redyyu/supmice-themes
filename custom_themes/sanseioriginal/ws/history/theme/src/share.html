@@ -1,0 +1,26 @@
+{% import "g" as g with context %}
+<!DOCTYPE html>
+<html lang="{{lang}}">
+{% include '_head.html' %}
+<body>
+
+{% include '_header.html' %}
+
+<section class="hero {{meta.hero.class}}"
+         style="{{meta.hero.style}}">
+  <div class="container hero-inner">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2">
+        <h3 class="sec-title">{{meta.title}}</h3>
+        <div class="content">
+          {{content}}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% include '_footer.html' %}
+
+</body>
+</html>

@@ -1,0 +1,37 @@
+{% import "g" as g with context %}
+<!DOCTYPE html>
+<html lang="en">
+{% include '_head.html' %}
+<body>
+{% include '_header.html' %}
+<div class="bg-content">
+	<!--============================== content =================================-->
+	<div id="content"><div class="ic"></div>
+		<div class="container">
+			<div class="row">
+				<article class="span12">
+				<h3>{{meta.title}}</h3>
+				</article>
+				<div class="clear"></div>
+				<ul class="thumbnails thumbnails-1 list-services">
+					{% for item in meta.services %}
+					<li class="span4">
+						<div class="thumbnail thumbnail-1">
+							<img class="thumbnail-img" 
+               src="{{theme_url}}/img/bg350.png"
+               style="background-image: url('{{item.src}}')">
+							<section>
+								<h3>{{item.title}}</h3>
+								<p class="line-clamp">{{item.caption}}</p>
+							</section>
+						</div>
+					</li>
+					{% endfor %}
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+{% include '_footer.html' %}
+</body>
+</html>

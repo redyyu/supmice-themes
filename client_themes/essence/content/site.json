@@ -1,0 +1,82 @@
+{
+  "content_types": {
+    "post": "Posts",
+    "page": "Pages",
+    "product": "Products",
+    "event": "Events"
+  },
+  "menus": {
+    "primary": [
+      {
+        "key": "index",
+        "meta": {},
+        "nodes": [],
+        "title": "首页",
+        "link": "/"
+      },
+      {
+        "key": "products",
+        "meta": {},
+        "nodes": [],
+        "title": "饮品美食",
+        "link": "/products"
+      },
+      {
+        "key": "culture",
+        "meta": {},
+        "nodes": [],
+        "title": "咖啡文化",
+        "link": "/culture"
+      },
+      {
+        "key": "activity",
+        "meta": {},
+        "nodes": [],
+        "title": "我的活动",
+        "link": "/activity"
+      },
+      {
+        "key": "contact",
+        "meta": {},
+        "nodes": [],
+        "title": "联系我们",
+        "link": "/contact"
+      }
+    ]
+  },
+  "taxonomies":{
+    "category": {
+      "title":"Categories",
+      "content_types":["work"],
+      "terms": [
+        {"slug":"coffee","title":"咖啡饮品","meta":{"subtitle":"COFFEE DRINKS","description":"远地里的消息是从木排上传过来的"}},
+        {"slug":"snake","title":"美味甜点","meta":{"subtitle":"DELICIOUS DESSERTS","description":"远地里的消息是从木排上传过来的"}},
+        {"slug":"food","title":"美味餐点","meta":{"subtitle":"DELICIOUS MEALS","description":"远地里的消息是从木排上传过来的"}},
+        {"slug":"appliance","title":"精美器具","meta":{"subtitle":"BEAUTIFULLY APPLIANCE","description":"远地里的消息是从木排上传过来的"}}
+      ]
+    }
+  },
+  "translates":{
+    "en_US":{
+      "name": "English",
+      "url": "#"
+    },
+    "zh_CN":{
+      "name": "中文",
+      "url": "#"
+    }
+  },
+  "meta": {
+    "slug":"pyco",
+    "type":"essence",
+    "favicon": "[%uploads%]/favicon.png",
+    "logo": "[%uploads%]/logo.png",
+    "bg": "",
+    "author": "redy",
+    "copyright": "2015 Made by Pyco.",
+    "description": "Udah dari dulu tahu kalo bocor kenapa nggak ditambal tong ...",
+    "license": "MIT",
+    "locale": "zh_CN",
+    "title": "Essence"
+  }
+}

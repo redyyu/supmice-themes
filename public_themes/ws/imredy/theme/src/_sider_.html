@@ -1,0 +1,26 @@
+<aside id="sider">
+  <a href="#share-modal" class="icon-btn share share-modal"></a>
+</aside>
+<div id="share-modal" class="modal-block mfp-hide">
+  <h1 class="text-center">
+    {{_('Share to Social Network')}}
+  </h1>
+  <div class="row">
+    {% if socials|length == 1 %}
+      {% set social_col = "col-xs-12" %}
+    {% elif socials|length == 2 %}
+      {% set social_col = "col-xs-6" %}
+    {% else %}
+      {% set social_col = "col-sm-4 col-xs-3" %}
+    {% endif %}
+    {% for item in socials %}
+    <div class="{{social_col}} social-item text-center">
+      <h4>{{item.name}}</h4>
+      <a href="{{item.url or '#'}}">
+        <img src="{{item.figure}}"
+             alt="{{item.name}}"/>
+      </a>
+    </div>
+    {% endfor %}
+  </div>
+</div>

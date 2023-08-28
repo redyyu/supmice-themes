@@ -1,0 +1,35 @@
+{% import "g" as g with context %}
+<!DOCTYPE html>
+<html lang="{{lang}}"
+      palette="{{g.opts.palette}}">
+
+{% include '_head_.html' %}
+
+<body class="{{meta.bg.class}}"
+      style="{{meta.bg.style}}">
+  {% include '_nav_.html' %}
+  <section class="wrapper">
+    <article class="container paper">
+      {% if meta.featured_img.src %}
+      <figure class="row">
+        <img class="img-responsive banner"
+             src="{{meta.featured_img.src}}" alt="{{meta.title}}">
+      </figure>
+      {% endif %}
+      <header class="upper">
+        <h1>{{meta.title}}</h1>
+      </header>
+      <hr class="row">
+      <!-- content -->
+      <div class="content">
+        {{content}}
+      </div>
+      <!-- #content -->
+      <hr class="row">
+    </article>
+    {% include '_cr_.html' %}
+  </section>
+  {% include '_sider_.html' %}
+  {% include '_js_.html' %}
+</body>
+</html>

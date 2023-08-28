@@ -1,0 +1,47 @@
+{% if g and page %}
+<section class="contact {{page.bg.class}}"
+         parallax-anchor="{{page.slug}}" title="{{page.title}}">
+  <div layout-gt-sm="row" layout-sm="column"
+       layout-align="center center" style="{{page.bg.style}}">
+    <article flex-gt-sm="35">
+      <header>
+        <h2>{{page.title}}</h2>
+      </header>
+      <div class="content">
+        {{page.content}}
+      </div>
+      <div class="info">
+        {% if page.email %}
+        <p>
+          <i class="ico">
+            <svg svg-sprite="base:ico-email"></svg>
+          </i>
+          <a href="{{page.email.link | url}}" class="btn-primary">
+            {{page.email.name}}
+          </a>
+        </p>
+        {% endif %}
+        {% if page.im %}
+        <p>
+          <i class="ico">
+            <svg svg-sprite="base:ico-im"></svg>
+          </i>
+          <a href="{{page.im.link | url}}" class="btn-primary">
+            {{page.im.name}}
+          </a>
+        </p>
+        {% endif %}
+      </div>
+    </article>
+    <aside flex-gt-sm="35" flex-sm="45" class="text-center">
+      {% if page.featured_img %}
+      <img src="{{page.featured_img.src}}"
+       title="{{page.featured_img.title}}"
+       class="{{page.featured_img.class or ''}}"/>
+      {% endif %}
+    </aside>
+  </div>
+</section>
+{% else %}
+  <script>window.location.replace('{{base_url}}/#/{{meta.slug}}');</script>
+{% endif %}

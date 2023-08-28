@@ -1,0 +1,38 @@
+{% import "g" as g with context %}
+<!DOCTYPE html>
+<html lang="{{lang}}">
+
+{% include '_head_.html' %}
+
+<body>
+  <div class="wrapper">
+    <div class="container clearfix">
+      <h1>{{meta.title}}</h2>
+      <div class="meta">
+        {{meta.date|date_formatted}} | {{meta.author}}
+      </div>
+      <div class="kv">
+        <img src="{{meta.featured_img.src or g.default_pic}}"
+             alt="{{meta.title}}">
+      </div>
+      <article sup-wx-broadcast class="content clearfix">
+        {{content}}
+      </article>
+    </dive>
+
+    <footer>
+      <div>
+        <div class="info">
+          <div class="read">{{_('Read')}}</div>
+          <div class="count">{{visit.page}}</div>
+        </div>
+      </div>
+      <div class="copyright">
+        <span>{{site_meta.copyright}}</span>
+        <span>{{site_meta.license}}</span>
+      </div>
+    </footer>
+
+  </div>
+</body>
+</html>

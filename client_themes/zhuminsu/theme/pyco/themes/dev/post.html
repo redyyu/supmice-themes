@@ -1,0 +1,80 @@
+{% import 'g' as g with context %}
+<!DOCTYPE html>
+<html lang="{{lang}}">
+{% include '_head.html' %}
+<body>
+
+{% include '_header.html' %}
+
+<section class="ribbon {{meta.hero.class}}"
+         style="{{meta.hero.style}}">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 text-center">
+        <h2 class="section-heading">
+          {{meta.title}}
+        </h2>
+        <hr class="light">
+        <p>{{meta.description}}</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% if meta.featured_img.src %}
+<section>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2">
+        <figure class="text-center">
+          <img class="img-responsive"
+               src="{{meta.featured_img.src}}"
+               alt="{{meta.featured_img.title}}" />
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>
+{% endif %}
+
+<section>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2">
+        <div class="content">
+          {{content}}
+        </div>
+        <hr>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="no-border">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2">
+        <div class="row img-gallery attachments">
+          {% for pic in meta.attachments %}
+          <div class="col-md-3 item">
+            <figure>
+              <a href="{{pic.src}}"
+                 class="img-popup"
+                 title="{{pic.title}}">
+                <img src="{{theme_url}}/styles/trans.png"
+                     class="thumbnail-img"
+                     style="background-image:url('{{pic.src|thumbnail}}')"
+                     alt="{{pic.title}}" />
+              </a>
+            </figure>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% include '_footer.html' %}
+
+</body>
+</html>

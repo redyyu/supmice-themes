@@ -1,0 +1,252 @@
+{
+	"version":"0.2.0",
+  "alias":"hbhjq",
+	"title":"红菁荞",
+  "capability":["ws"],
+	"thumbnail":"thumbnail.png",
+	"description":"菁禾缘健康酒业公司网站定制主题",
+	
+  "templates":{
+    "index": "首页",
+    "advantage": "优势",
+    "banner": "横幅",
+    "contact": "联系",
+    "gallery": "相册",
+    "brand": "品牌",
+    "news": "新闻",
+    "product": "产品",
+    "story": "故事",
+    "video": "视频",
+    "error_404": "404"
+  },
+
+  
+	"options":{
+		"sortby":"date",
+		"excerpt_length":162,
+		"excerpt_ellipsis":"&hellip;",
+		"date_format": "%Y年%m月%d日",
+		"perpage":12,
+    "markdown":false
+	},
+  
+  "mode": 0,
+  
+  "editor_fields":{
+
+  	"index": [
+
+  		{
+  			"key": "title",
+  			"name": "标题",
+  			"type": "input",
+  			"max": 120
+  		},
+  		{
+  			"key": "lebal",
+  			"name": "标贴",
+  			"type": "input",
+  			"max": 50
+  		},
+  		{
+  			"key": "background",
+  			"name": "背景",
+  			"type": "background"
+  		},
+  		{
+  			"key": "kv",
+  			"name": "主视觉图",
+  			"type": "background"
+  		}
+  		
+    ],
+    
+  	"advantage": [
+
+  		{
+  			"key": "title",
+  			"name": "标题",
+  			"type": "input",
+  			"max": 120
+  		},
+  		{
+  			"key": "label",
+  			"name": "标贴",
+  			"type": "input",
+  			"max": 50
+  		},
+  		{
+  			"key": "content",
+  			"name": "内容",
+  			"type": "content"
+  		},
+  		{
+  		  "key": "advantages",
+        "name": "优点",
+        "type": "notes"
+  		}
+  		
+    ],
+    
+  	"banner": [
+
+  		{
+  			"key": "title",
+  			"name": "标题",
+  			"type": "input",
+  			"max": 120
+  		},
+  		{
+  			"key": "content",
+  			"name": "内容",
+  			"type": "content"
+  		},
+  		{
+  			"key": "background",
+  			"name": "背景",
+  			"type": "background"
+  		}
+  		
+    ],
+    
+  	"contact": [
+
+  		{
+  			"key": "title",
+  			"name": "标题",
+  			"type": "input",
+  			"max": 120
+  		},
+  		{
+  			"key": "label",
+  			"name": "标贴",
+  			"type": "input",
+  			"max": 50
+  		},
+  		{
+  			"key": "content",
+  			"name": "内容",
+  			"type": "content"
+  		}
+    ],
+    
+  	"gallery": [
+
+  		{
+  			"key": "title",
+  			"name": "标题",
+  			"type": "input",
+  			"max": 120
+  		},
+  		{
+  			"key": "label",
+  			"name": "标贴",
+  			"type": "input",
+  			"max": 50
+  		},
+  		{
+  			"key": "content",
+  			"name": "内容",
+  			"type": "content"
+  		},
+  		{
+  			"key": "gallery",
+  			"name": "图文集",
+  			"type": "gallery"
+  		}
+      
+    ],
+    
+  	"news": [
+
+  		{
+  			"key": "title",
+  			"name": "标题",
+  			"type": "input",
+  			"max": 120
+  		},
+  		{
+  			"key": "label",
+  			"name": "标贴",
+  			"type": "input",
+  			"max": 50
+  		},
+  		{
+  			"key": "content",
+  			"name": "内容",
+  			"type": "content"
+  		},
+  		{
+  			"key": "news",
+  			"name": "新闻集",
+  			"type": "gallery"
+  		}
+      
+    ],
+    
+  	"product": [
+
+  		{
+  			"key": "title",
+  			"name": "标题", 
+  			"type": "input",
+  			"max": 120
+  		},
+  		{
+  			"key": "label",
+  			"name": "标贴",
+  			"type": "input",
+  			"max": 50
+  		},
+  		{
+  			"key": "content",
+  			"name": "内容",
+  			"type": "content"
+  		},
+  		{
+  			"key": "product",
+  			"name": "产品",
+  			"type": "gallery"
+  		}
+      
+    ],
+    
+  	"story": [
+
+  		{
+  			"key": "title",
+  			"name": "Title", 
+  			"type": "input",
+  			"max": 120
+  		},
+  		{
+  			"key": "label",
+  			"name": "标贴",
+  			"type": "input",
+  			"max": 50
+  		},
+  		{
+  			"key": "background",
+  			"name": "背景",
+  			"type": "background"
+  		}
+      
+    ],
+  	"video": [
+
+  		{
+  			"key": "title",
+  			"name": "标题", 
+  			"type": "input",
+  			"max": 120
+  		},
+  		{
+  			"key": "video",
+  			"name": "视频",
+  			"type": "script"
+  		}
+      
+    ]
+    
+  }
+}

@@ -1,0 +1,23 @@
+{% import "g" as g with context %}
+<!DOCTYPE html>
+<html lang="{{ lang }}">
+{% include "_head.html" %}
+<body>
+	<div id="wrapper">
+	{% include "_header.html" %}
+	<!-- Tagline -->
+	<div class="container">
+		<section class="jumbotron">
+			<h1 class="title">{{meta.title}}</h1>
+		</section>
+	</div>
+	<!-- #Tagline -->
+	<!-- Contents -->
+	<div class="container">
+		{{content}}
+	</div>
+	<!-- #Contents -->
+	{% include "_footer.html" %}
+	</div>
+</body>
+</html>

@@ -1,0 +1,70 @@
+{% import 'g' as g with context %}
+{% set curr_chapter = straw(taxonomy.chapter.terms,
+                            request.args.term,
+                            'key') %}
+{% if not curr_chapter %}
+  {% set curr_chapter = {'meta':{'name': _('Empty Chapter')}}%}
+{% endif %}
+
+<!DOCTYPE html>
+<html lang="{{lang}}">
+{% include '_head_.html' %}
+<body>
+  <div class="outer">
+    <div class="masthead">
+      <a href="{{base_url}}">
+        &rarr; {{_('Cover')}}
+      </a>
+    </div>
+    <header class="header-article container">
+      <h1>{{curr_chapter.meta.name}}</h1>
+    </header>
+    <section class="container">
+      {% set booklet = query('article', request.args.paged,
+                             taxonomy={'slug': 'chapter',
+                                       'term': request.args.term}) %}
+      {% for article in booklet.contents %}
+      <article>
+        <header>
+          <h3>{{article.title}}</h3>
+        </header>
+        <p>{{article.description}}</p>
+        <div class="readbox">
+          <a class="read"
+             href="{{glue({'term':request.args.term}, article.url)}}">
+            {{_('Read')}}
+          </a>
+        </div>
+      </article>
+      <hr class="dashed">
+      {% endfor %}
+
+      {% if booklet.total_pages > 1 %}
+      <ul class="paginator">
+        {% if booklet.paged > 1 %}
+        <li class="previous">
+          <a href="{{ glue({'paged':booklet.paged-1}) }}">
+            &larr; {{_('Previous')}}
+          </a>
+        </li>
+        {% endif %}
+        {% if booklet.paged < booklet.total_pages %}
+        <li class="next">
+          <a href="{{ glue({'paged':booklet.paged+1}) }}">
+            {{_('Next')}} &rarr;
+          </a>
+        </li>
+        {% endif %}
+      </ul>
+      {% endif %}
+    </section>
+    <footer class="container">
+      <div class="returnbox">
+        <a class="return"
+           href="{{base_url}}">{{_('Return to Cover')}}</a>
+      </div>
+    </footer>
+  </div>
+  {% include '_js_.html' %}
+</body>
+</html>

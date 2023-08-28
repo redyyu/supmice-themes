@@ -1,0 +1,1 @@
+(function(){var app,core;core=require('../../core.js');app=getApp();core.Page({data:{status:null},onLoad:function(opts){var self;self=this;return app.set_navbar('$error',true);},back:function(){var self;self=this;wx.clearStorageSync();return app.nav.launch({route:core.config.paths.index});}});}).call(this);

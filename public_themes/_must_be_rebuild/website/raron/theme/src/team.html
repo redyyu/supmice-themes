@@ -1,0 +1,38 @@
+{% if g and page %}
+<div class="team" id="team">
+  <h3 class="heading">{{page.title or _('Title')}}</h3>
+  <p class="desc">{{page.description or _('Description text here')}}</p>
+  <h6> </h6>
+  <div class="team_members">
+    <div class="wrap">
+      <div id="owlde" class="owl-carousel">
+        {% for item in page.gallery %}
+        <div class="item" >
+          <div class="carousel">
+              <a class="popup-with-zoom-anim" href="#small-dialog1">
+                <img src="{{item.src}}" alt="Image 1"/>
+              </a>
+              <!-- place-caption-info -->
+              <div class="caption-info">
+                 <div class="caption-info-head">
+                  <div class="caption-info-head-left">
+                    <h4><a href="#">{{item.title}}</a></h4>
+                    <span>{{item.caption}}</span>
+                  </div>
+                  <div class="clear"> </div>
+                 </div>
+              </div>
+              <!-- place-caption-info -->
+           </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+<!-- Owl Carousel Assets -->
+
+
+
+{% else %}
+  <script>window.location.replace('{{base_url}}/#/{{meta.slug}}');</script>
+{% endif %}

@@ -1,0 +1,28 @@
+{% import "g" as g with context %}
+<!DOCTYPE html>
+<html lang="en">
+{% include '_head.html' %}
+<body>
+{% include '_header.html' %}
+<div class="bg-content">
+	<!--============================== content =================================-->
+	<div id="content">
+		<div class="ic"></div>
+		<div class="container">
+			<div class="row">
+				<article class="span8">
+				  <div class="tbimg">
+					<img class="thumbnail-img" src="{{theme_url}}/img/bg770.png" style="background-image: url('{{meta.photo.src}}')">
+				  </div>
+				</article>
+				<article class="span4">
+					<h3>{{meta.title}}</h3>
+					<div>{{content}}</div>
+				</article>
+			</div>
+		</div>
+	</div>
+</div>
+{% include '_footer.html' %}
+</body>
+</html>

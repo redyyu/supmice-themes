@@ -1,0 +1,36 @@
+{% if g and page %}
+<!-- Section -->
+<section id="{{page.slug}}" class="product">
+  <div class="container">
+    <article class="center-block text-center">
+      <header>
+        <h4 class="title-label">{{page.label}}</h4>
+        <h2 class="title">{{page.title}}</h2>
+      </header>
+      <div class="content">
+        {{page.content}}
+      </div>
+    </article>
+    <div class="showreel">
+      <div class="perspective">
+        <div class="masks"><div class="gradient"></div></div>
+        <div class="showreel-cube">
+          {% set faces = ["front","right","back","left"] %}
+          {% for item in page.product[0:faces|length] %}
+            <figure class="{{faces[loop.index0]}}">
+              <img src="{{item.src or g.default_img}}" alt="...">
+            </figure>
+          {% endfor %}
+        </div>
+      </div>
+      <div class="controls clearfix">
+        <a href="#" class="prev"></a>
+        <a href="#" class="next"></a>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- #Section -->
+{% else %}
+  <script>window.location.replace('{{base_url}}/#/{{meta.slug}}');</script>
+{% endif %}

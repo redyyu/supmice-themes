@@ -1,0 +1,81 @@
+{% set _field = meta[key] or {} %}
+<div class="card custom-form"
+     data-key="{{key}}"
+     data-type="media">
+  <div class="card-header d-flex">
+    <h4>
+      {{_(opts.label)|title}}
+    </h4>
+    <small class="text-muted ml-auto">
+      {{key}}
+    </small>
+  </div>
+  <div class="card-body">
+    <div class="form-row">
+      {% if display_field('title', opts.hidden) %}
+      <div class="form-group col-md-6">
+        <label>{{_('Title')}}</label>
+        <input class="form-control"
+               type="text"
+               name="title"
+               maxlength="60"
+               value="{{_field.title}}">
+      </div>
+      {% endif %}
+      {% if display_field('link', opts.hidden) %}
+      <div class="form-group col-md-6">
+        <label>{{_('Link to URL')}}</label>
+        <div class="input-group">
+          <input class="form-control"
+                 type="text"
+                 name="link"
+                 maxlength="360"
+                 placeholder="URL, http://somesite.com"
+                 value="{{_field.link}}">
+          <input class="form-control col-md-3 col-4"
+                 type="text"
+                 name="target"
+                 maxlength="60"
+                 placeholder="_self"
+                 value="{{_field.target}}">
+        </div>
+      </div>
+      {% endif %}
+      {% if display_field('src', opts.hidden) %}
+      <div class="form-group media-preview-field col-md-6">
+        <label>{{_('Image URL')}}</label>
+        <div class="input-group">
+          <div class="input-group-append media-preview">
+            <a href="#" target="_blank"></a>
+          </div>
+          <input class="form-control media-input"
+                 type="text"
+                 name="src"
+                 value="{{_field.src or ''}}">
+          <div class="input-group-append">
+            <button class="btn btn-secondary"
+                    aria-lable="{{_('Select Image')}}"
+                    data-toggle="modal"
+                    data-target="#MODAL-MEDIAREPO"
+                    data-input="src"
+                    type="button">
+              <i class="fas fa-image"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+      {% endif %}
+      {% if display_field('class', opts.hidden) %}
+      <div class="form-group col-md-4">
+        <label>{{_('CSS Class')}}</label>
+        <input class="form-control"
+               type="text"
+               name="class"
+               maxlength="360"
+               placeholder="primary-bg, transparent-bg"
+               value="{{_field.class}}">
+      </div>
+      {% endif %}
+    </div>
+  </div>
+</div>

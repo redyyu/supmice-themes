@@ -1,0 +1,34 @@
+[
+    {
+        "name": {
+            "en":"Content Card",
+            "zh":"多列卡片"
+        },
+        "preview": "img/preview_card.png",
+        "code": "<div class=\"row presets\"><div class=\"col-md-4\"><div class=\"content-card\"><img class=\"thumbnail-img\" src=\"{{theme_url}}/img/foliobg.png\" style=\"background-image: url('{{theme_url}}/img/default_folio.png');\"><div class=\"content-card-caption\"><h5 class=\"text-center\"><span>{{_('Title')}}</span></h5><p class=\"line-clamp\">{{_('Description text here')}}</p></div></div></div><div class=\"col-md-4\"><div class=\"content-card\"><img class=\"thumbnail-img\" src=\"{{theme_url}}/img/foliobg.png\" style=\"background-image: url('{{theme_url}}/img/default_folio.png');\"><div class=\"content-card-caption\"><h5 class=\"text-center\"><span>{{_('Title')}}</span></h5><p class=\"line-clamp\">{{_('Description text here')}}</p></div></div></div><div class=\"col-md-4\"><div class=\"content-card\"><img class=\"thumbnail-img\" src=\"{{theme_url}}/img/foliobg.png\" style=\"background-image: url('{{theme_url}}/img/default_folio.png');\"><div class=\"content-card-caption\"><h5 class=\"text-center\"><span>{{_('Title')}}</span></h5><p class=\"line-clamp\">{{_('Description text here')}}</p></div></div></div></div>"
+    },
+    {
+        "name": {
+            "en":"Content Column Card",
+            "zh":"单行卡片"
+        },
+        "preview": "img/preview_column_card.png",
+        "code": "<div class=\"row presets\"><div class=\"col-md-3\"><img class=\"thumbnail-img border-img\" src=\"{{theme_url}}/img/cardbg.png\" style=\"background-image: url('{{theme_url}}/img/default_folio.png');\"></div><div class=\"col-md-8 col-md-offset-1\"><h5>{{_('Title')}}</h5><p>{{_('Description text here')}}</p></div></div>"
+    },
+    {
+        "name": {
+            "en":"Content Col2 Image",
+            "zh":"两列图片"
+        },
+        "preview": "img/preview_col2_img.png",
+        "code": "<div class=\"row presets\"><div class=\"col-md-6\"><img class=\"thumbnail-img border-img\" src=\"{{theme_url}}/img/foliobg.png\" style=\"background-image: url('{{theme_url}}/img/default_folio.png');\"></div><div class=\"col-md-6\"><img class=\"thumbnail-img border-img\" src=\"{{theme_url}}/img/foliobg.png\" style=\"background-image: url('{{theme_url}}/img/default_folio.png');\"></div></div>"
+    },
+    {
+        "name": {
+            "en":"Content Col Image",
+            "zh":"上图下文"
+        },
+        "preview": "img/preview_col_img.png",
+        "code": "<div class=\"row presets\"><div class=\"content-card\"><img class=\"thumbnail-img\" src=\"{{theme_url}}/img/default_img.png\"><div class=\"content-card-caption\"><h1><span>{{_('Title')}}</span></h1><h4>{{_('Subtitle')}}</h4><p>{{_('Description text here')}}</p></div></div></div>"
+    }
+]

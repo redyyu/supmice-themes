@@ -1,0 +1,13 @@
+{% if g and page %}
+<div class="contact" id="contact">
+  <div class="contact-bg">
+    <div class="wrap contact-info">
+      <h1>{{page.title or _('Title')}}</h1>
+      <h4>{{page.description or _('Description text here')}}</h4>
+      {{page.content or _('$_CONTENT')}}
+    </div>
+  </div>
+</div>
+{% else %}
+  <script>window.location.replace('{{base_url}}/#/{{meta.slug}}');</script>
+{% endif %}

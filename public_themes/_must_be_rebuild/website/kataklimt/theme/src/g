@@ -1,0 +1,5 @@
+{% set font_cdn = "fonts.useso.com" if gfw else "fonts.googleapis.com" %}
+{% set default_favicon = theme_url+"/img/default_favicon.png" %}
+{% set allowed_icons = ['facebook','twitter','google'] %}
+
+{% set opts = theme_meta.options %}

@@ -1,0 +1,40 @@
+{% import "g" as g with context %}
+<!DOCTYPE html>
+<html lang="{{lang}}">
+{% include '_head.html' %}
+<body>
+
+{% include '_header.html' %}
+
+<section id="{{meta.slug}}"
+         class="hero {{meta.hero.class}}"
+         style="{{meta.hero.style}}">
+  <div class="container hero-inner">
+    <div>
+      {% if site_meta.logo %}
+      <div class="logo"
+           style="{{site_meta.logo|bg_img}}"></div>
+      {% endif %}
+      <h1>{{meta.title}}</h1>
+      <h2>{{meta.description}}</h2>
+    </div>
+    <a href="{{meta.entrance.hash or (meta.entrance.link|url)}}"
+       class="arrow-more page-scroll {{meta.entrance.class}}"
+       target="{{meta.entrance.target}}">
+      <svg viewBox="0 0 512 512"><path d="M271.042,425.167a74.64,74.64,0,0,0,37.969-20.583L490.135,212.792A74.6665,74.6665,0,1,0,384.323,107.416L256,243.292,127.469,107.208A74.6667,74.6667,0,0,0,21.76,212.688L203.198,404.792a74.3415,74.3415,0,0,0,37.76,20.375,75.1738,75.1738,0,0,0,15.042,1.5A77.2128,77.2128,0,0,0,271.042,425.167Z"/></svg>
+    </a>
+  </div>
+</section>
+
+{% for page in segments() %}
+<section id="{{page.slug}}"
+         class="segment {{page.bg.class}}"
+         style="{{page.bg.style}}">
+  {% include page.template+'.html' ignore missing %}
+</section>
+{% endfor %}
+
+{% include '_footer.html' %}
+
+</body>
+</html>

@@ -1,0 +1,38 @@
+{% if g and page %}
+<!-- Section -->
+<section id="{{page.alias}}" class="advantages">
+  <div class="container">
+    <article class="center-block text-center">
+      <header>
+        <h4 class="title-label">{{page.label}}</h4>
+        <h2 class="title">{{page.title}}</h2>
+      </header>
+      <div class="content">
+        <p>
+          <img src="{{page.feature_img.src or g.default_img}}"/>
+        </p>
+      </div>
+    </article>
+    <div class="row">
+      {% for advantage in page.advantages %}
+      <!-- advantage -->
+      <div class="col-sm-6">
+        <div class="well row">
+          <div class="col-xs-3 col-md-2 digital">
+            <i class="digital-circle">{{loop.index}}</i>
+          </div>
+          <div class="col-xs-9 col-md-10">
+            <h3 class="text-nowrap">{{advantage.title}}</h3>
+            <p class="text-line-clamp description">{{advantage.content}}<p>
+          </div>
+        </div>
+      </div>
+      <!-- #advantage -->
+      {% endfor %}
+    </div>
+  </div>
+</section>
+<!-- #Section -->
+{% else %}
+  <script>window.location.replace('{{base_url}}/#/{{meta.alias}}');</script>
+{% endif %}

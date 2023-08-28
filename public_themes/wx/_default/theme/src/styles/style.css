@@ -1,0 +1,261 @@
+/*!
+ * WX Default
+ */
+
+.clearfix:before,
+.clearfix:after {
+  display: table;
+  content: " ";
+  visibility: hidden;
+}
+.clearfix:after {
+  clear: both;
+}
+
+/* Base
+---------------------------------- */
+* {
+  margin: 0;
+  padding: 0;
+}
+html {
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  line-height: 1.6;
+}
+body {
+  -webkit-touch-callout: none;
+  font-family: -apple-system-font, "Helvetica Neue", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  background-color: #f3f3f3;
+  line-height: inherit;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 400;
+  font-size: 16px;
+}
+a {
+  color: #607fa6;
+  text-decoration: none;
+}
+img {
+  height: auto !important;
+}
+hr {
+  border: 1px solid rgba(0,0,0,0.1);
+}
+ol, ul {
+  padding-left: 2.2em;
+}
+
+/* table */
+table {
+  margin-bottom: 10px;
+  border-collapse: collapse;
+  display: table;
+  width: 100% !important;
+}
+td, th {
+  word-wrap: break-word;
+  word-break: break-all;
+  padding: 5px 10px;
+  border: 1px solid #ddd;
+}
+caption {
+  border: 1px dashed #ddd;
+  border-bottom: 0;
+  padding: 3px;
+  text-align: center;
+}
+th {
+  border-top: 2px solid #BBB;
+  background: #f7f7f7;
+}
+
+.wrapper {
+  font-size: 16px;
+  word-wrap: break-word;
+  -webkit-hyphens: auto;
+  -ms-hyphens: auto;
+  hyphens: auto;
+}
+.wrapper:before,
+.wrapper:after {
+  display: table;
+  content: " ";
+  visibility: hidden;
+}
+.wrapper:after {
+  clear: both;
+}
+.page {
+  position: relative;
+  padding: 20px 15px 15px;
+  background-color: #fff;
+}
+.page:before {
+  content: " ";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 1px;
+  border-top: 1px solid #e5e5e5;
+  -webkit-transform-origin: 0 0;
+  transform-origin: 0 0;
+  -webkit-transform: scaleY(0.5);
+  transform: scaleY(0.5);
+  top: auto;
+  bottom: -2px;
+}
+
+/* title */
+.title {
+  margin-bottom: 10px;
+  line-height: 1.4;
+  font-weight: 400;
+  font-size: 24px;
+}
+
+/* metadata */
+.metadata {
+  margin-bottom: 18px;
+  line-height: 20px;
+  font-size: 0;
+}
+.metadata em {
+  font-style: normal;
+}
+.metadata .meta-item {
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 8px;
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+.metadata .meta-text {
+  color: #8c8c8c;
+}
+.metadata span.meta-nickname {
+  display: none;
+}
+
+/* featured image */
+.featured_img {
+  margin-bottom: 6px;
+}
+.featured_img img {
+  display: block;
+  width: 100%;
+}
+
+/* content */
+.content {
+  overflow: hidden;
+  color: #3e3e3e;
+}
+.content:before,
+.content:after {
+  display: table;
+  content: " ";
+  visibility: hidden;
+}
+.content:after {
+  clear: both;
+}
+.content * {
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+  -webkit-box-sizing: border-box !important;
+  word-wrap: break-word !important;
+}
+.content p {
+  clear: both;
+  min-height: 1em;
+  white-space: pre-wrap;
+}
+.content em {
+  font-style: italic;
+}
+.content fieldset {
+  min-width: 0;
+}
+.content blockquote {
+  margin: 0;
+  padding-left: 10px;
+  border-left: 3px solid #dbdbdb;
+}
+
+/* footer */
+footer {
+  background-color: #ffffff;
+  padding: 12px;
+}
+footer .info {
+  text-align: center;
+  padding: 12px;
+  box-sizing:border-box;
+  -moz-box-sizing: border-box; /* Firefox */
+  -webkit-box-sizing: border-box; /* Safari */
+}
+footer .info .read {
+  font-size: 14px;
+  color: #666;
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+footer .info .count {
+  line-height: 48px;
+  font-size: 48px;
+  color: #6ec500;
+}
+footer .copyright {
+  font-size: 14px;
+  color: #666;
+  text-align: center;
+  padding: 12px;
+}
+
+/* Responses
+---------------------------------- */
+@media(min-device-width:375px) and (max-device-width:667px) and (-webkit-min-device-pixel-ratio:2) {
+  .wrapper .page,
+  .wrapper .metadata .meta-item,
+  .wrapper .discuss,
+  .wrapper .extra,
+  .wrapper .title-tips {
+    font-size: 17px;
+  }
+  .wrapper .tag {
+    font-size:15px;
+  }
+}
+@media(min-device-width:414px) and (max-device-width:736px) and (-webkit-min-device-pixel-ratio:3) {
+  .wrapper .title {
+    font-size: 25px;
+  }
+}
+@media screen and (min-width:1024px) {
+  .wrapper {
+    width: 740px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .wrapper .page {
+    padding: 20px;
+  }
+  body {
+    background-color: #fff;
+  }
+}
+@media screen and (min-width:1025px) {
+  body {
+      font-family:"Helvetica Neue", Helvetica, "Hiragino Sans GB", "Microsoft YaHei", Arial, sans-serif;
+  }
+  .wrapper {
+    position:relative;
+  }
+  .wrapper .page {
+    background-color: #fff;
+    padding-bottom: 100px;
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "version": "1.5.4",
+  "slug": "onassis",
+  "author": "cheney",
+  "license": "MIT",
+  "title": "Onassis",
+  "type": "ws",
+  "capability": 0,
+  "icon": "icon.png",
+  "poster": "poster.jpg",
+  "previews": ["preview.jpg"],
+  "description": {
+    "en":"A simple gray theme. You can demonstrate your works, services.",
+    "zh":"一个简单的灰色系主题，可以展示您的作品、服务等。"
+  },
+
+  "templates": [
+    "^page",
+    "^services",
+    "^portfolio",
+    "^team",
+    "index"
+  ],
+
+  "segments": 24,
+
+  "options": {
+    "sortby": "date"
+  }
+}

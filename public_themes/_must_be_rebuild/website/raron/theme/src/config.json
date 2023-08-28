@@ -1,0 +1,58 @@
+{
+    "version": "1.3.0",
+    "slug": "roran",
+    "author": "cheney",
+    "license": "MIT",
+    "title": {
+        "en":"RORAN",
+        "zh":"罗兰"
+    },
+    "capability": ["ws"],
+    "thumbnail": "thumbnail.png",
+    "poster": "poster.jpg",
+    "previews": ["preview.png"],
+    "description": {
+        "en":"raron theme",
+        "zh":"raron 主题"
+    },
+    "mode": 1,
+
+    "templates": {
+        "index":{
+            "en":"Index",
+            "zh":"首页"
+        },
+        "about":{
+            "en":"About",
+            "zh":"关于我们"
+        },
+        "service":{
+            "en":"Service",
+            "zh":"服务"
+        },
+        "team":{
+            "en":"Team",
+            "zh":"团队"
+        },
+        "portfolio":{
+            "en":"Portfolio",
+            "zh":"作品集"
+        },
+        "contact":{
+            "en":"Contact",
+            "zh":"联系我们"
+        },
+        "error_404":"404"
+    },
+    "content_types":{
+        "works": {"title": "Portfolio", "status": 0},
+        "product": {"title": "Product", "status": 0}
+    },
+    "options":{
+        "sortby": "date",
+        "excerpt_length": 162,
+        "excerpt_ellipsis": "&hellip;",
+        "date_format": "%B %d, %Y",
+        "perpage": 6
+    }
+}

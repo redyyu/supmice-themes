@@ -1,0 +1,31 @@
+{% if g and page %}
+<section id="{{page.slug}}"
+         class="primary-section {{loop.cycle('bg-white','bg-gray')}}">
+  <div class="container">
+    <header class="section-header">
+      <div class="wow bounceInDown"
+           data-wow-delay="0.2s">
+        <h2>{{page.title}}</h2>
+      </div>
+      <p class="wow bounceInUp"
+         data-wow-delay="0.3s">
+        {{page.description}}
+      </p>
+    </header>
+    <div class="row wow bounceInUp"
+         data-wow-delay="0.2s">
+      <div class="col-md-6 text-center">
+        <img src="{{page.featured_img.src or g.default_img}}"
+             class="img-responsive img-rounded thumbnail-img"/>
+      </div>
+      <div class="col-md-6">
+        <div class="content">
+          {{page.content}}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% elif not meta.is_front %}
+<script>window.location.replace('{{base_url}}/#{{meta.slug}}');</script>
+{% endif %}

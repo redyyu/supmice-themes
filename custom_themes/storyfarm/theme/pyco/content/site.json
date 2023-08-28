@@ -1,0 +1,65 @@
+{
+  "app_id":"pyco_app",
+  "slug":"pyco",
+  "content_types": {
+    "post": "Posts",
+    "page": "Pages",
+    "work": "Works",
+    "product": "Products"
+  },
+  "menus": {
+    "primary": [
+      {
+        "key": "index",
+        "meta": {},
+        "nodes": [],
+        "name": "Home",
+        "link": "/"
+      },
+      {
+        "key": "works",
+        "meta": {},
+        "nodes": [],
+        "name": "Works",
+        "link": "/works"
+      },
+      {
+        "key": "client",
+        "meta": {},
+        "nodes": [],
+        "name": "Client & Cooperation",
+        "link": "/clients"
+      },
+      {
+        "key": "about",
+        "meta": {},
+        "nodes": [],
+        "name": "About",
+        "link": "/about"
+      },
+      {
+        "key": "contact",
+        "meta": {},
+        "nodes": [],
+        "name": "Contact",
+        "link": "/contact"
+      }
+    ]
+  },
+  "meta": {
+    "locale": "en_US",
+    "logo":"[%uploads%]/logo.png",
+    "favicon": "",
+    "bg": "",
+    "contact": "redy",
+    "copyright": "2015 Made by Pyco.",
+    "description": "...",
+    "license": "MIT",
+    "title": "Story Farm",
+    "translates": {
+      "en_US":{"name": "English", "url": "#" },
+      "zh_CN":{"name": "中文", "url": "#" }
+    }
+  }
+
+}

@@ -1,0 +1,26 @@
+{% import "g" as g with context %}
+<!DOCTYPE HTML>
+<html lang="{{lang}}">
+{% include "_head.html" %}
+<body>
+	<div class="header {{meta.background.class}}" style="{{meta.background.style or site_meta.bg.style}}">
+		<header id="home">
+			<div class="bg_mask">
+				<div class="wrap clearfix">
+					<div class="logo1"><img src="{{site_meta.logo or g.default_logo}}" alt="logo" /></div>
+					<h1>{{meta.title or _('Title')}}</h1>
+					<p>{{meta.description or _('Description text here')}}</p>
+					<div class="clear"> </div>
+				</div>
+			</div>
+		</header>
+	</div>
+	{% include "_header.html" %}
+
+	{% for page in pages | type('page') if page.template != meta.template %}
+	{% include page.template+'.html' %}
+	{% endfor %}
+
+	{% include '_footer.html' %}
+</body>
+</html>

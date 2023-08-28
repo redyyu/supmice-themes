@@ -1,0 +1,10 @@
+
+.sup-editor-canvas body > section {
+  border: 0;
+}
+.sup-editor-canvas .top-gap {
+  height: 15vh;
+}
+.sup-editor-canvas .nav-gap {
+  height: 50px;
+}

@@ -1,0 +1,67 @@
+[
+	{"language": "zh"},
+	{
+		"msgid": "Title",
+		"msgstr": "标题"
+	},
+	{
+		"msgid": "Description text here",
+		"msgstr": "在这里填写简介文字"
+	},
+	{
+		"msgid": "This page is for example only",
+		"msgstr": "这是个演示页面"
+	},
+	{
+		"msgid": "The real article will be display by chapters ...",
+		"msgstr": "真正的文章将会自动根据章节自动呈现 ..."
+	},
+	{
+		"msgid": "Previous article",
+		"msgstr": "前一篇文章"
+	},
+	{
+		"msgid": "Next article",
+		"msgstr": "后一篇文章"
+	},
+	{
+		"msgid": "Previous",
+		"msgstr": "前一页"
+	},
+	{
+		"msgid": "Next",
+		"msgstr": "后一页"
+	},
+	{
+		"msgid": "Article",
+		"msgstr": "文章"
+	},
+	{
+		"msgid": "Chapter",
+		"msgstr": "章节"
+	},
+	{
+		"msgid": "Empty Chapter",
+		"msgstr": "空的章节"
+	},
+	{
+		"msgid": "Demonstration",
+		"msgstr": "演示"
+	},
+	{
+		"msgid": "Read",
+		"msgstr": "阅读"
+	},
+	{
+		"msgid": "Cover",
+		"msgstr": "封面"
+	},
+	{
+		"msgid": "Return to Cover",
+		"msgstr": "返回封面"
+	},
+	{
+	  "msgid": "$_CONTENT",
+	  "msgstr": "<p>这一段是默认的富文本内容，你可以按照自己的需要重新填写。进入富文本编辑状态以后，将出现一个输入工具条（它通常会在画面顶部或是富文本区域的上方），使用工具条可以插入、更换或者删除图片和链接。</p>"
+	}
+]

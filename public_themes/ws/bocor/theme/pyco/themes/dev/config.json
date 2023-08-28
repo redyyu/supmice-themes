@@ -1,0 +1,32 @@
+{
+  "version": "1.6.4",
+  "slug": "bocor",
+  "author": "Cheney",
+  "license": "MIT",
+  "title": "Bocor",
+  "type": "ws",
+  "capability": 0,
+  "icon": "icon.png",
+  "poster": "poster.jpg",
+  "previews": ["preview.jpg"],
+  "description": {
+    "en":"A simple portfolio website. You can demonstration your works in this theme.",
+    "zh":"一个简单的作品集网站，您可以在这个主题上展示您的作品。"
+  },
+
+  "use_segments": true,
+
+  "templates": [
+    "^page",
+    "^page-s1",
+    "^page-s2",
+    "^services",
+    "^portfolio",
+    "index"
+  ],
+
+  "options": {
+    "sortby": "date",
+    "palette": "default"
+  }
+}

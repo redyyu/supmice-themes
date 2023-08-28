@@ -1,0 +1,44 @@
+{% if g and page %}
+<section id="{{page.slug}}" class="page service text-center">
+    <div class="page-header-wrapper">
+        <div class="container">
+            <div class="page-header text-center wow fadeInDown" data-wow-delay="0.4s">
+                <h2>{{page.title}}</h2>
+                <div class="devider"></div>
+                <p class="subtitle">{{page.subtitle}}</p>
+            </div>
+        </div>
+    </div>
+    <div class="rotate-box-2-wrapper">
+        <div class="container">
+            <div class="row">
+                {% for item in page.services %}
+                <div class="col-md-3 col-sm-6">
+                    <a href="{{item.link}}" class="rotate-box-2 square-icon text-center wow zoomIn" data-wow-delay="0">
+                        <img class="thumbnail-img" src="{{theme_url}}/img/mdiconbg.png" style="background-image: url('{{item.src}}');">
+                        <div class="rotate-box-info">
+                            <h4>{{item.title}}</h4>
+                            <p>{{item.caption}}</p>
+                        </div>
+                    </a>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        
+        <div class="container">
+            <div class="extra-space-l"></div>
+            <div class="text-center">
+                <a class="btn btn-default btn-lg-xl {{page.button.class}}"
+                 href="{{page.button.link}}"
+                 target="{{page.button.target}}"
+                 role="button">
+                    {{page.button.name or _('Button')}}
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+{% else %}
+<script>window.location.replace('{{base_url}}/#/{{meta.slug}}');</script>
+{% endif %}

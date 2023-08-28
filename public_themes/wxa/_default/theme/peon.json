@@ -1,0 +1,28 @@
+{
+  "watch":{
+    "src": "src",
+    "dest": "mittens/themes/default",
+    "clean": true,
+    "server": "mittens",
+    "port": 9525
+  },
+  "release": {
+    "clean": ["dist", "build"],
+    "render": {
+      "cwd": "src",
+      "dest": "build"
+    },
+    "copy": [
+      {
+        "name": "dist",
+        "src": [
+          "**/*",
+          "!**/_*",
+          "!_*"
+        ],
+        "cwd": "build",
+        "dest": "dist"
+      }
+    ]
+  }
+}

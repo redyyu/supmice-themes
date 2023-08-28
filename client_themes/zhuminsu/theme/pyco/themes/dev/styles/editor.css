@@ -1,0 +1,25 @@
+.sup-editor-canvas h1 {
+  font-size: 65px;
+}
+@media(max-width:849px) {
+  .sup-editor-canvas h1 {
+    font-size: 8vw;
+  }
+}
+@media(max-width:767px) {
+  .sup-editor-canvas h1 {
+    font-size: 10vw;
+  }
+}
+
+.sup-editor-canvas body > section {
+  border: 0;
+}
+
+.sup-editor-canvas .top-gap {
+  height: 25vh;
+}
+.sup-editor-canvas .nav-gap {
+  height: 50px;
+}
+

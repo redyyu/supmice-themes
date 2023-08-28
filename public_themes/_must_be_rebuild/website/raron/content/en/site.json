@@ -1,0 +1,94 @@
+{
+  "content_types": {
+    "post": "Posts",
+    "page": "Pages"
+  },
+  "menus": {
+    "primary": [
+      {
+        "key": "home",
+        "meta": {},
+        "nodes": [],
+        "title": "HOME",
+        "link": "/"
+      },
+      {
+        "key": "about",
+        "meta": {},
+        "nodes": [],
+        "title": "ABOUT",
+        "link": "/#about"
+      },
+      {
+        "key": "service",
+        "meta": {},
+        "nodes": [],
+        "title": "SERVICE",
+        "link": "/#services"
+      },
+      {
+        "key": "team",
+        "meta": {},
+        "nodes": [],
+        "title": "TEAM",
+        "link": "/#team"
+      },
+      {
+        "key": "portfolio",
+        "meta": {},
+        "nodes": [],
+        "title": "PORTFOLIO",
+        "link": "/#portfolio"
+      },
+      {
+        "key": "contact",
+        "meta": {},
+        "nodes": [],
+        "title": "CONTACT",
+        "link": "/#contact"
+      }
+    ]
+
+  },
+  "meta": {
+    "slug":"pyco",
+    "type":"raron",
+    "logo": "[%uploads%]/logo.png",
+    "favicon": "[%uploads%]/favicon.png",
+    "author": "redy",
+    "copyright": "2015 Made by Pyco.",
+    "description": "A simple example of Pyco side ...",
+    "license": "MIT",
+    "locale": "en_US",
+    "title": "Roran",
+    "socials":{
+      "facebook":{"name":"Facebook","url":"#","code":"facebook"},
+      "twitter":{"name":"Twitter","url":"#","code":"twitter"},
+      "pro":{"name":"Pro","url":"#","code":"pro"},
+      "in":{"name":"In","url":"#","code":"in"}
+    },
+    "translates":{
+      "en_US":{
+        "name": "English",
+        "url": "#"
+      },
+      "zh_CN":{
+        "name": "中文",
+        "url": "#"
+      }
+    }
+  },
+  "taxonomy":{
+    "category": {
+      "title":"Categories",
+      "content_types":["post", "product"],
+      "terms": [
+        {"slug":"photo","title":"Web"},
+        {"slug":"web-design","title":"Digital Art"},
+        {"slug":"ios-app","title":"Illustrations"},
+        {"slug":"graphic","title":"Branding"}
+      ]
+    }
+  }
+
+}

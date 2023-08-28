@@ -1,0 +1,84 @@
+{% set _lines = meta[key] or [] %}
+<div class="card multientry-form custom-form"
+     data-key="{{key}}"
+     data-type="lines">
+  <div class="card-header d-flex">
+    <h4>
+      {{_(opts.label)|title}}
+    </h4>
+    <small class="text-muted ml-auto">
+      {{key}}
+    </small>
+  </div>
+  <div class="card-body">
+    <div class="fields">
+      {% for item in _lines %}
+      <div class="form-group field-entry">
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <button class="btn btn-secondary btn-icon move-field-up"
+                    aria-label="{{_('Move Up')}}"
+                    type="button">
+              <i class="fas fa-chevron-up"></i>
+            </button>
+            <button class="btn btn-secondary btn-icon move-field-down"
+                    aria-label="{{_('Move Down')}}"
+                    type="button">
+              <i class="fas fa-chevron-down"></i>
+            </button>
+          </div>
+          <input class="form-control"
+                 value="{{item.text}}"
+                 name="text"
+                 type="text">
+          <div class="input-group-prepend">
+            <button class="btn btn-outline-danger btn-icon remove-field"
+                    aria-label="{{_('Remove')}}"
+                    type="button">
+              <i class="fas fa-times"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+
+    <div class="TMPL d-none">
+      <div class="form-group field-entry">
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <button class="btn btn-outline-secondary btn-icon move-field-up"
+                    aria-label="{{_('Move Up')}}"
+                    type="button">
+              <i class="fas fa-chevron-up"></i>
+            </button>
+            <button class="btn btn-outline-secondary btn-icon move-field-down"
+                    aria-label="{{_('Move Down')}}"
+                    type="button">
+              <i class="fas fa-chevron-down"></i>
+            </button>
+          </div>
+          <input class="form-control"
+                 value=""
+                 name="text"
+                 type="text">
+          <div class="input-group-prepend">
+            <button class="btn btn-outline-danger btn-icon remove-field"
+                    aria-label="{{_('Remove')}}"
+                    type="button">
+              <i class="fas fa-times"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <div class="card-footer d-flex">
+    <button class="btn btn-outline-primary btn-icon add-field"
+            aria-label="{{_('Add')}}"
+            type="button">
+      <i class="fas fa-plus"></i>
+    </button>
+  </div>
+</div>

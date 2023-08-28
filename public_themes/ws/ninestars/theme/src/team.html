@@ -1,0 +1,38 @@
+{% if g and page %}
+<div class="container text-center">
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2">
+      <div class="section-heading marginbot-50">
+        <h2>{{page.title}}</h2>
+        <p>{{page.description}}</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container text-center">
+  <div class="row">
+    {% for item in page.series %}
+    <div class="col-sm-6 col-md-3 team-box">
+      <div>
+        <div class="team boxed-gray">
+          <div class="inner">
+            <h5 class="text-nowrap">{{item.title}}</h5>
+            <p class="subtitle text-nowrap">
+              {{item.caption}}
+            </p>
+            <div class="avatar">
+              <img src="{{g.img_holder}}"
+                   class="img-responsive thumbnail-img"
+                   style="{{item.src|thumbnail|bg_img}}" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+{% elif not meta.is_front %}
+<script>window.location.replace('{{base_url}}/#{{meta.slug}}');</script>
+{% endif %}

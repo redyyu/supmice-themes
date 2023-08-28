@@ -1,0 +1,15 @@
+{% import "g" as g with context %}
+<!DOCTYPE html>
+<html lang="{{lang}}">
+{% include '_head.html' %}
+<body>
+<div class="wrapper">
+	<article class="container clearfix text-center">
+		<h1 class="error-404">{{meta.title or _('Error 404')}}</h1>
+		<div class="content clearfix">
+			{{content or _('$_ERROR404')}}
+		</div>
+	</article>
+</div>
+</body>
+</html>

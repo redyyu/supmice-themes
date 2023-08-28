@@ -1,0 +1,19 @@
+<nav class="nav_wrapper">
+  <div class="wrap">
+    <a href="#" class="header_toggle">Menu</a>
+    <ul class="navigation">
+      {% for menu in menu.primary %}
+      <li class="scroll"><a href="{{menu.link | url}}">{{menu.title}}</a></li>
+      {% endfor %}
+      <div class="clear"> </div>
+    </ul>
+    <div class="social_icons">
+      <ul>
+        {% for social in socials %}
+        <li class="{{social.code}}"><a href="{{social.url}}"><span> </span></a></li>
+        {% endfor %}
+      </ul>
+    </div>
+    <div class="clear"> </div>
+  </div>
+</nav>

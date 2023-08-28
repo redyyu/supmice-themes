@@ -1,0 +1,38 @@
+{% import 'g' as g with context %}
+<!DOCTYPE html>
+<html lang="{{lang}}">
+{% include '_head_.html' %}
+<body>
+  <div class="outer cover">
+    <header class="container centered">
+      <div>
+        <img src="{{meta.featured_img.src or g.default_img}}" />
+      </div>
+      <h1>{{meta.title}}</h1>
+      <h3>{{meta.author}}</h3>
+      <p class="caption">
+        {{meta.description}}
+      </p>
+    </header>
+    <hr>
+    <section class="container">
+      <ol class="chapters">
+      {% for term in taxonomy.chapter.terms %}
+        <li>
+          <a href="{{base_url}}/chapter/?term={{term.key}}">
+            {{term.meta.name}}
+          </a>
+        </li>
+      {% endfor %}
+      </ol>
+    </section>
+    <footer class="bottom">
+      <p class="cr">
+        <span>{{ site_meta.copyright }}</span>
+        <span>{{ site_meta.license }}</span>
+      </p>
+    </footer>
+  </div>
+  {% include '_js_.html' %}
+</body>
+</html>

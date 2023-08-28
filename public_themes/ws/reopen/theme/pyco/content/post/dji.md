@@ -1,0 +1,22 @@
+/*
+Author: Redy
+Date: '2013-05-01'
+Description: In early 2013 to develop a new version website. Took more than three
+  months, after several rounds of content demand planning, more than 10 versions of
+  the interactive visual design.
+Featured_img:
+  src: '[%uploads%]/reopen_home_image02.jpg'
+Link: {}
+Priority: 3
+Status: 1
+Tagline: Works
+Terms:
+- product
+Task: Complete
+Template: post
+Title: DJI Official Website
+Type: works
+Updated: 1444841767
+Url: http://tinforce.com/en/works/dji
+*/
+<p> <a class="lightbox-gallery" href="[%uploads%]/dji_4.jpg"> <img src="[%uploads%]/dji_4.jpg" alt="DJI" /> </a></p><p> <a class="lightbox-gallery" href="[%uploads%]/dji_5.jpg"> <img src="[%uploads%]/dji_5.jpg" alt="DJI" /> </a></p>

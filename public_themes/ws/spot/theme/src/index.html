@@ -1,0 +1,125 @@
+{% import "g" as g with context %}
+<!DOCTYPE html>
+<html lang="{{lang}}">
+{% include '_head.html' %}
+<body>
+{% include '_header.html' %}
+
+<div class="hero {{meta.hero.class}}"
+     style="{{meta.hero.style}}">
+  <div class="container">
+    <div class="row centered">
+      <div class="col-md-8 col-md-offset-2">
+        <h1>{{meta.title}}</h1>
+        <h2>{{meta.description}}</h2>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- HIGHTLIGHT SECTION -->
+<div class="section-primary">
+  <div class="container highlight">
+    <div class="row centered">
+      {% for item in meta.highlights %}
+      <div class="col-sm-4 highlight-item">
+        <div class="{{item.class}}">
+          <img src="{{g.img_holder}}"
+               style="{{item.src|thumbnail|bg_img}}" />
+          <h4 class="text-nowrap">{{item.title}}</h4>
+          <p class="text-clamp-4">{{item.caption}}</p>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+<!-- PORTFOLIO SECTION -->
+{% set portfolio = query('page', attrs=[{'template':'portfolio'}]).contents %}
+{% for works in portfolio %}
+<div class="section-primary {{loop.cycle('light-bg', 'dark-bg')}}">
+  <div class="container">
+    <div class="row centered">
+      <div class="col-md-8 col-md-offset-2 section-header">
+        <h4>{{works.title}}</h4>
+        <p>{{works.description}}</p>
+      </div>
+    </div>
+    <div class="row centered">
+      {% set works_offset = works.series|col_offset('col-sm-offset-', 4) %}
+      {% for item in works.series[0:3] %}
+      <div class="col-sm-4 {{works_offset if loop.first}}">
+        <div class="tilt">
+          <a href="{{works.url}}">
+            <img class="thumbnail-img img-holder rounded"
+                 src="{{g.img_cover_holder}}"
+                 style="{{item.src|bg_img}}" />
+          </a>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+{% endfor %}
+
+<!-- FEATURE SECTION -->
+<div class="section-primary bottom-less">
+  <div class="container">
+    <div class="row centered">
+      <div class="col-md-8 col-md-offset-2 section-body">
+        <div class="content">
+          {{content}}
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container {{meta.featured_img.class}}
+              {{'no-spacing' if not meta.featured_img.src}}">
+    <div class="row centered">
+      <div class="col-sm-10 col-sm-offset-1">
+        <img class="img-responsive center-block"
+             src="{{meta.featured_img.src or g.default_featured}}"
+             alt="{{meta.featured_img.title}}" />
+      </div>
+    </div><!-- row -->
+  </div><!-- container -->
+</div>
+
+<div class="section-primary light-bg">
+  <div class="container">
+    <div class="row centered">
+      <div class="col-md-8 col-md-offset-2 section-header">
+        <h4>{{meta.badges_title}}</h4>
+      </div>
+    </div>
+    <div class="row centered">
+      {% set badges_offset = meta.badges|col_offset('col-sm-offset-', 2) %}
+      {% for item in meta.badges %}
+      <div class="col-sm-2 {{badges_offset if loop.first}}">
+        <div>
+          <img class="img-holder contain"
+               src="{{g.img_holder}}"
+               alt="{{item.title}}"
+               style="{{item.src|thumbnail|bg_img}}" />
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+<div class="section-primary red-bg">
+  <div class="container">
+    <div class="row centered">
+      <div class="col-lg-8 col-lg-offset-2">
+        <h4>{{meta.statement}}</h4>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% include '_footer.html' %}
+</body>
+</html>

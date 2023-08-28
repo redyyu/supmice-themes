@@ -1,0 +1,61 @@
+{
+  "content_types": {
+    "page": "Pages"
+  },
+  "menus": {
+    "primary": [
+      {
+        "key": "index",
+        "meta": {},
+        "nodes": [],
+        "name": "Homepage",
+        "link": "#index"
+      },
+      {
+        "key": "services",
+        "meta": {},
+        "nodes": [],
+        "name": "Services",
+        "link": "#services"
+      },
+      {
+        "key": "portfolio",
+        "meta": {},
+        "nodes": [],
+        "name": "Portfolio",
+        "link": "#portfolio"
+      },
+      {
+        "key": "about",
+        "meta": {},
+        "nodes": [],
+        "name": "About",
+        "link": "#about"
+      },
+      {
+        "key": "contact",
+        "meta": {},
+        "nodes": [],
+        "name": "Contact",
+        "link": "#contact"
+      }
+    ]
+  },
+  "meta": {
+    "slug":"pyco",
+    "type":"onassis",
+    "favicon": "[%uploads%]/favicon.png",
+    "author": "redy",
+    "copyright": "Created by <a href='http://www.blacktie.co'>BLACKTIE.CO</a>",
+    "description": "It doesn't take a rocket scientist ...",
+    "license": "MIT",
+    "locale": "en_US",
+    "title": "Onassis",
+    "socials": {
+      "facebook":{"name":"Facebook","url":"#","code":"facebook"},
+      "twitter":{"name":"Twitter","url":"#","code":"twitter"}
+    }
+  },
+  "segments": ["about", "portfolio", "services", "others", "contact"]
+
+}

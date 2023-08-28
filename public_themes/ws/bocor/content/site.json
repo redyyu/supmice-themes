@@ -1,0 +1,63 @@
+{
+  "content_types": {
+    "post": "Posts",
+    "page": "Pages"
+  },
+  "menus": {
+    "primary": [
+      {
+        "key": "index",
+        "meta": {},
+        "nodes": [],
+        "name": "Home",
+        "link": "#index"
+      },
+      {
+        "key": "about",
+        "meta": {},
+        "nodes": [],
+        "name": "About Us",
+        "link": "/about",
+        "target": "_blank"
+      },
+      {
+        "key": "service",
+        "meta": {},
+        "nodes": [],
+        "name": "Services",
+        "link": "#service"
+      },
+      {
+        "key": "portfolio",
+        "meta": {},
+        "nodes": [],
+        "name": "Portfolio",
+        "link": "#portfolio"
+      },
+      {
+        "key": "contact",
+        "meta": {},
+        "nodes": [],
+        "name": "Contact",
+        "link": "#contact"
+      }
+    ]
+
+  },
+  "meta": {
+    "slug":"pyco",
+    "type":"bocor",
+    "favicon": "[%uploads%]/favicon.png",
+    "author": "redy",
+    "copyright": "2015 Made by Pyco.",
+    "description": "Udah dari dulu tahu kalo bocor kenapa nggak ditambal tong ...",
+    "license": "MIT",
+    "locale": "en_US",
+    "title": "Bocor",
+    "socials":{
+      "facebook":{"name":"Facebook","url":"#","code":"facebook"},
+      "twitter":{"name":"Twitter","url":"#","code":"twitter"}
+    }
+  },
+  "segments": ["about", "service", "portfolio", "contact", "team"]
+}

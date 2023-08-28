@@ -1,0 +1,36 @@
+{
+  "slug": "zhengrongfu",
+  "version": "1.0.8",
+  "author": "Redy",
+  "license": "MIT",
+  "title": "Zhengrongfu",
+  "type": "ws",
+  "capability": 0,
+  "icon": "icon.png",
+  "poster": "poster.jpg",
+  "previews": ["preview.jpg"],
+  "content_types": {
+    "post": {"title": "Posts", "templates": ["post"]},
+    "product": {"title": "Products", "templates": ["product-detail"]}
+  },
+  "templates": [
+    "^page",
+    "^page-story",
+    "^page-col2",
+    "^products",
+    "^articles",
+    "post",
+    "product-detail",
+    "index"
+  ],
+  "reserves": {
+    "articles": {
+      "parent": "index"
+    }
+  },
+  "slots": ["ministore"],
+  "options":{
+      "sortby": "date",
+      "perpage": 6
+  }
+}

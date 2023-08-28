@@ -1,0 +1,809 @@
+[
+	{"language":"zh_CN"},
+	{
+		"msgid": "Title",
+		"msgstr": "标题"
+	},
+  {
+    "msgid": "Subtitle",
+    "msgstr": "副标题"
+  },
+  {
+    "msgid": "Description",
+    "msgstr": "描述"
+  },
+	{
+		"msgid": "Cardinal",
+		"msgstr": "基本"
+	},
+  {
+    "msgid": "Dashboard",
+    "msgstr": "仪表板"
+  },
+  {
+    "msgid": "Thumbnail",
+    "msgstr": "内容"
+  },
+  {
+    "msgid": "No Description",
+    "msgstr": "没有描述"
+  },
+  {
+    "msgid": "Total Contents",
+    "msgstr": "内容总量"
+  },
+  {
+    "msgid": "Total Media",
+    "msgstr": "媒体总量"
+  },
+  {
+    "msgid": "Current Theme",
+    "msgstr": "当前主题"
+  },
+  {
+    "msgid": "Shortcuts",
+    "msgstr": "捷径"
+  },
+  {
+    "msgid": "Recent Contents",
+    "msgstr": "近期内容"
+  },
+  {
+    "msgid": "Content",
+    "msgstr": "内容"
+  },
+  {
+    "msgid": "Homepage",
+    "msgstr": "站点首页"
+  },
+  {
+    "msgid": "Page",
+    "msgstr": "页面"
+  },
+  {
+    "msgid": "Pages",
+    "msgstr": "页面"
+  },
+  {
+    "msgid": "Static Page",
+    "msgstr": "静态页面"
+  },
+  {
+    "msgid": "Static Pages",
+    "msgstr": "静态页面"
+  },
+  {
+    "msgid": "Post",
+    "msgstr": "帖子"
+  },
+  {
+    "msgid": "Posts",
+    "msgstr": "帖子"
+  },
+  {
+    "msgid": "Product",
+    "msgstr": "产品"
+  },
+  {
+    "msgid": "Products",
+    "msgstr": "产品"
+  },
+  {
+    "msgid": "Works",
+    "msgstr": "作品"
+  },
+  {
+    "msgid": "Portfolio",
+    "msgstr": "作品集"
+  },
+  {
+    "msgid": "Article",
+    "msgstr": "文章"
+  },
+  {
+    "msgid": "Articles",
+    "msgstr": "文章"
+  },
+  {
+    "msgid": "Content Types",
+    "msgstr": "内容类型"
+  },
+  {
+    "msgid": "Storage",
+    "msgstr": "存储"
+  },
+  {
+    "msgid": "Media Files",
+    "msgstr": "媒体文件"
+  },
+  {
+    "msgid": "Archives",
+    "msgstr": "档案"
+  },
+  {
+    "msgid": "Empty",
+    "msgstr": "空"
+  },
+  {
+    "msgid": "Nothing",
+    "msgstr": "没有"
+  },
+  {
+    "msgid": "Preference",
+    "msgstr": "偏好设置"
+  },
+  {
+    "msgid": "Site",
+    "msgstr": "站点"
+  },
+  {
+    "msgid": "Site Settings",
+    "msgstr": "站点设定"
+  },
+  {
+    "msgid": "Configure",
+    "msgstr": "配置"
+  },
+  {
+    "msgid": "Configuration",
+    "msgstr": "系统配置"
+  },
+  {
+    "msgid": "Appearance",
+    "msgstr": "外观"
+  },
+  {
+    "msgid": "Switch",
+    "msgstr": "开关"
+  },
+  {
+    "msgid": "Reset",
+    "msgstr": "重制"
+  },
+  {
+    "msgid": "Save",
+    "msgstr": "保存"
+  },
+  {
+    "msgid": "Save and exit",
+    "msgstr": "保存并退出"
+  },
+  {
+    "msgid": "Add",
+    "msgstr": "添加"
+  },
+  {
+    "msgid": "Remove",
+    "msgstr": "移除"
+  },
+  {
+    "msgid": "Delete",
+    "msgstr": "删除"
+  },
+  {
+    "msgid": "Backup",
+    "msgstr": "备份"
+  },
+  {
+    "msgid": "Code",
+    "msgstr": "代码"
+  },
+  {
+    "msgid": "JSON Code",
+    "msgstr": "JSON代码"
+  },
+  {
+    "msgid": "Script",
+    "msgstr": "脚本"
+  },
+  {
+    "msgid": "Initialize",
+    "msgstr": "初始化"
+  },
+  {
+    "msgid": "Old Passcode",
+    "msgstr": "旧口令"
+  },
+  {
+    "msgid": "New Passcode",
+    "msgstr": "新口令"
+  },
+  {
+    "msgid": "Confirm Passcode",
+    "msgstr": "确认口令"
+  },
+  {
+    "msgid": "Invalid Passcode, length between 6-360.",
+    "msgstr": "密码无效，长度要在6至360之间。"
+  },
+  {
+    "msgid": "Passcode",
+    "msgstr": "口令"
+  },
+  {
+    "msgid": "Login",
+    "msgstr": "登录"
+  },
+  {
+    "msgid": "Exit",
+    "msgstr": "退出"
+  },
+  {
+    "msgid": "Yes, Exit!",
+    "msgstr": "是的，退出!"
+  },
+  {
+    "msgid": "Dismiss",
+    "msgstr": "撤销"
+  },
+  {
+    "msgid": "Are you sure want exit the system?",
+    "msgstr": "你确定是要退出本系统吗？"
+  },
+  {
+    "msgid": "Basic Configuration",
+    "msgstr": "基础配置"
+  },
+  {
+    "msgid": "Admin Panel Locale",
+    "msgstr": "管理界面语言"
+  },
+  {
+    "msgid": "CDN Acceleration Option",
+    "msgstr": "CDN 加速选项"
+  },
+  {
+    "msgid": "Do not use",
+    "msgstr": "不使用"
+  },
+  {
+    "msgid": "Accelerate media files only",
+    "msgstr": "仅加速媒体文件"
+  },
+  {
+    "msgid": "Accelerate entire site",
+    "msgstr": "全站加速"
+  },
+  {
+    "msgid": "Acceleration URL",
+    "msgstr": "加速网址"
+  },
+  {
+    "msgid": "Security",
+    "msgstr": "安全"
+  },
+  {
+    "msgid": "Additional Options",
+    "msgstr": "附加选项"
+  },
+  {
+    "msgid": "Login Extends",
+    "msgstr": "登录扩展"
+  },
+  {
+    "msgid": "HTML Code after admin login form.",
+    "msgstr": "附加在管理界面登录表单之后的HTML代码。"
+  },
+  {
+    "msgid": "Download Backup Package",
+    "msgstr": "下载备份包"
+  },
+  {
+    "msgid": "Download",
+    "msgstr": "下载"
+  },
+  {
+    "msgid": "Download a zip file for all content of the website. All data will be stored as `.md` and `.json` files.",
+    "msgstr": "下载一个包含了整个网站内容数据的Zip文件。所有的数据文件将以`.md`文件和`.json`文件的形式存储。"
+  },
+  {
+    "msgid": "Restore Backup Package",
+    "msgstr": "恢复备份包"
+  },
+  {
+    "msgid": "Upload",
+    "msgstr": "上传"
+  },
+  {
+    "msgid": "Upload Files",
+    "msgstr": "上传文件"
+  },
+  {
+    "msgid": "All Files",
+    "msgstr": "所有文件"
+  },
+  {
+    "msgid": "Filename",
+    "msgstr": "文件名"
+  },
+  {
+    "msgid": "Action",
+    "msgstr": "动作"
+  },
+  {
+    "msgid": "Updated Date",
+    "msgstr": "更新日期"
+  },
+  {
+    "msgid": "Creation Date",
+    "msgstr": "创建日期"
+  },
+  {
+    "msgid": "Uploaded Date",
+    "msgstr": "上传日期"
+  },
+
+  {
+    "msgid": "Upload a Zip file that contains the entire site content data. All data files must conform to system rules.",
+    "msgstr": "上传一个包含了整个网站内容数据的Zip文件。所有的数据文件必须符合系统设定规则。"
+  },
+  {
+    "msgid": "Site Locale",
+    "msgstr": "站点语言"
+  },
+  {
+    "msgid": "Description for this website.",
+    "msgstr": "在这里输入网站的描述文字"
+  },
+  {
+    "msgid": "Logo",
+    "msgstr": "标志"
+  },
+  {
+    "msgid": "A URL for site logo image.",
+    "msgstr": "输入网站标志的URL地址"
+  },
+  {
+    "msgid": "Favicon",
+    "msgstr": "网站图标"
+  },
+  {
+    "msgid": "A URL for site favicon image.",
+    "msgstr": "输入网站图标的URL地址"
+  },
+  {
+    "msgid": "Copyright",
+    "msgstr": "版权"
+  },
+  {
+    "msgid": "License",
+    "msgstr": "许可证"
+  },
+  {
+    "msgid": "Advanced Options",
+    "msgstr": "高级选项"
+  },
+  {
+    "msgid": "SEO Metadata",
+    "msgstr": "SEO 元数据"
+  },
+  {
+    "msgid": "Languages",
+    "msgstr": "多语言"
+  },
+  {
+    "msgid": "Language Switcher Options",
+    "msgstr": "多语言切换器选项"
+  },
+  {
+    "msgid": "Social Media",
+    "msgstr": "社交媒体"
+  },
+  {
+    "msgid": "Social Media Channels",
+    "msgstr": "社交媒体通道"
+  },
+  {
+    "msgid": "Menu",
+    "msgstr": "菜单"
+  },
+  {
+    "msgid": "Primary Menu",
+    "msgstr": "主菜单"
+  },
+  {
+    "msgid": "Expert",
+    "msgstr": "专家"
+  },
+  {
+    "msgid": "Expert Mode",
+    "msgstr": "专家模式"
+  },
+  {
+    "msgid": "Menu Item",
+    "msgstr": "菜单项"
+  },
+  {
+    "msgid": "Hardcore",
+    "msgstr": "硬编码"
+  },
+  {
+    "msgid": "Name",
+    "msgstr": "名称"
+  },
+  {
+    "msgid": "Link",
+    "msgstr": "链接"
+  },
+  {
+    "msgid": "Path",
+    "msgstr": "路径"
+  },
+  {
+    "msgid": "Target Window",
+    "msgstr": "目标窗口"
+  },
+  {
+    "msgid": "Path Starts With",
+    "msgstr": "起始路径"
+  },
+  {
+    "msgid": "Fixed",
+    "msgstr": "固定"
+  },
+  {
+    "msgid": "Position",
+    "msgstr": "位置"
+  },
+  {
+    "msgid": "Fixed Link (No HASH generation)",
+    "msgstr": "固定链接（不生成HASH值）"
+  },
+  {
+    "msgid": "Toggle Advanced Options",
+    "msgstr": "开关高级选项"
+  },
+  {
+    "msgid": "New Menu Item",
+    "msgstr": "新建菜单项"
+  },
+  {
+    "msgid": "New",
+    "msgstr": "新建"
+  },
+  {
+    "msgid": "Theme",
+    "msgstr": "主题"
+  },
+  {
+    "msgid": "Version",
+    "msgstr": "版本"
+  },
+  {
+    "msgid": "Author",
+    "msgstr": "作者"
+  },
+  {
+    "msgid": "Install",
+    "msgstr": "安装"
+  },
+  {
+    "msgid": "Reload",
+    "msgstr": "重载"
+  },
+  {
+    "msgid": "Refresh",
+    "msgstr": "刷新"
+  },
+  {
+    "msgid": "Back",
+    "msgstr": "返回"
+  },
+  {
+    "msgid": "Create New Content",
+    "msgstr": "创建新内容"
+  },
+  {
+    "msgid": "New Content",
+    "msgstr": "新内容"
+  },
+  {
+    "msgid": "Previews",
+    "msgstr": "预览"
+  },
+  {
+    "msgid": "Preview",
+    "msgstr": "预览"
+  },
+  {
+    "msgid": "NO.",
+    "msgstr": "编号"
+  },
+  {
+    "msgid": "Slug",
+    "msgstr": "标识"
+  },
+  {
+    "msgid": "%s files total.",
+    "msgstr": "共有 %s 个文件。"
+  },
+  {
+    "msgid": "Can not uploading %s files at same time!!",
+    "msgstr": "不能一次上传超过 %s 个文件!!"
+  },
+  {
+    "msgid": "No contents at all.",
+    "msgstr": "没有任何内容。"
+  },
+  {
+    "msgid": "Select Image",
+    "msgstr": "选择图像"
+  },
+  {
+    "msgid": "Image URL",
+    "msgstr": "图像 URL"
+  },
+  {
+    "msgid": "Link to URL",
+    "msgstr": "链接到 URL"
+  },
+  {
+    "msgid": "Styles",
+    "msgstr": "样式"
+  },
+  {
+    "msgid": "CSS Styles",
+    "msgstr": "CSS 内联样式"
+  },
+  {
+    "msgid": "CSS Class",
+    "msgstr": "CSS 样式类"
+  },
+  {
+    "msgid": "Text",
+    "msgstr": "文本"
+  },
+  {
+    "msgid": "Write Content",
+    "msgstr": "撰写内容"
+  },
+  {
+    "msgid": "Properties",
+    "msgstr": "属性"
+  },
+  {
+    "msgid": "Save Content",
+    "msgstr": "保存内容"
+  },
+  {
+    "msgid": "Preview URL",
+    "msgstr": "预览链接"
+  },
+  {
+    "msgid": "Date",
+    "msgstr": "日期"
+  },
+  {
+    "msgid": "Publish Status",
+    "msgstr": "发布状态"
+  },
+  {
+    "msgid": "Published",
+    "msgstr": "发布"
+  },
+  {
+    "msgid": "Draft",
+    "msgstr": "草稿"
+  },
+  {
+    "msgid": "Featured Image",
+    "msgstr": "特色图片"
+  },
+  {
+    "msgid": "Tags",
+    "msgstr": "标签"
+  },
+  {
+    "msgid": "Category",
+    "msgstr": "分类"
+  },
+  {
+    "msgid": "Edit Category Term",
+    "msgstr": "编辑分类项"
+  },
+  {
+    "msgid": "Template",
+    "msgstr": "模版"
+  },
+  {
+    "msgid": "Parent",
+    "msgstr": "父级"
+  },
+  {
+    "msgid": "Edit",
+    "msgstr": "编辑"
+  },
+  {
+    "msgid": "Priority",
+    "msgstr": "优先级"
+  },
+  {
+    "msgid": "Redirect",
+    "msgstr": "重定向"
+  },
+  {
+    "msgid": "Custom Data Fields",
+    "msgstr": "自定义数据"
+  },
+  {
+    "msgid": "Those custom data fields is defined by theme. Different Template might use different definition.",
+    "msgstr": "以下的自定义数据由主题定义，不同的模版可能使用不同的自定义数据定义。"
+  },
+  {
+    "msgid": "All Category Terms",
+    "msgstr": "所有分类项"
+  },
+  {
+    "msgid": "Category Term",
+    "msgstr": "分类项"
+  },
+  {
+    "msgid": "%s terms total.",
+    "msgstr": "%s 分类项。"
+  },
+  {
+    "msgid": "New Category Term",
+    "msgstr": "新建分类项"
+  },
+  {
+    "msgid": "Poster",
+    "msgstr": "海报"
+  },
+  {
+    "msgid": "Caption",
+    "msgstr": "说明"
+  },
+  {
+    "msgid": "(Optional)",
+    "msgstr": "（可选）"
+  },
+  {
+    "msgid": "Type content here.",
+    "msgstr": "在这里输入内容。"
+  },
+  {
+    "msgid": "Type caption here.",
+    "msgstr": "在这里输入说明。"
+  },
+  {
+    "msgid": "Parent Term",
+    "msgstr": "父级分类项"
+  },
+  {
+    "msgid": "Media Repository",
+    "msgstr": "媒体仓库"
+  },
+  {
+    "msgid": "Load More",
+    "msgstr": "加载更多"
+  },
+  {
+    "msgid": "Media Upload Field, Please make sure the file type is allowed and file name is not duplicated.",
+    "msgstr": "媒体上传失败，请确保文件格式是被允许的，并且文件名没有和现存文件重复。"
+  },
+  {
+    "msgid": "Custom Metas",
+    "msgstr": "自定义元数据"
+  },
+  {
+    "msgid": "Slots",
+    "msgstr": "插槽"
+  },
+  {
+    "msgid": "Category is not activated.",
+    "msgstr": "分类没有激活，当前主题不支持分类系统。"
+  },
+
+
+  {
+    "msgid": "* Used to indicate the language of this website.",
+    "msgstr": "* 这个选项用来表明本网站的语种。"
+  },
+  {
+    "msgid": "* Switch the language display for admin panel.",
+    "msgstr": "* 这个选项用来切换管理面板的语言显示。"
+  },
+  {
+    "msgid": "* Use third-party CDN for acceleration. This option only effect contents after this option activated, the previous contents needs to be replaced manually.",
+    "msgstr": "* 使用第三方CDN进行加速。此选项只对开启之后录入的内容有效，之前的内容需要手动替换。"
+  },
+  {
+    "msgid": "* Accelerated URL will not activate when blank.",
+    "msgstr": "* 指向CDN的网址，加速网址URL为空白时将不会生效。"
+  },
+  {
+    "msgid": "* A HTML code into <head> of the site.",
+    "msgstr": "* 一段将被插入到网站<head>内的HTML脚本。"
+  },
+  {
+    "msgid": "* For expert only, must use JSON format.",
+    "msgstr": "* 这是专家选项，仅支持JSON格式数据。"
+  },
+  {
+    "msgid": "* For expert only, HTML, Javascript or any others.",
+    "msgstr": "* 这是专家选项，可以输入HTML、JS等各种数据。"
+  },
+  {
+    "msgid": "* Type `_blank` for open in new window.",
+    "msgstr": "* 键入`_blank`表示打开自新窗口。"
+  },
+  {
+    "msgid": "* Mark active status starts with this path as well.",
+    "msgstr": "* 以这个路径起头时也将被标记为激活状态。"
+  },
+  {
+    "msgid": "* Support image, audio, video, zip and pdf.",
+    "msgstr": "* 支持图像、视频、音频、ZIP压缩包和PDF。"
+  },
+  {
+    "msgid": "* Use parent content slug.",
+    "msgstr": "* 使用父级内容的标识。"
+  },
+  {
+    "msgid": "* The priority of the content when sorting.",
+    "msgstr": "* 内容被排序时的优先级。"
+  },
+  {
+    "msgid": "* The priority of the term when sorting.",
+    "msgstr": "* 分类项被排序时的优先级。"
+  },
+  {
+    "msgid": "* Use parent term key.",
+    "msgstr": "* 使用父级分类项的键值。"
+  },
+  {
+    "msgid": "* Please briefly describe this content.",
+    "msgstr": "* 请用简短的文字描述这篇内容。"
+  },
+  {
+    "msgid": "* Use absolute path or a URL.",
+    "msgstr": "* 使用绝对路径或是网址。"
+  },
+
+
+
+  {
+    "msgid": "SAVED",
+    "msgstr": "已保存"
+  },
+  {
+    "msgid": "REMOVED",
+    "msgstr": "已删除"
+  },
+  {
+    "msgid": "RESTORED",
+    "msgstr": "已恢复"
+  },
+  {
+    "msgid": "INSTALLED",
+    "msgstr": "已安装"
+  },
+  {
+    "msgid": "RELOADED",
+    "msgstr": "已重载"
+  },
+  {
+    "msgid": "ERROR",
+    "msgstr": "系统错误"
+  },
+  {
+    "msgid": "REFRESHED",
+    "msgstr": "已刷新"
+  },
+  {
+    "msgid": "MEDIA_UPLOADED: %s",
+    "msgstr": "媒体文件上传：%s"
+  },
+  {
+    "msgid": "MEDIA_EXISTS: %s",
+    "msgstr": "媒体文件重复：%s"
+  },
+  {
+    "msgid": "WRONG_PASSCODE",
+    "msgstr": "错误的口令。。。"
+  },
+  {
+    "msgid": "CONFIRM_PASSCODE_NOT_MATCH",
+    "msgstr": "确认口令不匹配。。。"
+  }
+]

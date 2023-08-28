@@ -1,0 +1,443 @@
+{% extends "layout.html" %}
+
+{% block page_css %}
+<link rel="stylesheet" href="{{static_url}}/modules/bootstrap-tagsinput/bootstrap-tagsinput.css">
+<link rel="stylesheet" href="{{static_url}}/modules/bootstrap-daterangepicker/daterangepicker.css">
+<link rel="stylesheet" href="{{static_url}}/modules/summernote/summernote-bs4.css">
+{% endblock %}
+
+{% block header %}
+<div class="section-header-back">
+  <a class="btn btn-icon"
+     href="{{url_as('.index', content_type=content_type.key)}}">
+    <i class="fas fa-arrow-left"></i>
+  </a>
+</div>
+<h1>{{_(content_type.title)}}</h1>
+<div class="ml-auto">
+  <a class="btn btn-icon btn-outline-secondary"
+     href="{{url_as('.content_raw',
+                    content_type=document.content_type,
+                    slug=document.slug)}}">
+    <i class="fas fa-flask"></i>
+  </a>
+</div>
+{% endblock %}
+
+{% block main %}
+<h2 class="section-title">
+  {{document.meta.title}}
+</h2>
+<p class="section-lead">
+  <a href="{{url_as('.index', content_type=content_type.key)}}">
+    {{document.content_type}} / {{document.slug}}
+  </a>
+</p>
+<form class="prevent-enter-key"
+      id="FORM-CONTENT-DETAIL"
+      method="POST"
+      action="{{url_as('.update_content',
+                       content_type=document.content_type,
+                       slug=document.slug)}}">
+<div class="row">
+  <div class="col-lg-8">
+    <div class="card base-form">
+      <div class="card-header">
+        <h4>{{_('Write Content')}}</h4>
+      </div>
+      <div class="card-body">
+        <div class="form-group">
+          <label>{{_('Title')}}</label>
+          <input class="form-control"
+                 type="text"
+                 name="title"
+                 maxlength="60"
+                 value="{{meta.title}}">
+        </div>
+        {% if display_field('description') %}
+        <div class="form-group">
+          <label>{{_('Description')}}</label>
+          <textarea class="form-control"
+                    name="description">{{meta.description}}</textarea>
+          <small class="form-text text-muted">
+            {{_('* Please briefly describe this content.')}}
+          </small>
+        </div>
+        {% endif %}
+        {% if display_field('content') %}
+        <div class="form-group">
+          <label>{{_('Content')}}</label>
+          <textarea class="summernote form-control"
+                    placeholder="{{_('Type content here.')}}"
+                    locale="{{locale}}"
+                    media-modal="#MODAL-MEDIAREPO"
+                    name="content">{{content}}</textarea>
+        </div>
+        {% endif %}
+        {% if display_field('tags') %}
+        <div class="form-group">
+          <label>{{_('Tags')}}</label>
+          <input class="form-control inputtags"
+                 type="text"
+                 name="tags"
+                 value="{{document.tags|join(',')}}">
+        </div>
+        {% endif %}
+      </div>
+    </div>
+
+    {% if custom_fields %}
+
+    <h2 class="section-title mt-5">
+      {{_('Custom Data Fields')}}
+    </h2>
+    <p class="section-lead">
+      {{_('Those custom data fields is defined by theme. Different Template might use different definition.')}}
+    </p>
+    <div>
+      {% for key, opts in custom_fields.items() %}
+      {% if opts.type == 'attrs' %}
+        {% include '_custom_attrs.tmpl' %}
+      {% elif opts.type == 'text' %}
+        {% include '_custom_text.tmpl' %}
+      {% elif opts.type == 'media' %}
+        {% include '_custom_media.tmpl' %}
+      {% elif opts.type == 'lines' %}
+        {% include '_custom_lines.tmpl' %}
+      {% elif opts.type == 'link' %}
+        {% include '_custom_link.tmpl' %}
+      {% elif opts.type == 'bg' %}
+        {% include '_custom_bg.tmpl' %}
+      {% elif opts.type == 'line' %}
+        {% include '_custom_line.tmpl' %}
+      {% elif opts.type == 'collection' %}
+        {% include '_custom_collection.tmpl' %}
+      {% elif opts.type == 'script' %}
+        {% include '_custom_script.tmpl' %}
+      {% else %}
+        {% include '_custom_hardcore.tmpl' %}
+      {% endif %}
+      {% endfor %}
+    </div>
+    {% endif %}
+  </div>
+
+  <div class="col-lg-4">
+      <div class="card base-form"
+           data-type="base">
+        <div class="card-header">
+          <h4>{{_('Properties')}}</h4>
+          <a class="btn ml-auto"
+             aria-label="{{_('Preview URL')}}"
+             href="{{document.url}}"
+             target="_preview">
+            <i class="fa fa-link"></i>
+          </a>
+        </div>
+        <div class="card-body">
+          <div class="d-flex">
+            <button class="btn btn-primary btn-lg save-btn">
+              {{_('Save Content')}}
+            </button>
+            {% if document.slug!='index' or document.content_type!='page' %}
+            <a class="btn btn-danger btn-lg btn-icon ml-auto"
+               aria-label="{{_('Delete')}}"
+               href="{{url_as('.remove',
+                               content_type=document.content_type,
+                               slug=document.slug)}}">
+              <i class="fas fa-trash"></i>
+            </a>
+            {% endif %}
+          </div>
+          <hr>
+          {% if display_field('date') %}
+          <div class="form-group">
+            <label>{{_('Date')}}</label>
+            <input class="form-control datepicker"
+                   type="text"
+                   name="date"
+                   value="{{document.date}}">
+          </div>
+          {% endif %}
+          <div class="form-group">
+            <label>{{_('Publish Status')}}</label>
+            <select class="form-control"
+                    name="status">
+              <option value="0"
+                      {{'selected' if document.status==0}}>
+                {{_('Draft')}}
+              </option>
+              <option value="1"
+                      {{'selected' if document.status==1}}>
+                {{_('Published')}}
+              </option>
+            </select>
+          </div>
+          {% if display_field('featured_img') %}
+          <div class="form-group media-preview-field">
+            <label>{{_('Featured Image')}}</label>
+            <div class="input-group">
+              <div class="input-group-append media-preview">
+                <a href="#" target="_blank"></a>
+              </div>
+              <input class="form-control media-input"
+                     type="text"
+                     name="featured_img"
+                     value="{{meta.featured_img.src
+                              if meta.featured_img else ''}}">
+              <div class="input-group-append">
+                <button class="btn btn-secondary"
+                        aria-lable="{{_('Select Image')}}"
+                        data-toggle="modal"
+                        data-target="#MODAL-MEDIAREPO"
+                        data-input="featured_img"
+                        type="button">
+                  <i class="fas fa-image"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+          {% endif %}
+          {% set tmpls = content_type.templates or theme.templates %}
+          <div class="form-group">
+            <label>{{_('Template')}}</label>
+            <select class="form-control"
+                    name="template">
+              {% for tmpl in tmpls %}
+              <option value="{{tmpl}}"
+                      {{'selected' if document.template==tmpl}}>
+                {{tmpl}}
+              </option>
+              {% endfor %}
+            </select>
+          </div>
+          {% if display_field('terms') and theme.category %}
+          <div class="form-group">
+            <label>{{_('Category')}}</label>
+            <select class="form-control"
+                    data-height="100%"
+                    name="terms"
+                    multiple>
+              {% for term in terms %}
+              <option value="{{term.key}}"
+                      {{'selected' if term.key in document.terms}}>
+                {{term.meta.name}}
+              </option>
+              {% endfor %}
+            </select>
+          </div>
+          {% endif %}
+
+          {% if display_field('parent') %}
+          <div class="form-group">
+            <label>{{_('Parent')}}</label>
+            <input class="form-control"
+                   type="text"
+                   name="parent"
+                   value="{{document.parent}}">
+            <small class="form-text text-muted">
+              {{_('* Use parent content slug.')}}
+            </small>
+          </div>
+          {% endif %}
+          {% if display_field('priority') %}
+          <div class="form-group">
+            <label>{{_('Priority')}}</label>
+            <input class="form-control"
+                   type="text"
+                   name="priority"
+                   value="{{document.priority}}">
+            <small class="form-text text-muted">
+              {{_('* The priority of the content when sorting.')}}
+            </small>
+          </div>
+          {% endif %}
+          {% if display_field('redirect') %}
+          <div class="form-group">
+            <label>{{_('Redirect')}}</label>
+            <input class="form-control"
+                   type="text"
+                   name="redirect"
+                   value="{{document.redirect}}">
+          </div>
+          {% endif %}
+        </div>
+      </div>
+  </div>
+
+</div>
+</form>
+{% endblock %}
+{% block page_scripts %}
+<script src="{{static_url}}/modules/moment.min.js"></script>
+<script src="{{static_url}}/modules/bootstrap-daterangepicker/daterangepicker.js"></script>
+<script src="{{static_url}}/modules/bootstrap-tagsinput/bootstrap-tagsinput.js"></script>
+<script src="{{static_url}}/modules/summernote/summernote-bs4.js"></script>
+<script src="{{static_url}}/modules/summernote/plugin/ext-media.js"></script>
+{% if lang == 'zh' %}
+<script src="{{static_url}}/modules/summernote/lang/summernote-{{locale|replace('_', '-')}}.js"></script>
+{% endif %}
+<script>
+  'use strict';
+
+  function _load_dict(form){
+    var output = {};
+    form.find('input:checkbox').map(function() {
+      output[this.name] = Boolean(this.checked);
+    });
+    form.find('input:text, textarea').map(function() {
+      output[this.name] = $(this).val();
+    });
+    form.find('select').map(function(){
+      output[this.name] = $(this).val();
+    })
+    return output;
+  }
+  function _load_list(form){
+    var output = [];
+    form.find('.field-entry').each(function(){
+      var field = $(this);
+      var item = {};
+      field.find('input, textarea').map(function(){
+        item[this.name] = $(this).val();
+      })
+      output.push(item);
+    });
+    return output;
+  }
+  function _load_text(form) {
+    var output = '';
+    form.find('input, textarea').map(function() {
+      output = $(this).val() || '';
+    });
+    return output;
+  }
+  function _load_hardcore(form) {
+    var output = '';
+    form.find('textarea').map(function() {
+      try {
+        output = JSON.parse($(this).val());
+      } catch(e) {
+        output = ''
+      }
+    });
+    return output;
+  }
+
+  function _reform_list(list){
+    if(Array.isArray(list)){
+      var _list = [];
+      list.forEach(function(entry){
+        if(typeof(entry) == 'string'){
+          var txt = entry.trim();
+          if (txt){
+            _list.push(txt);
+          }
+        }
+      });
+      return _list;
+    } else {
+      return [];
+    }
+  }
+
+  $('#FORM-CONTENT-DETAIL').on('submit', function(e){
+    e.preventDefault();
+    var content_form = $(this);
+    var meta = {};
+    var content = '';
+
+    $('.custom-form').each(function(){
+      var form = $(this);
+      var type = form.data('type');
+      var key = form.data('key');
+      switch (type){
+        case 'attrs':
+          meta[key] = _load_dict(form);
+          break;
+        case 'bg':
+          meta[key] = _load_dict(form);
+          break;
+        case 'collection':
+          meta[key] = _load_list(form);
+          break;
+        case 'lines':
+          meta[key] = _load_list(form);
+          break;
+        case 'link':
+          meta[key] = _load_dict(form);
+          break;
+        case 'media':
+          meta[key] = _load_dict(form);
+          break;
+        case 'script':
+          meta[key] = _load_text(form);
+          break;
+        case 'text':
+          meta[key] = _load_text(form);
+          break;
+        case 'hardcore':
+          meta[key] = _load_hardcore(form);
+          break;
+      }
+    });
+    $('.base-form').each(function(){
+      var form = $(this);
+      var output = _load_dict(form);
+      $.extend(meta, output);
+    });
+    content = meta.content || '';
+    content = content.replace(/\r?\n|\r/gm, '');
+    delete meta.content;
+
+    if(Array.isArray(meta.terms)){
+      meta.terms = _reform_list(meta.terms)
+    }
+    if(Array.isArray(meta.tags)){
+      meta.tags = _reform_list(meta.tags.split(','))
+    }
+
+    $.ajax(content_form.attr('action'), {
+      data: JSON.stringify({
+        'content': content,
+        'meta': meta,
+      }),
+      type: 'post',
+      contentType: 'application/json',
+      dataType: 'json'
+    })
+    .done(function(res){
+      window.location.reload(false);
+    })
+    .fail(function(err){
+      console.error(err);
+      setTimeout(function(){
+        alert('['+err.status+']'+err.statusText);
+      }, 200);
+    })
+    return false;
+  });
+
+
+  $(".inputtags").tagsinput('items');
+
+  /* summernote */
+  var editor_lang = ($('.summernote').attr('locale') || '').replace('_', '-');
+  $('.summernote').summernote({
+    height: 420,
+    dialogsInBody: true,
+    lang: editor_lang,
+    callbacks: {},
+    toolbar: [
+      // [groupName, [list of button]]
+      ['style', ['style', 'bold', 'italic', 'underline', 'clear']],
+      ['font', ['strikethrough', 'superscript', 'subscript']],
+      ['fontsize', ['fontsize']],
+      ['color', ['color']],
+      ['para', ['ul', 'ol', 'paragraph']],
+      ['insert', ['link', 'video', 'media', 'hr']],
+      ['view', ['codeview']],
+    ]
+  });
+</script>
+{% endblock %}

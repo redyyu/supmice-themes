@@ -1,0 +1,6 @@
+{% set favicon = theme_url+"/styles/favicon.png" %}
+{% set default_img = theme_url+"/styles/default.jpg" %}
+{% set default_hero = theme_url+"/styles/hero.png" %}
+
+{% set img_holder = theme_url+"/styles/trans.png" %}
+{% set img_holder_cover = theme_url+"/styles/trans_cover.png" %}

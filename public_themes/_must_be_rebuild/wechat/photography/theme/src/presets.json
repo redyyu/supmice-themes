@@ -1,0 +1,37 @@
+[
+	{
+		"name": "Line frame",
+		"preview": "styles/previews/preview_line_frame.png",
+		"code": "<section style=\"border-top: 1px dotted #825c45;border-bottom: 1px dotted #825c45;padding-top: 5px;padding-bottom: 5px;text-align: center;color: #825c45;margin-top: 20px;margin-bottom: 20px;\"><section>{{_('Title')}}</section><section>{{_('Description text here')}}</section></section>"
+	},
+	{
+		"name": "Square frame",
+		"preview": "styles/previews/preview_square_border.png",
+		"code": "<section style=\"border: 1px solid #825c45;padding: 10px;text-align: center;color: #825c45;margin-top: 20px;margin-bottom: 20px;\"><section>{{_('Title')}}</section><section>{{_('Description text here')}}</section></section>"
+	},
+	{
+		"name": "Text button square",
+		"preview": "styles/previews/preview_text_btn.png",
+		"code": "<section style=\"background: #825c45;padding: 10px;color: #fff;text-align: center;margin-top: 20px;margin-bottom: 20px;\"><section>{{_('Title')}}</section></section>"
+	},
+	{
+		"name": "Text button radius",
+		"preview": "styles/previews/preview_text_btn_radius.png",
+		"code": "<section style=\"background: #825c45;padding: 10px;color: #fff;text-align: center;border-radius: 5px;margin-top: 20px;margin-bottom: 20px;\"><section>{{_('Title')}}</section></section>"
+	},
+	{
+		"name": "Hr solid",
+		"preview": "styles/previews/preview_hr_solid.png",
+		"code": "<section style=\"height: 1;border-top: 1px solid #825c45;margin-top: 20px;margin-bottom: 20px;\"></section>"
+	},
+	{
+		"name": "Hr dotted",
+		"preview": "styles/previews/preview_hr_dotted.png",
+		"code": "<section style=\"height: 1;border-top: 1px dotted #825c45;margin-top: 20px;margin-bottom: 20px;\"></section>"
+	},
+	{
+		"name": "Circle img",
+		"preview": "styles/previews/preview_circle_img.png",
+		"code": "<section style=\"margin-top: 20px;margin-bottom: 20px;text-align: center;\"><img style=\"border-radius: 50%;width: 150px;\" src=\"{{theme_url}}/styles/default-img.jpg\"></section>"
+	}
+]

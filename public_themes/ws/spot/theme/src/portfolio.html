@@ -1,0 +1,65 @@
+{% import "g" as g with context %}
+<!DOCTYPE html>
+<html lang="{{lang}}">
+{% include '_head.html' %}
+
+<body>
+
+{% include '_header.html' %}
+
+<div class="section-header blue-bg">
+  <div class="container">
+    <div class="row centered">
+      <div class="col-md-8 col-md-offset-2">
+        <h2>{{meta.title}}</h2>
+        <p>{{meta.description}}</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section-primary">
+  <div class="container">
+    {% for item in meta.series %}
+    <div class="row {{item.class}}">
+      <div class="col-md-5 centered">
+        <img class="featured-img rounded"
+             src="{{item.src}}"
+             alt="{{item.title}}" />
+      </div>
+      <div class="col-md-7">
+        <h3>{{item.title}}</h3>
+        <p>{{item.caption}}</p>
+        {% if item.link %}
+        <div class="spacing">
+          <a class="btn btn-primary"
+             href="{{item.link|url}}">
+            {{_('View')}}
+          </a>
+        </div>
+        {% endif %}
+        {% if item.misc %}
+        <div>
+          {{item.misc}}
+        </div>
+        {% endif %}
+      </div>
+    </div>
+    {{'<hr>' if not loop.last }}
+    {% endfor %}
+  </div>
+</div>
+
+<div class="section-primary red-bg">
+  <div class="container">
+    <div class="row centered">
+      <div class="col-lg-8 col-lg-offset-2">
+        <h4>{{meta.statement}}</h4>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% include '_footer.html' %}
+</body>
+</html>

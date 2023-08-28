@@ -1,0 +1,35 @@
+<head>
+  <title>{{site_meta.title | striptags}}</title>
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+  <meta name="format-detection" content="telephone=yes">
+  <meta name="description" content="{{site_meta.description | striptags}}">
+  <meta name="keywords" content="{{site_meta.keywords | striptags}}">
+  <meta name="author" content="{{site_meta.author | striptags}}">
+  <meta name="robots" content="{{g.robots}}">
+  
+  {% include '_app_metas_.html' %}
+  
+  <!-- Browser support -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0,
+   maximum-scale=1.0">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="renderer" content="webkit">
+
+  <!-- Favicons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144"
+   href="{{site_meta.favicon or g.default_favicon}}">
+  <link rel="shortcut icon" href="{{site_meta.favicon or g.default_favicon}}">
+
+  <!-- Styles -->
+  <!-- build:css {{theme_url}}/simba.min.css?md5=null -->
+  <link href="{{theme_url}}/styles/normalize.css" rel="stylesheet">
+  <link href="{{theme_url}}/styles/fonts/roboto-fonts.css" rel="stylesheet">
+  <link href="{{theme_url}}/styles/simba.css" rel="stylesheet">
+  <!-- /build -->
+  
+  {{site_meta.analytics}}
+  {{site_meta.seo}}
+  {{g.custom_styles}}
+</head>

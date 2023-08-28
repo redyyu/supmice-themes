@@ -1,0 +1,93 @@
+{% import 'g' as g with context %}
+<!DOCTYPE html>
+<html lang="{{lang}}">
+{% include '_head.html' %}
+
+<body>
+  {% include '_header.html' %}
+
+  <section class="ribbon {{meta.ribbon.class}}"
+           style="{{(meta.ribbon.src or g.default_ribbon)|bg_img}}">
+    <header>
+      <h2>{{meta.title or _('Cooperation & Partners')}}</h2>
+    </header>
+  </section>
+  <section class="segment">
+    <div class="container">
+      <header>
+        <h3>{{meta.partners_title or _('Our Partners')}}</h3>
+      </header>
+      <div id="PARTNER-CAROUSEL"
+           class="partner-carousel carousel slide"
+           data-interval="6000"
+           data-ride="carousel">
+        <div class="carousel-inner partner-carousel-inner">
+          {% for partner in meta.partners %}
+          <div class="carousel-item partner-carousel-item
+                      {{'active' if loop.index == 1}}">
+            <div class="row">
+              <div class="col-md-4 py-2">
+                <div class="pl-md-3">
+                  <img class="slide-img"
+                       src="{{g.trans}}"
+                       style="{{partner.src|bg_img}}">
+                </div>
+              </div>
+              <div class="col-md-8 d-flex flex-column justify-content-center">
+                <h4 class="text-truncate">{{partner.title}}</h4>
+                <p>
+                  {{partner.caption}}
+                </p>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+        <a class="carousel-control carousel-control-prev"
+           href="#PARTNER-CAROUSEL"
+           role="button"
+           data-slide="prev">
+          <svg width='24' height='24' viewBox='0 0 8 8'><path d='M5.25 0l-4 4 4 4 1.5-1.5L4.25 4l2.5-2.5L5.25 0z'/></svg>
+          <span class="sr-only">{{_('Previous')}}</span>
+        </a>
+        <a class="carousel-control carousel-control-next"
+           href="#PARTNER-CAROUSEL"
+           role="button"
+           data-slide="next">
+          <svg width='24' height='24' viewBox='0 0 8 8'><path d='M2.75 0l-1.5 1.5L3.75 4l-2.5 2.5L2.75 8l4-4-4-4z' /></svg>
+          <span class="sr-only">{{_('Next')}}</span>
+        </a>
+      </div>
+    </div>
+  </section>
+  <section class="segment bg-dark">
+    <div class="container">
+      <header class="text-light">
+        <h3>{{meta.clients_title or _('Our Clients')}}</h3>
+      </header>
+      <div class="row">
+        {% for client in meta.clients %}
+        <div class="col-6 col-md-2 text-center py-2">
+          <img class="icon"
+               src="{{g.trans}}"
+               alt="{{client.title}}"
+               style="{{client.src|bg_img}}">
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+  <section class="segment">
+    <div class="container">
+      <article class="col-md-10 offset-md-1">
+        <div class="content text-center">
+          {{content}}
+        </div>
+      </article>
+    </div>
+  </section>
+  {% include '_footer.html' %}
+
+{{g.scripts}}
+</body>
+</html>

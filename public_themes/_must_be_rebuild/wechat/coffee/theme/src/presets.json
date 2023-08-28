@@ -1,0 +1,44 @@
+[
+    {
+        "name": "Title1",
+        "preview": "styles/previews/",
+        "code": "<div style=\"text-align: center;\"><img src=\"{{theme_url}}/styles/icon_line.png\"><p>{{_('Description text here')}}</p></div>"
+    },
+    {
+        "name": "Title2",
+        "preview": "styles/previews/",
+        "code": "<div style=\"text-align: center;\"><img src=\"{{theme_url}}/styles/icon_line2.png\"><h2>{{_('Title')}}</h2></div>"
+    },
+    {
+        "name": "Title3",
+        "preview": "styles/previews/",
+        "code": "<div style=\"text-align: center;\"><img src=\"{{theme_url}}/styles/icon_line.png\"><p>{{_('Description text here')}}</p></div>"
+    },
+    {
+        "name": "Coffe Bean",
+        "preview": "styles/previews/",
+        "code": "<img src=\"{{theme_url}}/styles/icon_cbean.png\">"
+    },
+    {
+        "name": "Border Description",
+        "preview": "styles/previews/",
+        "code": "<div style=\"text-align: center;\"><img src=\"{{theme_url}}/styles/icon_cup3.png\"><div style=\"border: 1px solid
+            #333;padding: 8px 10px;margin-top: 15px;\"><p>{{_('Description text here')}}</p></div></div>"
+    },
+    {
+        "name": "Title4",
+        "preview": "styles/previews/",
+        "code": "<div style=\"text-align: center;\"><img src=\"{{theme_url}}/styles/icon_cup2.png\"><h2>{{_('Title')}}</h2><p>{{_('Description text here')}}</p></div>"
+    },
+    {
+        "name": "Title5",
+        "preview": "styles/previews/",
+        "code": "<div><img src=\"{{theme_url}}/styles/icon_coffee.png\"><h2 style=\"text-align: center;\">{{_('Title')}}</h2></div>
+            </div>"
+    },
+    {
+        "name": "Coffe Bean Hr",
+        "preview": "styles/previews/",
+        "code": "<div style=\"width: 100%;height: 9px;margin-top: 10px;margin-bottom: 10px;background-image: url('{{theme_url}}/styles/icon1.png');\">"
+    }
+]

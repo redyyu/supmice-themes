@@ -1,0 +1,54 @@
+{% import "g" as g with context %}
+<!DOCTYPE html>
+<html lang="en">
+{% include '_head.html' %}
+<body>
+{% include '_header.html' %}
+<div class="bg-content">
+	<div id="content">
+		<div class="ic"></div>
+		<div class="container">
+			<div class="row">
+				<article class="span12">
+				<h3>{{meta.title}}</h3>
+				</article>
+				<div class="clear"></div>
+				{% set booklet = stapler(pages|type('works'), g.paged, g.perpage) %}
+				{% set works = booklet.pages %}
+				<ul class="thumbnails thumbnails-1">
+					{% for work in works %}
+					<li class="span3 box">
+						<a href="{{work.url}}" class="thumbnail thumbnail-1">
+							<img class="thumbnail-img" src="{{theme_url}}/img/bg270.png"
+                   style="background-image:
+                          url('{{work.featured_img.src | thumbnail}}')">
+							<section>
+								<strong>{{work.title}}</strong>
+							</section>
+						</a>
+					</li>
+					{% endfor %}
+				</ul>
+				{% if booklet.max and booklet.paged %}
+				<div class="paginator">
+					{% set has_next_page = booklet.paged < booklet.max %}
+					{% set has_prev_page = booklet.paged > 1 %}
+					<a href="{{glue({'paged':booklet.paged-1})}}"
+             class="btn btn-danger btn-left
+                    {{'disabled' if not has_prev_page}}">
+           Prev
+          </a>
+					<a href="{{glue({'paged':booklet.paged+1})}}"
+             class="btn btn-danger btn-right 
+                    {{'disabled' if not has_next_page}}">
+           Next
+          </a>
+				</div>
+				{% endif %}
+			</div>
+		</div>
+	</div>
+</div>
+{% include '_footer.html' %}
+</body>
+</html>

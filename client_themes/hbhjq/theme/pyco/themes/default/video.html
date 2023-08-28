@@ -1,0 +1,20 @@
+{% if g and page %}
+<!-- Section -->
+<section id="{{page.alias}}" class="video primary"
+ style="background-image:url('{{page.background.src or g.default_img}}');">
+  <div class="container">
+    <article class="center-block text-center">
+      <header>
+        <h4 class="title-label">{{page.label}}</h4>
+        <h2 class="title">{{page.title}}</h2>
+      </header>
+    </article>
+    <div class="video-room">
+      {{page.video.code if page.video.status else ''}}
+    </div>
+  </div>
+</section>
+<!-- #Section -->
+{% else %}
+  <script>window.location.replace('{{base_url}}/#/{{meta.alias}}');</script>
+{% endif %}

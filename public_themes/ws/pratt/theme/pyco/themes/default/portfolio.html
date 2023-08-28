@@ -1,0 +1,42 @@
+{% if g and page %}
+
+<div class="section-primary portfolio">
+  <div class="container">
+
+    <div class="row centered section-header">
+      <div class="col-md-8 col-md-offset-2">
+        <h2>{{page.title}}</h2>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2">
+        <div class="carousel slide portfolio-gallery">
+          <!-- Indicators -->
+          <ol class="carousel-indicators">
+            {% for item in page.carousel %}
+            <li data-target=".portfolio-gallery"
+                data-slide-to="{{loop.index0}}"
+                class="{{'active' if loop.first}}"></li>
+            {% endfor %}
+          </ol>
+
+          <!-- Wrapper for slides -->
+          <div class="carousel-inner">
+            {% for item in page.carousel %}
+            <div class="item {{'active' if loop.first}}">
+              <img class="contain-img img-holder-cover"
+                   src="{{g.img_holder_cover}}"
+                   style="{{item.src|bg_img}}">
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div><!-- /container -->
+</div>
+
+{% else %}
+<script>window.location.replace('{{base_url}}/#{{meta.slug}}')</script>
+{% endif %}

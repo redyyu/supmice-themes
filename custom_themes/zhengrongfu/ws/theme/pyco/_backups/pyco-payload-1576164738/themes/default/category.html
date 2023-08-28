@@ -1,0 +1,105 @@
+{% import "g" as g with context %}
+
+<!DOCTYPE html>
+<html lang="{{lang}}">
+
+<head>
+{% include '_head_.html' %}
+</head>
+
+<body>
+  {% set args = request.args %}
+  {% set category = categorize() %}
+  {% set macthed_term = straw(category.terms, args.term, 'key')
+                        if args.term else {} %}
+  {% if not macthed_term and args.term %}
+  <script>window.location.replace('{{base_url}}/error-404')</script>
+  {% endif %}
+
+  {% include '_nav.html' %}
+  <header>
+    <h1>{{meta.title}}</h1>
+    <hr>
+    <span>
+      {{meta.description}}
+    </span>
+    <div>
+      <img src="{{meta.featured_img.src}}"
+           alt="{{ meta.featured_img.title }}" />
+    </div>
+  </header>
+
+  <!-- category -->
+  {% if not macthed_term %}
+
+    <div class="container">
+      <div class="row">
+        {% for term in category.terms %}
+        <div class="col-md-6">
+          <a href="{{glue({'category': term.key})}}"
+             style="display:block; background: #eee;">
+            <img style="max-width: 100px;"
+                 src="{{term.meta.figure or g.default_img}}"
+                 alt="{{term.meta.name}}"/>
+            <h4 class="text-nowrap">{{term.meta.name}}</h4>
+          </a>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+
+  {% else %}
+    {% if macthed_term.meta.figure %}
+    <div class="container"
+         style="border: 1px solid #333;">
+      <img src="{{macthed_term.meta.figure or g.default_img}}"
+           class="img-responsive center-block"
+           alt="{{macthed_term.meta.name}}"/>
+    </div>
+    {% else %}
+    <div class="container">
+      <h2>{{macthed_term.meta.name}}</h2>
+    </div>
+    {% endif %}
+    <div class="container prd-container">
+      <div class="row">
+        {% set booklet = query('post',
+                               paged=args.paged,
+                               term=macthed_term.key) %}
+
+        {% for item in booklet.contents %}
+        <div class="col-md-3 col-sm-4 col-xs-6"
+             style="border: 1px solid #333; margin: 16px; padding:16px;">
+          <a href="{{item.url}}">
+            <img src="{{(item.featured_img.src or g.default_img)|thumbnail}}"
+                 style="max-width: 200px;"
+                 alt="{{item.title}}" />
+          </a>
+          <h3 class="text-nowrap">{{item.title}}</h3>
+        </div>
+        {% endfor %}
+      </div>
+      {% if booklet.total_pages > 1 %}
+      <ul class="pager">
+        {% if booklet.has_prev %}
+        <a href="{{glue({'category':args.term, 'page':booklet.paged-1})}}">
+          {{_('Previous page')}}
+        </a>
+        {% endif %}
+        &nbsp;/&nbsp;
+        {% if booklet.has_next %}
+        <a href="{{glue({'category':args.term, 'page':booklet.paged+1})}}">
+          {{_('Next page')}}
+        </a>
+        {% endif %}
+      </ul>
+      {% endif %}
+    </div>
+
+  {% endif %}
+  <hr>
+  <a href="{{base_url}}">{{_('Return to home')}}</a>
+
+  {% include '_footer.html'%}
+</body>
+</html>

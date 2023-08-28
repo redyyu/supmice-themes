@@ -1,0 +1,11 @@
+{% set opts = theme_meta.options %}
+
+{% set logo = theme_url+'/styles/logo.png' %}
+{% set favicon = theme_url+'/styles/favicon.png' %}
+
+{% set default_img = theme_url+'/styles/default.jpg' %}
+{% set larger_img = theme_url+'/styles/larger.jpg' %}
+{% set add_img = theme_url+'/styles/add.png' %}
+
+{% set img_holder = theme_url+"/styles/trans.png" %}
+{% set badge_holder = theme_url+"/styles/trans_badge.png" %}

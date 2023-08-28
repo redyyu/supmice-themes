@@ -1,0 +1,118 @@
+<!-- promotions -->
+<view class="showreel"
+      wx:if="{{promotions.length > 0}}">
+  <swiper indicator-dots="true"
+          autoplay="true"
+          circular="true">
+    <block wx:for="{{promotions}}"
+           wx:for-item="promo"
+           wx:key="index">
+      <swiper-item data-promo="{{promo}}"
+                   bind:tap="enter_promo">
+        <image src="{{promo.poster}}"
+               background-size="cover"
+               background-position="center center"/>
+      </swiper-item>
+    </block>
+  </swiper>
+</view>
+
+<!-- categories -->
+<view class="menu"
+      wx:if="{{cat_groups.length > 0}}">
+  <swiper wx:if="{{cat_groups.length > 1}}"
+          style="height: {{180*cat_group_limit/4}}rpx;">
+    <swiper-item class="menu-inner"
+                 wx:for="{{cat_groups}}"
+                 wx:for-item="categories"
+                 wx:key="index">
+      <view class="menu-item"
+            wx:for="{{categories}}"
+            wx:for-item="cat"
+            wx:key="index">
+        <button plain
+                data-category="{{cat}}"
+                bind:tap="enter_category">
+          <image src="{{cat.icon}}"
+                 mode="aspectFill" />
+          <text>{{cat.label}}</text>
+        </button>
+      </view>
+    </swiper-item>
+  </swiper>
+
+  <view wx:else>
+    <view class="menu-inner"
+          wx:for="{{cat_groups}}"
+          wx:for-item="categories"
+          wx:key="index">
+      <view class="menu-item"
+            wx:for="{{categories}}"
+            wx:for-item="cat"
+            wx:key="index">
+        <button plain
+                data-category="{{cat}}"
+                bind:tap="enter_category">
+          <image src="{{cat.icon}}"
+                 mode="aspectFill" />
+          <text>{{cat.label}}</text>
+        </button>
+      </view>
+    </view>
+  </view>
+
+  <block wx:if="{{cat_groups.length > 1}}">
+    <view class="arrow-left"></view>
+    <view class="arrow-right"></view>
+  </block>
+</view>
+
+
+<!-- shortcuts -->
+<view class="container"
+      wx:if="{{shortcuts.length > 0}}">
+  <view wx:for="{{shortcuts}}"
+        wx:for-item="shortcut"
+        wx:key="index">
+    <image class="rounded"
+           src="{{shortcut.src}}"
+           mode="widthFix"
+           data-shortcut="{{shortcut}}"
+           bind:tap="enter_shortcut" />
+  </view>
+</view>
+
+
+<!-- newest -->
+<block wx:if="{{commodities.length > 0}}">
+  <view class="section-divider">
+    <text class="primary">❀❀❀ 精选上新 ❀❀❀</text>
+    <view class="divider-line"></view>
+  </view>
+  <view class="grid-list">
+    <view class="grid"
+          wx:for="{{commodities}}"
+          wx:key="index">
+      <view class="card"
+            bind:tap="enter"
+            data-item="{{item}}">
+        <image src="{{item.src}}" mode="aspectFill" lazy-load/>
+        <view class="card-text">
+          <text class="title">{{item.title}}</text>
+          <view class="info">
+            <text class="coupon">{{item.coupon}}</text>
+            <text class="price">¥ {{item.price}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</block>
+
+
+<!-- footer -->
+<view class="footer"
+      wx:if="{{commodities.length > 0}}">
+  <import src="/widgets/loadmore.wxml"/>
+  <template is="loadmore" data="{{loading: is_loading, more: has_more}}"/>
+</view>

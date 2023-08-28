@@ -1,0 +1,25 @@
+{% set _value = meta[key] or '' %}
+<div class="card custom-form"
+     data-key="{{key}}"
+     data-type="script">
+  <div class="card-header d-flex">
+    <h4>
+      {{_(opts.label)|title}}
+    </h4>
+    <small class="text-muted ml-auto">
+      {{key}}
+    </small>
+  </div>
+  <div class="card-body">
+    <div class="form-group">
+      <label>{{_('Script')}}</label>
+      <textarea class="form-control"
+                name="script"
+                maxlength="1200"
+                rows="6">{{_value}}</textarea>
+      <small class="form-text text-muted">
+        {{_('* For expert only, HTML, Javascript or any others.')}}
+      </small>
+    </div>
+  </div>
+</div>

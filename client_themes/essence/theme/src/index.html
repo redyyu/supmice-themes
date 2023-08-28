@@ -1,0 +1,129 @@
+{% import 'g' as g with context %}
+<!DOCTYPE html>
+<html lang="{{lang}}">
+{% include '_head_.html' %}
+<body>
+{% include '_header_.html' %}
+
+<!-- carousel begin -->
+<div class="container-full">
+  <div id="carousel" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+      {% for item in meta.carousels %}
+      <li data-target="#carousel"
+          data-slide-to="{{loop.index0}}"
+          class="{{'active' if loop.first}}">
+      </li>
+      {% endfor %}
+    </ol>
+    <div class="carousel-inner" role="listbox">
+      {% for item in meta.carousels %}
+      <div class="item {{'active' if loop.first}}">
+        <a href="#">
+          <img class="thumbnail-img {{item.class}}"
+               src="{{theme_url}}/img/carouselbg.png"
+               style="{{item.src|bg_img}}">
+        </a>
+      </div>
+      {% endfor %}
+    </div>
+    <a class="left carousel-control"
+       href="#carousel"
+       role="button"
+       data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left"
+            aria-hidden="true"></span>
+      <span class="sr-only"></span>
+    </a>
+    <a class="right carousel-control"
+       href="#carousel"
+       role="button"
+       data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right"
+            aria-hidden="true"></span>
+      <span class="sr-only"></span>
+    </a>
+  </div>
+</div>
+<!-- carousel end -->
+
+<!-- culture begin -->
+<div class="wrap-white">
+  <div class="container text-culture">
+    <div class="col-md-4 content">
+      {{content}}
+      <a class="btn-bluegrey {{meta.culture_btn.class}}"
+         href="{{meta.culture_btn.link}}"
+         target="{{meta.culture_btn.target}}">
+         {{meta.culture_btn.name}}
+      </a>
+    </div>
+    <div class="col-md-8">
+      <img class="thumbnail-img"
+           src="{{meta.culture_img.src|thumbnail}}">
+    </div>
+  </div>
+</div>
+<!-- culture end -->
+
+<!-- event begin -->
+<div class="wrap-bluegrey">
+  <div class="container text-center event-box">
+    <h2>{{meta.event_title}}</h2>
+    <h5>{{meta.event_description}}</h5>
+    <ul class="event-portfolio">
+      {% set event = query('event', 0, 4) %}
+      {% for e in event.contents %}
+      <li class="col-sm-6 col-md-3">
+        <div class="e-box">
+          <img class="thumbnail-img"
+               src="{{theme_url}}/img/foliobg.png"
+               style="{{e.featured_img.src|bg_img}}">
+          <div class="e-box-caption">
+            <div class="e-box-caption-content">
+              <h4>{{e.title}}</h4>
+              <h5 class="text-nowrap">{{e.description}}</h5>
+              <a href="{{e.url}}" class="btn-bluegrey">{{_('More')}}</a>
+            </div>
+          </div>
+        </div>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+</div>
+<!-- event end -->
+
+<div class="wrap-white">
+  <div class="container text-center">
+    <h1>{{meta.folio_title}}</h1>
+    <h5>{{meta.folio_description}}</h5>
+
+    <div class="row">
+      {% set product = query('product', 0, 4) %}
+      {% for p in product.contents %}
+      <div class="col-sm-6 col-md-3 text-left">
+        <a href="{{p.url}}">
+          <img class="thumbnail-img"
+               src="{{theme_url}}/img/foliobg.png"
+               style="background-image:
+                      url('{{p.featured_img.src|thumbnail}}');">
+          <div class="product-text">
+            <p>{{p.title}}</p>
+            <p>
+              <span>{{p.tip}}</span>
+              <span class="product-price">{{p.price}}</span>
+            </p>
+          </div>
+        </a>
+      </div>
+      {% endfor %}
+    </ul>
+    {% endif %}
+  </div>
+</div>
+
+{% include '_footer_.html' %}
+{% include '_js_.html' %}
+</body>
+</html>

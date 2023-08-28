@@ -1,0 +1,42 @@
+{% import "g" as g with context %}
+<!DOCTYPE html>
+<html lang="en">
+{% include '_head.html' %}
+<body>
+{% include '_header.html' %}
+<div class="bg-content">
+	<div id="content">
+		<div class="ic"></div>
+		<div class="container">
+			<div class="row">
+				<article class="span8">
+					<div class="inner-1">
+						<ul class="list-blog">
+							{% for post in pages | type('post') %}
+							<li>
+								<h3>{{post.title}}</h3>
+								<time datetime="2012-11-09" class="date-1">{{meta.date_formatted}}</time>
+								<div class="name-author">by <mark>{{post.author}}</mark></div>
+								<div class="clear"></div>
+								<img class="thumbnail-img" style="background-image: url('{{post.photo.src}}')" src="{{theme_url}}/img/bg740.png">
+								<p>{{post.article}}</p>
+							</li>
+							{% endfor %}
+						</ul>
+					</div>
+				</article>
+				<article class="span4">
+					<h3>{{meta.ctitle}}</h3>
+					<ul class="list extra extra1">
+						{% for post in pages | type('post',10) %}
+						<li><a href="#">{{post.title}}</a></li>
+						{% endfor %}
+					</ul>
+				</article>
+			</div>
+		</div>
+	</div>
+</div>
+{% include '_footer.html' %}
+</body>
+</html>

@@ -1,0 +1,24 @@
+<html lang="{{ locale }}">
+{% include "_head.html" %}
+<body>
+	<section class="error-404">
+		<div class="container">
+		  <div class="row justify-content-center">
+		    <article class="col-md-8 text-center">
+		      <header>
+		        <h1>{{_('Error 404')}}</h1>
+		      </header>
+		      <div class="content">
+		        {{_('$_ERROR404')}}
+		      </div>
+		      <aside>
+			    	<a class="btn icon-btn" href="{{base_url}}">
+			    		<svg width="24" height="24" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"/><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg>
+			    	</a>
+			    </aside>
+		    </article>
+		  </div>
+		</div>
+	</section>
+</body>
+</html>

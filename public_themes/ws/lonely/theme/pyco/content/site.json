@@ -1,0 +1,71 @@
+{
+  "content_types": {
+    "post": "Posts",
+    "page": "Pages"
+  },
+  "menus": {
+    "primary": [
+      {
+        "key": "home",
+        "meta": {},
+        "nodes": [],
+        "name": "HOME",
+        "link": "#index"
+      },
+      {
+        "key": "profile",
+        "meta": {},
+        "nodes": [],
+        "name": "My Profile",
+        "link": "#profile"
+      },
+      {
+        "key": "favorites",
+        "meta": {},
+        "nodes": [],
+        "name": "Favorites",
+        "link": "#favorites"
+      },
+      {
+        "key": "gallery",
+        "meta": {},
+        "nodes": [],
+        "name": "MY GALLERY",
+        "link": "#gallery"
+      },
+      {
+        "key": "contact",
+        "meta": {},
+        "nodes": [],
+        "name": "TALK TO ME",
+        "link": "#contact"
+      }
+    ]
+  },
+  "meta": {
+    "slug":"pyco",
+    "type":"lonely",
+    "logo":"[%uploads%]/logo.gif",
+    "favicon": "[%uploads%]/favicon.png",
+    "author": "redy",
+    "copyright": "2015 Made by Pyco.",
+    "description": "It doesn't take a rocket scientist ...",
+    "license": "MIT",
+    "locale": "en_US",
+    "title": "Lonely",
+    "socials":{
+      "facebook":{"name":"Facebook","url":"#","code":"facebook"},
+      "twitter":{"name":"Twitter","url":"#","code":"twitter"}
+    },
+    "translates":{
+      "en_US":{
+        "name": "English",
+        "url": "#"
+      },
+      "zh_CN":{
+        "name": "中文",
+        "url": "#"
+      }
+    }
+  }
+}

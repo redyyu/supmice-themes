@@ -1,0 +1,26 @@
+{
+  "version": "1.5.4",
+  "slug": "ninestars",
+  "author": "Cheney",
+  "license": "MIT",
+  "title": "NINESTARS",
+  "type": "ws",
+  "capability": 0,
+  "icon": "icon.png",
+  "poster": "poster.jpg",
+  "previews": ["preview.jpg"],
+
+  "templates": [
+    "^page",
+    "^team",
+    "^services",
+    "^portfolio",
+    "index"
+  ],
+
+  "segments": 24,
+
+  "options":{
+    "sortby": "date"
+  }
+}

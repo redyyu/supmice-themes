@@ -1,0 +1,14 @@
+{% if g and page %}
+<div class="container">
+  <div class="row justify-content-center">
+    <article class="col-md-8 mb-4 text-center">
+      <header>
+        <h2>{{page.title}}</h2>
+      </header>
+      {{page.content}}
+    </article>
+  </div>
+</div>
+{% else %}
+<script>window.location.replace('{{base_url}}/#{{meta.slug}}');</script>
+{% endif %}

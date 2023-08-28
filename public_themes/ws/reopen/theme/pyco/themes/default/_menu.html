@@ -1,0 +1,38 @@
+<div class="menu-wraper center-relative">
+  <div class="menu-logo center-text">
+    <a href="{{base_url}}">
+      <img src="{{meta.logo.src or site_meta.logo or g.logo}}"
+           alt="{{meta.title or site_meta.title}}" />
+    </a>
+  </div>
+  <nav id="header-main-menu" class="big-menu">
+    <ul class="main-menu">
+      {% for menu in menu.primary %}
+      <li class="{{menu.class}}">
+        <a class="{{menu|active(meta.path, match_nodes=True)}}
+                  {{'has-submenu' if menu.nodes else ''}}"
+           href="{{'#' if menu.nodes else menu.url}}"
+           target="{{'_self' if menu.nodes else menu.target}}">
+          {{menu.name}}
+          {% if menu.nodes %}
+          <span class="sub-arrow">+</span>
+          {% endif %}
+        </a>
+        {% if menu.nodes %}
+        <ul class="sub-menu">
+          {% for submenu in menu.nodes %}
+          <li>
+            <a href="{{submenu.url}}"
+               target="{{submenu.target}}">
+              {{submenu.name}}
+            </a>
+          </li>
+          {% endfor %}
+        </ul>
+        {% endif %}
+      </li>
+      {% endfor %}
+    </ul>
+  </nav>
+  <div class="clear"></div>
+</div>

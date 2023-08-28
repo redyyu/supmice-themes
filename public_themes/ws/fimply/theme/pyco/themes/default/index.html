@@ -1,0 +1,71 @@
+{% import 'g' as g with context %}
+<!doctype html>
+<html lang="{{lang}}">
+
+{% include '_head.html' %}
+
+<body>
+  <!--preloader-->
+  <div id="preloader">
+    <div id="status">&nbsp;</div>
+  </div>
+
+  {% include '_header.html' %}
+
+  <section id="{{meta.slug}}"
+           class="carousel fade-carousel slide"
+           data-ride="carousel"
+           data-interval="10000">
+
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      {% for item in meta.carousel %}
+      <li data-target="#{{meta.slug}}"
+          data-slide-to="{{loop.index0}}"
+          class="{{'active' if loop.first }}">
+      </li>
+      {% endfor %}
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner">
+      {% for item in meta.carousel %}
+      <div class="item slides {{'active' if loop.first}}">
+        <div class="slide"
+             style="background-image:url('{{item.src}}')"></div>
+        <div class="hero">
+          <header>
+            <h1>{{item.title}}</h1>
+            <h3>{{item.caption}}</h3>
+          </header>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+
+    <!-- Controls -->
+    <a class="left carousel-control"
+       href="#{{meta.slug}}"
+       role="button"
+       data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left"
+            aria-hidden="true"></span>
+      <span class="sr-only">{{_('Previous')}}</span>
+    </a>
+    <a class="right carousel-control"
+       href="#{{meta.slug}}"
+       role="button"
+       data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right"
+            aria-hidden="true"></span>
+      <span class="sr-only">{{_('Next')}}</span>
+    </a>
+  </section>
+
+  {% for page in segments() if page.template != meta.template %}
+    {% include page.template+'.html' ignore missing %}
+  {% endfor %}
+
+  {% include '_footer.html' %}
+</body>
+</html>

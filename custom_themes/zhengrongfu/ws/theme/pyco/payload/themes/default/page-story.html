@@ -1,0 +1,23 @@
+{% if g and page %}
+<div class="compact bg-glassy">
+  <div class="container text-brighten">
+    <div class="row">
+      <div class="col-md-6 frame d-flex align-items-center mb-5 mb-md-0">
+        <div class="content">
+          {{page.content}}
+        </div>
+      </div>
+      <div class="col-md-6 d-flex align-items-center">
+        <figure>
+          {% if page.featured_img.src %}
+          <img src="{{page.featured_img.src}}"
+               alt="{{page.featured_img.title}}"/>
+          {% endif %}
+        </figure>
+      </div>
+    </div>
+  </div>
+</div>
+{% elif not meta.is_front %}
+<script>window.location.replace('{{base_url}}/#{{meta.slug}}');</script>
+{% endif %}

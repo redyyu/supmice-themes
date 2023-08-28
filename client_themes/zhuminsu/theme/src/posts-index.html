@@ -1,0 +1,77 @@
+{% import 'g' as g with context %}
+<!DOCTYPE html>
+<html lang="{{lang}}">
+{% include '_head.html' %}
+<body>
+
+{% include '_header.html' %}
+
+<section class="ribbon {{meta.hero.class}}"
+         style="{{meta.hero.style}}">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 text-center">
+        <h2 class="section-heading">
+          {{meta.title}}
+        </h2>
+        <hr class="light">
+        <p>{{meta.description}}</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section>
+  <div class="container posts">
+    {% set booklet = query('post', args.paged) %}
+    {% set posts = booklet.contents %}
+    {% for post in posts %}
+    <div class="row item">
+      <div class="col-md-6">
+        <figure>
+          <img src="{{post.featured_img.src|thumbnail}}"
+               class="img-responsive thumbnail-img"
+               alt="{{post.title}}" />
+        </figure>
+      </div>
+      <div class="col-md-6">
+        <h3>{{post.title}}</h3>
+        <p>{{post.description}}</p>
+        <p><a href="{{post.url}}">{{_('Read More')}}</a></p>
+      </div>
+    </div>
+    {% endfor %}
+    <hr>
+  </div>
+  <div class="container">
+
+    {% if booklet.total_pages > 1 %}
+    <ul class="pager">
+    {% set has_older_page = booklet.paged < booklet.total_pages %}
+    {% set has_newer_page = booklet.paged > 1 %}
+      {% if has_newer_page %}
+      <li>
+        <a href="{{ glue({'paged':booklet.paged-1}) }}">
+         &larr; {{_('Newer Posts')}}
+        </a>
+      </li>
+      {% endif %}
+      {% if has_older_page %}
+      <li>
+        <a href="{{ glue({'paged':booklet.paged+1}) }}">
+          {{_('Older Posts')}} &rarr;
+        </a>
+      </li>
+      {% endif %}
+    </ul>
+    {% endif %}
+
+  </div>
+</section>
+
+
+{% include '_footer.html' %}
+
+</body>
+</html>

@@ -1,0 +1,75 @@
+{% import "g" as g with context %}
+<!DOCTYPE html>
+<html lang="{{ lang }}">
+{% include "_head.html" %}
+
+<body class="page">
+
+  {{g.loader}}
+
+  {% include '_menu.html' %}
+
+  <div class="body-wrapper">
+    {% include '_header.html' %}
+
+    {% if not meta.attrs.hide_headline %}
+    <div class="block content-1170 center-relative">
+      <h1 class="entry-title">
+        {{meta.title}}
+      </h1>
+      <p class="page-desc">{{meta.description}}</p>
+    </div>
+    {% endif %}
+
+    <div class="grid" id="portfolio">
+      <div class="grid-sizer"></div>
+      {% set _perpage = meta.attrs.perpage or g.opts.perpage %}
+      {% set result = query('post', perpage=_perpage) %}
+      {% set category = categorize() %}
+
+      {% for post in result.contents %}
+      <div class="grid-item element-item">
+        <a href="{{post.url}}">
+          <img src="{{(post.featured_img.src or g.default_img)|thumbnail}}"
+               alt="{{post.title}}" />
+          <div class="portfolio-text-holder">
+            <p class="portfolio-text">
+              {{post.title}}
+            </p>
+            <p class="portfolio-type">
+              {% set term_key = post.terms[0] %}
+              {% if category.terms_dict[term_key] %}
+              <span>{{category.terms_dict[term_key].meta.name}}</span>
+              {% endif %}
+            </p>
+          </div>
+        </a>
+      </div>
+      {% endfor %}
+    </div>
+
+    <div class="clear"></div>
+
+    <div class="content-1170 center-relative center-text top-50 bottom-50">
+      {% if result.has_next %}
+      <a class="more-posts-portfolio"
+         data-url="{{api_url}}/app/{{app_id}}/view/content/post"
+         data-cate-url="{{api_url}}/app/{{app_id}}/view/category"
+         data-perpage="{{meta.attrs.perpage or g.opts.perpage}}"
+         href="#">
+        <img src="{{g.assets_url}}/load_more.png"
+             alt="{{_('Load more')}}" />
+      </a>
+      {% endif %}
+    </div>
+
+
+
+    <div class="clear"></div>
+    {% include '_footer.html' %}
+  </div>
+
+
+  {{g.scripts}}
+</body>
+</html>

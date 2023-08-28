@@ -1,0 +1,8 @@
+{% set default_favicon = theme_url+"/img/default_favicon.png" %}
+{% set default_logo = theme_url+"/img/default_logo.png" %}
+{% set default_img = theme_url+"/img/default_img.png" %}
+
+{% set opts = theme_meta.options %}
+{% set ver = theme_meta.version %}
+
+{% set robots = 'index, follow' if not meta.is_404 else 'noindex, nofollow' %}

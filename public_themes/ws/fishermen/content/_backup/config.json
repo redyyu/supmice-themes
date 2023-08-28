@@ -1,0 +1,40 @@
+{
+	"site_config":{
+		"locale":"zh_CN",
+		"translates":{
+			"en":{"name":"English", "text":"Language", "url":"http://en.fisherman.cc"},
+			"zh_CN":{"name":"简体中文", "text":"语 言", "url":"http://cn.fisherman.cc"}
+		},
+
+		"pages_order_by":"data",
+		"pages_order":"asc",
+		"excerpt_length":50,
+		"date_format": "jS M Y",
+		"singlepage":true,
+
+		"shortcuts":{"uploads":"$/uploads"},
+		"custom_metas":{"link":"Link","pic":"Picture","copyright":"Copyright"},
+		"seo":"<meta name=\"twitter:card\" content=\"app\"><meta name=\"twitter:description\" content=\"Download the Fisherman app now, make video calls with up to 4 friends at the same time.\"><meta name=\"twitter:app:name:iphone\" content=\"Fisherman\"><meta name=\"twitter:app:id:iphone\" content=\"847320333\"><meta name=\"twitter:app:url:iphone\" content=\"https://itunes.apple.com/us/app/small-talks/id847320333?l=zh&ls=1&mt=8\"><meta property=\"og:type\" content=\"website\" /><meta property=\"og:url\" content=\"http://cn.fisherman.cc/\" /><meta property=\"og:title\" content=\"Fisherman\" /><meta property=\"og:site_name\" content=\"Fisherman\" /><meta property=\"og:description\" content=\"Download the Fisherman app now, make video calls with up to 4 friends at the same time.\" /><meta property=\"og:image\" content=\"http://app.supmice.com/cc/fisherman/uploads/sharing.jpg\" /><meta property=\"og:image:type\" content=\"image/jpeg\" /><meta property=\"og:image:height\" content=\"1200\" /><meta property=\"og:image:width\" content=\"628\" /><meta property=\"fb:app_id\" content=\"864255366931402\" /><meta property=\"al:ios:url\" content=\"wx942a41492c022264:\" /><meta property=\"al:ios:app_store_id\" content=\"847320333\" /><meta property=\"al:ios:app_name\" content=\"Fisherman\" />",
+		"ga":"UA-52850433-1",
+		"ga_action":"Redirect",
+		"ga_label":"AppStore",
+		"fb":"864255366931402",
+		"applestore":"https://itunes.apple.com/us/app/small-talks/id847320333?l=zh&ls=1&mt=8"
+	},
+
+	"theme_config":{
+		"slug":"fisherman",
+		"title":"Fisherman",
+		"thumbnail":"sample.jpg",
+		"description":"It's for Skytech Co., ltd. A simple app website, for Fisherman app.",
+		"templates":{
+			"index":"主页面",
+			"feature_left":"左字右图",
+			"feature_right":"左图右字",
+			"feature_center":"中间图上面字",
+			"feature_free":"随便怎么排",
+			"linkpage":"#当链接用（看不见）#",
+			"section":"#当封面用（看不见）#"
+		}
+	}
+}

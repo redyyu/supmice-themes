@@ -1,0 +1,20 @@
+{
+  "slug":"zhengrongfu-wx",
+  "version": "1.0.2",
+  "author":"Redy",
+  "license": "MIT",
+	"title": "Default Theme",
+  "type": "wx",
+
+  "templates": ["article"],
+  "stylesheets": {
+    "hr": "border: 1px solid rgba(0,0,0,0.1);",
+    "ul, ol": "@: list-paddingleft-2",
+    "h2": "font-size:2em;color:#bb995f;",
+    "h3": "font-size:1.8em;color:#bb995f;",
+    "h4": "font-size:1.2em;color:#bb995f;",
+    "h5": "font-size:1em;color:#bb995f;",
+    "blockquote": "border-color:#c6a771;",
+    "@centered": "text-align:center;"
+  }
+}

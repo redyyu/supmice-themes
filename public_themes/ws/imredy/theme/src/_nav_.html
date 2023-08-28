@@ -1,0 +1,17 @@
+<nav id="primary-nav">
+  <a href="#" class="icon-btn menu menu-toggle"></a>
+  <a href="{{base_url}}" class="logo">
+    <img src="{{site_meta.logo or g.logo}}"
+         alt="{{site_meta.title}}" />
+  </a>
+  <ul class="nav">
+    {% for item in menu.primary %}
+    <li>
+      <a href="{{item.url}}"
+         class="{{item.class}} {{item|active(meta.path)}}">
+        {{item.name}}
+      </a>
+    </li>
+    {% endfor %}
+  </ul>
+</nav>

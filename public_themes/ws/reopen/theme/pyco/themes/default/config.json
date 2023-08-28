@@ -1,0 +1,32 @@
+{
+  "slug": "reopen",
+  "version": "1.1.0",
+  "author": "Redy",
+  "license": "MIT",
+  "title": "REOPEN",
+  "type": "ws",
+  "capability": 0,
+  "icon": "icon.png",
+  "poster": "poster.jpg",
+  "previews": ["preview_1.jpg", "preview_2.jpg"],
+  "content_types": {
+    "post": {"title": "Posts", "templates": ["post"]}
+  },
+  "category": {
+    "name": "Categories",
+    "content_types": ["post"]
+  },
+  "templates": [
+    "page",
+    "post",
+    "category",
+    "index"
+  ],
+  "reserves": {
+    "category": true
+  },
+  "options":{
+      "sortby": "date",
+      "perpage": 12
+  }
+}

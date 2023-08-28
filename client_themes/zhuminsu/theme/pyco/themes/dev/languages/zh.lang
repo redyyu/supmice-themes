@@ -1,0 +1,59 @@
+[
+	{"language": "zh"},
+	{
+		"msgid": "Toggle navigation",
+		"msgstr": "切换导航"
+	},
+	{
+		"msgid": "Button Title",
+		"msgstr": "按钮标题"
+	},
+	{
+		"msgid": "Title",
+		"msgstr": "标题"
+	},
+	{
+		"msgid": "Submit",
+		"msgstr": "提交"
+	},
+  {
+		"msgid": "Success",
+		"msgstr": "成功"
+  },
+  {
+		"msgid": "Error!!",
+		"msgstr": "错误！！"
+  },
+	{
+		"msgid": "Description text here",
+		"msgstr": "在这里填写简介文字"
+	},
+	{
+		"msgid": "Learn More",
+		"msgstr": "了解更多"
+	},
+	{
+		"msgid": "Item Title",
+		"msgstr": "子标题"
+	},
+	{
+		"msgid": "Click here add series content",
+		"msgstr": "点击这里添加序列内容"
+	},
+	{
+		"msgid": "Please Click here to add a form.",
+		"msgstr": "请点击这里添加一个表单。"
+	},
+	{
+		"msgid": "$_CONTENT",
+		"msgstr": "<p>这一段是默认的富文本内容，你可以按照自己的需要重新填写。进入富文本编辑状态以后，将出现一个输入工具条（它通常会在画面顶部或是富文本区域的上方），使用工具条可以插入、更换或者删除图片和链接。</p>"
+	},
+  {
+    "msgid": "Error 404",
+    "msgstr": "出错了 404"
+  },
+  {
+    "msgid": "$_ERROR404",
+    "msgstr": "<p>糟糕！没办法找到您要打开的页面，或许是搞错了网址，也可能是这个页面已经失效了。</p>"
+  }
+]

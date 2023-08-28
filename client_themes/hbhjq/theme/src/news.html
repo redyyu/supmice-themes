@@ -1,0 +1,51 @@
+{% if g and page %}
+<!-- Section -->
+<section id="{{page.slug}}" class="news">
+  <div class="container">
+    <article class="center-block text-center">
+      <header>
+        <h4 class="title-label">{{page.label}}</h4>
+        <h2 class="title">{{page.title}}</h2>
+      </header>
+      <div class="content">
+        {{page.content}}
+      </div>
+    </article>
+    <div class="slider">
+      <div class="sticker">
+        <h4 class="title-label">{{page.label}}</h4>
+        <h4 class="title-label">
+          <span class="current">1</span> / <span class="total"></span>
+        </h4>
+      </div>
+      <div class="slides">
+        {% for item in page.news %}
+        <!-- slide -->
+        <article>
+          <figure class="col-md-6 col-md-push-6"
+                  style="background-image:url('{{item.src or
+                                                 g.default_img}}');">
+          </figure>
+          <div class="col-md-6 col-md-pull-6 text">
+            <header>
+              <h2 class="title">{{item.title}}</h2>
+            </header>
+            <div class="content">
+              <p>{{item.caption}}</p>
+            </div>
+          </div>
+        </article>
+        <!-- #slide -->
+        {% endfor %}
+      </div>
+      <div class="controls">
+        <a href="#" class="prev"></a>
+        <a href="#" class="next"></a>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- #Section -->
+{% else %}
+  <script>window.location.replace('{{base_url}}/#/{{meta.slug}}');</script>
+{% endif %}

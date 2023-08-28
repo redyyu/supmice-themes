@@ -1,0 +1,27 @@
+{
+	"slug": "ws",
+  "version": "1.8.1",
+  "license": "MIT",
+  "author": "Redy",
+	"title": "Default Theme",
+  "type": "ws",
+	"icon": "icon.png",
+  "poster": "poster.jpg",
+  "capability": 0,
+	"previews": ["preview.jpg"],
+
+  "templates": [
+    "index",
+    "page",
+    "post"
+  ],
+
+  "content_types":{
+    "post": {"title": "Posts"}
+  },
+
+	"options":{
+		"sortby": "date",
+    "perpage": 12
+	}
+}

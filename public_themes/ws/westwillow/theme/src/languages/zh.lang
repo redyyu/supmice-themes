@@ -1,0 +1,60 @@
+[
+    {"language":"zh"},
+    {
+        "msgid": "Title",
+        "msgstr": "标题"
+    },
+    {
+        "msgid": "Toggle navigation",
+        "msgstr": "切换导航"
+    },
+
+    {
+        "msgid": "Description text goes here",
+        "msgstr": "在这里填写简介文字"
+    },
+    {
+        "msgid": "Subtitle goes here",
+        "msgstr": "在这里写副标题"
+    },
+    {
+        "msgid": "Button title",
+        "msgstr": "按钮标题"
+    },
+  	{
+  		"msgid": "Learn More",
+  		"msgstr": "了解更多"
+  	},
+  	{
+  		"msgid": "Item Title",
+  		"msgstr": "子标题"
+  	},
+    {
+      "msgid": "Previous Page",
+      "msgstr": "前一页"
+    },
+    {
+      "msgid": "Next Page",
+      "msgstr": "后一页"
+    },
+    {
+      "msgid": "Insert New Term",
+      "msgstr": "插入新条目"
+    },
+    {
+        "msgid": "$_CONTENT",
+        "msgstr": "<p>这一段是默认的富文本内容，你可以按照自己的需要重新填写。进入富文本编辑状态以后，将出现一个输入工具条（它通常会在画面顶部或是富文本区域的上方），使用工具条可以插入、更换或者删除图片和链接。</p>"
+    },
+    {
+      "msgid": "Error 404",
+      "msgstr": "出错了 404"
+    },
+    {
+      "msgid": "$_ERROR404",
+      "msgstr": "<p>糟糕！没办法找到您要打开的页面，或许是搞错了网址，也可能是这个页面已经失效了。</p>"
+    },
+    {
+      "msgid": "Categorized entries are automatically obtained. You can do nothing about it.",
+      "msgstr": "这些分类条目是自动从「分类」中获取的，在这里您什么也做不了。"
+    }
+]

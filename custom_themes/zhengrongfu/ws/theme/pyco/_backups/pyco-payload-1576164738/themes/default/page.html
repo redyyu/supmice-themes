@@ -1,0 +1,32 @@
+{% import "g" as g with context %}
+
+<!DOCTYPE html>
+<html lang="{{lang}}">
+
+<head>
+{% include '_head_.html' %}
+</head>
+
+<body>
+  {% include '_nav.html' %}
+  <header>
+    <h1>{{meta.title}}</h1>
+  </header>
+
+  <!-- content -->
+  <section>
+    <article>
+      {{content}}
+    </artcile>
+    <hr>
+  </section>
+
+  <!-- widgets -->
+  <section app-id="{{app_id}}">
+    <h4>Slot:</h4>
+    {{slot.event.script}}
+  </section>
+
+  {% include '_footer.html'%}
+</body>
+</html>

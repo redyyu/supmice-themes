@@ -1,0 +1,35 @@
+{
+    "slug":"coffee",
+    "version": "1.0.1",
+    "license": "MIT",
+    "title": {
+        "en": "coffee",
+        "zh": "咖啡"
+    },
+    "thumbnail": "thumbnail.png",
+    "capabilities": ["wx"],
+    "previews": [],
+    "description": {
+        "en":"This is a simple coffee theme for wechat article...",
+        "zh":"这是一个简单的咖啡的微信文章主题。"
+    },
+    "author": "Cheney",
+    "templates": {
+        "index": {
+            "en": "index",
+            "zh": "索引"
+        },
+        "article": {
+            "en": "Article",
+            "zh": "文章"
+        }
+    },
+    "mode": 1,
+    "options": {
+        "sortby": "data",
+        "excerpt_length": 162,
+        "excerpt_ellipsis": "&hellip;",
+        "date_format": "%Y-%m-%d",
+        "perpage": 6
+    }
+}

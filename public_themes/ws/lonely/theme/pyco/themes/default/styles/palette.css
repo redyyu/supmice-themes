@@ -1,0 +1,39 @@
+
+a,a:hover {
+	color: #d43076;
+}
+
+.intro .page-scroll a:hover {
+	color: #d43076;
+}
+
+.icon:hover .fa{
+	color: #d43076;
+}
+
+ul.nav li a:hover {
+	color: #d43076;
+}
+
+.bg-skin {
+	background: #d43076;
+}
+
+footer {
+  background-color: #d43076;
+}
+
+.btn-skin {
+  color: #fff;
+  background-color: #d43076;
+  border-color: #d43076;
+}
+
+.skill *,
+.feature * {
+  color: #fff;
+}
+.skill.light *,
+.feature.light * {
+  color: #444;
+}

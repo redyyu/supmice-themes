@@ -1,0 +1,48 @@
+{% import "g" as g with context %}
+<!DOCTYPE html>
+<html lang="{{ lang }}">
+{% include "_head.html" %}
+<body>
+  <div id="wrapper">
+    {% include "_header.html" %}
+    <!-- Tagline -->
+    <div class="container">
+      <section class="jumbotron">
+        <h1>{{meta.tagline}}</h1>
+      </section>
+    </div>
+    <!-- #Tagline -->
+    <!-- Contents -->
+    <div class="container">
+      <section class="row works-list"
+               data-app-id="{{app_id}}"
+               data-api-url="{{api_url}}"
+               data-perpage="{{g.perpage}}">
+
+        <figure class="col-md-3 col-sm-6"
+                style="display: none;">
+          <div>
+            <a href="#">
+              <figcaption></figcaption>
+              <img src="{{g.trans}}" alt="#" />
+            </a>
+          </div>
+        </figure>
+
+      </section>
+      <section class="row">
+        <div class="col-md-3 pull-right more">
+          <a class="btn-more"
+             href="#more"
+             style="display:none;"
+             ontouchstart="btn-more-on">
+            {{_('More')}}
+          </a>
+        </div>
+      </section>
+    </div>
+    <!-- #Contents -->
+    {% include "_footer.html" %}
+  </div>
+</body>
+</html>

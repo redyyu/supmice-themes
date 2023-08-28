@@ -1,0 +1,26 @@
+{
+  "version": "1.8.1",
+  "slug": "wr",
+  "author": "Redy",
+  "license": "MIT",
+  "title": "Default Theme",
+  "type": "wr",
+  "previews": [
+    "preview_index.jpg",
+    "preview_page.jpg",
+    "preview_showreel.jpg",
+    "preview_free.jpg"
+  ],
+
+  "templates": [
+    "index",
+    "^page",
+    "^showreel",
+    "^free"
+  ],
+
+  "options": {
+      "segments": 60,
+      "sortby": "date"
+  }
+}

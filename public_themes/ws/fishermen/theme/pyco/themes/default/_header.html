@@ -1,0 +1,55 @@
+<!-- Header -->
+<header class="masthead">
+  <nav class="container nav-primary">
+     <div class="navbar">
+	     <div class="navbar-header">
+         <button class="navbar-toggle"
+                 type="button"
+                 data-toggle="collapse"
+                 data-target=".navbar-collapse">
+           <span class="icon-bar"></span>
+           <span class="icon-bar"></span>
+           <span class="icon-bar"></span>
+         </button>
+  		   <div class="navbar-brand">
+  			   {{site_meta.title}}
+  		   </div>
+       </div>
+     <div class="navbar-collapse collapse">
+       <ul class="nav navbar-nav">
+				 {% for nav in menu.primary %}
+          <li>
+						<a href="{{nav.url}}"
+               target="{{nav.target}}"
+               class="parallax-link {{nav.meta.class}}">
+              {{nav.name}}
+            </a>
+					</li>
+				 {% endfor %}
+				 {% if languages %}
+         <li class="dropdown">
+           <a href="#"
+              data-toggle="dropdown"
+              class="language dropdown-toggle">
+            <span>{{_('Languages')}}</span>
+            <span class="caret"></span>
+           </a>
+           <ul class="dropdown-menu language-menu"
+               role="menu">
+  				 {% for trans in languages %}
+             <li>
+               <a href="{{trans.url}}"
+                  class="{{'active' if trans.active}}">
+                 {{trans.name}}
+               </a>
+             </li>
+  				 {% endfor %}
+           </ul>
+         </li>
+				 {% endif %}
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+<!-- #Header -->

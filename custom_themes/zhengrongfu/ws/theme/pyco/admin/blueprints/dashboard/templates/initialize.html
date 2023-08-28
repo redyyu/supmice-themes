@@ -1,0 +1,79 @@
+{% extends "layout.html" %}
+
+{% block layout %}
+<section class="section">
+  <div class="container mt-5">
+    <div class="row">
+      <div class="col-12 col-sm-8 offset-sm-2 col-md-6 offset-md-3 col-lg-6
+                  offset-lg-3 col-xl-4 offset-xl-4">
+        <div class="login-brand">
+          <img class="shadow-light rounded-circle bg-white"
+               src="{{static_url}}/pyco.png"
+               alt="logo"
+               width="100" >
+        </div>
+
+        <div class="card card-primary">
+          <div class="card-header"><h4>{{_('Initialize')}}</h4></div>
+
+          <div class="card-body">
+            <form class="needs-validation"
+                  action="{{url_as('.exec_initialize')}}"
+                  method="POST"
+                  novalidate="">
+              <div class="form-group">
+                <label for="passcode">{{_('New Passcode')}}</label>
+                <input id="passcode"
+                       class="form-control pwstrength"
+                       name="passcode"
+                       data-indicator="pwindicator"
+                       minlength="6"
+                       maxlength="360"
+                       type="text">
+                  <div id="pwindicator" class="pwindicator">
+                    <div class="bar"></div>
+                    <div class="label"></div>
+                  </div>
+
+                <div class="invalid-feedback">
+                  {{_('Invalid Passcode, length between 6-360.')}}
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="passcode2">{{_('Confirm Passcode')}}</label>
+                <input id="passcode2"
+                       class="form-control"
+                       name="passcode2"
+                       minlength="6"
+                       maxlength="360"
+                       type="text">
+              </div>
+
+              <div class="form-group">
+                <button class="btn btn-primary btn-lg btn-block"
+                        type="submit"
+                        tabindex="4">
+                  {{_('Initialize')}}
+                </button>
+              </div>
+            </form>
+
+          </div>
+        </div>
+
+        <div class="simple-footer">
+          {{copyright|safe}}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}
+
+{% block page_scripts %}
+<script src="{{static_url}}/modules/jquery-pwstrength/jquery.pwstrength.min.js"></script>
+<script>
+$(".pwstrength").pwstrength();
+</script>
+{% endblock %}

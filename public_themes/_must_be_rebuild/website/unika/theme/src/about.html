@@ -1,0 +1,32 @@
+{% if g and page %}
+<section id="{{page.slug}}" class="page bg-style1">
+    <div class="page-header-wrapper">
+        <div class="container">
+            <div class="page-header text-center wow fadeInUp" data-wow-delay="0.3s">
+                <h2>{{page.title}}</h2>
+                <div class="devider"></div>
+                <p class="subtitle">{{page.subtitle}}</p>
+            </div>
+        </div>
+    </div>
+    <div class="rotate-box-1-wrapper">
+        <div class="container">
+            <div class="row">
+                {% for item in page.abouts %}
+                <div class="col-md-3 col-sm-6">
+                    <a href="#" class="rotate-box-2 square-icon wow zoomIn" data-wow-delay="0">
+                        <img class="thumbnail-img" src="{{theme_url}}/img/mdiconbg.png" style="background-image: url('{{item.src}}');">
+                        <div class="rotate-box-info">
+                            <h4>{{item.title}}</h4>
+                            <p>{{item.caption}}</p>
+                        </div>
+                    </a>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>
+{% else %}
+<script>window.location.replace('{{base_url}}/#/{{meta.slug}}');</script>
+{% endif %}

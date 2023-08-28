@@ -1,0 +1,66 @@
+{
+  "watch": {
+    "cwd": "src",
+    "dest": "build",
+    "clean": true,
+    "render_aliases": {
+      "lwxss": {
+        "type": "less",
+        "ext": "wxss"
+      },
+      "wxml": {
+        "type": "html",
+        "ext": "wxml"
+      },
+      "wxs": {
+        "type": "decaf",
+        "ext": "wxs"
+      }
+    }
+  },
+  "release": {
+    "clean": ["dist", "build"],
+    "render": {
+      "cwd": "src",
+      "dest": "build",
+      "render_aliases": {
+        "lwxss": {
+          "type": "less",
+          "ext": "wxss"
+        },
+        "wxml": {
+          "type": "html",
+          "ext": "wxml"
+        },
+        "wxs": {
+          "type": "decaf",
+          "ext": "wxs"
+        }
+      }
+    },
+    "copy": [
+      {
+        "name": "dist",
+        "src": [
+          "**/*",
+          "!**/_*",
+          "!_*"
+        ],
+        "cwd": "build",
+        "dest": "dist"
+      }
+    ],
+    "compress": [
+      {
+        "type": "js",
+        "cwd": "dist",
+        "src": [
+          "*.js",
+          "**/*.js"
+        ],
+        "beautify": false,
+        "mangle_js": false
+      }
+    ]
+  }
+}

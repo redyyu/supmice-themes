@@ -1,0 +1,126 @@
+{
+  "_id": "payload/content/site.json",
+  "slug": "pyco",
+  "locale": "en_US",
+  "content_types": {
+    "post": "Posts",
+    "page": "Pages"
+  },
+  "categories": {
+    "terms": [
+      {
+        "key": "bbb",
+        "meta": {
+          "name": "bbb",
+          "caption": "",
+          "figure": ""
+        },
+        "parent": "",
+        "priority": 0,
+        "status": 1
+      },
+      {
+        "key": "asdfdsf",
+        "meta": {
+          "name": "asdfdsf",
+          "caption": "adsfsdaf",
+          "figure": ""
+        },
+        "parent": "index",
+        "priority": 0,
+        "status": 0
+      },
+      {
+        "key": "s-123213",
+        "meta": {
+          "name": "123213",
+          "caption": "",
+          "figure": "http://localhost:5500/uploads/business-card-template_1389-191.jpg"
+        },
+        "parent": "",
+        "priority": 0,
+        "status": 0
+      }
+    ],
+    "status": 1,
+    "name": "Categories",
+    "conten_types": []
+  },
+  "menus": {
+    "primary": [
+      {
+        "key": "index",
+        "link": "/",
+        "meta": {},
+        "name": "Home",
+        "nodes": []
+      },
+      {
+        "key": "posts",
+        "link": "/post/index",
+        "meta": {},
+        "name": "Posts",
+        "nodes": []
+      },
+      {
+        "key": "category",
+        "link": "/category",
+        "meta": {},
+        "name": "Category",
+        "nodes": []
+      },
+      {
+        "key": "about",
+        "link": "/about",
+        "meta": {},
+        "name": "About",
+        "nodes": []
+      }
+    ]
+  },
+  "slots": {
+    "event": {
+      "script": "<div></div>"
+    }
+  },
+  "meta": {
+    "favicon": "",
+    "logo": "",
+    "bg": "",
+    "contact": "redy",
+    "copyright": "2015 Made by Pyco.",
+    "description": "...",
+    "license": "MIT",
+    "title": "Sample",
+    "socials": [
+      {
+        "key": "facebook",
+        "name": "Facebook",
+        "url": "#",
+        "code": "facebook"
+      },
+      {
+        "key": "twitter",
+        "name": "Twitter",
+        "url": "#",
+        "code": "twitter"
+      }
+    ],
+    "languages": [
+      {
+        "key": "zh_CN",
+        "name": "汉语",
+        "url": "http://....."
+      },
+      {
+        "key": "en_US",
+        "name": "English",
+        "url": "http://....."
+      }
+    ],
+    "head_metadata": "",
+    "custom": {
+      "test": 1
+    }
+  }
+}

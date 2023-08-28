@@ -1,0 +1,36 @@
+{% import "g" as g with context %}
+<!DOCTYPE html>
+<html lang="{{lang}}">
+{% include '_head_.html' %}
+<body>
+{% include '_header_.html' %}
+
+<div id="orange">
+	<div class="container">
+		<div class="row centered">
+			<div class="col-lg-8 col-lg-offset-2">
+			<h4>{{meta.title or _('Title')}}</b></h4>
+			<p>{{meta.description or _('Description text here')}}</p>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="container w">
+	<div class="row centered">
+		<br><br>
+    {% for item in meta.gallery %}
+		<div class="col-sm-6 col-md-4">
+			<img class="thumbnail-img"
+           src="{{theme_url}}/styles/tbg.png"
+           style="background-image: url('{{item.src}}');">
+			<h4>{{item.title}}</h4>
+			<p>{{item.caption}}</p>
+		</div>
+    {% endfor %}
+	</div>
+</div>
+
+{% include '_footer_.html' %}
+</body>
+</html>

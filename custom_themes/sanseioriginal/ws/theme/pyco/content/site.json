@@ -1,0 +1,62 @@
+{
+  "app_id":"pyco_app",
+  "slug":"pyco",
+  "content_types": {
+    "post": "Posts",
+    "page": "Pages",
+    "work": "Works",
+    "product": "Products"
+  },
+  "menus": {
+    "primary": [
+      {
+        "key": "index",
+        "meta": {},
+        "nodes": [],
+        "name": "Home",
+        "link": "/"
+      },
+      {
+        "key": "story",
+        "meta": {},
+        "nodes": [],
+        "name": "Brand Stroy",
+        "link": "/story"
+      },
+      {
+        "key": "wuque",
+        "meta": {},
+        "nodes": [],
+        "name": "Products",
+        "link": "/wuque"
+      },
+      {
+        "key": "about",
+        "meta": {},
+        "nodes": [],
+        "name": "About",
+        "link": "/about"
+      }
+    ]
+  },
+  "meta": {
+    "locale": "zh_CN",
+    "favicon": "",
+    "logo": "[%uploads%]/logo.png",
+    "bg": "",
+    "contact": "redy",
+    "description": "...",
+    "copyright": "2017 © 宿朴信息科技。",
+    "license": "沪ICP备12021567号-1 | 沪公网安备 31010402002013号",
+    "title": "Sansei Original",
+    "socials":{
+      "facebook":{"name":"Facebook","url":"#","code":"facebook"},
+      "twitter":{"name":"Twitter","url":"#","code":"twitter"}
+    },
+    "translates": {
+      "en_US":{"name": "English", "url": "#" },
+      "zh_CN":{"name": "中文", "url": "#" }
+    }
+  }
+
+}

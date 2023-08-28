@@ -1,0 +1,17 @@
+{
+  "slug":"wxa",
+  "version": "1.2.1",
+  "author":"Redy",
+  "license": "MIT",
+	"title": "Default Theme",
+  "type": "wxa",
+  "previews": ["preview1.jpg", "preview2.jpg"],
+
+  "templates": [
+    "index",
+    "product"
+  ],
+  "options": {
+    "sortby": "date"
+  }
+}

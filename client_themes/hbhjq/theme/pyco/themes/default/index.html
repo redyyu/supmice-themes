@@ -1,0 +1,35 @@
+{% import "g" as g with context %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+  {% include '_head.html' %}
+
+<body id="wrapper">
+  
+  {% include '_header.html' %}
+  
+  <!-- Key visual -->
+  <section id="{{meta.alias}}" rel="startpage" class="primary jumbotron kv"
+   style="background-image:url('{{meta.background.src or g.default_img}}');">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-6 text-center">
+          <h1 class="title">{{meta.title}}</h1>
+          <h3 class="subtitle">{{meta.subtitle}}</h3>
+        </div>
+        <div class="col-sm-6 kv-img-room"
+         style="background-image:url('{{meta.kv.src or g.default_img}}');">
+        </div>
+      </div>
+    </div>  
+  </section>
+	<!-- #Key visual -->
+  {% for page in pages | type('page') if page.template != meta.template %}
+    {% include page.template+'.html' %}
+  {% endfor %}
+  
+  {% include '_footer.html' %}
+
+</body>
+</html>

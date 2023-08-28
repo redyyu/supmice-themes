@@ -1,0 +1,50 @@
+{% import "g" as g with context %}
+
+<!DOCTYPE html>
+<html lang="{{lang}}">
+
+<head>
+{% include '_head_.html' %}
+</head>
+
+<body>
+  {% include '_nav.html' %}
+  <header>
+    <h1>{{meta.title}}</h1>
+    <hr>
+    <span>
+      {{meta.description}}
+    </span>
+    <div>
+      <img src="{{meta.featured_img.src}}"
+           alt="{{ meta.featured_img.title }}" />
+    </div>
+  </header>
+
+  <!-- posts -->
+  <section>
+    {% set posts = query('post', paged=request.args.paged, perpage=3) %}
+    {% for post in posts.contents %}
+    <article>
+      <header>
+        <h4>{{post.title}}</h4>
+        <h5>
+          {{_('Posted by %s on %s', meta.author, meta.date|date_formatted)}}
+        </h5>
+      </header>
+      <p>{{post.description}}</p>
+      <a href="{{post.url}}">{{_('Read More')}}</a>
+    </artcile>
+    <hr>
+    {% endfor %}
+  </section>
+
+  <!-- widgets -->
+  <section app-id="{{app_id}}">
+    <h4>Slot:</h4>
+    {{slot.event.script}}
+  </section>
+
+  {% include '_footer.html'%}
+</body>
+</html>

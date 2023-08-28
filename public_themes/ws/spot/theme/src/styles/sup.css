@@ -1,0 +1,68 @@
+/* Common theme styles
+/* ----------------------------------------------- */
+
+/* safe content */
+img,
+video,
+audio,
+embed {
+  max-width: 100%;
+}
+
+/* img holder */
+.img-holder,
+.img-holder-cover,
+.img-holder-banner {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+.img-holder.contain,
+.img-holder-cover.contain,
+.img-holder-banner.contain {
+  background-size: contain;
+}
+
+/* text */
+.text-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 1.5em;
+  height: 3em;
+}
+.text-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 1.5em;
+  height: 4.5em;
+}
+.text-clamp-4 {
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 1.5em;
+  height: 6em;
+}
+.text-nowrap {
+  min-width: 0;
+  overflow: hidden !important;
+  white-space: nowrap !important;
+  text-overflow: ellipsis !important;
+}
+.text-break {
+  word-break: break-all;
+}
+.text-nosize {
+  font-size: 0;
+}

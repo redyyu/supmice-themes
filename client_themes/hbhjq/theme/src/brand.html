@@ -1,0 +1,37 @@
+{% if g and page %}
+<!-- Section -->
+<section id="{{page.slug}}" class="features">
+  <article class="center-block text-center">
+    <header>
+      <h4 class="title-label">{{page.label}}</h4>
+      <h2 class="title">{{page.title}}</h2>
+    </header>
+    <div class="content">
+      {{page.content}}
+    </div>
+  </article>
+  <div class="container">
+    <div class="row feaures-cols">
+      {% for item in page.gallery %}
+      <!-- feature -->
+      <div class="col-sm-4 feature">
+        <div class="thumbnail">
+          <i>
+            <img class="img-circle" 
+             src="{{item.src or g.default_img}}" alt="...">
+          </i>
+          <div class="caption text-center">
+            <h4>{{item.title}}</h4>
+            <p>{{item.caption}}</p>
+          </div>
+        </div>
+      </div>
+      <!-- #feature -->
+      {% endfor %}
+    </div>
+  </div>
+</section>
+<!-- #Section -->
+{% else %}
+  <script>window.location.replace('{{base_url}}/#/{{meta.slug}}');</script>
+{% endif %}

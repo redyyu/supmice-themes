@@ -1,0 +1,56 @@
+/* Common theme styles
+/* ----------------------------------------------- */
+
+/* safe content */
+.content img,
+.content video,
+.content audio,
+.content embed,
+.content iframe {
+  max-width: 100%;
+}
+
+/* img holder */
+.img-holder {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+.img-holder.contain {
+  background-size: contain;
+}
+
+/* text */
+.text-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.text-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.text-clamp-4 {
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.text-nowrap {
+  min-width: 0;
+  overflow: hidden !important;
+  white-space: nowrap !important;
+  text-overflow: ellipsis !important;
+}
+.text-break {
+  word-break: break-all;
+}

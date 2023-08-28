@@ -1,0 +1,100 @@
+<!-- cover -->
+<view class="cover primary"
+      wx:if="{{profile}}">
+  <view class="cover-inner"
+        bind:tap="sync_profile">
+    <block wx:if="{{!profile.avatar}}">
+      <image class="avatar layout-padding"
+             src="{{image.avatar}}"
+             background-size="cover"/>
+    </block>
+    <block wx:else>
+      <image class="avatar shadow"
+             src="{{profile.avatar}}"
+             background-size="cover"
+             background-position="center center" />
+    </block>
+    <block wx:if="{{!profile.name}}">
+      <text>点击授权个人信息</text>
+    </block>
+    <block wx:else>
+      <text>{{profile.name}}</text>
+    </block>
+  </view>
+</view>
+
+<!-- shopping cart -->
+<view class="container">
+  <view class="flex-row">
+    <text class="subheader flex">购物单中有 {{items.length}} 件宝贝</text>
+    <button class="thin-btn"
+            type="flat"
+            bind:tap="help">
+      <text>帮助</text>
+      <image class="ico"
+             src="{{image.help}}"/>
+    </button>
+  </view>
+
+  <view class="flash accent margin"
+        wx:if="{{show_tip && items.length}}"
+        bind:tap="skip_cart_tip">
+    <view class="flex padding">
+      <text>您感兴趣的宝贝最多能在购物单中放俩礼拜，</text>
+      <text>还没买的话要赶紧，放久了可就不见了哇...</text>
+    </view>
+    <view class="block">
+      <button class="icon-btn"
+              type="flat">
+        <image class="ico"
+               src="{{image.cancel}}" />
+      </button>
+    </view>
+  </view>
+
+  <view class="layout-margin"
+        wx:for="{{items}}"
+        wx:key="index"
+        wx:if="{{item.url}}">
+    <view class="card row"
+          data-item="{{item}}"
+          bind:touchstart="swipe_start"
+          bind:touchend="swipe_end"
+          bind:touchcancel="swipe_cancel"
+          bind:tap="use">
+      <image class="card-sup primary" src="{{image.check}}"
+             wx:if="{{item.coupon_code}}"/>
+      <image class="card-figure" src="{{item.src}}" mode="aspectFill"/>
+      <view class="card-text">
+        <text class="excerpt">{{item.title}}</text>
+        <view class="info">
+          <text class="coupon">{{item.coupon_info || ''}}</text>
+          <text class="price">¥ {{item.price}}</text>
+        </view>
+      </view>
+    </view>
+    <view class="divider"></view>
+  </view>
+
+  <view class="padding margin"
+        wx:if="{{items.length}}">
+    <button class="thin-btn"
+            type="flat"
+            bind:tap="clear">
+      <image class="ico"
+             src="{{image.clear}}" />
+      <text>清空</text>
+    </button>
+  </view>
+</view>
+
+<view class="container flex-column centered"
+      wx:if="{{items && !items.length}}">
+  <view class="holder-sm padding margin">
+    <text class="light">购物单是空的...</text>
+  </view>
+  <view class="text-center">
+    <button type="accent"
+            bind:tap="gobuy">去看看有什么可买</button>
+  </view>
+</view>

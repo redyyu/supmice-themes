@@ -1,0 +1,7 @@
+{% set opts = theme_meta.options or {} %}
+
+{% set favicon = theme_url+"/styles/favicon.png" %}
+{% set logo = theme_url+"/styles/logo.png" %}
+{% set default_img = theme_url+"/styles/default.jpg" %}
+
+{% set img_holder = theme_url+"/styles/trans.png" %}

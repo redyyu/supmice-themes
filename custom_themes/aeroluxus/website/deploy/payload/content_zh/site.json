@@ -1,0 +1,165 @@
+{
+  "_id": "payload/content/site.json",
+  "slug": "pyco",
+  "locale": "zh_CN",
+  "content_types": {
+    "page": "Static Pages",
+    "profile": "Profile",
+    "service": "Products & Courses",
+    "post": "Activities & Events"
+  },
+  "categories": {
+    "status": 0
+  },
+  "menus": {
+    "primary": [
+      {
+        "key": "our-company",
+        "name": "公司简介",
+        "link": "/profile/company",
+        "target": "",
+        "path_scope": "",
+        "fixed": "on",
+        "class": "",
+        "nodes": [
+          {
+            "key": "company-profile",
+            "name": "关于我们",
+            "link": "/profile/company",
+            "target": "",
+            "path_scope": "",
+            "fixed": "on",
+            "class": "",
+            "nodes": []
+          },
+          {
+            "key": "our-advantage",
+            "name": "我们的优势",
+            "link": "/profile/advantages",
+            "target": "",
+            "path_scope": "",
+            "fixed": "on",
+            "class": "",
+            "nodes": []
+          },
+          {
+            "key": "our-team",
+            "name": "导师团队",
+            "link": "/profile//team",
+            "target": "",
+            "path_scope": "",
+            "fixed": false,
+            "class": ""
+          }
+        ]
+      },
+      {
+        "key": "services-products",
+        "name": "产品与课程",
+        "link": "/service/aviation-edu",
+        "target": "",
+        "path_scope": "",
+        "fixed": "on",
+        "class": "",
+        "meta": {},
+        "nodes": [
+          {
+            "key": "aviation-education-and-service-improvement",
+            "name": "航空继续教育与服务提升",
+            "link": "/service/aviation-edu",
+            "target": "",
+            "path_scope": "",
+            "fixed": false,
+            "class": ""
+          },
+          {
+            "key": "high-grade-hotel-service-training",
+            "name": "高端酒店服务培训",
+            "link": "/service/hotel-training",
+            "target": "",
+            "path_scope": "",
+            "fixed": false,
+            "class": ""
+          },
+          {
+            "key": "high-grade-professional-services-training",
+            "name": "高端商务服务培训",
+            "link": "/service/pro-training",
+            "target": "",
+            "path_scope": "",
+            "fixed": false,
+            "class": ""
+          },
+          {
+            "key": "personal-etiquette-salon-activities",
+            "name": "个人精修礼仪培训",
+            "link": "/service/personal-salon-activities",
+            "target": "",
+            "path_scope": "",
+            "fixed": false,
+            "class": ""
+          }
+        ]
+      },
+      {
+        "key": "course-activities",
+        "name": "活动与回顾",
+        "link": "/activities",
+        "target": "",
+        "path_scope": "",
+        "fixed": "on",
+        "class": "",
+        "meta": {},
+        "nodes": []
+      },
+      {
+        "key": "cooperation-partners",
+        "name": "合作伙伴",
+        "link": "/partners",
+        "target": "",
+        "path_scope": "",
+        "fixed": "",
+        "class": "",
+        "meta": {},
+        "nodes": []
+      }
+    ]
+  },
+  "slots": {
+    "applyment": {
+      "name": "申请试听",
+      "src": "https://www.aeroluxus.com/zh/uploads/qrcode.jpg",
+      "route": "",
+      "scripts": "",
+      "data": {
+        "email": "info@aeroluxus.com"
+      },
+      "status": true
+    }
+  },
+  "meta": {
+    "favicon": "",
+    "logo": "",
+    "bg": "",
+    "contact": "aeroluxus",
+    "copyright": "2020 © Aeroluxus.",
+    "description": "创造不同，创造卓越",
+    "license": "浙ICP备案20008720号 | <a class=\"license-police\" target=\"_blank\" href=\"http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=33011002014600\">浙公网安备 33011002014600号</a>",
+    "title": "Aeroluxus",
+    "socials": [],
+    "languages": [
+      {
+        "key": "zh_CN",
+        "name": "汉",
+        "url": "https://www.aeroluxus.com/zh"
+      },
+      {
+        "key": "en_US",
+        "name": "En",
+        "url": "https://www.aeroluxus.com/en"
+      }
+    ],
+    "head_metadata": "",
+    "custom": {}
+  }
+}

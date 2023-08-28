@@ -1,0 +1,55 @@
+{
+  "content_types": {
+    "post": "Posts",
+    "page": "Pages"
+  },
+  "menus": {
+    "primary": [
+      {
+        "alias": "post",
+        "meta": {},
+        "nodes": [],
+        "title": "Journal",
+        "link": "/journal"
+      },
+      {
+        "alias": "portfolio",
+        "meta": {},
+        "nodes": [],
+        "title": "Works",
+        "link": "/portfolio"
+      },
+      {
+        "alias": "profile",
+        "meta": {},
+        "nodes": [],
+        "title": "Profile",
+        "link": "/profile"
+      }
+    ]
+  },
+  "meta": {
+    "alias":"pyco",
+    "type":"ws",
+    "logo":null,
+    "author": "redy",
+    "copyright": "&copy; 2016 redy.ru@gmail.com",
+    "description": "A simple example \"of Pyco side ...",
+    "license": "MIT",
+    "locale": "en_US",
+    "title": "Pyco",
+    "bg": {
+      "src":"[%uploads%]/bg.jpg",
+      "style":"background-image:url([%uploads%]/bg.jpg)"
+    }, 
+    "socials": {
+       "wechat":{
+         "name":"WeChat",
+         "url":"",
+         "headmeta":"",
+         "code":"",
+         "image": "[%uploads%]/qr.png"
+       }
+    }
+  }
+}

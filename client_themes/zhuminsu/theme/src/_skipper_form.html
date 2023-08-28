@@ -1,0 +1,101 @@
+{% set form_status = ['', 'required', 'disabled'] %}
+{% set form_actions = {'mailto': 'mailto:'+meta.form.action,
+                       'event': meta.form.action} %}
+<form name="try_form"
+      type="{{meta.form.type}}"
+      action="{{form_actions[meta.form.type]}}">
+  <div class="results">
+    <p class="success bg-success">{{_('Success')}}</p>
+    <p class="errors bg-danger"></p>
+  </div>
+  {% for field in meta.form.fields %}
+    {% if field.type in ['text', 'date'] %}
+    <div class="form-group">
+      <label>{{field.label}}</label>
+      <input type="{{field.type}}"
+             field="{{field.type}}"
+             name="{{field.name}}"
+             label="{{field.label}}"
+             class="form-control"
+             placeholder="{{field.placeholder}}"
+             {{form_status[field.status]}}/>
+      <div class="tip">{{field.hint}}</div>
+      <div class="messages bg-danger" for="{{field.name}}">
+        {{_('Error!!')}}
+      </div>
+    </div>
+
+    {% elif field.type == 'textarea' %}
+    <div class="form-group">
+      <label>{{field.label}}</label>
+      <textarea field="{{field.type}}"
+                name="{{field.name}}"
+                label="{{field.label}}"
+                class="form-control"
+                placeholder="{{field.placeholder}}"
+                {{form_status[field.status]}}></textarea>
+      <div class="tip">{{field.hint}}</div>
+      <div class="messages bg-danger" for="{{field.name}}">
+        {{_('Error!!')}}
+      </div>
+    </div>
+
+    {% elif field.type in ['selector', 'multi-selector']%}
+    {% set multiple = 'multiple="multiple"'
+                      if field.type == 'multi-selector' else '' %}
+    <div class="form-group">
+      <label>{{field.label}}</label>
+      <select field="{{field.type}}"
+              name="{{field.name}}"
+              label="{{field.label}}"
+              class="form-control"
+              placeholder="{{field.placeholder}}"
+              {{multiple}}
+              {{form_status[field.status]}} />
+        {% for item in field.value %}
+        <option value="{{item.key}}">{{item.text}}</option>
+        {% endfor %}
+      </select>
+      <div class="tip">{{field.hint}}</div>
+      <div class="messages bg-danger" for="{{field.name}}">
+        {{_('Error!!')}}
+      </div>
+    </div>
+
+    {% elif field.type in ['checkbox', 'radio'] %}
+    <div field="{{field.type}}"
+         name="{{field.name}}"
+         label="{{field.label}}"
+         class="checkbox">
+      {% for item in field.value %}
+      <label>
+        <input type="{{field.type}}"
+               name="{{field.name}}"
+               value="{{item.key}}">&nbsp;{{item.text}}
+      </label>
+      {% endfor %}
+      <div class="tip">{{field.hint}}</div>
+      <div class="messages bg-danger" for="{{field.name}}">
+        {{_('Error!!')}}
+      </div>
+    </div>
+
+    {% elif field.type == 'hidden' %}
+    <input type="hidden"
+           name="{{field.name}}"
+           value="{{field.value}}" />
+
+    {% elif field.type == 'content' %}
+    <p>{{field.value}}</p>
+
+    {% endif %}
+
+  {% endfor %}
+  <div class="text-center">
+    <button type="submit"
+            class="btn btn-primary btn-xl">
+      {{_('Submit')}}
+    </button>
+  </div>
+
+</form>

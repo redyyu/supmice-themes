@@ -1,0 +1,75 @@
+// price
+var filter_credit, filter_ellipsis, filter_html_entity, filter_price;
+
+filter_price = function(amount, use_currency, fractionSize) {
+  var pattern, price, size;
+  if (amount === (void 0) || amount === null) {
+    return -1;
+  }
+  size = parseInt(fractionSize) || 2;
+  price = (parseInt(amount) / 100) || 0;
+  if (use_currency) {
+    pattern = getRegExp('(\d)(?=(\d{3})+\.)', 'g');
+    price = price.toFixed(size).replace(pattern, '$1,');
+  } else {
+    price = price.toFixed(size);
+  }
+  return price;
+};
+
+// credit
+filter_credit = function(amount, fractionSize) {
+  var credit, size;
+  size = parseInt(fractionSize) || 0;
+  credit = (parseInt(amount) / 100) || 0;
+  credit = credit.toFixed(size);
+  return credit;
+};
+
+// ellipsis
+filter_ellipsis = function(str, limit) {
+  if (!str) {
+    return '';
+  }
+  if (!limit) {
+    limit = 144;
+  }
+  str = str.replace('&hellip;', '...');
+  str = str.substring(0, limit);
+  return str;
+};
+
+// html entities
+filter_html_entity = function(str) {
+  var entities, entity, i, len, regex;
+  if (!str) {
+    return '';
+  }
+  entities = [
+    {
+      pattern: '&hellip;',
+      replace: '...'
+    },
+    {
+      pattern: '&copy;',
+      replace: '©'
+    },
+    {
+      pattern: '&nbsp;',
+      replace: ' '
+    }
+  ];
+  for (i = 0, len = entities.length; i < len; i++) {
+    entity = entities[i];
+    regex = getRegExp(entity.pattern, 'ig');
+    str = str.replace(regex, entity.replace);
+  }
+  return str;
+};
+
+module.exports = {
+  price: filter_price,
+  credit: filter_credit,
+  ellipsis: filter_ellipsis,
+  html_entity: filter_html_entity
+};

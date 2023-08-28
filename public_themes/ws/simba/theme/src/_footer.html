@@ -1,0 +1,17 @@
+<footer class="footer">
+  <div class="container">
+    <div class="pt-4 pb-2">
+      {% if meta.logo.src or site_meta.logo %}
+      <img class="logo" src="{{meta.logo.src or site_meta.logo}}" />
+      {% else %}
+      <div>
+
+      </div>
+      {% endif %}
+    </div>
+    <div class="certificate">
+      <p>{{site_meta.copyright}}</p>
+      <p>{{site_meta.license}}</p>
+    </div>
+  </div>
+</footer>

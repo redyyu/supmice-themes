@@ -1,0 +1,54 @@
+{% extends "layout.html" %}
+
+{% block page_css %}
+{% endblock %}
+
+{% set reserved_meta_keys = ['title', 'description', 'featured_img'] %}
+
+{% block header %}
+<div class="section-header-back">
+  <a class="btn btn-icon"
+     href="{{url_as('.content_detail',
+                     content_type=document.content_type,
+                     slug=document.slug)}}">
+    <i class="fas fa-times"></i>
+  </a>
+</div>
+<h1>{{_('Expert Mode')}}</h1>
+{% endblock %}
+
+{% block main %}
+<h2 class="section-title">
+  {{document.meta.title}}
+</h2>
+<p class="section-lead">
+  {{document.content_type}} / {{document.slug}}
+</p>
+
+<form action="{{url_as('.hardcore_content',
+                        content_type=document.content_type,
+                        slug=document.slug)}}"
+      method="POST">
+<div class="row">
+  <div class="col-12">
+    <div class="card">
+      <div class="card-header">
+        <h4>{{_('Hardcore')}}</h4>
+      </div>
+      <div class="card-body">
+        <div clas="form-group">
+          <textarea class="form-control"
+                    name="raw"
+                    rows="24">{{document.raw}}</textarea>
+        </div>
+      </div>
+      <div class="card-footer">
+        <button class="btn btn-primary btn-lg">{{_('Save')}}</button>
+      </div>
+    </div>
+  </div>
+</div>
+</form>
+{% endblock %}
+{% block page_scripts %}
+{% endblock %}

@@ -1,0 +1,2 @@
+{% set default_logo = theme_url+'/styles/logo.png' %}
+{% set default_favicon = theme_url+'/styles/favicon.png' %}

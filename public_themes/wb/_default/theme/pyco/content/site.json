@@ -1,0 +1,72 @@
+{
+  "app_id":"pyco_app",
+  "slug":"pyco",
+  "content_types": {
+    "post": "Posts",
+    "page": "Pages",
+    "work": "Works",
+    "product": "Products"
+  },
+  "menus": {
+    "primary": [
+      {
+        "key": "index",
+        "meta": {},
+        "nodes": [],
+        "name": "Home",
+        "link": "/"
+      },
+      {
+        "key": "posts",
+        "meta": {},
+        "nodes": [],
+        "name": "Posts",
+        "link": "/post/index"
+      },
+      {
+        "key": "works",
+        "meta": {},
+        "nodes": [],
+        "name": "Portfolio",
+        "link": "/works/index"
+      },
+      {
+        "key": "about",
+        "meta": {},
+        "nodes": [],
+        "name": "About",
+        "link": "/about"
+      }
+    ]
+  },
+  "taxonomies": {
+    "chapter": {
+      "title":"Chapters",
+      "content_types":["article"],
+      "terms": [
+        {"key":"daily", "meta":{"name": "Daily"}},
+        {"key":"food", "meta":{"name": "Food"}}
+      ]
+    }
+  },
+  "meta": {
+    "locale": "en_US",
+    "favicon": "",
+    "logo": "",
+    "bg": "",
+    "contact": "redy",
+    "copyright": "2015 Made by Pyco.",
+    "description": "...",
+    "license": "MIT",
+    "title": "Sample",
+    "socials":{
+      "facebook":{"name":"Facebook","url":"#","code":"facebook"},
+      "twitter":{"name":"Twitter","url":"#","code":"twitter"}
+    },
+    "translates": {
+      "en_US":{"name": "English", "url": "#" },
+      "zh_CN":{"name": "中文", "url": "#" }
+    }
+  }
+
+}

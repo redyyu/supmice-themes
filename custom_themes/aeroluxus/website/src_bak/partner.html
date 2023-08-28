@@ -1,0 +1,28 @@
+{% if g and page %}
+<div class="image main"
+     cover-image="{{page.bg.src}}">
+  {% if page.featured_img and page.featured_img.src %}
+  <img src="{{page.featured_img.src}}"
+       alt="{{page.featured_img.title}}" />
+  {% endif %}
+</div>
+<h2 class="major">{{page.title}}</h2>
+<div class="content">
+  {{page.content}}
+</div>
+
+<div class="row">
+  {% for item in page.series %}
+  <div class="col-5">
+    <a href="{{item.link|url or '#'}}"
+       alt="{{item.title}}">
+      <img src="{{item.src}}" />
+      <p>{{item.title}}</p>
+    </a>
+  </div>
+  {% endfor %}
+</div>
+
+{% elif not meta.is_front %}
+<script>window.location.replace('{{base_url}}/#{{meta.slug}}');</script>
+{% endif %}

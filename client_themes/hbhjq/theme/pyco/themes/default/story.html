@@ -1,0 +1,28 @@
+{% if g and page %}
+<!-- Section -->
+<section id="{{page.alias}}" class="story dark">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-7">
+        <figure>
+          <img src="{{page.feature_img.src or g.default_img}}"/>
+        </figure>
+      </div>
+      <div class="col-sm-5">
+        <article>
+          <header>
+            <h4 class="title-label">{{page.label}}</h4>
+            <h2 class="title">{{page.title}}</h2>
+          </header>
+          <div class="content">
+            {{page.content}}
+          </div>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- #Section -->
+{% else %}
+  <script>window.location.replace('{{base_url}}/#/{{meta.alias}}');</script>
+{% endif %}

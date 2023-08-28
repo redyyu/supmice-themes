@@ -1,0 +1,68 @@
+{% import 'g' as g with context %}
+<!DOCTYPE html>
+<html lang="{{lang}}">
+{% include '_head.html' %}
+
+<body>
+  {% include '_header.html' %}
+
+  <section class="ribbon {{meta.ribbon.class}}"
+           style="{{(meta.ribbon.src or g.default_ribbon)|bg_img}}">
+    <header>
+      <h2>{{meta.title or _('Activities & Events')}}</h2>
+      <p class="lead">{{meta.description}}</p>
+    </header>
+  </section>
+  <section class="page">
+    <div class="container">
+      <div class="row">
+        {% set booklet = query('post') %}
+        {% for post in booklet.contents %}
+        <div class="col-md-6">
+          <div class="p-5">
+            <h4 class="{{'text-truncate' if lang != 'en' else 'text-clamp-2'}}">{{post.title}}</h4>
+            <figure class="py-2">
+              <a href="{{post.url}}">
+                <img class="thumbnail"
+                     src="{{g.trans2x1}}"
+                     style="{{post.featured_img.src|bg_img}}"/>
+              </a>
+            </figure>
+            <p class="text-clamp-5">{{post.description or post.excerpt}}</p>
+            <a class="btn btn-primary"
+               href="{{post.url}}">{{_('Detail')}}</a>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+      {% if booklet.total_pages > 1 %}
+      <nav aria-label="{{_('Pagination')}}">
+        <ul class="pagination justify-content-center">
+          <li class="page-item p-5
+                    {{'disabled' if not booklet.has_prev}}">
+            <a class="page-link border-0"
+               href="{{ glue({'page':booklet.paged-1,
+                              'term':request.args.term}) }}">
+              <span aria-hidden="true">&laquo;</span>
+              {{_('Previous')}}
+            </a>
+          </li>
+          <li class="page-item border-0 p-5
+                    {{'disabled' if not booklet.has_next}}">
+            <a class="page-link border-0"
+               href="{{ glue({'page':booklet.paged+1,
+                              'term':request.args.term}) }}">
+              {{_('Next')}}
+              <span aria-hidden="true">&raquo;</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+      {% endif %}
+    </div>
+  </section>
+  {% include '_footer.html' %}
+
+{{g.scripts}}
+</body>
+</html>

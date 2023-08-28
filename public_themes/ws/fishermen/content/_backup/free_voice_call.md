@@ -1,0 +1,11 @@
+/*
+picture:%base_url%/uploads/feature_1.png
+markdown:False
+author:None
+title:优质稳定语音
+draft:
+template:feature_left
+date:2014/09/24
+order:10
+*/
+<p>Fisherman是您手机里的一部免费电话：高清音质，没噪音、不掉线，轻点即可享受优质语音电话。它支持系统推送通知机制，即使软件未运行也能收到别人的Fisherman来电，让您畅聊无忧。</p>

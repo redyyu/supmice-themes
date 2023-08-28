@@ -1,0 +1,24 @@
+{% import "g" as g with context %}
+<html lang="{{ locale }}">
+{% include "_head.html" %}
+<body>
+	<div id="wrapper">
+		{% include "_header.html" %}
+		<!-- Tagline -->
+		<div class="container">
+			<section class="jumbotron">
+				<h1 class="title">{{meta.title or _('Error 404')}}</h1>
+			</section>
+		</div>
+		<!-- #Tagline -->
+		<!-- Contents -->
+		<div class="container">
+			<article>
+				{{content or _('$_ERROR404')}}
+			</article>
+		</div>
+		<!-- #Contents -->
+		{% include "_footer.html" %}
+	</div>
+</body>
+</html>

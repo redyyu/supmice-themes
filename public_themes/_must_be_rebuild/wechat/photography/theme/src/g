@@ -1,0 +1,3 @@
+{% set default_logo = theme_url+'/styles/logo.png' %}
+{% set default_favicon = theme_url+'/styles/favicon.png' %}
+{% set robots = 'index, follow' if not meta.is_404 else 'noindex, nofollow' %}

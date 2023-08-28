@@ -1,0 +1,27 @@
+{% if g and page %}
+<section id="{{page.slug}}"
+         class="common">
+  <div class="container">
+    <header>
+      <h2>{{page.title}}</h2>
+      <p>{{page.description}}</p>
+    </header>
+
+    <div id="owl-carosuel"
+         class="owl-carousel owl-theme">
+      {% for item in page.carousel %}
+      <div class="client">
+        <h3>{{item.title}}</h3>
+
+        <img class="thumbnail-img"
+             src="{{theme_url}}/styles/trans_cover.png"
+             style="{{item.src|bg_img}}">
+        <p>{{item.caption}}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% else %}
+<script>window.location.replace('{{base_url}}/#{{meta.slug}}');</script>
+{% endif %}

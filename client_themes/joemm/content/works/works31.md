@@ -1,0 +1,9 @@
+/*
+Priority: 0
+Robots: noindex,nofollow
+Status: 1
+Template: works
+Title: 时光锁系列-欧珀莱官方旗舰店-天猫Tmall.com
+Photo: 
+  src: [%uploads%]/tm_aupres13.jpg
+*/

@@ -1,0 +1,24 @@
+{% if g and page %}
+<div class="container">
+  <div class="row">
+    {% for item in page.series %}
+    <div class="item col-sm-3 text-center {{item.class}}">
+      <div class="feature">
+        <figure>
+          <img src="{{g.img_holder}}"
+               class="img-holder"
+               style="{{item.src|bg_img}}"
+               alt="{{item.title}}" />
+        </figure>
+        <h3 class="text-nowrap">{{item.title}}</h3>
+        <p class="text-clamp-3 caption">
+          {{item.caption}}
+        </p>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+{% elif not meta.is_front %}
+<script>window.location.replace('{{base_url}}/#/{{meta.slug}}');</script>
+{% endif %}

@@ -1,0 +1,35 @@
+{
+  "version": "1.0.0",
+  "slug": "wb",
+  "author": "Redy",
+  "license": "MIT",
+  "title": {
+    "en":"Default Theme",
+    "zh":"默认主题"
+  },
+  "type": "wb",
+  "previews": ["preview_index.jpg",
+               "preview_chapter.jpg",
+               "preview_article.jpg"],
+  "description": {
+    "en":"This is a default Manuscript theme, you can try to write your own article.",
+    "zh":"一个默认的手稿主题，您可以在这里随便写点儿文章。"
+  },
+
+  "templates": [
+    "index",
+    "article",
+    "chapter"
+  ],
+  "taxonomies": {
+    "chapter": true
+  },
+  "reserves": {
+    "chapter": true
+  },
+
+  "options": {
+      "sortby": "+date",
+      "perpage": 12
+  }
+}

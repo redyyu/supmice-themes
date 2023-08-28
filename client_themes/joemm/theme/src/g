@@ -1,0 +1,4 @@
+{% set default_favicon = theme_url+"/styles/default_favicon.png" %}
+
+{% set ver = theme_meta.verison %}
+{% set opts = theme_meta.options %}

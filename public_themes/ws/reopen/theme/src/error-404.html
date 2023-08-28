@@ -1,0 +1,30 @@
+{% import "g" as g with context %}
+<!DOCTYPE html>
+<html lang="{{ lang }}">
+{% include "_head.html" %}
+
+<body class="page">
+
+  {% include '_menu.html' %}
+
+  <div class="body-wrapper">
+    {% include '_header.html' %}
+    <div class="site-content">
+      <div class="block content-1170 center-relative">
+        <h1 class="entry-title">
+          {{_('Error 404')}}
+        </h1>
+        <div class="page-desc">
+          {{_('$_ERROR404')}}
+        </div>
+        <div class="center-text">
+          <a href="{{base_url}}">{{_('Back')}}</a>
+        </div>
+      </div>
+    </div>
+    {% include '_footer.html' %}
+  </div>
+
+  {{g.scripts}}
+</body>
+</html>

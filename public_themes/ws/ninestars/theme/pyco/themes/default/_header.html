@@ -1,0 +1,30 @@
+<div class="container primary-nav">
+  <ul id="gn-menu"
+      class="gn-menu-main navbar">
+    <li class="gn-trigger">
+      <a class="gn-icon gn-icon-menu"><span>Menu</span></a>
+      <nav class="gn-menu-wrapper">
+        <div class="gn-scroller">
+          <ul class="gn-menu">
+            <!-- download cog help archive -->
+            {% set classes = ['archive', 'pictures', 'videos', 'article',
+                              'illustrator', 'photoshop', 'download',
+                              'search', 'cog', 'earth','help'] %}
+            {% for menu in menu.primary %}
+            {% set menu_class = menu.class if menu.class in classes
+                                           else 'archive' %}
+            <li>
+              <a href="{{menu.hash or menu.url}}"
+                 target="{{menu.target}}"
+                 class="gn-icon gn-icon-{{menu_class}}">
+                 {{menu.name}}
+              </a>
+            </li>
+            {% endfor %}
+          </ul>
+        </div>
+      </nav>
+    </li>
+    <li><a href="/">{{site_meta.title}}</a></li>
+  </ul>
+</div>

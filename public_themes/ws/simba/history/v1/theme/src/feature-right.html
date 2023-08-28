@@ -1,0 +1,23 @@
+{% if g and page %}
+<section class="page {{page.bg.class}}" 
+ parallax-anchor="{{page.slug}}" title="{{page.title}}">
+  <div layout-gt-sm="row" layout-sm="column" 
+   layout-align="center center" style="{{page.bg.style}}">
+    {% if page.featured_img %}
+    <figure flex="40" flex-order-gt-sm="2">
+      <img src="{{page.featured_img.src or g.default_img_360x360}}"
+       alt="{{page.featured_img.title}}" 
+       class="{{page.featured_img.class or ''}}"/>
+    </figure>
+    {% endif %}
+    <article flex="40" class="text-right">
+      <header>
+        <h2>{{page.tagline}}</h2>
+      </header>
+      {{page.content}}
+    </article>
+  </div>
+</section>
+{% else %}
+  <script>window.location.replace('{{base_url}}/#/{{meta.slug}}');</script>
+{% endif %}

@@ -1,0 +1,94 @@
+{% import "g" as g with context %}
+<!DOCTYPE html>
+<html lang="en">
+{% include '_head.html' %}
+<body>
+{% include '_header.html' %}
+<div class="bg-content">
+	<div class="container">
+		<div class="row">
+			<div class="span12">
+				<div class="flexslider">
+					<ul class="slides">
+						{% for item in meta.slides[0:5] %}
+						<li>
+							<a href="{{item.link|url or ''}}" style="display:block;">
+                <img class="thumbnail-img" src="{{theme_url}}/img/bg960.png"
+                     style="background-image: url('{{item.src}}')">
+              </a>
+						</li>
+						{% endfor %}
+					</ul>
+				</div>
+				<span id="responsiveFlag"></span>
+				<div class="block-slogan">
+					<h2>{{meta.subtitle}}</h2>
+					<div>
+						<p>{{meta.description}}</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="content" class="content-extra"><div class="ic"></div>
+		<div class="row-1">
+			<div class="container">
+				<div class="row">
+					<ul class="thumbnails thumbnails-1">
+						{% for item in meta.highlights %}
+						<li class="span3">
+							<div class="thumbnail thumbnail-1">
+								<h3>{{item.title}}</h3>
+								<img class="thumbnail-img"
+                     src="{{theme_url}}/img/bg270x146.png"
+                     style="background-image: url('{{item.src}}')">
+								<section>
+								  <p>{{item.caption}}</p>
+								</section>
+							</div>
+						</li>
+						{% endfor %}
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<div class="container">
+			<div class="row">
+				<article class="span6">
+					<h3>{{meta.ltitle}}</h3>
+					<div class="wrapper">
+						<figure class="img-indent">
+							<img class="thumbnail-img" 
+                   src="{{theme_url}}/img/bg270x321.png"
+                   style="background-image: url('{{meta.lphoto.src}}')" />
+						</figure>
+						<div class="inner-1 overflow extra">
+							{{content}}
+						</div>
+					</div>
+				</article>
+				<article class="span6">
+					<h3>{{meta.rtitle}}</h3>
+					<ul class="list-photo">
+						{% for works in pages | type('works',12) %}
+						<li>
+							<a href="{{works.featured_img.src}}" class="magnifier">
+								<img class="thumbnail-img"
+                 src="{{theme_url}}/img/bg120x87.png"
+                 style="background-image: 
+                        url('{{works.featured_img.src|thumbnail}}')"/>
+							</a>
+						</li>
+						{% endfor %}
+					</ul>
+				</article>
+			</div>
+		</div>
+	</div>
+</div>
+
+{% include '_footer.html' %}
+</body>
+</html>

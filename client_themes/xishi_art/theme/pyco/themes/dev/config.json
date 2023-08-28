@@ -1,0 +1,45 @@
+{
+  "slug":"sunstone-wx",
+  "version": "1.2.1",
+  "license": "MIT",
+  "title": {
+      "en": "Sun Stone Art",
+      "zh": "夕石美术"
+  },
+  "thumbnail": "thumbnail.png",
+  "poster": "poster.jpg",
+  "capabilities": ["wx"],
+  "previews": ["preview_1.jpg", "preview_2.jpg", "preview_3.jpg"],
+  "description": {
+    "en":"This is a simple studio theme for wechat article.",
+    "zh":"这是一个简单的画室的微信文章主题。"
+  },
+  "author": "Redy",
+
+  "templates": {
+    "article": {
+      "en": "Article",
+      "zh": "文章"
+    },
+    "form": {
+      "en": "Form",
+      "zh": "表单"
+    }
+  },
+  "options": {
+    "sortby": "date"
+  },
+  "broadcast_styles": {
+    "mark": "color: #fff; background-color: #c36;",
+    "blockquote": "margin: 30px 15px; font-size: 14px; border-left-color: #f93;",
+    "ul li": "color: #f93;",
+    "ul li > *": "color: #333;",
+    "table": "margin: 30px 0;",
+    "table td": "padding: 8px; vertical-align: center;",
+    "@title": "margin-top: 30px; margin-bottom: 15px;text-align: center;",
+    "@title h2": "border-bottom: 1px solid #ddd;text-align: center;",
+    "@figure-hori": "border-top: 2px solid #6c3; border-bottom: 2px solid #6c3;",
+    "@figure-vert": "border-top: 2px solid #c36; border-bottom: 2px solid #c36;",
+    "@img-box": "text-align: center;"
+  }
+}

@@ -1,0 +1,6 @@
+{% set opts = theme_meta.options %}
+{% set perpage = (opts.perpage|int) if opts.perpage else 12 %}
+
+{% set logo = theme_url+'/styles/logo.png' %}
+{% set favicon = theme_url+'/styles/favicon.png' %}
+{% set trans = theme_url+'/styles/trans.png' %}

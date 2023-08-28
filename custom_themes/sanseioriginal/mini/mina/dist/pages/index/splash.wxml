@@ -1,0 +1,24 @@
+<wxs src="../../translator.wxs" module="_"></wxs>
+<wxs src="../../filters.wxs" module="f"></wxs>
+{{_('$set', locale)}}
+
+<block wx:if="{{loaded}}">
+  <!-- splash -->
+  <view class="splash"
+        bind:tap="skip"
+        bind:touchstart="swipe_start"
+        bind:touchend="swipe_end">
+    <image class="splash-media"
+           src="{{meta.splash.src}}"
+           background-size="cover"
+           background-position="bottom center" />
+    <image class="splash-cover"
+           src="/img/splash.png"
+           background-size="contain"
+           background-position="bottom center" />
+    <image class="brand"
+           src="{{meta.logo.src || '/img/logo.png'}}"
+           mode="aspectFit"
+           background-position="center center" />
+  </view>
+</block>

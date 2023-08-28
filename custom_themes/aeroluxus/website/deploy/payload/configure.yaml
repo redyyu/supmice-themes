@@ -1,0 +1,6 @@
+Locale: en_US
+Login_extra: "<div class=\"container\">\r\n<div class=\"row\">\r\n<div class=\"col-md-6\
+  \ text-center\"><a class=\"btn btn-secondary\" href=\"http://admin.aeroluxus.com:19900/en\">English</a></div>\r\
+  \n<div class=\"col-md-6 text-center\"><a class=\"btn btn-secondary\" href=\"http://admin.aeroluxus.com:19900/zh\"\
+  >汉语</a></div>\r\n</div>\r\n</div>"
+Passcode_hash: pbkdf2:sha256:150000$eQIYUHfh$91b4ff6c9debb3259388c8c5757885df54a1fb660688a8c39b906e90cb3191da

@@ -1,0 +1,73 @@
+{
+  "content_types": {
+    "page": "Pages"
+  },
+  "menus": {
+    "primary": [
+      {
+        "key": "home",
+        "meta": {},
+        "nodes": [],
+        "name": "Home",
+        "link": "#index"
+      },
+      {
+        "key": "about",
+        "meta": {},
+        "nodes": [],
+        "name": "About",
+        "link": "#about"
+      },
+      {
+        "key": "service",
+        "meta": {},
+        "nodes": [],
+        "name": "Services",
+        "link": "/services"
+      },
+      {
+        "key": "portfolio",
+        "meta": {},
+        "nodes": [],
+        "name": "Portfolio",
+        "link": "#portfolio"
+      },
+      {
+        "key": "contact",
+        "meta": {},
+        "nodes": [],
+        "name": "Contact",
+        "link": "#contact"
+      }
+    ]
+
+  },
+  "meta": {
+    "slug":"pyco",
+    "type":"creative",
+    "logo":"[%uploads%]/logo.gif",
+    "favicon": "[%uploads%]/favicon.png",
+    "author": "redy",
+    "copyright": "2015 Made by Pyco.",
+    "description": "It doesn't take a rocket scientist ...",
+    "license": "MIT License",
+    "locale": "en_US",
+    "title": "Creative",
+    "socials":{
+      "facebook":{"name":"Facebook","url":"#","code":"facebook"},
+      "twitter":{"name":"Twitter","url":"#","code":"twitter"}
+    },
+    "translates":{
+      "en_US": {
+        "name": "Engligh",
+        "url": "#"
+      },
+      "zh_CN": {
+        "name": "中文",
+        "url": "#"
+      }
+    }
+  },
+  "segments": ["about", "services", "portfolio", "contact"]
+
+}

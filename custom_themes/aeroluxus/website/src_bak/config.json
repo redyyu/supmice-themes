@@ -1,0 +1,148 @@
+{
+  "slug": "aeroluxus",
+  "version": "0.1.0",
+  "author": "Redy",
+  "license": "",
+  "title": "Aeroluxus",
+  "type": "ws",
+  "capability": 0,
+  "icon": "icon.jpg",
+  "poster": "poster.jpg",
+  "previews": ["preview.jpg"],
+  "content_types": {
+    "page": {"title": "Static Pages", "templates": ["index", "page", "page-2col", "page-section", "contact", "partner"]},
+    "profile": {"title": "Profile", "templates": ["profile"]},
+    "service": {"title": "Products & Services", "templates": ["service"]},
+    "activity": {"title": "Course Activities", "templates": ["activity"]}
+  },
+  "templates": [
+    "^page",
+    "^page-section",
+    "^page-2col",
+    "^contact",
+    "^partner",
+    "index"
+  ],
+  "options":{
+      "sortby": "date",
+      "perpage": 6
+  },
+  "custom_fields": {
+    "index": {
+      "button": {
+        "type": "link",
+        "label": "Page footer Link"
+      },
+      "carousel": {
+        "type": "collection",
+        "label": "Background Carousel"
+      }
+    },
+    "page-section": {
+      "!": ["content", "description", "featured_img",
+            "tags", "parent", "priority", "redirect", "category", "date"],
+      "bg": {
+        "type": "bg",
+        "label": "Background Image"
+      },
+      "attrs": {
+        "type": "attrs",
+        "label": "Attributes",
+        "props": [
+          {
+            "key": "rel_content_type",
+            "label": "Relate to Content",
+            "type": "select",
+            "options": [
+              {"label": "Profile", "value": "profile"},
+              {"label": "Course Activities", "value": "activity"},
+              {"label": "Products & Services", "value": "service"}
+            ]
+          }
+        ]
+      }
+    },
+    "profile": {
+      "channel_name": {
+        "label": "Channel Name",
+        "type": "text"
+      },
+      "series": {
+        "label": "Sereis Cotnent",
+        "type": "collection"
+      },
+      "attrs": {
+        "type": "attrs",
+        "label": "Attributes",
+        "props": [
+          {
+            "key": "hide_content",
+            "label": "Hide Main Content",
+            "type": "switch"
+          }
+        ]
+      }
+    },
+    "partner": {
+      "bg": {
+        "type": "bg",
+        "label": "Background Image"
+      },
+      "series": {
+        "label": "Partner's Logo",
+        "type": "collection"
+      }
+    },
+    "service": {
+      "channel_name": {
+        "label": "Channel Name",
+        "type": "text"
+      },
+      "subtitle": {
+        "type": "text",
+        "label": "Subtitle"
+      }
+    },
+    "activity": {
+      "!": ["description", "tags", "parent", "redirect", "category"],
+      "channel_name": {
+        "label": "Channel Name",
+        "type": "text"
+      },
+      "series": {
+        "label": "Activity",
+        "type": "collection"
+      }
+    },
+    "page": {
+      "bg": {
+        "type": "bg",
+        "label": "Background Image"
+      }
+    },
+    "page-2col": {
+      "bg": {
+        "type": "bg",
+        "label": "Background Image"
+      }
+    },
+    "contact": {
+      "contact_form": {
+        "type": "attrs",
+        "label": "Contact Form",
+        "props": [
+          {
+            "key": "email",
+            "label": "Contact Email",
+            "type": "text"
+          },
+          {
+            "key": "subject",
+            "label": "Subject",
+            "type": "text"
+          }
+        ]
+      }
+    }
+  }
+}

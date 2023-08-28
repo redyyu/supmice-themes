@@ -1,0 +1,3 @@
+{% set default_logo = theme_url + '/styles/logo.png' %}
+{% set default_img = theme_url + '/styles/default_img.png' %}
+{% set ver = theme_meta.version %}

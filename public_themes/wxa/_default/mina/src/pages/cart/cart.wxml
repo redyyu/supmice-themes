@@ -1,0 +1,124 @@
+<wxs src="../../translator.wxs" module="_"></wxs>
+<wxs src="../../filters.wxs" module="f"></wxs>
+{{_('$set', store.locale)}}
+
+<!-- function bar -->
+<view class="padding">
+  <view class="flex-row">
+    <view class="flex">
+      <button class="thin"
+              type="{{checked_count >= item_list.length?'accent':''}}"
+              bind:tap="toggle_checked_all"
+              disabled="{{!item_list.length}}"
+              data-item-index="{{index}}">
+        <image class="ico" src="{{image.done_all}}"
+               wx:if="{{checked_count >= item_list.length}}"/>
+        <image class="ico" src="{{image.done_none}}"
+               wx:else />
+        <text>{{_('Select All')}}</text>
+      </button>
+    </view>
+    <view class="flex text-right">
+      <button class="thin"
+              disabled="{{!item_list.length}}"
+              bind:tap="toggle_edit_mode">
+        {{edit_mode?_('Done'):_('Edit')}}
+      </button>
+    </view>
+  </view>
+  <view class="divider thin"></view>
+</view>
+
+<!-- shopping cart -->
+<view class="container"
+      wx:if="{{is_empty}}">
+  <view class="holder-md flex-row align-center justify-center">
+    <text class="draft subhead">{{_('It is Empty')}}</text>
+  </view>
+</view>
+
+<view class="cart container padding"
+      wx:if="{{item_list.length}}">
+
+  <view class="flex-row"
+        wx:for="{{item_list}}"
+        wx:key="index">
+    <view>
+      <button class="icon-btn"
+              bind:tap="check_item"
+              data-item-index="{{index}}">
+        <image class="ico" src="{{image.checked}}"
+               wx:if="{{item._checked}}"/>
+        <image class="ico" src="{{image.unchecked}}"
+               wx:else />
+      </button>
+    </view>
+    <view bind:tap="check_item"
+          data-item-index="{{index}}">
+      <image class="thumbnail"
+             src="{{item.figure||image.cart}}"
+             background-size="cover"
+             background-position="center center" />
+    </view>
+    <view class="flex padding text-nowrap">
+      <text class="block text-nowrap">{{item.name}}</text>
+      <text class="block caption">{{item.detail || '-'}}</text>
+      <text class="block caption accent">¥ {{f.price(item.price)}} {{edit_mode?'':('x'+item.amount)}}</text>
+      <!-- discounts -->
+      <view wx:if="{{!edit_mode}}">
+        <view class="tag accent"
+              wx:if="{{item.coupon}}">{{item.coupon}}</view>
+        <view class="tag accent"
+              wx:for="{{item.vouchers}}"
+              wx:for-item="voucher"
+              wx:key="index">{{voucher}}</view>
+      </view>
+      <!-- edit mode -->
+      <view class="flex-row align-center"
+            wx:if="{{edit_mode}}">
+        <button class="icon-btn draft"
+                bind:tap="decrease_amount"
+                data-item-index="{{index}}">
+          <image class="ico"
+                 src="{{image.remove_circle}}"></image>
+        </button>
+        <text class="accent">{{item.amount}}</text>
+        <button class="icon-btn draft"
+                type="accent"
+                bind:tap="increase_amount"
+                data-item-index="{{index}}">
+          <image class="ico"
+                 src="{{image.add_circle}}"></image>
+        </button>
+        <view class="flex"></view>
+        <button class="icon-btn thin"
+                type="accent"
+                bind:tap="remove_item"
+                data-item-index="{{index}}">
+          <image class="ico" src="{{image.trash}}"/>
+        </button>
+      </view>
+      <view class="divider"></view>
+    </view>
+  </view>
+  <view class="margin">
+    <text class="hint">{{_('* Items are kept in the shopping cart for one week top. The price also will be recalculated at the time of payment.')}}</text>
+  </view>
+</view>
+
+
+<!-- bottombar -->
+<view class="bottombar-holder"></view>
+
+<view class="bottombar flex-row">
+  <view class="flex info">
+    <text>{{_('Total Price')}}</text>
+    <text class="accent">¥ {{f.price(total_price)}}</text>
+  </view>
+  <button class="raised"
+          type="accent"
+          bind:tap="purchase"
+          disabled="{{checked_count <= 0}}">
+    {{_('Purchase')}}
+  </button>
+</view>

@@ -1,0 +1,95 @@
+{% import "g" as g with context %}
+
+<!DOCTYPE html>
+<html lang="{{lang}}">
+{% include "_head.html" %}
+<body>
+	<!-- Header -->
+	{% include "_header.html" %}
+	<!-- #Header -->
+	<!-- Main -->
+	<section id="{{meta.slug}}" class="main-section">
+    <div class="container">
+      <div class="brand">
+        <div class="logo">
+          <img src="{{meta.logo.src or site_meta.logo or g.logo}}"
+               alt="{{site_meta.title}}" />
+        </div>
+        <h1>{{meta.title}}</h1>
+  	    <h2>{{meta.subtitle}}</h2>
+      </div>
+      {% if not meta.mailto.hidden %}
+      <div class="get-link">
+        <form action="mailto:{{meta.mailto.address}}">
+          <input type="hidden"
+                 name="subject"
+                 value="{{meta.mailto.subject}}">
+          <div class="form-group row">
+            <div class="col-sm-8">
+              <!-- email -->
+              <input id="email"
+                     type="email"
+                     name="email"
+                     placeholder="{{_('Email Address here')}}"
+                     class="form-control email">
+               <!-- #email -->
+            </div>
+            <div class="col-sm-4">
+              <button class="btn btn-primary btn-block">
+                {{meta.mailto.btntext}}
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+      {% endif %}
+      <div class="excerpt">
+        <p>{{meta.description}}</p>
+      </div>
+      {% if meta.badges %}
+      <div class="store">
+        <div class="row">
+          {% set _offset = 'col-sm-offset-2' if (meta.badges|length) == 2
+                      else 'col-sm-offset-4' if (meta.badges|length) == 1 %}
+          {% for prd in meta.badges[:3] %}
+          <div class="col-sm-4 {{_offset if loop.index == 1}}">
+            <a href="{{prd.link | url}}"
+               class="flag {{prd.class}}">
+              <img src="{{g.badge_holder}}"
+                   style="{{prd.src|bg_img}}" />
+            </a>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+      {% endif %}
+      <div class="learn-more">
+        <a href="#" class="btn-more parallax-link parallax-go-first">
+          {{_('Learn More')}}
+        </a>
+      </div>
+    </div>
+  </section>
+	<!-- #Main -->
+	{% for page in segments() if page.template != meta.template %}
+	<!-- Section -->
+	<section id="{{page.slug}}"
+           class="content-block {{'last' if loop.last}} {{page.bg.class}}"
+           style="{{page.bg.style}}">
+		<!-- Section Block -->
+    <div>
+	    {% include page.template+".html" ignore missing %}
+    </div>
+		<!-- #Section Block -->
+	</section>
+	<!-- #Section -->
+	{% endfor %}
+	<!-- Footer -->
+	{% include "_footer.html" %}
+	<!-- #Footer -->
+
+  <div class="cover {{meta.hero.class}}"
+       style="{{meta.hero.style}}"></div>
+
+</body>
+</html>

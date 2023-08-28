@@ -1,0 +1,57 @@
+{% set _field = meta[key] or {} %}
+<div class="card custom-form"
+     data-key="{{key}}"
+     data-type="link">
+  <div class="card-header d-flex">
+    <h4>
+      {{_(opts.label)|title}}
+    </h4>
+    <small class="text-muted ml-auto">
+      {{key}}
+    </small>
+  </div>
+  <div class="card-body">
+    <div class="form-row">
+      {% if display_field('name', opts.hidden) %}
+      <div class="form-group col-md-8">
+        <label>{{_('Name')}}</label>
+        <input class="form-control"
+               type="text"
+               name="name"
+               maxlength="60"
+               value="{{_field.name}}">
+      </div>
+      {% endif %}
+      {% if display_field('class', opts.hidden) %}
+      <div class="form-group col-md-4">
+        <label>{{_('CSS Class')}}</label>
+        <input class="form-control"
+               type="text"
+               name="class"
+               maxlength="360"
+               placeholder="primary-bg, transparent-bg"
+               value="{{_field.class}}">
+      </div>
+      {% endif %}
+      {% if display_field('link', opts.hidden) %}
+      <div class="form-group col-12">
+        <label>{{_('Link to URL')}}</label>
+        <div class="input-group">
+          <input class="form-control"
+                 type="text"
+                 name="link"
+                 maxlength="360"
+                 placeholder="URL, http://somesite.com"
+                 value="{{_field.link}}">
+          <input class="form-control col-md-3 col-4"
+                 type="text"
+                 name="target"
+                 maxlength="60"
+                 placeholder="_self"
+                 value="{{_field.target}}">
+        </div>
+      </div>
+      {% endif %}
+    </div>
+  </div>
+</div>

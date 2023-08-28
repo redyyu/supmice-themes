@@ -1,0 +1,139 @@
+{% extends "layout.html" %}
+
+{% block header %}
+<h1>{{_('Category')}}</h1>
+{% endblock %}
+
+{% block main %}
+<div class="row">
+  <div class="col-12">
+    {% if categories.status == 0 %}
+    <div class="card">
+      <div class="card-header">
+        {{_('Category is not activated.')}}
+      </div>
+    </div>
+    {% else %}
+    <div class="card">
+      <div class="card-header">
+        <h4>{{_('All Category Terms')}}</h4>
+        <small>{{_('%s terms total.', categories.terms|length)}}</small>
+        <a class="btn btn-primary btn-lg ml-auto"
+           data-toggle="modal"
+           data-target="#MODAL-CREATE-TERM"
+           href="#">
+          <i class="fas fa-refresh"></i>
+          <span>{{_('New Category Term')}}</span>
+        </a>
+      </div>
+      <div class="card-body">
+        <div class="table-responsive">
+          <table class="table table-striped">
+            <tr>
+              <th class="text-center">{{_('Poster')}}</th>
+              <th>{{_('Name')}}</th>
+              <th>{{_('Parent')}}</th>
+              <th class="text-center">{{_('Action')}}</th>
+            </tr>
+            {% for term in categories.terms %}
+            <tr>
+              <td class="p-2 text-center">
+                {% if term.meta and term.meta.figure %}
+                <a href="{{term.meta.figure}}" target="_blank">
+                  <div class="list-figure"
+                       style="background-image:url({{term.meta.figure}});">
+                  </div>
+                </a>
+                {% else %}
+                <i class="fas fa-bookmark list-icon"></i>
+                {% endif %}
+              </td>
+              <td>
+                {% if not term.status %}
+                <small class="text-muted">
+                  [{{_('Draft')}}]
+                </small>
+                {% endif %}
+                {{term.meta.name or term.key}}
+              </td>
+              <td>{{term.parent or '-'}}</td>
+              <td>
+                <div class="row">
+                  <div class="col-lg-6 text-center">
+                    <a class="btn {{'btn-primary' if term.status else
+                                    'btn-secondary'}}"
+                       href="{{url_as('.term', term_key=term.key)}}">
+                      <i class="fas fa-edit"></i>
+                      <span>{{_('Edit')}}</span>
+                    </a>
+                  </div>
+                  <div class="col-lg-6 d-lg-block d-none text-right">
+                    <a class="btn btn-danger btn-icon"
+                       aria-label="{{_('Delete')}}"
+                       href="{{url_as('.remove_term', term_key=term.key)}}">
+                      <i class="fas fa-trash"></i>
+                    </a>
+                  </div>
+                </div>
+              </td>
+            </tr>
+            {% endfor %}
+          </table>
+        </div>
+      </div>
+    </div>
+    {% endif %}
+  </div>
+</div>
+{% endblock %}
+
+{% block page_modals %}
+<div id="MODAL-CREATE-TERM"
+     class="modal fade"
+     tabindex="-1"
+     role="dialog"
+     aria-labelledby="{{_('New Category Term')}}"
+     aria-hidden="true">
+  <div class="modal-dialog" role="exit">
+    <div class="modal-content">
+      <form action="{{url_as('.create_term')}}"
+            method="POST">
+        <div class="modal-header">
+          <h5 class="modal-title">{{_('New Category Term')}}</h5>
+          <button class="close"
+                  type="button"
+                  data-dismiss="modal"
+                  aria-label="{{_('Close')}}">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="form-group">
+            <label>{{_('Name')}}</label>
+            <input class="form-control"
+                   type="text"
+                   name="name"
+                   value=""
+                   required>
+          </div>
+          <div class="form-group">
+            <label>{{_('Key')}} {{_('(Optional)')}}</label>
+            <input class="form-control"
+                   type="text"
+                   name="key"
+                   placeholder="term-key"
+                   value="">
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary"
+                  data-dismiss="modal">{{_('Dismiss')}}</button>
+          <button class="btn btn-primary">
+            {{_('Save')}}
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,48 @@
+<!-- Header -->
+<header id="header" class="container">
+	<div class="row">
+		{% if languages %}
+		<div id="language" class="col-sm-3 pull-right">
+			<a class="language-switcher-btn"
+         href="#lang"
+         ontouchstart="language-switcher-btn-on">
+       <span class="language-switcher-text">{{_('Languages')}}</span>
+      </a>
+			<div id="lang"
+           class="language-list"
+           style="display:none;">
+				{% for trans in languages %}
+					{% if trans.active %}
+					<span class="lang-current-item">{{trans.name}}</span>
+					{% else %}
+					<a class="lang-item"
+             href="{{trans.url}}">{{trans.name}}</a>
+					{% endif %}
+				{% endfor %}
+			</div>
+		</div>
+		{% endif %}
+		<div id="logo" class="col-sm-3">
+			<a href="{{ base_url }}">
+        <img src="{{site_meta.logo or g.logo}}"
+             alt="{{ site_meta.title }}"
+             title="{{ site_meta.title }}" />
+      </a>
+		</div>
+		<nav id="nav" class="col-sm-6">
+			<ul>
+				{% for nav in menu.primary %}
+				<li>
+          <a href="{{ nav.url }}"
+             target="{{nav.target}}"
+             class="{{nav.class}}"
+             ontouchstart="nav-btn-on">
+            {{ nav.name }}
+          </a>
+        </li>
+				{% endfor %}
+			</ul>
+		</nav>
+	</div>
+</header>
+<!-- #Header -->

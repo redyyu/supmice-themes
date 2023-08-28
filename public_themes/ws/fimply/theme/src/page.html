@@ -1,0 +1,16 @@
+{% if g and page %}
+<section id="{{page.slug}}"
+         class="common">
+  <div class="container">
+    <header>
+      <h2>{{page.title}}</h2>
+      <p>{{page.description}}</p>
+    </header>
+    <article class="content">
+      {{page.content}}
+    </article>
+  </div>
+</section>
+{% else %}
+<script>window.location.replace('{{base_url}}/#{{meta.slug}}');</script>
+{% endif %}

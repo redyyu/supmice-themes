@@ -1,0 +1,148 @@
+/*
+-----------------------------------------------
+Cycling WeChat theme
+http://www.soopro.io
+
+Author:   redy
+Date:     4 dec 2014
+Version: 0.2
+----------------------------------------------- */
+.clearfix:before,
+.clearfix:after {
+  display: table;
+  content: " ";
+  visibility: hidden;
+}
+.clearfix:after {
+  clear: both;
+}
+
+/* Base
+---------------------------------- */
+h1 {
+  padding: 10px 0;
+  margin-bottom: 14px;
+  font-weight: 600;
+  line-height: 1.4;
+  color: #333;
+  background-repeat: no-repeat;
+  background-position: right 10px;
+}
+
+p {
+  font-size: 16px;
+  margin-bottom: 1em;
+}
+h1 {
+  font-size: 1.8em;
+}
+h2 {
+  font-size: 1.5em;
+}
+h3 {
+  font-size: 1.2em;
+}
+h4 {
+  font-size: 1.1em;
+}
+h5 {
+  font-size: 1em;
+}
+
+hr {
+  border: 1px solid rgba(0,0,0,0.1);
+}
+
+a,
+a:link,
+a:hover,
+a:visited {
+  color: #A597B6;
+}
+
+/* Grid
+---------------------------------- */
+.wrapper {
+  max-width: 740px;
+  position: relative;
+  margin: 0 auto;
+  color: #333;
+}
+
+.wrapper * {
+  box-sizing: border-box!important;
+  -webkit-box-sizing: border-box!important;
+  word-wrap: break-word!important;
+}
+.wrapper img,
+.wrapper iframe,
+.wrapper iframe * {
+  max-width: 100% !important;
+}
+
+.container {
+  padding: 15px;
+}
+
+/* Elements
+---------------------------------- */
+.kv {
+  font-size: 0;
+  margin-top: 12px;
+  margin-bottom: 12px;
+  border: 1px solid #ccc;
+  background-color: #ccc;
+}
+
+.kv img,
+.kv > div {
+  width: 100%;
+}
+
+.meta {
+  color: #888;
+  font-size: 14px;
+  padding-bottom: 6px;
+}
+
+.content {
+  padding: 0;
+  margin: 0;
+}
+
+footer {
+  background-color: #ffffff;
+  padding: 12px;
+}
+
+.info {
+  text-align: center;
+  padding: 12px;
+  box-sizing:border-box;
+  -moz-box-sizing: border-box; /* Firefox */
+  -webkit-box-sizing: border-box; /* Safari */
+}
+
+.info .read {
+  font-size: 14px;
+  color: #666;
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+.info .count {
+  line-height: 48px;
+  font-size: 48px;
+  color: #A597B6;
+}
+
+.copyright {
+  font-size: 14px;
+  color: #666;
+  text-align: center;
+  padding: 12px;
+}
+
+.text-center {
+  text-align: center;
+}

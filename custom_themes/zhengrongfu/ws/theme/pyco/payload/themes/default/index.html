@@ -1,0 +1,60 @@
+{% import 'g' as g with context %}
+<!DOCTYPE html>
+<html lang="{{lang}}">
+{% include '_head.html' %}
+<body class="parallax-major"
+      style="{{meta.hero.style}}">
+
+  {% include '_header.html' %}
+
+  <section class="hero {{meta.hero.class}}">
+    <div>
+      <div class="logo">
+        <img src="{{meta.logo.src or site_meta.logo or g.logo}}"
+             alt="{{meta.title or site_meta.title}}">
+      </div>
+      {% if meta.intro.type == 'video' %}
+      <button class="video-play btn icon-btn open-video"
+              type="button"
+              data-mfp-src="#MODAL-video"
+              data-effect="mfp-slide-bottom">
+        <svg width="24" height="24" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"/><path d="M10 16.5l6-4.5-6-4.5v9zM12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/></svg>
+      </button>
+      {% endif %}
+      <a class="entrance anim-fade-in-out"
+         href="#">
+        <svg width="100" heigth="100" viewBox="0 0 100 100"><polygon points="49.999 66.734 9.946 39.084 13.961 33.266 49.999 58.143 86.039 33.266 90.054 39.084 49.999 66.734" /></svg>
+      </a>
+    </div>
+  </section>
+
+  {% for page in segments() %}
+    <section id="{{page.slug}}"
+             class="segment {{page.bg.class}}"
+             style="{{page.bg.style}}">
+    {% include page.template+'.html' ignore missing %}
+    </section>
+  {% endfor %}
+
+  {% include '_footer.html' %}
+
+
+<div id="MODAL-video"
+     class="mfp-hide mfp-with-anim modal-video">
+  <div class="p-2">
+    {% if meta.intro.src and meta.intro.type == 'video'%}
+    <video src="{{meta.intro.src}}"
+           poster="{{meta.intro.poster}}"
+           controls>
+      <p>{{_('Your browser does not support HTML5 video.')}}</p>
+    </video>
+    {% else %}
+    <p class="text-center">{{_('No video')}}</p>
+    {% endif %}
+  </div>
+</div>
+
+{{g.scripts}}
+
+</body>
+</html>

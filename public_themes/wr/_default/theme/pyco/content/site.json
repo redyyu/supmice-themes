@@ -1,0 +1,23 @@
+{
+  "app_id":"pyco_web_app",
+  "slug":"pyco",
+  "meta": {
+    "locale": "en_US",
+    "favicon": "",
+    "logo": "",
+    "bg": "",
+    "contact": "redy",
+    "copyright": "2015 Made by Pyco.",
+    "description": "...",
+    "license": "MIT",
+    "title": "Sample",
+    "socials":{
+      "facebook":{"name":"Facebook","url":"#","code":"facebook"},
+      "twitter":{"name":"Twitter","url":"#","code":"twitter"}
+    },
+    "translates": {
+      "en_US":{"name": "English", "url": "#" },
+      "zh_CN":{"name": "中文", "url": "#" }
+    }
+  }
+}

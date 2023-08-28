@@ -1,0 +1,12 @@
+{% if g and page %}
+<!-- Section -->
+<section id="{{page.slug}}" class="banner primary"
+ style="background-image:url('{{page.background.src or g.default_img}}');">
+  <div class="content text-center">
+    {{page.content}}
+  </div>
+</section>
+<!-- #Section -->
+{% else %}
+  <script>window.location.replace('{{base_url}}/#/{{meta.slug}}');</script>
+{% endif %}

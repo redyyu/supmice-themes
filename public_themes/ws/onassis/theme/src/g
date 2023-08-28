@@ -1,0 +1,4 @@
+{% set favicon = theme_url+"/styles/favicon.png" %}
+{% set default_img = theme_url+"/styles/default.jpg" %}
+
+{% set img_holder = theme_url+"/styles/trans.png" %}

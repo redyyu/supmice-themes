@@ -1,0 +1,170 @@
+/*
+-----------------------------------------------
+Default WeChat artcile theme
+http://www.soopro.io
+
+Author:   redy
+Date:     4 dec 2014
+Version: 0.2
+----------------------------------------------- */
+.clearfix:before,
+.clearfix:after {
+  display: table;
+  content: " ";
+  visibility: hidden;
+}
+.clearfix:after {
+  clear: both;
+}
+
+/* Base
+---------------------------------- */
+html,
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial,
+               "Lucida Grande", sans-serif;
+  background: #fff;
+  margin: 0;
+}
+h1,h2,h3,h4,h5,h6,p,label,li,td,th{
+  font-weight: 300;
+  line-height: 1.4em;
+}
+
+h1 {
+  padding: 10px 0;
+  padding-right: 60px;
+  margin: 0;
+  color: #333;
+  font-size: 24px;
+  line-height: 1.4em;
+  font-weight: 600;
+  background-image: url(decorate.png);
+  background-repeat: no-repeat;
+  background-position: right 10px;
+}
+
+h1.error-404{
+  padding: 60px 0 10px 0;
+  background: none;
+}
+
+h2 {
+  font-size: 26px;
+  color: #333;
+}
+
+p {
+  font-size: 18px;
+  line-height: 1.4em;
+}
+
+a,
+a:link,
+a:hover,
+a:visited {
+  color: #6ec500;
+}
+/* Grid
+---------------------------------- */
+.wrapper {
+  max-width: 740px;
+  position: relative;
+  margin: 0 auto;
+  color: #333;
+}
+
+.wrapper * {
+  box-sizing: border-box!important;
+  -webkit-box-sizing: border-box!important;
+  word-wrap: break-word!important;
+}
+.wrapper img,
+.wrapper iframe,
+.wrapper iframe * {
+  max-width: 100% !important;
+}
+
+.container {
+  padding: 15px;
+}
+
+/* Elements
+---------------------------------- */
+.kv {
+  font-size: 0;
+  margin-top: 12px;
+  margin-bottom: 12px;
+  border: 1px solid #9c6;
+  background-color: #9c6;
+}
+
+.kv img,
+.kv > div {
+  width: 100%;
+}
+
+.meta {
+  color: #888;
+  font-size: 14px;
+  padding-bottom: 6px;
+}
+
+.content {
+  padding: 0;
+  margin: 0;
+}
+
+.content img {
+  max-width: 100%;
+  background-color: #6ec500;
+}
+
+.content p:first-child {
+  margin-top: 0;
+}
+
+footer {
+  background-color: #ffffff;
+  padding: 12px;
+}
+
+.info {
+  text-align: center;
+  padding: 12px;
+  box-sizing:border-box;
+  -moz-box-sizing: border-box; /* Firefox */
+  -webkit-box-sizing: border-box; /* Safari */
+}
+
+.info .read {
+  font-size: 14px;
+  color: #666;
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+.info .count {
+  line-height: 48px;
+  font-size: 48px;
+  color: #6ec500;
+}
+
+.copyright {
+  font-size: 14px;
+  color: #666;
+  text-align: center;
+  padding: 12px;
+}
+
+.text-center {
+  text-align: center;
+}
+
+/* languages */
+html[lang^="zh"],
+html[lang^="zh"] body {
+  font-family: "Helvetica Neue", Helvetica, Arial,
+               "Hiragino Sans GB", STHeiti, "Microsoft YaHei",
+               "Lucida Grande", sans-serif;
+}

@@ -1,0 +1,44 @@
+{
+  "watch":{
+    "src": "src",
+    "dest": "mittens/themes/default",
+    "clean": true,
+    "server": "mittens",
+    "port": 9525
+  },
+  "release": {
+    "clean": ["dist", "build"],
+    "render": {
+      "cwd": "src",
+      "dest": "build"
+    },
+    "copy": [
+      {
+        "name": "dist",
+        "src": [
+          "**/*",
+          "!**/_*",
+          "!_*"
+        ],
+        "cwd": "build",
+        "dest": "dist"
+      }
+    ]
+  },
+  "packing":{
+    "zip":{
+      "cwd":"dist",
+      "dest":".",
+      "file":"theme.zip"
+    },
+    "upload":{
+      "cwd":".",
+      "file":"theme.zip",
+      "headers":{
+        "SecretKey":"redy-d1d4bb4878cd4be7afaade8b"
+      },
+      "url":"http://localhost:5000/app/sansei-original-mini/develop/theme",
+      "delete": true
+    }
+  }
+}

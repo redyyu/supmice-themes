@@ -1,0 +1,59 @@
+{
+  "content_types": {
+    "post": "Posts",
+    "page": "Pages",
+    "works": "Works"
+  },
+  "menus": {
+    "primary": [
+      {
+        "alias": "home",
+        "meta": {},
+        "nodes": [],
+        "title": "首页",
+        "link": "/"
+      },
+      {
+        "alias": "services",
+        "meta": {},
+        "nodes": [],
+        "title": "服务",
+        "link": "/services"
+      },
+      {
+        "alias": "about",
+        "meta": {},
+        "nodes": [],
+        "title": "关于我们",
+        "link": "/about"
+      }
+    ]
+
+  },
+  "meta": {
+    "alias":"pyco",
+    "type":"george",
+    "favicon": "[%uploads%]/favicon.png",
+    "author": "redy",
+    "copyright": "2015 Made by Pyco.",
+    "description": "It doesn't take a rocket scientist ...",
+    "license": "MIT",
+    "locale": "en_US",
+    "title": "George",
+    "socials":{
+      "facebook":{"name":"Facebook","url":"#","code":"facebook"},
+      "twitter":{"name":"Twitter","url":"#","code":"twitter"}
+    },
+    "translates":{
+      "en_US":{
+        "name": "English",
+        "url": "#"
+      },
+      "zh_CN":{
+        "name": "中文",
+        "url": "#"
+      }
+    }
+  }
+
+}

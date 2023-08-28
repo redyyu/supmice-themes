@@ -1,0 +1,75 @@
+{% extends "_layout.html" %}
+{% block wrapper %}
+
+<div class="section-header ribbon-bg
+            {{'ribbon-cover' if meta.hero.src}} {{meta.hero.class}}"
+     style="{{meta.hero.style}}">
+  <div class="container">
+    <div class="row centered">
+      <div class="col-md-8 col-md-offset-2">
+        <h2>{{meta.title}}</h2>
+        <p>{{meta.description}}</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section-primary">
+  <div class="container">
+    <div class="row centered">
+      {% set _col_service = 4 if meta.series|length > 3 else 6 %}
+      {% for item in meta.series %}
+      <div class="col-sm-{{_col_service}} service-item">
+        <div class="{{item.class}}">
+          <img src="{{g.img_holder}}"
+               style="{{item.src|thumbnail|bg_img}}">
+          <h4 class="text-nowrap">
+            {{item.title}}
+          </h4>
+          <p class="text-clamp-4">
+            {{item.caption}}
+          </p>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+<div class="section-primary dark-bg">
+  <div class="container">
+    <div class="row centered">
+      <div class="col-md-8 col-md-offset-2 section-header">
+        <h3>{{meta.badges_title}}</h3>
+      </div>
+    </div>
+    <div class="row centered">
+      {% set badges_offset = meta.badges|col_offset('col-sm-offset-', 2) %}
+      {% for item in meta.badges %}
+      <div class="col-sm-2 col-xs-4 {{badges_offset if loop.first}}">
+        <div class="{{item.class}}">
+          <a class="{{'no-click' if not item.link}}"
+             href="{{item.link|url}}"
+             target="{{item.target}}">
+            <img class="img-holder contain"
+                 src="{{g.img_holder}}"
+                 alt="{{item.title}}"
+                 style="{{item.src|thumbnail|bg_img}}" />
+          </a>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+<div class="section-primary hl-bg">
+  <div class="container">
+    <div class="row centered">
+      <div class="col-lg-8 col-lg-offset-2">
+        <h4>{{meta.statement}}</h4>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

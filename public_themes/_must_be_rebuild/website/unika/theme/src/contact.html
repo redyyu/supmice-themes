@@ -1,0 +1,33 @@
+{% if g and page %}
+<section id="contact"
+ class="page text-white parallax contact-section"
+ data-stellar-background-ratio="0.5"
+ style="background-image: url({{theme_url}}/img/map-bg.jpg);">
+    <div class="cover"></div>
+    <div class="page-header-wrapper">
+        <div class="container">
+            <div class="page-header text-center wow fadeInDown" data-wow-delay="0.4s">
+                <h2>{{page.title}}</h2>
+                <div class="devider"></div>
+                <p class="subtitle">{{page.subtitle}}</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="contact wow bounceInRight" data-wow-delay="0.4s">
+        <div class="container">
+            <div class="row">
+            
+                <div class="col-sm-12 text-center">
+                    <div class="contact-info">
+                        {{page.content}}
+                    </div>
+                </div>
+                                                                    
+            </div>
+        </div>
+    </div>
+</section>
+{% else %}
+<script>window.location.replace('{{base_url}}/#/{{meta.slug}}');</script>
+{% endif %}

@@ -1,0 +1,27 @@
+{% import "g" as g with context %}
+<!DOCTYPE html>
+<html lang="{{lang}}">
+{% include '_head.html' %}
+<body>
+<div class="wrapper">
+	<div class="container clearfix">
+		<h1>{{meta.title or _('Title')}}</h1>
+		<div class="date">
+			{{meta.date_formatted}}
+		</div>
+		<div class="date">
+			{{meta.author}}
+		</div>
+		{% if meta.featured_img %}
+		<div class="featured text-center">
+			<img src="{{meta.featured_img.src}}" alt="{{meta.title}}">
+		</div>
+		{% endif %}
+		<article sup-wx-broadcast class="content clearfix">
+			{{content or _('$_CONTENT')}}
+		</article>
+	</div>
+	{% include '_footer.html' %}
+</div>
+</body>
+</html>

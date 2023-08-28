@@ -1,0 +1,62 @@
+{
+  "watch":{
+    "src": "src",
+    "dest": "pyco/themes/dev",
+    "clean": true,
+    "server": true,
+    "pyco": "pyco",
+    "skip_includes": "html"
+  },
+  "packing":{
+    "zip":{
+      "cwd":"src",
+      "dest":".",
+      "file":"devinpan.zip"
+    },
+    "upload":{
+      "cwd":".",
+      "file":"devinpan.zip",
+      "headers":{
+        "SecretKey":"devin-98fc0df7c6674407b4d6ab782c6a2cb3"
+      },
+      "url":"http://api.soopro.io/app/dp/develop/theme",
+      "delete": true
+    }
+  },
+  "transport":{
+    "upload":{
+      "cwd":"pyco/content",
+      "replace": [
+        {
+          "pattern":"[%uploads%]",
+          "replacement":"http://media.soopro.com/devin/dp"
+        }
+      ],
+      "headers":{
+        "content-type": "application/json",
+        "SecretKey":"devin-98fc0df7c6674407b4d6ab782c6a2cb3"
+      },
+      "url":"http://api.soopro.com/app/dp/develop/sitedata"
+    },
+    "download":{
+      "dest":"pyco/content",
+      "replace": [
+        {
+          "pattern":"http://media.soopro.com/devin/dp",
+          "replacement":"[%uploads%]"
+        }
+      ],
+      "headers":{
+        "SecretKey":"devin-98fc0df7c6674407b4d6ab782c6a2cb3"
+      },
+      "url":"http://api.soopro.com/app/dp/develop/sitedata"
+    },
+    "media": {
+      "dest":"test/uploads",
+      "headers":{
+        "SecretKey":"devin-98fc0df7c6674407b4d6ab782c6a2cb3"
+      },
+      "url":"http://api.soopro.com/app/devinpan/develop/media"
+    }
+  }
+}

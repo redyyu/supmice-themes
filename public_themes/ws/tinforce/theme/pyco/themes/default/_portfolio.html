@@ -1,0 +1,75 @@
+{% import "g" as g with context %}
+<!DOCTYPE html>
+<html lang="{{ lang }}">
+{% include "_head.html" %}
+<body>
+  <header class="fixed-top">
+    <nav class="navbar affix">
+      <a class="navbar-brand"
+         href="{{base_url}}">
+        {{site_meta.title}}
+      </a>
+      <div class="d-flex flex-row justify-content-end">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link"
+               href="{{base_url}}">
+              <svg width="24" height="24" viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/><path d="M0 0h24v24H0z" fill="none"/></svg>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  {% set booklet = query('works', perpage=12, paged=request.args.paged) %}
+  <div class="container portfolio my-5 pt-5">
+    <div class="row media-gallery">
+      {% for item in booklet.contents %}
+      <figure class="col-6 col-lg-3">
+        <a href="{{item.url}}">
+          <div class="flip dot">
+            <div class="text-truncate">
+              {{item.title or item.slug}}
+            </div>
+          </div>
+          <img src="{{g.trans}}"
+               style="{{(item.featured_img.src or g.default_img)
+                         |thumbnail|bg_img}}" />
+        </a>
+      </figure>
+      {% endfor %}
+    </div>
+
+    {% if booklet.total_pages > 1 %}
+    <ul class="pagination my-4 justify-content-center">
+      <li class="page-item {{'disabled' if not booklet.has_prev}}">
+        <a class="page-link"
+           href="{{ glue({'page':booklet.paged-1}) }}">
+          <svg width="24" height="24" viewBox="0 0 24 24"><path d="M15.41 16.59L10.83 12l4.58-4.59L14 6l-6 6 6 6 1.41-1.41z"/><path fill="none" d="M0 0h24v24H0V0z"/></svg>
+        </a>
+      </li>
+      <li class="page-item {{'disabled' if not booklet.has_next}}">
+        <a class="page-link"
+           href="{{ glue({'page':booklet.paged+1}) }}">
+          <svg width="24" height="24" viewBox="0 0 24 24"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/><path fill="none" d="M0 0h24v24H0V0z"/></svg>
+        </a>
+      </li>
+    </ul>
+    {% endif %}
+
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer container">
+    <hr>
+    <div class="text-center">
+      <span>{{site_meta.copyright}}</span>
+      <span>{{site_meta.license}}</span>
+    </div>
+  </footer>
+
+  {{g.scripts}}
+
+</body>
+</html>

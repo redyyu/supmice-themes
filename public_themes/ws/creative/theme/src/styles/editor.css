@@ -1,0 +1,16 @@
+.editor-top {
+  height: 60px;
+}
+.sup-editor-canvas h1 {
+  font-size: 65px;
+}
+@media(max-width:849px) {
+  .sup-editor-canvas h1 {
+    font-size: 8vw;
+  }
+}
+@media(max-width:767px) {
+  .sup-editor-canvas h1 {
+    font-size: 10vw;
+  }
+}

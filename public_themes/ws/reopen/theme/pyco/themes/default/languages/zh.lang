@@ -1,0 +1,91 @@
+[
+	{"language":"zh"},
+	{
+		"msgid": "Posts",
+		"msgstr": "帖子"
+	},
+	{
+		"msgid": "Categories",
+		"msgstr": "分类"
+	},
+	{
+		"msgid": "Category",
+		"msgstr": "分类"
+	},
+	{
+		"msgid": "Category Key",
+		"msgstr": "分类键值"
+	},
+	{
+		"msgid": "Number of Perpage",
+		"msgstr": "每页数量"
+	},
+	{
+		"msgid": "Hide Headline",
+		"msgstr": "隐藏标题区"
+	},
+	{
+		"msgid": "Attach Category Headline",
+		"msgstr": "使用分类标题区"
+	},
+	{
+		"msgid": "There is no post yet.",
+		"msgstr": "还没有任何文章"
+	},
+	{
+		"msgid": "Title",
+		"msgstr": "标题"
+	},
+	{
+		"msgid": "Description text here",
+		"msgstr": "在这里填写简介文字"
+	},
+	{
+		"msgid": "Description of the Category",
+		"msgstr": "分类简介文字"
+	},
+	{
+		"msgid": "Title of Category %s",
+		"msgstr": "分类%s的标题"
+	},
+	{
+		"msgid": "Load more",
+		"msgstr": "加载更多"
+	},
+	{
+		"msgid": "Create",
+		"msgstr": "创建"
+	},
+	{
+		"msgid": "Add New Post",
+		"msgstr": "添加新帖子"
+	},
+	{
+		"msgid": "Click here to add a new post",
+		"msgstr": "点击这里添加一个新帖子"
+	},
+	{
+		"msgid": "Modified with",
+		"msgstr": "修改自"
+	},
+	{
+		"msgid": "Category page will automatically query posts.",
+		"msgstr": "分类页面将自动读取帖子"
+	},
+	{
+		"msgid": "Next",
+		"msgstr": "下一篇"
+	},
+	{
+		"msgid": "Previous",
+		"msgstr": "上一篇"
+	},
+	{
+		"msgid": "$_CONTENT",
+		"msgstr": "<p>这一段是默认的富文本内容，你可以按照自己的需要重新填写。进入富文本编辑状态以后，将出现一个输入工具条（它通常会在画面顶部或是富文本区域的上方），使用工具条可以插入、更换或者删除图片和链接。</p>"
+	},
+	{
+    "msgid": "$_ERROR404",
+    "msgstr": "<p>糟糕！没办法找到您要打开的页面，或许是搞错了网址，也可能是这个页面已经失效了。</p>"
+  }
+]

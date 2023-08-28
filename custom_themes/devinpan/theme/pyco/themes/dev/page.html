@@ -1,0 +1,21 @@
+{% import "g" as g with context %}
+<!DOCTYPE html>
+<html lang="en">
+{% include '_head.html' %}
+<body>
+{% include '_header.html' %}
+<div class="bg-content">
+	<!--============================== content =================================-->
+	<div id="content">
+		<div class="ic"></div>
+		<div class="container">
+			<div class="row">
+				<h1>{{meta.title}}</h1>
+				{{content}}
+			</div>
+		</div>
+	</div>
+</div>
+{% include '_footer.html' %}
+</body>
+</html>

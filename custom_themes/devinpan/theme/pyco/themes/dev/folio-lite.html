@@ -1,0 +1,39 @@
+{% import "g" as g with context %}
+<!DOCTYPE html>
+<html lang="en">
+{% include '_head.html' %}
+<body>
+{% include '_header.html' %}
+<div class="bg-content">
+	<div id="content">
+		<div class="ic"></div>
+		<div class="container">
+			<div class="row">
+				<article class="span12">
+				<h3>{{meta.title}}</h3>
+				</article>
+				<div class="clear"></div>
+				<ul class="portfolio clearfix" id="portfolio"
+         			 data-prepage="{{g.opts.prepage}}">
+					{% for works in pages | type('works') %}
+					<li class="box" style="display:none;">
+						<a href="{{works.featured_img.src}}" class="magnifier">
+							<img class="thumbnail-img" src="{{theme_url}}/img/bg270.png"
+               					 style="background-image: 
+                      			 url('{{works.featured_img.src | thumbnail}}')">
+						</a>
+					</li>
+					{% endfor %}
+				</ul>
+			</div>
+		</div>
+		<div class="container pagination-centered">
+			<a class="btn btn-danger btn-large more"  style="display:none;" href="#">
+		        Show More
+		      </a>
+		</div>
+	</div>
+</div>
+{% include '_footer.html' %}
+</body>
+</html>

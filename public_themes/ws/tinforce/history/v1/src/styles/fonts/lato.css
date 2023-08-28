@@ -1,0 +1,47 @@
+/*
+-----------------------------------------------
+Webfonts Definition
+----------------------------------------------- */
+@media screen and (min-width:640px){
+	@font-face{
+		font-family: Lato;
+		src: url('Lato-Hairline.woff') format("woff");
+		font-weight: 100;
+		font-style: normal;
+	}
+	
+	@font-face{
+		font-family: Lato;
+		src: url('Lato-HairlineItalic.woff') format("woff");
+		font-weight: 100;
+		font-style: italic;
+	}
+	
+	@font-face{
+		font-family: Lato;
+		src: url('Lato-Light.woff') format("woff");
+		font-weight: 300;
+		font-style: normal;
+	}
+	
+	@font-face{
+		font-family: Lato;
+		src: url('Lato-LightItalic.woff') format("woff");
+		font-weight: 300;
+		font-style: italic;
+	}
+	
+	@font-face{
+		font-family: Lato;
+		src: url('Lato-Regular.woff') format("woff");
+		font-weight: 400;
+		font-style: normal;
+	}
+	
+	@font-face{
+		font-family: Lato;
+		src: url('Lato-Italic.woff') format("woff");
+		font-weight: 400;
+		font-style: italic;
+	}
+}

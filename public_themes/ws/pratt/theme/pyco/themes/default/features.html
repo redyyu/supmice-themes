@@ -1,0 +1,27 @@
+{% if g and page %}
+<div class="section-primary features">
+  <div class="container">
+    <div class="row centered section-header">
+      <div class="col-md-8 col-md-offset-2">
+        <h2>{{page.title}}</h2>
+      </div>
+    </div>
+    <div class="row centered">
+      {% for item in page.series %}
+      <div class="col-md-4 feature-item">
+        <div>
+          <img class="img-holder {{item.class}}"
+               src="{{g.img_holder}}"
+               style="{{item.src|thumbnail|bg_img}}">
+          <h3 class="text-nowrap">{{item.title}}</h3>
+          <p class="text-clamp-3">{{item.caption}}</p>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    <hr>
+</div>
+
+{% else %}
+<script>window.location.replace('{{base_url}}/#{{meta.slug}}')</script>
+{% endif %}

@@ -1,0 +1,29 @@
+{% import 'g' as g with context %}
+<!DOCTYPE html>
+<html lang="{{lang}}">
+{% include '_head.html' %}
+
+<body>
+  {% include '_header.html' %}
+
+  <section class="ribbon {{meta.ribbon.class}}"
+           style="{{(meta.ribbon.src or g.default_ribbon)|bg_img}}">
+    <header>
+      <h2>{{meta.title or _('Title')}}</h2>
+    </header>
+  </section>
+
+  <section class="page">
+    <div class="container">
+      <main>
+        <article class="py-5 col-10 offset-1">
+          <div class="content">{{content}}</div>
+        </article>
+      </main>
+    </div>
+  </section>
+  {% include '_footer.html' %}
+
+{{g.scripts}}
+</body>
+</html>

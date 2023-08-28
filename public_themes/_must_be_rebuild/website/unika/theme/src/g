@@ -1,0 +1,2 @@
+{% set default_favicon = theme_url+"/img/default_favicon.png" %}
+{% set font_cdn = "fonts.useso.com" if gfw else "fonts.googleapis.com" %}

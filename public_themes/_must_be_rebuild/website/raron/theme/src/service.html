@@ -1,0 +1,37 @@
+{% if g and page %}
+
+<div class="services" id="services">
+  <h3 class="heading">{{page.title or _('Title')}}</h3>
+  <p class="desc">{{page.subtitle or _('Title')}}</p>
+  <h6> </h6>
+  <div class="wrap">
+  <div class="service_grids">
+    {% for item in page.gallery %}
+    <div class="grid1">
+      <img src="{{item.src}}" alt="" />
+      <div class="grid_sub">
+        <h3><span>{{item.title}}</span></h3>
+        <h6> </h6>
+        <p>{{item.caption}}</p>
+      </div>
+        <div class="clear"> </div>
+    </div>
+    {% endfor %}
+    <div class="clear"> </div>
+  </div>
+  </div>
+<div class="slider2">
+  <div class=" bg_mask1 bg_mask2">
+    <div class="wrap">
+      <p><img src="{{theme_url+'/styles/lg.png'}}">
+        {{page.description or _('Description text here')}}
+        <img src="{{theme_url+'/styles/lg.png'}}"> </p>
+      <h6> </h6>
+      <h4>{{page.smtitle or _('Title')}}</h4>
+    </div>
+  </div>
+</div>
+</div>
+{% else %}
+  <script>window.location.replace('{{base_url}}/#/{{meta.slug}}');</script>
+{% endif %}

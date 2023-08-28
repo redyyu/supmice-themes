@@ -1,0 +1,158 @@
+/*
+---------------------------------------
+Sunstone Art styles
+
+Author:     Redy
+Version:    1.0.0
+--------------------------------------- */
+
+html,
+body {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+h1,h2,h3,h4,h5,h6,p,label,li,td,th {
+  line-height: 1.4em;
+}
+
+img,
+iframe {
+  max-width: 100% !important;
+}
+
+a:focus,
+a:active,
+button:focus,
+button:active {
+  outline: 0 !important;
+}
+
+mark {
+  color: #fff;
+  background-color: #c36;
+}
+
+body > header {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 15px;
+  text-align: center;
+  border-bottom: 1px solid #eee;
+}
+body > header.free {
+  padding: 0;
+}
+body > footer {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 15px;
+  text-align: center;
+  color: #aaa;
+}
+
+/* Elements
+--------------------------------------- */
+.signature {
+  color: #888;
+  padding: 5px 0;
+}
+
+.featured > * {
+  width: 100%;
+  text-align: center;
+}
+
+.featured img{
+  width: 100%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border: 3px solid #39c;
+  box-shadow: 0 5px 6px -3px rgba(0,0,0,.24);
+}
+.bullet {
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #c36;
+  font-size: 1.5em;
+  vertical-align: middle;
+}
+.count {
+  color: #c36;
+  font-size: 2.5em;
+}
+
+
+/* form
+--------------------------------------- */
+form {
+  margin-bottom: 45px;
+}
+form .results > p {
+  padding: 15px;
+  display: none;
+}
+form .messages {
+  margin: 5px 0;
+  padding: 5px;
+  display: none;
+}
+form .tip {
+  margin: 5px 0;
+  padding: 5px;
+}
+
+/* content
+--------------------------------------- */
+.content blockquote {
+  margin: 30px 15px;
+  font-size: 14px;
+  border-left-color: #f93;
+}
+
+.content .title {
+  margin-top: 30px;
+  margin-bottom: 15px;
+  text-align: center;
+}
+.content .title img {
+  border: 0;
+  box-shadow: none;
+}
+.content .title h2 {
+  margin: 0;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+}
+.content ul li {
+  color: #f93;
+}
+.content ul li > * {
+  color: #333;
+}
+.content table {
+  margin: 30px 0;
+}
+.content table td {
+  padding: 8px;
+  vertical-align: center;
+}
+.content .figure-hori {
+  border-top: 2px solid #6c3;
+  border-bottom: 2px solid #6c3;
+}
+.content .figure-vert {
+  border-top: 2px solid #c36;
+  border-bottom: 2px solid #c36;
+}
+.content .img-box {
+  text-align: center;
+}
+
+/* Languages
+/* ----------------------------------------------- */
+html[lang^="zh"],
+html[lang^="zh"] body {
+  font-family: 'Helvetica Neue',
+               'Hiragino Sans GB', STHeiti, 'Microsoft YaHei',
+                Helvetica, Arial, sans-serif;
+}

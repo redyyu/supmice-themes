@@ -1,0 +1,203 @@
+[
+	{"language":"zh"},
+	{
+		"msgid": "Toggle navigation",
+		"msgstr": "切换导航"
+	},
+	{
+		"msgid": "Menu",
+		"msgstr": "菜单"
+	},
+	{
+		"msgid": "Home",
+		"msgstr": "首页"
+	},
+	{
+		"msgid": "Loading",
+		"msgstr": "正在读取"
+	},
+	{
+		"msgid": "Close",
+		"msgstr": "关闭"
+	},
+	{
+		"msgid": "Title",
+		"msgstr": "标题"
+	},
+	{
+		"msgid": "Attributes",
+		"msgstr": "属性"
+	},
+	{
+		"msgid": "Request",
+		"msgstr": "申请"
+	},
+	{
+		"msgid": "Hide Main Content",
+		"msgstr": "隐藏主内容"
+	},
+	{
+		"msgid": "Products & Courses",
+		"msgstr": "产品与课程"
+	},
+	{
+		"msgid": "Activities & Events",
+		"msgstr": "活动与回顾"
+	},
+	{
+		"msgid": "Cooperation & Partners",
+		"msgstr": "合作伙伴"
+	},
+	{
+		"msgid": "Company Profile",
+		"msgstr": "公司简介"
+	},
+	{
+		"msgid": "Profile",
+		"msgstr": "简介"
+	},
+	{
+		"msgid": "Our Partners",
+		"msgstr": "我们的合作伙伴"
+	},
+	{
+		"msgid": "Our Clients",
+		"msgstr": "我们的客户"
+	},
+	{
+		"msgid": "Our Company",
+		"msgstr": "公司简介"
+	},
+	{
+		"msgid": "Our Services",
+		"msgstr": "我们的服务"
+	},
+	{
+		"msgid": "Services",
+		"msgstr": "服务"
+	},
+	{
+		"msgid": "Read More",
+		"msgstr": "阅读更多"
+	},
+	{
+		"msgid": "Partner's Logo",
+		"msgstr": "合作伙伴的标志"
+	},
+	{
+		"msgid": "Sereis Cotnent",
+		"msgstr": "序列内容"
+	},
+	{
+		"msgid": "Background Image",
+		"msgstr": "背景图片"
+	},
+	{
+		"msgid": "Background Carousel",
+		"msgstr": "背景轮播图"
+	},
+	{
+		"msgid": "Page Footer Link",
+		"msgstr": "页脚链接"
+	},
+	{
+		"msgid": "Relate to Content",
+		"msgstr": "链接到内容"
+	},
+	{
+		"msgid": "Contact",
+		"msgstr": "联系"
+	},
+	{
+		"msgid": "Tel:",
+		"msgstr": "电话："
+	},
+	{
+		"msgid": "Email:",
+		"msgstr": "电子邮件："
+	},
+	{
+		"msgid": "Subject",
+		"msgstr": "邮件标题"
+	},
+	{
+		"msgid": "Profile",
+		"msgstr": "简介"
+	},
+	{
+		"msgid": "Detail",
+		"msgstr": "详情"
+	},
+	{
+		"msgid": "Pagination",
+		"msgstr": "翻页"
+	},
+	{
+		"msgid": "Description text here",
+		"msgstr": "在这里填写简介文字"
+	},
+	{
+		"msgid": "Feature Title",
+		"msgstr": "特点标题"
+	},
+	{
+		"msgid": "Click here to edit the feature.",
+		"msgstr": "点击这里编辑特点内容"
+	},
+	{
+		"msgid": "Create New Feature",
+		"msgstr": "添加新特点"
+	},
+	{
+		"msgid": "Parallax",
+		"msgstr": "视差"
+	},
+	{
+		"msgid": "Primary Text",
+		"msgstr": "主要文本"
+	},
+	{
+		"msgid": "Secondary Text",
+		"msgstr": "次要文本"
+	},
+	{
+		"msgid": "Danger Text",
+		"msgstr": "警告文本"
+	},
+	{
+		"msgid": "Name",
+		"msgstr": "姓名"
+	},
+	{
+		"msgid": "Message",
+		"msgstr": "消息"
+	},
+	{
+		"msgid": "Send E-mail",
+		"msgstr": "发送邮件"
+	},
+	{
+		"msgid": "Follow Us",
+		"msgstr": "关注我们"
+	},
+	{
+		"msgid": "Visit us on Linkedin",
+		"msgstr": "访问我们的领英主页"
+	},
+	{
+		"msgid": "Reset",
+		"msgstr": "重置"
+	},
+	{
+		"msgid": "Previous",
+		"msgstr": "上一页"
+	},
+	{
+		"msgid": "Next",
+		"msgstr": "下一页"
+	},
+	{
+		"msgid": "$_CONTENT",
+		"msgstr": "<p>这一段是默认的富文本内容，你可以按照自己的需要重新填写。进入富文本编辑状态以后，将出现一个输入工具条（它通常会在画面顶部或是富文本区域的上方），使用工具条可以插入、更换或者删除图片和链接。</p>"
+	}
+]

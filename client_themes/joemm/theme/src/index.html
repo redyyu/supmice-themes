@@ -1,0 +1,55 @@
+{% import "g" as g with context %}
+<!DOCTYPE html>
+<html lang="{{lang}}">
+{% include '_head_.html' %}
+<body>
+{% include '_header_.html' %}
+
+<div id="orange">
+  <div class="container">
+    <div class="row centered">
+      <div class="col-lg-8 col-lg-offset-2">
+        <h4>{{meta.title or _('Title')}}</b></h4>
+        <p>{{meta.description or _('Description text here')}}</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div>
+  {% set booklet = query('works', args.paged) %}
+  <div id="columns">
+    {% for w in booklet.contents if w.photo %}
+    <figure class="box">
+      <div class="figurediv">
+        <a class="image-popup-fit-width"
+           href="{{w.photo.src}}">
+          <img src="{{w.photo.src|thumbnail}}"
+               alt="{{w.title}}"/>
+        </a>
+        <figcaption>{{w.title}}</figcaption>
+      </div>
+    </figure>
+    {% endfor %}
+  </div>
+
+  {% if booklet.total_pages > 1 %}
+  {% set has_prev_page = booklet.paged > 1 %}
+  {% set has_next_page = booklet.paged < booklet.total_pages %}
+  <div class="pagers">
+    <a href="{{glue({'paged':booklet.paged-1})}}"
+       class="btn btn-warning btn-md {{'disabled' if not has_prev_page}}">
+        {{_('Prev')}}
+    </a>
+    <span>{{booklet.paged}} / {{booklet.total_pages}}</span>
+    <a href="{{glue({'paged':booklet.paged+1})}}"
+       class="btn btn-warning btn-md {{'disabled' if not has_next_page}}">
+        {{_('Next')}}
+    </a>
+  </div>
+  {% endif %}
+</div>
+
+{% include '_footer_.html' %}
+</body>
+</html>

@@ -1,0 +1,94 @@
+{% import 'g' as g with context %}
+<!DOCTYPE html>
+<html lang="{{lang}}">
+{% include '_head.html' %}
+<body>
+
+{% include '_header.html' %}
+
+<section class="ribbon {{meta.hero.class}}"
+         style="{{meta.hero.style}}">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 text-center">
+        <h2>
+          {{meta.title}}
+        </h2>
+        <hr>
+        <p>{{meta.description}}</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  {% if meta.featured_img.src %}
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2">
+        <figure class="text-center">
+          {% if meta.featured_img.link %}
+          <a class="popup-video"
+             href="{{meta.featured_img.link|url}}">
+            <div class="popup-video-overlay">
+              <span class="glyphicon glyphicon-play-circle"></span>
+            </div>
+            <img class="img-responsive"
+                 src="{{meta.featured_img.src}}"
+                 alt="{{meta.featured_img.title}}" />
+          </a>
+          {% else %}
+          <img class="img-responsive"
+               src="{{meta.featured_img.src}}"
+               alt="{{meta.featured_img.title}}" />
+          {% endif %}
+        </figure>
+      </div>
+    </div>
+  </div>
+  {% endif %}
+</section>
+
+
+<section class="no-padding no-border">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2">
+        <div class="content">
+          {{content}}
+        </div>
+        <hr>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="no-border">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2">
+        <div class="row img-gallery attachments">
+          {% for pic in meta.attachments %}
+          <div class="col-md-3 item">
+            <figure>
+              <a href="{{pic.src}}"
+                 class="img-popup"
+                 title="{{pic.title}}">
+                <img src="{{theme_url}}/styles/trans_16x10.png"
+                     class="img-responsive"
+                     style="{{pic.src|thumbnail|bg_img}}"
+                     alt="{{pic.title}}" />
+              </a>
+            </figure>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% include '_footer.html' %}
+
+</body>
+</html>

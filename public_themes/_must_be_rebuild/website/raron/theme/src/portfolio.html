@@ -1,0 +1,55 @@
+{% if g and page %}
+<div id="cbp-so-scroller" class="cbp-so-scroller">
+<!--Portfolio-->
+  <div id="portfolio" class="clearfix">
+    <div class="portfolio-bg"> </div>
+    <div class="typo1">
+      <div class="wrapper clearfix">
+        <div class="section-title">
+          <h3 class="heading">{{page.title or _('Title')}}</h3>
+          <p class="desc">{{page.description or _('Description text here')}}</p>
+        </div>
+
+        <div id="options" class="clearfix">
+          <ul id="filters" class="option-set clearfix" data-option-key="filter">
+            {% for term in taxonomy.category.terms %}
+            <li><a href="#filter" data-option-value=".{{term.slug}}">{{term.title}}</a></li>
+            {% endfor %}
+            <li><a href="#filter" data-option-value="*" class="selected">All</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <ul id="container" class="clickable cs-style-5 grid clearfix">
+          {% for product in pages | type('product') %}
+          {% set _category = product.taxonomy.category or [] %}
+          <li class="element {{_category | join(' ')}}">
+            <figure>
+              <img src="{{product.picture.src}}" alt="" />
+              <figcaption>
+                <h3><a href="#">{{product.title}}</a></h3>
+                <footer>
+                  <div id="nivo-lightbox-demo">
+                    <p>
+                      <a href="{{product.picture.src}}"
+                       data-lightbox-gallery="gallery-{{_category | join(' ')}}"
+                       id="nivo-lightbox-demo">
+                        {{product.checkbtn}}
+                      </a>
+                    </p>
+                  </div>
+                </footer>
+              </figcaption>
+            </figure>
+          </li>
+          {% endfor %}
+        <div class="clear"> </div>
+      </ul>
+    </div>
+  </div>
+</div>
+
+{% else %}
+  <script>window.location.replace('{{base_url}}/#/{{meta.slug}}');</script>
+{% endif %}

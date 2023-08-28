@@ -1,0 +1,39 @@
+{% import "g" as g with context %}
+<!DOCTYPE html>
+<html lang="{{lang}}">
+{% include '_head_.html' %}
+
+<body>
+  {% include '_header_.html' %}
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2">
+        <h1 class="text-center">{{meta.title}}</h1>
+        <div class="signature text-center">
+          {{meta.author}}
+          <span class="bullet">&bullet;</span>
+          {{meta.date|date_formatted}}
+        </div>
+        {% if meta.featured_img.src %}
+        <div class="featured">
+          <img src="{{meta.featured_img.src}}">
+        </div>
+        {% endif %}
+        <hr>
+        <article sup-wx-broadcast class="content">
+          {{content}}
+          {% if meta.qr.src %}
+          <div style="text-align: center; padding-top:30px;">
+            <img src="{{meta.qr.src}}">
+          </div>
+          {% endif %}
+        </article>
+      </div>
+    </div>
+  </div>
+
+{% include '_footer_.html' %}
+{% include '_js_.html' %}
+</body>
+</html>

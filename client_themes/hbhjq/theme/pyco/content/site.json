@@ -1,0 +1,55 @@
+{
+  "content_types": {
+    "page": "Static Pages"
+  },
+  "menus": {
+    "primary": [
+      {
+        "alias": "index",
+        "meta": {},
+        "nodes": [],
+        "title": "首页",
+        "link": "/#"
+      },
+      {
+        "alias": "history",
+        "meta": {},
+        "nodes": [],
+        "title": "品牌故事",
+        "link": "/#/brand"
+      },
+      {
+        "alias": "production",
+        "meta": {},
+        "nodes": [],
+        "title": "特色产品",
+        "link": "/#/product"
+      },
+      {
+        "alias": "contact",
+        "meta": {},
+        "nodes": [],
+        "title": "联系我们",
+        "link": "/#/contact"
+      },
+      {
+        "alias": "purchase",
+        "meta": {
+          "class":"disabled"
+        },
+        "nodes": [],
+        "title": "在线购买",
+        "link": "/#"
+      }
+    ]
+  },
+  "meta": {
+    "author": "majik",
+    "copyright": "&copy; 2015 湖北菁禾缘健康酒业有限公司版权。",
+    "description": "菁禾缘健康酒业公司网站",
+    "license": "Powered by Soopro.",
+    "locale": "zh_CN",
+    "title": "红菁荞｜原生态养生白酒"
+  },
+  "terms":{}
+}

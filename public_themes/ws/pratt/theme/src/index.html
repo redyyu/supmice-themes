@@ -1,0 +1,48 @@
+{% import 'g' as g with context %}
+<!DOCTYPE html>
+<html lang="{{lang}}">
+{% include '_head.html' %}
+
+<body data-spy="scroll" data-offset="50" data-target=".primary-nav">
+{% include '_header.html' %}
+
+<section id="{{meta.slug}}">
+  <div class="hero">
+    <div class="container">
+      <div class="row centered section-header">
+        <div class="col-md-8 col-md-offset-2">
+          <h1>{{meta.title}}</h1>
+          <h2>{{meta.subtitle}}</h2>
+        </div>
+      </div>
+      <div class="row">
+    		<div class="col-lg-2 hero-tip">
+    			<h5>{{meta.left_hint_title}}</h5>
+    			<p>{{meta.left_hint}}</p>
+    			<img class="hidden-xs hidden-sm hidden-md"
+               src="{{theme_url}}/styles/arrow1.png">
+    		</div>
+        <div class="col-lg-8 hero-imgbox">
+          <img src="{{g.img_holder_cover}}"
+               style="{{(meta.hero.src or g.default_hero)|bg_img}}"/>
+        </div>
+    		<div class="col-lg-2 hero-tip">
+    			<img class="hidden-xs hidden-sm hidden-md"
+               src="{{theme_url}}/styles/arrow2.png">
+    			<h5>{{meta.right_hint_title}}</h5>
+    			<p>{{meta.right_hint}}</p>
+    		</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% for page in segments() if page.template != meta.template %}
+  <section id="{{page.slug}}">
+  {% include page.template+'.html' ignore missing %}
+  </section>
+{% endfor %}
+
+{% include '_footer.html' %}
+</body>
+</html>

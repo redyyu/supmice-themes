@@ -1,0 +1,26 @@
+{
+	"version": "0.4.2",
+  "slug": "hbhjq",
+	"title": "红菁荞",
+  "author": "Soopro",
+  "type": "ws",
+	"icon": "icon.png",
+	"description": "菁禾缘健康酒业公司网站定制主题",
+
+  "templates": [
+    "index",
+    "advantage",
+    "banner",
+    "contact",
+    "gallery",
+    "brand",
+    "news",
+    "product",
+    "story",
+    "video"
+  ],
+
+	"options":{
+		"perpage": 60
+	}
+}

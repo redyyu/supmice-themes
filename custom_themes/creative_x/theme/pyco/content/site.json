@@ -1,0 +1,74 @@
+{
+  "content_types": {
+    "page": "Pages"
+  },
+  "menus": {
+    "primary": [
+      {
+        "key": "home",
+        "meta": {},
+        "nodes": [],
+        "name": "Home",
+        "link": "#index"
+      },
+      {
+        "key": "about",
+        "meta": {},
+        "nodes": [],
+        "name": "About",
+        "link": "#about"
+      },
+      {
+        "key": "service",
+        "meta": {},
+        "nodes": [],
+        "name": "Services",
+        "link": "/services"
+      },
+      {
+        "key": "portfolio",
+        "meta": {},
+        "nodes": [],
+        "name": "Portfolio",
+        "link": "#portfolio"
+      },
+      {
+        "key": "contact",
+        "meta": {},
+        "nodes": [],
+        "name": "Contact",
+        "link": "#contact"
+      }
+    ]
+
+  },
+  "meta": {
+    "slug":"pyco",
+    "type":"creative",
+    "logo":"[%uploads%]/logo.png",
+    "favicon": "[%uploads%]/favicon.png",
+    "author": "redy",
+    "copyright": "2015 Made by Pyco.",
+    "description": "The next generation of Multi-Channel CMS.",
+    "license": "<span>MIT License MIT MIT License MITMIT License MIT</span><span>License MIT License</span>",
+    "locale": "en_US",
+    "title": "Soopro",
+    "socials":{
+      "facebook":{"name":"Facebook","url":"#","code":"facebook"},
+      "twitter":{"name":"Twitter","url":"#","code":"twitter"}
+    },
+    "languages":[
+      { "key":"en_US",
+        "name": "English",
+        "url": "#"
+      },
+      {
+        "key": "zh_CN",
+        "name": "中文",
+        "url": "#"
+      }
+    ]
+  },
+  "segments": ["about", "services", "portfolio", "contact"]
+
+}

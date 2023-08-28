@@ -1,0 +1,25 @@
+{
+  "watch":{
+    "src": "src",
+    "dest": "pyco/themes/default",
+    "clean": true,
+    "server": "pyco",
+    "skip_includes": "html"
+  },
+  "packing":{
+    "zip":{
+      "cwd":"src",
+      "dest":".",
+      "file":"theme.zip"
+    },
+    "upload":{
+      "cwd":".",
+      "file":"theme.zip",
+      "headers":{
+        "SecretKey":"zhengrongfu-1951663cc8a84630"
+      },
+      "url":"http://api.soopro.net/app/zhengrongfu-wx/develop/theme",
+      "delete": true
+    }
+  }
+}

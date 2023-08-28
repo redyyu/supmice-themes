@@ -1,0 +1,26 @@
+{% extends "_layout.html" %}
+{% block wrapper %}
+
+<div class="section-header ribbon-bg error-header">
+  <div class="container">
+    <div class="row centered">
+      <div class="col-md-8 col-md-offset-2">
+        <h2>{{meta.title or _('Error 404')}}</h2>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section-primary error">
+  <div class="container">
+    <div class="row centered">
+      <div class="col-lg-8 col-lg-offset-2">
+        <div class="content">
+          {{content or _('$_ERROR404')}}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

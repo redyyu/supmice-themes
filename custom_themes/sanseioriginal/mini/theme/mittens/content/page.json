@@ -1,0 +1,14 @@
+{
+  "meta": {
+    "title": "Page Title",
+    "featured_img": {
+      "src": "/uploads/default.jpg"
+    }
+  },
+  "slug": "page-1",
+  "content_type": "page",
+  "date": "2018-12-12",
+  "price": 0,
+  "tags": [],
+  "content": ""
+}

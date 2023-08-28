@@ -1,0 +1,35 @@
+{
+	"slug":"universe",
+	"version": "1.0.1",
+	"license": "MIT",
+	"title": {
+		"en": "Universe Wechat Theme",
+		"zh": "宇宙微信主题"
+	},
+	"thumbnail": "thumbnail.png",
+	"capabilities": ["wx"],
+	"previews": [],
+	"description": {
+		"en": "This is a simple universe theme for wechat article, you will experience write a wechat article with custom template.",
+		"zh": "这是一个简单的微信默认主题，你可以用它试着撰写一篇带有主题外观的微信文章。"
+	},
+	"author": "Cheney",
+	"templates": {
+		"index": {
+			"en": "index",
+			"zh": "索引"
+		},
+		"article": {
+			"en": "Article",
+			"zh": "文章"
+		}
+	},
+	"mode": 1,
+	"options": {
+		"sortby": "data",
+		"excerpt_length": 162,
+		"excerpt_ellipsis": "&hellip;",
+		"date_format": "%Y-%m-%d",
+		"perpage": 6
+	}
+}

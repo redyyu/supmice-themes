@@ -1,0 +1,41 @@
+{
+  "version": "1.2.0",
+  "slug": "essence",
+  "author": "cheney",
+  "license": "MIT",
+  "title": {
+    "en":"Essence Cafe",
+    "zh":"质源咖啡"
+  },
+  "type": "ws",
+  "capability": 1,
+  "icon": "icon.png",
+  "poster": "poster.jpg",
+  "previews": ["preview.png"],
+  "description": {
+    "en":"A simple cafe theme, you can show your products.",
+    "zh":"一个简单的咖啡店，你可以展示各种咖啡店产品。"
+  },
+
+  "templates": [
+    "page",
+    "post",
+    "product",
+    "event",
+    "products",
+    "culture",
+    "activity",
+    "contact",
+    "error_404",
+    "index"
+  ],
+  "content_types":{
+    "product": {"title": "products"},
+    "event": {"title": "events"},
+    "post": {"title": "posts"}
+  },
+  "options":{
+    "sortby": "date",
+    "perpage": 12
+  }
+}

@@ -1,0 +1,47 @@
+{% import 'g' as g with context %}
+<!DOCTYPE html>
+<html lang="{{lang}}">
+{% include '_head_.html' %}
+
+<body>
+  <div class="outer">
+    <div class="masthead">
+      <a href="{{base_url}}/chapter/?term={{request.args.term}}">
+        &rarr; {{_('Chapter')}}
+      </a>
+    </div>
+
+    <article class="container">
+      <header>
+        <h2>{{meta.title}}</h2>
+      </header>
+      <div class="content">
+        {{content}}
+      </div>
+    </article>
+
+    <aside>
+      {% set channel = query_sides(meta.id, 'article',
+                                   taxonomy={'slug': 'chapter',
+                                             'term': request.args.term}) %}
+      <ul class="paginator">
+        {% if channel.before %}
+        <li class="previous">
+          <a href="{{glue({'term':request.args.term}, channel.before.url)}}">
+            {{channel.before.title}}
+          </a>
+        </li>
+        {% endif %}
+        {% if channel.after %}
+        <li class="next">
+          <a href="{{glue({'term':request.args.term}, channel.after.url)}}">
+            {{channel.after.title}}
+          </a>
+        </li>
+        {% endif %}
+      </ul>
+    </aside>
+  </div>
+  {% include '_js_.html' %}
+</body>
+</html>

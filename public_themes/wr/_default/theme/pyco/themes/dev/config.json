@@ -1,0 +1,31 @@
+{
+  "version": "1.0.8",
+  "slug": "wa",
+  "author": "Redy",
+  "license": "MIT",
+  "title": {
+    "en":"Default HTML5 App",
+    "zh":"默认H5轻应用主题"
+  },
+  "type": "wa",
+  "capability": 0,
+  "icon": "icon.png",
+  "poster": "poster.jpg",
+  "previews": ["preview.jpg"],
+  "description": {
+    "en":"This is a default WebApp theme, you can try to write something fun.",
+    "zh":"一个默认的H5轻应用主题，您可以在这里随便写点儿有趣的东西。"
+  },
+
+  "templates": [
+    "index",
+    "^page",
+    "^page-s1",
+    "^showreel",
+    "^free"
+  ],
+
+  "options": {
+      "sortby": "date"
+  }
+}

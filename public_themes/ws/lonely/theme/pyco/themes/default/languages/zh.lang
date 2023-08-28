@@ -1,0 +1,47 @@
+[
+	{"language":"zh"},
+	{
+		"msgid": "Title",
+		"msgstr": "标题"
+	},
+	{
+		"msgid": "Description text here",
+		"msgstr": "在这里填写简介文字"
+	},
+	{
+		"msgid": "Item Title",
+		"msgstr": "子标题"
+	},
+	{
+		"msgid": "Click here add series content",
+		"msgstr": "点击这里添加序列内容"
+	},
+  {
+    "msgid": "Photo Title",
+    "msgstr": "照片标题"
+  },
+  {
+    "msgid": "Click here to edit the photo.",
+    "msgstr": "点击这里编辑照片内容。"
+  },
+  {
+    "msgid": "Create New Phone",
+    "msgstr": "添加新照片"
+  },
+  {
+    "msgid": "Feature Title",
+    "msgstr": "特色标题"
+  },
+  {
+    "msgid": "Click here to edit the feature.",
+    "msgstr": "点击这里编辑特色内容。"
+  },
+  {
+    "msgid": "Create New Feature",
+    "msgstr": "添加新特色"
+  },
+	{
+		"msgid": "$_CONTENT",
+		"msgstr": "<p>这一段是默认的富文本内容，你可以按照自己的需要重新填写。进入富文本编辑状态以后，将出现一个输入工具条（它通常会在画面顶部或是富文本区域的上方），使用工具条可以插入、更换或者删除图片和链接。</p>"
+	}
+]

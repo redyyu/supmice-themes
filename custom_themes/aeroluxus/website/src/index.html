@@ -1,0 +1,192 @@
+{% import 'g' as g with context %}
+<!DOCTYPE html>
+<html lang="{{lang}}">
+{% include '_head.html' %}
+
+<body class="parallax-major">
+  <!-- screen loader -->
+  <div class="loader">
+    <h4>{{_('Loading')}}</h4>
+    <div class="lds-ellipsis">
+      <div></div><div></div><div></div><div></div>
+    </div>
+  </div>
+
+  <div class="bg-carousel carousel slide carousel-fade"
+       data-ride="carousel">
+    <div class="carousel-inner bg-carousel-inner">
+      {% for slide in meta.carousel %}
+      <div class="carousel-item bg-carousel-item
+                  {{'active' if loop.index == 1}}">
+        <img class="slide-img"
+             src="{{g.trans}}"
+             alt="{{slide.title}}"
+             style="{{slide.src|bg_img}}">
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+  {% include '_header.html' %}
+
+  <section class="hero {{meta.hero.class}}">
+    <div class="hero-inner">
+      <h1>{{meta.title or _('Title')}}</h1>
+      <h3 class="lead">
+        {{meta.description or ''}}
+      </h3>
+      <a class="entrance anim-fade-in-out"
+         href="#">
+        <svg width="48" height="48" viewBox="0 0 48 48" ><path d="M47.4522,12.4112a1.8749,1.8749,0,0,0-2.6517-.0027L25.3258,31.8427a1.8775,1.8775,0,0,1-2.653-.0014L3.2,12.4085a1.875,1.875,0,1,0-2.649,2.6543l19.472,19.4316a5.6309,5.6309,0,0,0,7.9535.0013L47.45,15.0628A1.875,1.875,0,0,0,47.4522,12.4112Z"/></svg>
+      </a>
+    </div>
+  </section>
+
+  <section id="SERVICES"
+           class="segment">
+    <div class="container">
+      <header>
+        <h3>{{_('Products & Courses')}}</h3>
+      </header>
+      {% set services = query('service', perpage=6).contents %}
+      <div class="row">
+      {% for service in services %}
+        <div class="col-md-6 col-lg-3">
+          <a class="card text-center"
+             href="{{service.url}}">
+            <img class="card-img-top thumbnail"
+                 src="{{g.trans2x1}}"
+                 style="{{service.featured_img.src|bg_img}}"
+                 alt="{{service.title}}">
+            <div class="card-body">
+              <h5 class="card-title {{'text-truncate' if lang != 'en' else 'text-clamp-2'}}">{{service.title}}</h5>
+              <p class="card-text text-clamp-3 small">
+                {{service.description or service.excerpt}}
+              </p>
+              <div class="more-text">{{_('Read More')}}</div>
+            </div>
+          </a>
+        </div>
+      {% endfor %}
+      </div>
+    </div>
+  </section>
+
+  <section id="COMPANY"
+           class="segment bg-cover {{'glassy' if meta.about.glassy}}"
+           style="{{meta.about.bg|bg_img}}">
+    <div class="container">
+      <header>
+        <h3>{{meta.about.title or _('Our Company')}}</h3>
+      </header>
+      <div class="text-center px-2">
+        <p class="col-md-10 offset-md-1">
+          {{meta.about.caption}}
+        </p>
+        <a class="btn btn-primary"
+           href="{{meta.about.link|url}}">
+          {{_('Read More')}}
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section id="ACTIVITY"
+           class="segment">
+    <div class="container">
+      <header>
+        <h3>{{_('Activities & Events')}}</h3>
+      </header>
+      {% set posts = query('post', perpage=6).contents %}
+      <div id="POST-CAROUSEL"
+           class="post-carousel carousel slide"
+           data-interval="6000"
+           data-ride="carousel">
+        <div class="carousel-inner post-carousel-inner">
+          {% for post in posts %}
+          <div class="carousel-item post-carousel-item
+                      {{'active' if loop.index == 1}}">
+            <div class="row">
+              <div class="col-md-6 py-2">
+                <div class="pl-md-3">
+                  <img class="slide-img"
+                       src="{{g.trans2x1}}"
+                       style="{{post.featured_img.src|bg_img}}">
+                </div>
+              </div>
+              <div class="col-md-6 py-2">
+                <h4 class="{{'text-truncate' if lang != 'en' else 'text-clamp-2'}}">{{post.title}}</h4>
+                <p class="text-clamp-5">
+                  {{post.description or post.excerpt}}
+                </p>
+                <a class="btn btn-primary mt-2"
+                   href="{{post.url}}">
+                  {{_('Read More')}}
+                </a>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+        <a class="carousel-control carousel-control-prev"
+           href="#POST-CAROUSEL"
+           role="button"
+           data-slide="prev">
+          <svg width='24' height='24' viewBox='0 0 8 8'><path d='M5.25 0l-4 4 4 4 1.5-1.5L4.25 4l2.5-2.5L5.25 0z'/></svg>
+          <span class="sr-only">{{_('Previous')}}</span>
+        </a>
+        <a class="carousel-control carousel-control-next"
+           href="#POST-CAROUSEL"
+           role="button"
+           data-slide="next">
+          <svg width='24' height='24' viewBox='0 0 8 8'><path d='M2.75 0l-1.5 1.5L3.75 4l-2.5 2.5L2.75 8l4-4-4-4z' /></svg>
+          <span class="sr-only">{{_('Next')}}</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section id="CONTACT"
+           class="segment dark">
+    <div class="container">
+      <header>
+        <h3>{{meta.contact.title or _('Contact')}}</h3>
+      </header>
+      <div class="row px-2">
+        <div class="col-md-6">
+          <p>{{meta.contact.caption}}</p>
+          <div class="pt-2">
+            <h6 class="my-4">
+              {{_('Tel:')}} {{meta.contact.tel}}
+            </h6>
+            <h6 class="my-4">
+              {{_('Email:')}}
+              <a target="_top" href="mailto:{{meta.contact.email}}">
+                {{meta.contact.email}}
+              </a>
+            </h6>
+            <h6 class="my-4">
+              <a class="linkedin"
+                 href="{{meta.contact.linkedin}}"
+                 target="_blank">
+                <img class="icon"
+                     src="{{theme_url}}/assets/linkedin.png">
+                <span>{{_('Visit us on Linkedin')}}</span>
+              </a>
+            </h6>
+          </div>
+        </div>
+        <div class="col-md-6 text-center p-5 p-md-0">
+          <h6>{{meta.contact.follow or _('Follow us')}}</h6>
+          <div class="p-2">
+            <img class="qrcode" src="{{meta.contact.src}}" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {% include '_footer.html' %}
+
+{{g.scripts}}
+</body>
+</html>

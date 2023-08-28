@@ -1,0 +1,28 @@
+html,
+body {
+}
+
+.product .price {
+  font-size: 1.4em;
+  font-weight: bold;
+}
+
+/* customize ui
+----------------------------------------------*/
+.carousel {
+  height: 300px;
+}
+mini-top-navbar {
+  color: #fff;
+  background-color: #3cf;
+}
+mini-top-navbar icon {
+  fill: #fff;
+}
+mini-bottom-tabs {
+  color: #3cf;
+  background-color: #fff;
+}
+mini-bottom-tabs icon {
+  fill: #3cf;
+}

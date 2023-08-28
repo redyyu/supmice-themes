@@ -1,0 +1,23 @@
+{% if g and page %}
+<div class="page section-primary
+            {{loop.cycle('palette-gray', '')}}
+            {{page.bg.class}}"
+     style="{{page.bg.style}}">
+  <div class="container text-center">
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2 section-header">
+        <h2>{{page.title}}</h2>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2">
+        <div class="content">
+          {{page.content}}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% elif not meta.is_front %}
+<script>window.location.replace('{{base_url}}/#{{meta.slug}}');</script>
+{% endif %}

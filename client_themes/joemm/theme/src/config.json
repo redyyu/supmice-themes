@@ -1,0 +1,31 @@
+{
+  "version": "1.8.0",
+  "slug": "joemm",
+  "author": "cheney",
+  "license": "MIT",
+  "title": {
+    "en":"JoeMM",
+    "zh":"乔员外"
+  },
+  "type": "ws",
+  "icon": "icon.png",
+  "poster": "poster.jpg",
+  "previews": ["preview.png"],
+  "description": {
+    "en":"A simple portfolio website. You can show your works on it.",
+    "zh":"一个简单的作品集网站，您可以展示您的作品。"
+  },
+  "templates": [
+    "index",
+    "about",
+    "services",
+    "works",
+    "error_404"
+  ],
+  "content_tpyes":{
+    "works": {"title": "Works", "status": 0}
+  },
+  "options":{
+    "sortby": "date"
+  }
+}

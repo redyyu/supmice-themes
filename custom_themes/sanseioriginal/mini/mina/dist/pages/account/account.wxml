@@ -1,0 +1,137 @@
+<wxs src="../../translator.wxs" module="_"></wxs>
+<wxs src="../../filters.wxs" module="f"></wxs>
+{{_('$set', locale)}}
+
+
+<block wx:if="{{loaded}}">
+  <!-- member -->
+  <view class="panel avatar-panel primary">
+    <!-- is member -->
+    <block wx:if="{{profile.id}}">
+      <button class="avatar-btn raised"
+              type="primary"
+              open-type="getUserInfo"
+              bindgetuserinfo="sync_profile">
+        <block wx:if="{{profile.meta.avatar}}">
+          <image class="avatar"
+                 src="{{profile.meta.avatar}}"/>
+          <view class="text">
+            {{profile.meta.name || profile.login}}
+          </view>
+          <view class="caption draft">
+            {{_('Points %s', f.credit(profile.credit))}}
+          </view>
+        </block>
+        <block wx:else>
+          <view class="ico ico-user"/>
+          <view class="text">
+            {{profile.login}}
+          </view>
+          <view class="caption draft">
+            {{_('Click here authorize profile')}}
+          </view>
+        </block>
+      </button>
+    </block>
+
+    <!-- not member -->
+    <block wx:else>
+      <button class="avatar-btn raised"
+              type="primary"
+              open-type="getPhoneNumber"
+              bindgetphonenumber="join_member">
+        <view class="ico ico-user"/>
+        <view class="text">{{_('Join Membership')}}</view>
+      </button>
+    </block>
+  </view>
+
+  <!-- orders -->
+  <block wx:if="{{is_empty}}">
+    <!-- is empty -->
+    <view class="container">
+      <view class="holder flex-column centered">
+        <view class="ico xxl ico-cart-empty accent draft"/>
+        <view class="text accent draft">
+          {{_('No orders')}}
+        </view>
+        <view class="padding margin">
+          <button class="raised"
+                  type="accent"
+                  bind:tap="go_buy">{{_('Go Buy Something')}}</button>
+        </view>
+      </view>
+    </view>
+  </block>
+
+  <block wx:else>
+    <!-- list -->
+    <view class="container panel"
+          wx:for="{{orders}}"
+          wx:for-item="order"
+          wx:key="index">
+      <view class="padding">
+        <view class="card"
+              data-order="{{order}}"
+              bind:tap="open">
+          <view class="card-title">
+            <view class="card-title-text">
+              <view class="body-text accent">
+                {{_('Trade ID')}} {{order.trade_id}}
+              </view>
+              <view class="title primary space-margin">
+                ¥ {{f.price(order.payment)}}
+              </view>
+            </view>
+            <view class="card-title-media align-items-end">
+              <block wx:if="{{order.status == -1}}">
+                <view class="body-text acctent">
+                  {{_('Error')}}
+                </view>
+                <view class="ico lg ico-warn warn margin" />
+              </block>
+              <block wx:elif="{{order.status == 0}}">
+                <view class="body-text accent">
+                  {{_('Pending')}}
+                </view>
+                <view class="ico lg ico-time primary margin" />
+              </block>
+              <block wx:elif="{{order.status == 1}}">
+                <view class="body-text accent">
+                  {{_('Paid')}}
+                </view>
+                <view class="ico lg ico-paid primary margin"/>
+              </block>
+              <block wx:elif="{{order.status == 2}}">
+                <view class="body-text accent">
+                  {{_('Delivered')}}
+                </view>
+                <view class="ico lg ico-delivery primary margin"/>
+              </block>
+              <block wx:elif="{{order.status == 3}}">
+                <view class="body-text accent">
+                  {{_('Finished')}}
+                </view>
+                <view class="ico lg ico-complete primary margin"/>
+              </block>
+              <block wx:elif="{{order.status == 4}}">
+                <view class="body-text accent">
+                  {{_('Refunded')}}
+                </view>
+                <view class="ico lg ico-refund primary margin"/>
+              </block>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </block>
+
+  <!-- footer -->
+  <view class="footer"
+        wx:if="{{orders.length > 0}}">
+    <component-loadmore loading="{{is_loading}}" has-more="{{has_more}}">
+      {{_('Scroll down for more')}}
+    </component-loadmore>
+  </view>
+</block>

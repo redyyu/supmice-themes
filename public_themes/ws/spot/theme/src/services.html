@@ -1,0 +1,53 @@
+{% import "g" as g with context %}
+<!DOCTYPE html>
+<html lang="{{lang}}">
+{% include '_head.html' %}
+<body>
+{% include '_header.html' %}
+
+<div class="section-header blue-bg">
+  <div class="container">
+    <div class="row centered">
+      <div class="col-md-8 col-md-offset-2">
+        <h2>{{meta.title}}</h2>
+        <p>{{meta.description}}</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section-primary">
+  <div class="container">
+    <div class="row centered">
+      {% set _col_service = 4 if meta.series|length > 3 else 6 %}
+      {% for item in meta.series %}
+      <div class="col-sm-{{_col_service}} service-item">
+        <div class="{{item.class}}">
+          <img src="{{g.img_holder}}"
+               style="{{item.src|thumbnail|bg_img}}">
+          <h4 class="text-nowrap">
+            {{item.title}}
+          </h4>
+          <p class="text-clamp-4">
+            {{item.caption}}
+          </p>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+<div class="section-primary red-bg">
+  <div class="container">
+    <div class="row centered">
+      <div class="col-lg-8 col-lg-offset-2">
+        <h4>{{meta.statement}}</h4>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% include '_footer.html' %}
+</body>
+</html>

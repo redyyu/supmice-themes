@@ -1,0 +1,9 @@
+{
+  "watch":{
+    "src": "src",
+    "dest": "pyco/payload/themes/default",
+    "clean": true,
+    "server": "pyco",
+    "skip_includes": "html"
+  }
+}

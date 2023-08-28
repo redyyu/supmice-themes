@@ -1,0 +1,4 @@
+module.exports = [
+  {key: 'en', texts: require('languages/en.wxs')}
+  {key: 'zh', texts: require('languages/zh.wxs')}
+]

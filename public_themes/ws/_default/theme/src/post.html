@@ -1,0 +1,48 @@
+{% import "g" as g with context %}
+
+<!DOCTYPE html>
+<html lang="{{lang}}">
+
+{% include '_head_.html' %}
+
+<body>
+  <!-- Navigation -->
+  {% include '_nav_.html' %}
+
+  <!-- Page Header -->
+  <header class="intro-header post-kv {{meta.hero.class}}"
+          style="{{meta.hero.style}}">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+          <div class="post-heading">
+            <h1>{{meta.title or _('Title')}}</h1>
+            <h2 class="subheading">
+              {{meta.description or _('Description text here')}}
+            </h2>
+            <span class="meta">
+              {{_("Posted by")}} {{meta.author}} {{_("on")}}
+              {{meta.date|date_formatted}}
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- Post Content -->
+  <article>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+          <div class="content">
+            {{content or _('$_CONTENT')}}
+          </div>
+        </div>
+      </div>
+    </div>
+  </article>
+  <hr>
+<!-- Footer -->
+{% include '_footer_.html'%}
+</body>
+</html>

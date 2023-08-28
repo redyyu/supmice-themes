@@ -1,0 +1,24 @@
+{
+  "slug": "creative_x",
+  "version": "1.2.2",
+  "author": "Redy",
+  "license": "MIT",
+  "title": "CREATIVE X",
+  "type": "ws",
+  "capability": 0,
+  "icon": "icon.jpg",
+  "poster": "poster.jpg",
+  "previews": ["preview.jpg"],
+
+  "templates": [
+    "^page",
+    "^services",
+    "^features",
+    "^portfolio",
+    "index"
+  ],
+
+  "options":{
+      "sortby": "+date"
+  }
+}

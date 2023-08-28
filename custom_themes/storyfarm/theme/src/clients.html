@@ -1,0 +1,59 @@
+{% import 'g' as g with context %}
+<!DOCTYPE html>
+<html lang="{{lang}}">
+{% include '_head.html' %}
+<body>
+
+{% include '_header.html' %}
+
+<section class="ribbon {{meta.hero.class}}"
+         style="{{meta.hero.style}}">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 text-center">
+        <h2>
+          {{meta.title}}
+        </h2>
+        <hr>
+        <p>{{meta.description}}</p>
+      </div>
+    </div>
+  </div>
+</section>
+<section>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2">
+        <div class="content">
+          {{content}}
+        </div>
+        <hr>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="no-padding no-border">
+  <div class="container">
+    <div class="row">
+      {% for item in meta.series %}
+      <div class="col-lg-3 col-md-4 col-sm-6 text-center">
+        <a href="{{item.link|url}}"
+           target="{{item.target or '_blank'}}">
+          <img class="img-responsive img-client"
+               src="{{theme_url}}/styles/trans_16x10.png"
+               style="{{item.src|thumbnail|bg_img}}"
+               alt="{{item.title}}">
+        </a>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+
+
+{% include '_footer.html' %}
+
+</body>
+</html>

@@ -1,0 +1,32 @@
+{% if g and page %}
+
+<div class="section-primary {{page.bg.class}}"
+     style="{{page.bg.style}}">>
+  <div class="container">
+
+    <div class="row centered section-header">
+      <div class="col-md-8 col-md-offset-2">
+        <h2>{{page.title}}</h2>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6 text-right">
+        <div class="content">
+          {{page.content}}
+        </div>
+      </div>
+      <div class="col-md-6 centered">
+        <img class="thumbnail-img"
+             src="{{page.featured_img.src or g.default_img}}"
+             alt="{{page.featured_img.title}}" />
+      </div>
+
+    </div>
+
+  </div>
+</div>
+
+{% else %}
+<script>window.location.replace('{{base_url}}/#{{meta.slug}}')</script>
+{% endif %}

@@ -1,0 +1,37 @@
+{% if g and page %}
+<div class="container">
+  <header>
+    <h2>{{page.title or _('Title')}}</h2>
+    <h4 class="lead">{{page.description}}</h4>
+  </header>
+  <div class="row">
+    {% for item in page.series %}
+    <div class="col-lg-3 col-md-6 mb-3">
+      <div class="p-3 card trigger border-0 text-center {{item.class}}">
+        <figure class="m-auto">
+          <img class="avatar"
+               src="{{g.trans}}"
+               style="{{item.src|bg_img}}"
+               alt="{{item.title}}"/>
+        </figure>
+        <div class="card-body">
+          <h5 class="text-truncate card-title">
+            {{item.title or _('Service Title')}}
+          </h5>
+          <p class="text-clamp-4 card-text">
+            {{item.caption or _('Description text here')}}
+          </p>
+          {% if item.link %}
+          <a class="btn btn-sm btn-link text-secondary"
+             href="{{item.link|url}}">{{_('Learn More')}}</a>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+
+{% elif not meta.is_front %}
+<script>window.location.replace('{{base_url}}/#{{meta.slug}}');</script>
+{% endif %}

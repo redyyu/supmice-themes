@@ -1,0 +1,25 @@
+{
+  "version": "1.6.0",
+  "slug": "pratt",
+  "author": "Cheney",
+  "license": "MIT",
+  "title": "PRATT",
+  "type": "ws",
+  "capability": 0,
+  "icon": "icon.png",
+  "poster": "poster.jpg",
+  "previews": ["preview.jpg"],
+
+  "templates": [
+    "^page",
+    "^page-s1",
+    "^page-s2",
+    "^features",
+    "^portfolio",
+    "index"
+  ],
+
+  "options":{
+    "sortby": "date"
+  }
+}

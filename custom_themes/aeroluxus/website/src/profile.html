@@ -1,0 +1,59 @@
+{% import 'g' as g with context %}
+<!DOCTYPE html>
+<html lang="{{lang}}">
+{% include '_head.html' %}
+
+<body>
+  {% include '_header.html' %}
+
+  <section class="ribbon {{meta.ribbon.class}}"
+           style="{{(meta.ribbon.src or g.default_ribbon)|bg_img}}">
+    <header>
+      <h2>{{meta.tagline or _('Company Profile')}}</h2>
+    </header>
+  </section>
+  <section class="page">
+    <div class="container">
+      <div class="row">
+        <nav class="d-none d-md-block col-md-4 col-lg-3 sidebar">
+          <header>
+            <span>{{meta.navbar_title or _('Profile')}}</span>
+          </header>
+          {% set channels = query('profile', perpage=60).contents %}
+          <ul class="nav flex-column">
+            {% for chn in channels %}
+            <li class="nav-item {{'active' if meta.slug == chn.slug}}">
+              <a class="nav-link"
+                 href="{{chn.url}}">
+                {{chn.title}}
+              </a>
+            </li>
+            {% endfor %}
+          </ul>
+        </nav>
+
+        <main class="col-md-8 col-lg-9">
+          <article>
+            <header>
+              <h1>{{meta.title}}</h1>
+              {% if meta.featured_img.src %}
+              <figure>
+                <img src="{{g.trans10x3}}"
+                     style="{{meta.featured_img.src|bg_img}}">
+              </figure>
+              {% endif %}
+            </header>
+            <div class="content">
+              {{content}}
+            </div>
+          </article>
+        </main>
+
+      </div>
+    </div>
+  </section>
+  {% include '_footer.html' %}
+
+{{g.scripts}}
+</body>
+</html>

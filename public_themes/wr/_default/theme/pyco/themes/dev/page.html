@@ -1,0 +1,10 @@
+{% if g and page %}
+<section id="id-{{page.slug}}"
+         data-anchor="{{page.slug}}"
+         class="section {{page.hero.preset.key}} {{page.hero.class}}"
+         style="{{page.hero.style}}">
+  {% include '_page.html' %}
+</section>
+{% else %}
+<script>window.location.replace('{{base_url}}/#{{meta.slug}}');</script>
+{% endif %}

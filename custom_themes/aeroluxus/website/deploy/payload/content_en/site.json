@@ -1,0 +1,165 @@
+{
+  "_id": "payload/content/site.json",
+  "slug": "pyco",
+  "locale": "en_US",
+  "content_types": {
+    "page": "Static Pages",
+    "profile": "Profile",
+    "service": "Products & Courses",
+    "post": "Activities & Events"
+  },
+  "categories": {
+    "status": 0
+  },
+  "menus": {
+    "primary": [
+      {
+        "key": "our-company",
+        "name": "Our Company",
+        "link": "/profile/company",
+        "target": "",
+        "path_scope": "",
+        "fixed": "on",
+        "class": "",
+        "nodes": [
+          {
+            "key": "company-profile",
+            "name": "Company Profile",
+            "link": "/profile/company",
+            "target": "",
+            "path_scope": "",
+            "fixed": "on",
+            "class": "",
+            "nodes": []
+          },
+          {
+            "key": "our-advantage",
+            "name": "Our Advantage",
+            "link": "/profile/advantages",
+            "target": "",
+            "path_scope": "",
+            "fixed": "on",
+            "class": "",
+            "nodes": []
+          },
+          {
+            "key": "our-team",
+            "name": "Our Team",
+            "link": "/profile//team",
+            "target": "",
+            "path_scope": "",
+            "fixed": false,
+            "class": ""
+          }
+        ]
+      },
+      {
+        "key": "services-products",
+        "name": "Products & Courses",
+        "link": "/service/aviation-edu",
+        "target": "",
+        "path_scope": "",
+        "fixed": "on",
+        "class": "",
+        "meta": {},
+        "nodes": [
+          {
+            "key": "aviation-education-and-service-improvement",
+            "name": "Aviation Education and Service Improvement",
+            "link": "/service/aviation-edu",
+            "target": "",
+            "path_scope": "",
+            "fixed": false,
+            "class": ""
+          },
+          {
+            "key": "high-grade-hotel-service-training",
+            "name": "High Grade Hotel Service Training",
+            "link": "/service/hotel-training",
+            "target": "",
+            "path_scope": "",
+            "fixed": false,
+            "class": ""
+          },
+          {
+            "key": "high-grade-professional-services-training",
+            "name": "High Grade Professional Services Training",
+            "link": "/service/pro-training",
+            "target": "",
+            "path_scope": "",
+            "fixed": false,
+            "class": ""
+          },
+          {
+            "key": "personal-etiquette-salon-activities",
+            "name": "Personal Etiquette & Salon Activities",
+            "link": "/service/personal-salon-activities",
+            "target": "",
+            "path_scope": "",
+            "fixed": false,
+            "class": ""
+          }
+        ]
+      },
+      {
+        "key": "course-activities",
+        "name": "Activities & Events",
+        "link": "/activities",
+        "target": "",
+        "path_scope": "",
+        "fixed": "on",
+        "class": "",
+        "meta": {},
+        "nodes": []
+      },
+      {
+        "key": "cooperation-partners",
+        "name": "Cooperation & Partners",
+        "link": "/partners",
+        "target": "",
+        "path_scope": "",
+        "fixed": "",
+        "class": "",
+        "meta": {},
+        "nodes": []
+      }
+    ]
+  },
+  "slots": {
+    "applyment": {
+      "name": "Applyment",
+      "src": "https://www.aeroluxus.com/en/uploads/qrcode.jpg",
+      "route": "",
+      "scripts": "",
+      "data": {
+        "email": "info@aeroluxus.com"
+      },
+      "status": true
+    }
+  },
+  "meta": {
+    "favicon": "",
+    "logo": "",
+    "bg": "",
+    "contact": "redy",
+    "copyright": "2020 © Aeroluxus.",
+    "description": "Luxury training as you have never experienced it before.",
+    "license": "ICP-20008720 | <a class=\"license-police\" target=\"_blank\" href=\"http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=33011002014600\">POCE-33011002014600</a>",
+    "title": "Aeroluxus",
+    "socials": [],
+    "languages": [
+      {
+        "key": "zh_CN",
+        "name": "汉",
+        "url": "https://www.aeroluxus.com/zh"
+      },
+      {
+        "key": "en_US",
+        "name": "En",
+        "url": "https://www.aeroluxus.com/en"
+      }
+    ],
+    "head_metadata": "",
+    "custom": {}
+  }
+}

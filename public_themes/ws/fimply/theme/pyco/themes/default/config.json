@@ -1,0 +1,26 @@
+{
+  "slug": "fimply",
+  "version": "1.7.1",
+  "author": "Cheney",
+  "license": "MIT",
+  "title": "FIMPLY",
+  "type": "ws",
+  "capability": 0,
+  "icon": "icon.png",
+  "poster": "poster.jpg",
+  "previews": ["preview.jpg"],
+
+  "templates": [
+    "^page",
+    "^page-s1",
+    "^page-s2",
+    "^portfolio",
+    "^services",
+    "^clients",
+    "index"
+  ],
+
+  "options":{
+      "sortby": "+date"
+  }
+}

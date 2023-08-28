@@ -1,0 +1,78 @@
+{% extends "_layout.html" %}
+{% block wrapper %}
+
+<div class="section-header ribbon-bg
+            {{'ribbon-cover' if meta.hero.src}} {{meta.hero.class}}"
+     style="{{meta.hero.style}}">
+  <div class="container">
+    <div class="row centered">
+      <div class="col-md-8 col-md-offset-2">
+        <h2>{{meta.title}}</h2>
+        <p>{{meta.description}}</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section-primary">
+  <div class="container">
+    <div class="row centered">
+      {% set _col_team = '3' if meta.series|length > 3
+                             else (12/(meta.series|length or 1))|int %}
+      {% set _col_team_sm = '4' if meta.series|length % 2 != 0 else '6' %}
+      {% for item in meta.series %}
+      <div class="col-sm-{{_col_team_sm}} col-md-{{_col_team}} team-item">
+        <div>
+          <img class="img-circle avatar-img"
+               src="{{g.img_holder}}"
+               style="{{item.src|thumbnail|bg_img}}">
+          <h4 class="text-nowrap">
+            {{item.title}}
+          </h4>
+          <p class="text-clamp-4">
+            {{item.caption}}
+          </p>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+<div class="section-primary deep-dark-bg">
+  <div class="container">
+    <div class="row centered">
+      <div class="col-md-8 col-md-offset-2 section-header">
+        <h3 class="headline">{{meta.badges_title}}</h3>
+      </div>
+    </div>
+    <div class="row centered">
+      {% set _col_badges = '3' if meta.badges|length > 3
+                               else (12/(meta.badges|length or 1))|int %}
+      {% set _col_badges_sm = '4' if meta.badges|length % 2 != 0 else '6' %}
+      {% for item in meta.badges %}
+      <div class="col-sm-{{_col_badges_sm}} col-md-{{_col_badges}}
+                  award-item">
+        <div class="{{item.class}}">
+          <img class="award-img"
+               src="{{g.img_holder}}"
+               style="{{item.src|thumbnail|bg_img}}">
+          <h4 class="text-nowrap">{{item.title}}</h4>
+          <p class="text-clamp-4">{{item.caption}}</p>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+<div class="section-primary hl-bg">
+  <div class="container">
+    <div class="row centered">
+      <div class="col-lg-8 col-lg-offset-2">
+        <h4>{{meta.statement}}</h4>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

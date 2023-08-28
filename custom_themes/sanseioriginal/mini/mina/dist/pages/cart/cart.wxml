@@ -1,0 +1,141 @@
+<wxs src="../../translator.wxs" module="_"></wxs>
+<wxs src="../../filters.wxs" module="f"></wxs>
+{{_('$set', locale)}}
+
+<block wx:if="{{loaded && is_empty}}">
+  <!-- is empty -->
+  <view class="container">
+    <view class="holder flex-column centered">
+      <view class="ico pie ico-cart-empty"/>
+      <view class="text draft margin">
+        {{_('Shopping Cart is Empty')}}
+      </view>
+    </view>
+  </view>
+</block>
+
+<block wx:if="{{loaded && !is_empty}}">
+  <view class="container panel">
+    <view class="flex-row">
+      <view class="flex flex-row align-items-center">
+        <button type="primary"
+                size="sm"
+                bind:tap="toggle_checked_all"
+                disabled="{{!item_list.length}}"
+                data-item-index="{{index}}">
+          <view class="ico md ico-checked"
+                 wx:if="{{checked_count >= item_list.length}}"/>
+          <view class="ico md ico-unchecked"
+                 wx:else />
+          <view class="text accent body-text">
+            {{_('Select All')}}
+          </view>
+        </button>
+      </view>
+      <view class="flex flex-row align-items-center justify-end">
+        <button type="accent"
+                size="sm"
+                bind:tap="toggle_edit_mode">
+          {{edit_mode?_('Done'):_('Edit')}}
+        </button>
+      </view>
+    </view>
+  </view>
+
+  <view class="container panel"
+        wx:for="{{item_list}}"
+        wx:key="index">
+    <view class="flex-row">
+      <view>
+        <button class="icon-btn"
+                type="primary"
+                bind:tap="check_item"
+                data-item-index="{{index}}">
+          <view class="ico {{item._checked?'ico-checked':'ico-unchecked'}}"/>
+        </button>
+      </view>
+      <view class="space-margin"
+            bind:tap="check_item"
+            data-item-index="{{index}}">
+        <image class="thumbnail cart-img"
+               src="{{item.figure||image.cart}}"
+               background-size="cover"
+               background-position="center center" />
+      </view>
+      <view class="flex margin">
+        <view class="text accent text-nowrap">
+          {{item.name}}
+        </view>
+        <view class="caption draft">
+          {{item.detail || '-'}}
+        </view>
+        <view class="body-text-2 primary">
+          ¥ {{f.price(item.price)}} {{edit_mode?'':('x'+item.amount)}}
+        </view>
+        <!-- discounts -->
+        <view wx:if="{{!edit_mode}}">
+          <view class="tag accent"
+                wx:for="{{item.discounts}}"
+                wx:for-item="discount"
+                wx:key="index">{{discount}}</view>
+        </view>
+        <!-- edit mode -->
+        <view class="flex-row align-items-center"
+              wx:if="{{edit_mode}}">
+          <button class="icon-btn"
+                  type="primary"
+                  size="lg"
+                  bind:tap="decrease_amount"
+                  data-item-index="{{index}}">
+            <view class="ico ico-minus"/>
+          </button>
+          <text class="accent">{{item.amount}}</text>
+          <button class="icon-btn"
+                  type="primary"
+                  size="lg"
+                  bind:tap="increase_amount"
+                  data-item-index="{{index}}">
+            <view class="ico ico-add"/>
+          </button>
+          <view class="flex"></view>
+          <button class="icon-btn"
+                  type="accent"
+                  bind:tap="remove_item"
+                  data-item-index="{{index}}">
+            <view class="ico ico-trash"/>
+          </button>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class="container panel">
+    <view class="padding hint">
+      {{_('* Items are kept in the shopping cart for one week top. The price also will be recalculated at the time of payment.')}}
+    </view>
+  </view>
+
+
+  <!-- bottombar -->
+  <view class="bottombar">
+    <view class="bottombar-inner">
+      <view class="row">
+        <view class="padding flex">
+          <view class="body-text primary text-right">
+            {{_('Total estimated:')}} ¥ {{f.price(total_price)}}
+          </view>
+          <view class="caption accent draft text-right">
+            {{_('Courier fee not included')}}
+          </view>
+        </view>
+        <button class="raised"
+                type="accent"
+                bind:tap="purchase"
+                disabled="{{checked_count <= 0}}">
+          {{_('Bill, please')}}
+        </button>
+      </view>
+    </view>
+  </view>
+
+</block>

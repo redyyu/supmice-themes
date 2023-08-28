@@ -1,0 +1,38 @@
+{% import 'g' as g with context %}
+<!DOCTYPE html>
+<html lang="{{lang}}">
+{% include '_head.html' %}
+
+<body>
+  <!-- Preloader -->
+  <div id="preloader">
+    <div id="load"></div>
+  </div>
+
+  <!-- Section: intro -->
+  <section id="{{meta.slug}}"
+           class="intro {{meta.hero.class}}"
+           style="{{meta.hero.style}}">
+    <div class="slogan">
+      <div>
+        <img src="{{meta.logo.src or site_meta.logo.src or g.logo}}"
+             alt="{{meta.title}}" />
+      </div>
+      <div class="page-scroll">
+          <a href="#">
+              <i class="fa fa-angle-down fa-5x animated"></i>
+          </a>
+      </div>
+    </div>
+  </section>
+  <!-- /Section: intro -->
+
+  {% include '_header.html' %}
+  {% for page in segments if page.template != meta.template %}
+    {% set _loop = loop %}
+    {% include page.template+'.html' ignore missing %}
+  {% endfor %}
+
+  {% include '_footer.html' %}
+</body>
+</html>

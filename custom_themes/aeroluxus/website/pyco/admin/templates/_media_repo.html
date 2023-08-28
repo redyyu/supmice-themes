@@ -1,0 +1,62 @@
+<div id="MODAL-MEDIAREPO"
+     class="modal fade"
+     tabindex="-1"
+     role="dialog"
+     aria-labelledby="{{_('Media Repository')}}"
+     aria-hidden="true"
+     data-request-url="{{url_as('media.repository')}}">
+  <div class="modal-dialog modal-xl" role="media-repo">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">{{_('Media Repository')}}</h5>
+        <button class="close"
+                type="button"
+                data-dismiss="modal"
+                aria-label="{{_('Close')}}">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="container-fluid">
+          <div id="MODAL-MEDIAREPO-LIST"
+               class="row">
+            <div  id="MODAL-METHOD-CONTAINER"
+                  class="col-lg-2 col-md-4 col-6 text-center py-2">
+              <form id="MODAL-MEDIAREPO-UPLOADER"
+                    class="ml-auto"
+                    action="{{url_as('media.repository_upload')}}"
+                    enctype=multipart/form-data
+                    method="POST"
+                    data-error-message="{{_('Media Upload Field, Please make sure the file type is allowed and file name is not duplicated.')}}">
+                <label class="grid-thumbnail btn btn-outline-primary">
+                  <i class="fas fa-cloud-upload-alt ico"></i>
+                  <input class="d-none"
+                         type="file"
+                         name="file"
+                         accept=".jpg,.jpe,.jpeg,.png,.gif,.svg">
+                </label>
+                <div class="text text-muted text-truncate">
+                  {{_('Upload')}}
+                </div>
+              </form>
+            </div>
+            <div id="MODAL-MEDIAREPO-ITEM"
+                 class="col-lg-2 col-md-4 col-6 text-center py-2">
+              <button class="grid-thumbnail" type="button">
+                <i class="fas fa-file ico text-secondary"></i>
+              </button>
+              <div class="text text-muted text-truncate"></div>
+            </div>
+          </div>
+        </div>
+        <div id="MODAL-MEDIAREPO-MORE"
+             class="text-center">
+          <hr>
+          <button class="btn btn-outline-primary">
+            {{_('Load More')}}
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

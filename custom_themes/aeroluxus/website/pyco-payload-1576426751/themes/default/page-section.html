@@ -1,0 +1,30 @@
+{% if g and page %}
+{% set docs = query(page.attrs.rel_content_type,
+                    with_content=True).contents %}
+<div cover-image="{{page.bg.src}}"></div>
+
+<div class="hidden section-overlay">
+  <div class="channels-row">
+    {% for doc in docs %}
+    <div class="channel">
+      <a class="channel-link" href="#SECTION-{{doc.slug}}">
+        <img src="{{theme_url}}/assets/trans.png" alt="{{doc.title}}"
+             style="{{doc.featured_img.src|bg_img}}">
+        <div class="text">{{doc.channel_name or doc.title}}</div>
+      </a>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+{% for doc in docs %}
+<div class="doc-section {{'first' if loop.first else 'hidden'}}"
+     id="SECTION-{{doc.slug}}">
+  {% if doc.template not in ['page-section', 'index'] %}
+  {% include doc.template+'.html' ignore missing %}
+  {% endif %}
+</div>
+{% endfor %}
+
+{% elif not meta.is_front %}
+<script>window.location.replace('{{base_url}}/');</script>
+{% endif %}

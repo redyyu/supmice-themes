@@ -1,0 +1,80 @@
+{% import "g" as g with context %}
+<!DOCTYPE html>
+<html lang="{{ lang }}">
+{% include "_head.html" %}
+
+<body class="post single-post">
+
+  {{g.loader}}
+
+  {% include '_menu.html' %}
+
+  <div class="body-wrapper">
+    {% include '_header.html' %}
+
+    <div id="content" class="site-content center-relative">
+      <article>
+        <h1 class="entry-title">{{meta.title}}</h1>
+        <div class="center-relative clear">
+          <div class="cat-links">
+            {% set category = categorize() %}
+            {% for term_key in meta.terms %}
+            <a href="{{base_url}}/category?term={{term_key}}">
+              {{category.terms_dict[term_key].meta.name}}
+              {{', ' if not loop.last}}
+            </a>
+            {% endfor %}
+          </div>
+          <div class="post-info">
+            <div class="post-date">
+              {{meta.date|date_formatted}}
+            </div>
+            <div class="post-author">
+              {{meta.author}}
+            </div>
+          </div>
+
+          <div class="entry-content">
+            <div class="content-wrap center-text">
+              {{content}}
+            </div>
+            <div class="clear"></div>
+          </div>
+        </div>
+      </article>
+      <div class="nav-links">
+        <div class="nav-previous">
+          {% if meta.prevpage %}
+          <a href="{{meta.prevpage.link|url}}" rel="prev">
+            {{meta.prevpage.name}}
+          </a>
+          <p class="nav-previous-text">
+              <img src="{{g.assets_url}}/left.png"
+                   alt="{{_('Previous')}}" />
+          </p>
+          <div class="clear"></div>
+          {% endif %}
+        </div>
+        <div class="nav-next">
+          {% if meta.nextpage %}
+          <a href="{{meta.nextpage.link|url}}" rel="next">
+            {{meta.nextpage.name}}
+          </a>
+          <p class="nav-next-text">
+              <img src="{{g.assets_url}}/right.png"
+                   alt="{{_('Next')}}" />
+          </p>
+          <div class="clear"></div>
+          {% endif %}
+        </div>
+        <div class="clear"></div>
+      </div>
+    </div>
+
+    {% include '_footer.html' %}
+  </div>
+
+  {{g.scripts}}
+
+</body>
+</html>

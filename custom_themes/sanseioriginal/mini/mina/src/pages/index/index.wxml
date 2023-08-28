@@ -1,0 +1,64 @@
+<wxs src="../../translator.wxs" module="_"></wxs>
+<wxs src="../../filters.wxs" module="f"></wxs>
+{{_('$set', locale)}}
+
+<block wx:if="{{loaded}}">
+  <!-- carousel -->
+  <view class="container panel"
+        wx:if="{{meta.carousel.length}}">
+    <view class="carousel major-carousel">
+      <swiper class="slides"
+              indicator-dots="true"
+              indicator-color="#c2b197"
+              indicator-active-color="rgba(255,255,255,.6)"
+              interval="9000"
+              duration="600"
+              autoplay="true"
+              circular="true">
+        <swiper-item class="slide"
+                     wx:for="{{meta.carousel}}"
+                     wx:for-item="slide"
+                     wx:key="index">
+          <image class="slide-media"
+                 src="{{slide.src}}"
+                 bind:tap="enter_slide"
+                 data-slide="{{slide}}"
+                 background-size="cover"
+                 background-position="center center"/>
+        </swiper-item>
+      </swiper>
+    </view>
+  </view>
+
+  <!-- products -->
+  <view class="grid-list">
+    <view class="grid"
+          wx:for="{{products}}"
+          wx:key="index">
+      <view class="card"
+            bind:tap="enter"
+            data-item="{{item}}">
+        <image class="prd-item-img"
+               src="{{item.featured_img.src}}"
+               background-size="cover"
+               background-position="center center"
+               lazy-load/>
+        <view class="card-content text-center">
+          <view class="body-text-2 accent">{{item.title}}</view>
+          <view class="primary body-text-2">
+            {{item.price ? '¥ ' + f.price(item.price) : _('Free')}}
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- footer -->
+  <view class="footer"
+        wx:if="{{products.length > 0}}">
+    <component-loadmore loading="{{is_loading}}" has-more="{{has_more}}">
+      {{_('Scroll down for more')}}
+    </component-loadmore>
+  </view>
+
+</block>

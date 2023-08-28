@@ -1,0 +1,30 @@
+{% import 'g' as g with context %}
+<!DOCTYPE html>
+<html lang="{{lang}}">
+{% include '_head_.html' %}
+<body>
+{% include '_header_.html' %}
+
+<div class="jumbotron {{meta.bg.class}}"
+     style="{{meta.bg.style or site_meta.bg.style}}"></div>
+
+<div class="container wrap-box">
+  <div class="activity-box">
+    {% set event = query('event') %}
+    {% for e in event.contents %}
+    <div class="activity text-center">
+      <h2>{{e.title}}</h2>
+      <p>{{e.descrption}}</p>
+      <a href="{{e.url}}">
+        <img class="thumbnail-img"
+             src="{{e.featured_img.src}}">
+      </a>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+
+{% include '_footer_.html' %}
+{% include '_js_.html' %}
+</body>
+</html>

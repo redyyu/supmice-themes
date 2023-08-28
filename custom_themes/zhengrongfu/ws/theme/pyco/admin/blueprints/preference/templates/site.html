@@ -1,0 +1,651 @@
+{% extends "layout.html" %}
+
+{% block header %}
+<h1>{{_('Site')}}</h1>
+{% endblock %}
+
+{% block main %}
+<div class="row">
+  <div class="col-12 col-md-6 col-lg-6">
+    <div class="card">
+      <form action="{{url_as('.update_site')}}"
+            method="POST">
+        <div class="card-header">
+          <h4>{{_('Site Settings')}}</h4>
+        </div>
+        <div class="card-body">
+          <div class="form-group">
+            <label>{{_('Site Locale')}}</label>
+            <select class="form-control"
+                    name="locale">
+              {% for lang in site.languages %}
+              <option value="{{lang.key}}"
+                      {{'selected' if site.locale==lang.key}}>
+                {{lang.name}}
+              </option>
+              {% endfor %}
+            </select>
+            <small class="form-text text-muted">
+              {{_('* Used to indicate the language of this website.')}}
+            </small>
+          </div>
+          <div class="form-group">
+            <label>{{_('Title')}}</label>
+            <input class="form-control"
+                   type="text"
+                   name="title"
+                   value="{{site.meta.title}}">
+          </div>
+          <div class="form-group">
+            <label>{{_('Description')}}</label>
+            <textarea class="form-control"
+                      placeholder="{{_('Description for this website.')}}"
+                      name="description">{{site.meta.description}}</textarea>
+          </div>
+
+          <div class="form-group media-preview-field">
+            <label>{{_('Logo')}}</label>
+            <div class="input-group">
+              <div class="input-group-append media-preview">
+                <a href="#" target="_blank"></a>
+              </div>
+              <input class="form-control media-input"
+                     type="text"
+                     name="logo"
+                     placeholder="{{_('A URL for site logo image.')}}"
+                     value="{{site.meta.logo}}">
+              <div class="input-group-append">
+                <button class="btn btn-secondary"
+                        aria-lable="{{_('Select Image')}}"
+                        data-toggle="modal"
+                        data-target="#MODAL-MEDIAREPO"
+                        data-input="logo"
+                        type="button">
+                  <i class="fas fa-image"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="form-group media-preview-field">
+            <label>{{_('Favicon')}}</label>
+            <div class="input-group">
+              <div class="input-group-append media-preview">
+                <a href="#" target="_blank"></a>
+              </div>
+              <input class="form-control media-input"
+                     type="text"
+                     name="favicon"
+                     placeholder="{{_('A URL for site favicon image.')}}"
+                     value="{{site.meta.favicon}}">
+              <div class="input-group-append">
+                <button class="btn btn-secondary"
+                        aria-lable="{{_('Select Image')}}"
+                        data-toggle="modal"
+                        data-target="#MODAL-MEDIAREPO"
+                        data-input="favicon"
+                        type="button">
+                  <i class="fas fa-image"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>{{_('Copyright')}}</label>
+            <input class="form-control"
+                   type="text"
+                   name="copyright"
+                   value="{{site.meta.copyright}}">
+          </div>
+
+          <div class="form-group">
+            <label>{{_('License')}}</label>
+            <textarea class="form-control"
+                      name="license">{{site.meta.license}}</textarea>
+          </div>
+        </div>
+        <div class="card-footer">
+          <button class="btn btn-primary btn-lg">{{_('Save')}}</button>
+        </div>
+      </form>
+    </div>
+    <div class="card">
+      <form action="{{url_as('.update_site_adv')}}"
+            method="POST">
+        <div class="card-header">
+          <h4>{{_('Advanced Options')}}</h4>
+        </div>
+        <div class="card-body">
+          <div class="form-group">
+            <label>{{_('SEO Metadata')}}</label>
+            <textarea class="form-control"
+                      name="head_metadata">{{site.meta.head_metadata}}</textarea>
+            <small class="form-text text-muted">
+              {{_('* A HTML code into <head> of the site.')}}
+            </small>
+          </div>
+          <div class="form-group">
+            <label>{{_('Slots')}}</label>
+            <textarea class="form-control"
+                      name="slots"
+                      placeholder="{'<slot_key>': {'name': '<name>', 'src':'<img_url>', 'route': '<url>', 'script':'....', 'stauts': true}}">{{site.slots|tojson}}</textarea>
+            <small class="form-text text-muted">
+              {{_('* For expert only, must use JSON format.')}}
+            </small>
+          </div>
+          <div class="form-group">
+            <label>{{_('Custom Metas')}}</label>
+            <textarea class="form-control"
+                      name="customs"
+                      placeholder="{'<key>': '<value>'}">{{site.meta.custom|tojson}}</textarea>
+            <small class="form-text text-muted">
+              {{_('* For expert only, must use JSON format.')}}
+            </small>
+          </div>
+        </div>
+        <div class="card-footer">
+          <button class="btn btn-warning btn-lg">{{_('Save')}}</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="col-12 col-md-6 col-lg-6">
+    <div class="card">
+      <div class="card-header">
+        <h4>{{_('Menu')}}</h4>
+      </div>
+      <div class="card-body">
+        {% for menu in site.menus %}
+        <div class="section-title {{'mt-0' if loop.first}}">
+          {{_(theme.menus[menu.key].title)}}
+        </div>
+        <div>
+          {% for node in menu.nodes %}
+          <div class="py-2">
+            <button class="btn btn-outline-primary w-100"
+                    type="button"
+                    data-toggle="modal"
+                    data-target="#MODAL-MENU-NODE"
+                    data-name="{{node.name}}"
+                    data-link="{{node.link}}"
+                    data-window="{{node.target}}"
+                    data-fixed="{{node.fixed}}"
+                    data-path-scope="{{node.path_scope}}"
+                    data-css="{{node.class}}"
+                    data-pos="{{loop.index0}}"
+                    data-remove-url="{{url_as('.remove_site_menu_node',
+                                                menu_key=menu.key,
+                                                node_key=node.key)}}"
+                    data-action-url="{{url_as('.update_site_menu_node',
+                                              menu_key=menu.key,
+                                              node_key=node.key)}}">
+              <i class="fas fa-bars"></i>
+              <span>{{node.name}}</span>
+            </button>
+            {% if theme.menus[menu.key] and theme.menus[menu.key].level > 1 %}
+            {% for subnode in node.nodes %}
+            <div class="py-1">
+              <button class="btn btn-outline-secondary w-100"
+                      type="button"
+                      data-toggle="modal"
+                      data-target="#MODAL-MENU-NODE"
+                      data-name="{{subnode.name}}"
+                      data-link="{{subnode.link}}"
+                      data-window="{{subnode.target}}"
+                      data-fixed="{{subnode.fixed}}"
+                      data-path-scope="{{subnode.path_scope}}"
+                      data-css="{{subnode.class}}"
+                      data-pos="{{loop.index0}}"
+                      data-remove-url="{{url_as('.remove_site_menu_node',
+                                                 menu_key=menu.key,
+                                                 parent_key=node.key,
+                                                 node_key=subnode.key)}}"
+                      data-action-url="{{url_as('.update_site_menu_node',
+                                                 menu_key=menu.key,
+                                                 parent_key=node.key,
+                                                 node_key=subnode.key)}}">
+                <span>{{subnode.name}}</span>
+              </button>
+            </div>
+            {% endfor %}
+            <div class="row py-1">
+              <div class="col-md-4 offset-md-8">
+                <button class="btn btn-secondary w-100"
+                        type="button"
+                        data-toggle="modal"
+                        data-target="#MODAL-MENU-NODE"
+                        data-action-url="{{url_as('.add_site_menu_node',
+                                                   menu_key=menu.key,
+                                                   parent_key=node.key)}}">
+                  <i class="fas fa-plus"></i>
+                  <span>{{_('New')}}</span>
+                </button>
+              </div>
+            </div>
+            {% endif %}
+          </div>
+          {% endfor %}
+          <div class="row my-2">
+            <div class="col-md-8">
+              <button class="btn btn-primary w-100"
+                      type="button"
+                      data-toggle="modal"
+                      data-target="#MODAL-MENU-NODE"
+                      data-action-url="{{url_as('.add_site_menu_node',
+                                                 menu_key=menu.key)}}">
+                <i class="fas fa-plus"></i>
+                <span>{{_('New Menu Item')}}</span>
+              </button>
+            </div>
+            <div class="col-md-4">
+              <button class="btn btn-outline-secondary w-100"
+                      type="button"
+                      data-toggle="modal"
+                      data-target="#MODAL-MENU-HARDCORE"
+                      data-action-url="{{url_as('.hardcore_site_menu',
+                                                 menu_key=menu.key)}}">
+                <i class="fas fa-flask"></i>
+                <span>{{_('Expert')}}</span>
+                <textarea class="d-none">{{menu.nodes|tojson}}</textarea>
+              </button>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+
+    <div class="card">
+      <form class="multientry-form"
+            action="{{url_as('.update_site_language')}}"
+            method="POST">
+        <div class="card-header">
+          <h4>{{_('Languages')}}</h4>
+        </div>
+        <div class="card-body">
+          <div class="section-title mt-0">
+            {{_('Language Switcher Options')}}
+          </div>
+          <div class="fields">
+            {% for lang in site.languages %}
+            <div class="form-group field-entry">
+              <div class="input-group">
+                <input class="form-control col-3"
+                       placeholder="{{_('Key')}}"
+                       value="{{lang.key}}"
+                       name="key"
+                       type="text"
+                       required>
+                <input class="form-control col-3"
+                       placeholder="{{_('Name')}}"
+                       value="{{lang.name}}"
+                       name="name"
+                       type="text">
+                <input class="form-control"
+                       placeholder="{{_('URL, http://lang.yoursite.com')}}"
+                       value="{{lang.url}}"
+                       name="url"
+                       type="text">
+                <div class="input-group-prepend">
+                  <button class="btn btn-outline-danger btn-icon remove-field"
+                          aria-label="{{_('Remove')}}"
+                          type="button">
+                    <i class="fas fa-times"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+            {% endfor %}
+            <div class="TMPL d-none">
+              <div class="form-group field-entry">
+                <div class="input-group">
+                  <input class="form-control col-3"
+                         placeholder="{{_('Key')}}"
+                         name="key"
+                         type="text"
+                         required>
+                  <input class="form-control col-3"
+                         placeholder="{{_('Name')}}"
+                         name="name"
+                         type="text">
+                  <input class="form-control"
+                         placeholder="{{_('URL, http://lang.yoursite.com')}}"
+                         name="url"
+                         type="text">
+                  <div class="input-group-prepend">
+                    <button class="btn btn-outline-danger
+                                   btn-icon remove-field"
+                            aria-label="{{_('Remove')}}"
+                            type="button">
+                      <i class="fas fa-times"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card-footer d-flex">
+          <button class="btn btn-outline-primary btn-icon add-field"
+                  aria-label="{{_('Add')}}"
+                  type="button">
+            <i class="fas fa-plus"></i>
+          </button>
+          <button class="btn btn-primary ml-auto">
+            {{_('Save')}}
+          </button>
+        </div>
+      </form>
+    </div>
+
+    <div class="card">
+      <form class="multientry-form"
+            action="{{url_as('.update_site_social')}}"
+            method="POST">
+        <div class="card-header">
+          <h4>{{_('Social Media')}}</h4>
+        </div>
+        <div class="card-body">
+          <div class="section-title mt-0">
+            {{_('Social Media Channels')}}
+          </div>
+          <div class="fields">
+            {% for social in site.meta.socials %}
+            <div class="form-group field-entry">
+              <div class="input-group">
+                <input class="form-control"
+                       placeholder="{{_('Key')}}"
+                       value="{{social.key}}"
+                       name="key"
+                       type="text"
+                       required>
+                <input class="form-control"
+                       placeholder="{{_('Name')}}"
+                       value="{{social.name}}"
+                       name="name"
+                       type="text">
+                <input class="form-control"
+                       placeholder="{{_('URL, http://social.com/you')}}"
+                       value="{{social.url}}"
+                       name="url"
+                       type="text">
+                <input class="form-control"
+                       placeholder="{{_('Script')}}"
+                       value="{{social.url}}"
+                       name="code"
+                       type="text">
+                <div class="input-group-prepend">
+                  <button class="btn btn-outline-danger btn-icon remove-field"
+                          aria-label="{{_('Remove')}}"
+                          type="button">
+                    <i class="fas fa-times"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+            {% endfor %}
+            <div class="TMPL d-none">
+              <div class="form-group field-entry">
+                <div class="input-group">
+                  <input class="form-control col-3"
+                         placeholder="{{_('Key')}}"
+                         name="key"
+                         type="text"
+                         required>
+                  <input class="form-control col-3"
+                         placeholder="{{_('Name')}}"
+                         name="name"
+                         type="text">
+                  <input class="form-control"
+                         placeholder="{{_('URL, http://social.com/you')}}"
+                         name="url"
+                         type="text">
+                  <input class="form-control"
+                         placeholder="{{_('Script')}}"
+                         name="code"
+                         type="text">
+                  <div class="input-group-prepend">
+                    <button class="btn btn-outline-danger
+                                   btn-icon remove-field"
+                            aria-label="{{_('Remove')}}"
+                            type="button">
+                      <i class="fas fa-times"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card-footer d-flex">
+          <button class="btn btn-outline-primary btn-icon add-field"
+                  aria-label="{{_('Add')}}"
+                  type="button">
+            <i class="fas fa-plus"></i>
+          </button>
+          <button class="btn btn-primary ml-auto">
+            {{_('Save')}}
+          </button>
+        </div>
+      </form>
+    </div>
+
+  </div>
+</div>
+{% endblock %}
+
+{% block page_modals %}
+<div id="MODAL-MENU-NODE"
+     class="modal fade"
+     tabindex="-1"
+     role="dialog"
+     aria-labelledby="{{_('Menu Item')}}"
+     aria-hidden="true">
+  <div class="modal-dialog" role="exit">
+    <div class="modal-content">
+      <form action=""
+            method="POST">
+        <div class="modal-header">
+          <h5 class="modal-title">{{_('Menu Item')}}</h5>
+          <button class="close"
+                  type="button"
+                  data-dismiss="modal"
+                  aria-label="{{_('Close')}}">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="form-group">
+            <label>{{_('Name')}}</label>
+            <input class="form-control"
+                   type="text"
+                   name="name"
+                   value=""
+                   required>
+          </div>
+          <div class="form-group">
+            <label>{{_('Path')}}</label>
+            <div class="input-group">
+              <input class="form-control"
+                     type="text"
+                     name="link"
+                     maxlength="360"
+                     placeholder="/page-path"
+                     value="">
+              <input class="form-control col-md-3 col-4"
+                     type="text"
+                     name="target"
+                     maxlength="60"
+                     placeholder="_self"
+                     value="">
+            </div>
+            <small class="form-text text-muted">
+              {{_('* Use absolute path or a URL.')}}
+            </small>
+          </div>
+
+          <div class="form-group">
+            <label>{{_('Position')}}</label>
+            <input class="form-control"
+                   type="text"
+                   name="pos"
+                   value=""
+                   placeholder="0">
+          </div>
+
+          <div class="text-right">
+            <button class="btn btn-link"
+                    data-toggle="collapse"
+                    data-target="#MODAL-MENU-NODE-ADV-FIELDS"
+                    aria-expanded="true"
+                    type="button" >
+              {{_('Toggle Advanced Options')}}
+            </button>
+          </div>
+          <div id="MODAL-MENU-NODE-ADV-FIELDS"
+               class="collapse">
+            <hr>
+
+            <div class="form-group">
+              <label>{{_('CSS Class')}}</label>
+              <input class="form-control"
+                     type="text"
+                     name="css"
+                     placeholder="primary-bg, transparent-bg"
+                     value="">
+            </div>
+
+            <div class="form-group">
+              <label>{{_('Path Starts With')}}</label>
+              <input class="form-control"
+                     type="text"
+                     name="path_scope"
+                     value="">
+              <small class="form-text text-muted">
+                {{_('* Mark active status starts with this path as well.')}}
+              </small>
+            </div>
+
+            <div class="form-group">
+              <label>{{_('Fixed')}}</label>
+              <label class="custom-switch mt-2">
+                <input class="custom-switch-input"
+                       type="checkbox"
+                       name="fixed">
+                <span class="custom-switch-indicator"></span>
+                <span class="custom-switch-description">
+                  {{_('Fixed Link (No HASH generation)')}}
+                </span>
+              </label>
+            </div>
+
+          </div>
+
+          <input type="hidden" name="key" value="">
+          <input type="hidden" name="parent" value="">
+        </div>
+        <div class="modal-footer">
+          <a class="btn btn-danger remove-node mr-auto"
+             href="#">
+            <i class="fas fa-trash"></i>
+          </a>
+          <button type="button" class="btn btn-secondary"
+                  data-dismiss="modal">{{_('Dismiss')}}</button>
+          <button class="btn btn-primary">
+            {{_('Save')}}
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<div id="MODAL-MENU-HARDCORE"
+     class="modal fade"
+     tabindex="-1"
+     role="dialog"
+     aria-labelledby="{{_('Menu')}}"
+     aria-hidden="true">
+  <div class="modal-dialog" role="exit">
+    <div class="modal-content">
+      <form action=""
+            method="POST">
+        <div class="modal-header">
+          <h5 class="modal-title">{{_('Menu')}}</h5>
+          <button class="close"
+                  type="button"
+                  data-dismiss="modal"
+                  aria-label="{{_('Close')}}">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="form-group">
+            <label>{{_('Hardcore')}}</label>
+            <textarea class="form-control"
+                      rows="12"
+                      name="hardcore"></textarea>
+            <small class="form-text text-muted">
+              {{_('* For expert only, must use JSON format.')}}
+            </small>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary"
+                  data-dismiss="modal">{{_('Dismiss')}}</button>
+          <button class="btn btn-primary">
+            {{_('Save')}}
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock %}
+{% block page_scripts %}
+<script>
+$('#MODAL-MENU-NODE').on('show.bs.modal', function(e) {
+  var btn = $(e.relatedTarget);
+  var modal = $(e.currentTarget);
+
+  var action_url = btn.data('action-url');
+  var remove_url = btn.data('remove-url');
+
+  var item_name = btn.data('name');
+  var item_link = btn.data('link');
+  var item_target = btn.data('window');
+  var item_fixed = btn.data('fixed');
+  var item_path_scope = btn.data('path-scope');
+  var item_css = btn.data('css')
+
+  var pos = btn.data('pos');
+  console.log(item_fixed);
+  modal.find('input[name="name"]').val(item_name);
+  modal.find('input[name="link"]').val(item_link);
+  modal.find('input[name="target"]').val(item_target);
+  modal.find('input[name="fixed"]').prop('checked', Boolean(item_fixed));
+  modal.find('input[name="path_scope"]').val(item_path_scope);
+  modal.find('input[name="css"]').val(item_css);
+  modal.find('input[name="pos"]').val(pos);
+
+  modal.find('form').attr('action', action_url);
+
+  if(remove_url){
+    modal.find('.remove-node').attr('href', remove_url).show();
+  } else {
+    modal.find('.remove-node').hide();
+  }
+});
+
+$('#MODAL-MENU-HARDCORE').on('show.bs.modal', function(e) {
+  var btn = $(e.relatedTarget);
+  var modal = $(e.currentTarget);
+
+  var action_url = btn.data('action-url');
+  var hardcore = btn.find('textarea').val();
+  console.log(hardcore, typeof(hardcore));
+  modal.find('form').attr('action', action_url);
+  modal.find('textarea[name="hardcore"]').val(hardcore);
+});
+</script>
+{% endblock %}

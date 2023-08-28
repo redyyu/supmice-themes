@@ -1,0 +1,28 @@
+{% import "g" as g with context %}
+<!DOCTYPE html>
+<html>
+{% include '_head.html' %}
+<body>
+{% include '_header.html' %}
+<section id="page-section" class="page">
+    <div class="page-header-wrapper">
+        <div class="container">
+            <div class="page-header text-center wow fadeInUp" data-wow-delay="0.3s">
+                <h2>{{meta.title}}</h2>
+                <div class="devider"></div>
+                <p class="subtitle">{{meta.subtitle}}</p>
+            </div>
+        </div>
+    </div>
+    <div class="rotate-box-1-wrapper">
+        <div class="container">
+            <div class="row">
+                {{content}}
+            </div>
+        </div>
+    </div>
+</section>
+{% include '_footer.html' %}
+{% include '_js_.html' %}
+</body>
+</html>

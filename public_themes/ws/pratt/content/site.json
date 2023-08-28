@@ -1,0 +1,56 @@
+{
+  "content_types": {
+    "page": "Pages"
+  },
+  "menus": {
+    "primary": [
+      {
+        "key": "index",
+        "meta": {},
+        "nodes": [],
+        "title": "Home",
+        "link": "#index"
+      },
+      {
+        "key": "features",
+        "meta": {},
+        "nodes": [],
+        "title": "Features",
+        "link": "#features"
+      },
+      {
+        "key": "showcase",
+        "meta": {},
+        "nodes": [],
+        "title": "Showecase",
+        "link": "#showcase"
+      },
+      {
+        "key": "contact",
+        "meta": {},
+        "nodes": [],
+        "title": "Contact",
+        "link": "#contact"
+      }
+    ]
+
+  },
+  "meta": {
+    "slug":"pyco",
+    "type":"pratt",
+    "favicon": "[%uploads%]/favicon.png",
+    "author": "snowe",
+    "copyright": "2015 Made by Pyco.",
+    "description": "Show your product width this handsome theme...",
+    "license": "MIT",
+    "locale": "en_US",
+    "title": "Pratt",
+    "socials":{
+      "facebook":{"name":"Facebook","url":"#","code":"facebook"},
+      "twitter":{"name":"Twitter","url":"#","code":"twitter"},
+      "pro":{"name":"Pro","url":"#","code":"pro"},
+      "in":{"name":"In","url":"#","code":"in"}
+    }
+  }
+
+}

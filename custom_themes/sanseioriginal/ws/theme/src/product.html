@@ -1,0 +1,27 @@
+{% if g and page %}
+<div class="container">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2">
+      <h3 class="sec-title">{{page.title}}</h3>
+      <div class="content">
+        {{page.content}}
+      </div>
+      <figure>
+        {% if page.featured_img.link %}
+        <a class="prd-link"
+           href="{{page.featured_img.link|url}}"
+           target="{{page.featured_img.target}}">
+          <img src="{{page.featured_img.src or g.default_img}}"
+               class="{{page.featured_img.class}}">
+        </a>
+        {% else %}
+        <img src="{{page.featured_img.src or g.default_img}}"
+             class="{{page.featured_img.class}}">
+        {% endif %}
+      </figure>
+    </div>
+  </div>
+</div>
+{% elif not meta.is_front %}
+<script>window.location.replace('{{base_url}}/#{{meta.slug}}');</script>
+{% endif %}

@@ -1,0 +1,28 @@
+<!-- Footer -->
+<footer class="footer">
+  <div class="container">
+    {% if socials %}
+    <div class="shareto">
+      {% for social in socials if social.code %}
+        {{social.code}}
+      {% endfor %}
+    </div>
+    {% endif %}
+    <div class="copyright">
+      <span>{{site_meta.copyright}}</span>
+		  <span>{{site_meta.license}}</span>
+    </div>
+  </div>
+</footer>
+<!-- #Footer -->
+<!--
+====== JavaScript ======
+-->
+<script src="{{theme_url}}/libs/jquery/jquery-2.1.1.min.js"></script>
+<script src="{{theme_url}}/libs/bootstrap/bootstrap.min.js"></script>
+<script src="{{theme_url}}/js/functions.js"></script>
+<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!--[if lt IE 9]>
+<script src="{{ libs_url }}/supports/html5shiv.min.js"></script>
+<script src="{{ libs_url }}/supports/respond.min.js"></script>
+<![endif]-->

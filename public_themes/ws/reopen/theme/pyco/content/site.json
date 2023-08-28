@@ -1,0 +1,77 @@
+{
+  "locale": "en_US",
+  "content_types": {
+    "page": "Static Pages",
+    "post": "Posts"
+  },
+  "menus": {
+    "primary": [
+      {
+        "name": "Home",
+        "meta": {},
+        "link": "/"
+      },
+      {
+        "name": "Services",
+        "meta": {},
+        "link": "/services"
+      },
+      {
+        "name": "Portfolio",
+        "meta": {},
+        "link": "/portfolio",
+        "path_scope": "/category",
+        "nodes": [
+          {
+            "name": "Products Deatail",
+            "meta": {},
+            "link": "/category?term=product"
+          },
+          {
+            "name": "Posters",
+            "meta": {},
+            "link": "/category?term=poster"
+          }
+        ]
+      },
+      {
+        "name": "About",
+        "meta": {},
+        "link": "/about"
+      }
+    ]
+  },
+  "categories": {
+    "name":"Categories",
+    "content_types": ["post"],
+    "terms": [
+      {
+        "key":"product",
+        "meta":{"name":"Product", "caption": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."}
+      },
+      {
+        "key":"poster",
+        "meta":{"name":"Poster", "caption": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."}
+      },
+      {
+        "key":"drink",
+        "meta":{"name":"Drink"}
+      },
+      {
+        "key":"coffee",
+        "meta":{"name":"Coffee"}
+      }
+    ]
+  },
+  "meta": {
+    "copyright": "2015 Made by Pyco.",
+    "license": "MIT",
+    "description": "",
+    "title": "tin.",
+    "logo": "[%uploads%]/logo.png",
+    "languages": [
+      {"key": "en_US", "name": "English", "url": "#"},
+      {"key": "zh_CN", "name": "汉语", "url": "#"}
+    ]
+  }
+}

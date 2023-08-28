@@ -1,0 +1,181 @@
+{
+  "slug": "aeroluxus",
+  "version": "1.2.0",
+  "author": "Redy",
+  "license": "",
+  "title": "Aeroluxus",
+  "type": "ws",
+  "capability": 0,
+  "icon": "icon.jpg",
+  "poster": "poster.jpg",
+  "previews": ["preview.jpg"],
+  "menus": {
+    "primary": {
+      "title": "Primary menu",
+      "level": 2
+    }
+  },
+  "content_types": {
+    "page": {"title": "Static Pages", "templates": ["page", "page-2col",
+             "partner", "post-index", "index"]},
+    "profile": {"title": "Profile", "templates": ["profile"]},
+    "service": {"title": "Services & Products", "templates": ["service"]},
+    "post": {"title": "Course & Activities", "templates": ["post"]}
+  },
+  "templates": [
+    "page",
+    "contact",
+    "partner",
+    "post",
+    "post-index",
+    "index"
+  ],
+  "slots": ["applyment"],
+  "options":{
+      "sortby": "date",
+      "perpage": 6
+  },
+  "custom_fields": {
+    "index": {
+      "!": ["content", "description", "featured_img",
+            "tags", "parent", "priority", "category", "date"],
+      "carousel": {
+        "!":["title", "subtitle", "link", "caption"],
+        "type": "collection",
+        "label": "Background Carousel"
+      },
+      "about": {
+        "type": "attrs",
+        "label": "About",
+        "props": [
+          {
+            "key": "title",
+            "label": "Title",
+            "type": "text"
+          },
+          {
+            "key": "link",
+            "label": "Link",
+            "type": "text"
+          },
+          {
+            "key": "caption",
+            "label": "Caption",
+            "type": "textarea"
+          },
+          {
+            "key": "glassy",
+            "label": "Use glassy background",
+            "type": "switch"
+          }
+        ]
+      },
+      "contact": {
+        "type": "attrs",
+        "label": "Contact",
+        "props": [
+          {
+            "key": "title",
+            "label": "Title",
+            "type": "text"
+          },
+          {
+            "key": "caption",
+            "label": "Caption",
+            "type": "textarea"
+          },
+          {
+            "key": "tel",
+            "label": "Tel Number",
+            "type": "text"
+          },
+          {
+            "key": "email",
+            "label": "E-mail",
+            "type": "text"
+          },
+          {
+            "key": "follow",
+            "label": "Follow Text",
+            "type": "text"
+          },
+          {
+            "key": "src",
+            "label": "Follow Image",
+            "type": "image"
+          }
+        ]
+      }
+    },
+    "post-index": {
+      "!": ["content", "parent","tags", "priority"],
+      "ribbon": {
+        "!": ["class", "style"],
+        "label": "Ribbon Image",
+        "type": "bg"
+      }
+    },
+    "profile": {
+      "tagline": {
+        "label": "Tagline",
+        "type": "text"
+      },
+      "ribbon": {
+        "!": ["class", "style"],
+        "label": "Ribbon Image",
+        "type": "bg"
+      }
+    },
+    "partner": {
+      "ribbon": {
+        "!": ["class", "style"],
+        "label": "Ribbon Image",
+        "type": "bg"
+      },
+      "partners_title": {
+        "label": "Partners Title",
+        "type": "text"
+      },
+      "partners": {
+        "!": ["subtitle", "link"],
+        "label": "Partner Dialog",
+        "type": "collection"
+      },
+      "clients_title": {
+        "label": "Clients Title",
+        "type": "text"
+      },
+      "clients": {
+        "!": ["subtitle", "link", "caption"],
+        "label": "Clients Logo",
+        "type": "collection"
+      }
+    },
+    "service": {
+      "!": ["tags", "redirect", "category"],
+      "tagline": {
+        "label": "Tagline",
+        "type": "text"
+      },
+      "ribbon": {
+        "!": ["class", "style"],
+        "label": "Ribbon Image",
+        "type": "bg"
+      }
+    },
+    "post": {
+      "ribbon": {
+        "!": ["class", "style"],
+        "label": "Ribbon Image",
+        "type": "bg"
+      }
+    },
+    "page": {
+      "ribbon": {
+        "!": ["class", "style"],
+        "label": "Ribbon Image",
+        "type": "bg"
+      }
+    }
+  }
+}

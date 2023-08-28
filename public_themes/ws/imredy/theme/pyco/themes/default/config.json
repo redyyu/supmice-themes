@@ -1,0 +1,38 @@
+{
+  "version": "1.6.10",
+  "slug": "imredy",
+	"title": "I'm Redy",
+  "author": "Redy Ru",
+  "type": "ws",
+  "capability": 0,
+	"icon": "icon.png",
+  "poster": "poster.jpg",
+	"previews": ["preview1.jpg", "preview2.jpg"],
+
+  "templates": [
+    "page",
+    "post",
+    "portfolio",
+    "post-index",
+    "index",
+    "error-404"
+  ],
+
+  "content_types": {
+    "post": {"title": "Posts"}
+  },
+  "reserves": {
+    "post-index": true,
+    "error-404": true
+  },
+  "taxonomies": {
+    "category": {"title": "Categories", "content_types": ["post"]}
+  },
+  "allowed_slots": ["comment"],
+
+	"options": {
+    "palette": "default",
+    "palette-options": "default, red, blue, yellow, orange, pink",
+		"sortby": "date"
+  }
+}

@@ -1,0 +1,47 @@
+[
+	{"language":"en_US"},
+  {
+    "msgid": "SAVED",
+    "msgstr": "Saved."
+  },
+  {
+    "msgid": "REMOVED",
+    "msgstr": "Removed."
+  },
+  {
+    "msgid": "RESTORED",
+    "msgstr": "Restored."
+  },
+  {
+    "msgid": "INSTALLED",
+    "msgstr": "Installed."
+  },
+  {
+    "msgid": "RELOADED",
+    "msgstr": "Reloaded."
+  },
+  {
+    "msgid": "ERROR",
+    "msgstr": "System Error."
+  },
+  {
+    "msgid": "REFRESHED",
+    "msgstr": "Refreshed."
+  },
+  {
+    "msgid": "MEDIA_UPLOADED: %s",
+    "msgstr": "Media has been uploaded: %s"
+  },
+  {
+    "msgid": "MEDIA_EXISTS: %s",
+    "msgstr": "Media already exists: %s"
+  },
+  {
+    "msgid": "WRONG_PASSCODE",
+    "msgstr": "Passcode is wrong..."
+  },
+  {
+    "msgid": "CONFIRM_PASSCODE_NOT_MATCH",
+    "msgstr": "Confirm passcode is not match..."
+  }
+]

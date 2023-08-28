@@ -1,0 +1,59 @@
+{% import 'g' as g with context %}
+<!DOCTYPE html>
+<html lang="{{lang}}">
+{% include '_head.html' %}
+<body>
+<div class="wrapper">
+  {% include '_header.html' %}
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2">
+
+        <aside>
+          <figure>
+            <img class="{{meta.featured_img.class}}"
+                 src="{{meta.featured_img.src}}"
+                 alt="{{meta.featured_img.title}}" />
+          </figure>
+        </aside>
+
+        <article>
+          <header>
+            <h2>{{meta.title}}</h2>
+          </header>
+          <div class="content">
+            {{content}}
+          </div>
+        </article>
+
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2">
+        <div class="row img-gallery">
+          {% for pic in meta.attachments if pic.type == 'image' %}
+          <div class="col-md-3">
+            <figure class="prd">
+              <a href="{{pic.src}}"
+                 class="img-popup"
+                 title="{{pic.title}}">
+                <img src="{{g.img_holder}}"
+                     class="img-holder"
+                     style="{{pic.src|thumbnail|bg_img}}"
+                     alt="{{pic.title}}" />
+              </a>
+            </figure>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+{% include '_footer.html' %}
+</body>
+</html>

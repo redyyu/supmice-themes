@@ -1,0 +1,21 @@
+{% if g and page %}
+<section id="id-{{page.slug}}"
+         data-anchor="{{page.slug}}"
+         class="section {{page.hero.preset}} {{page.hero.class}}"
+         style="{{page.hero.style}}">
+  {% for item in page.carousel %}
+  <div class="slide"
+       data-anchor="slide-{{page.slug}}-{{loop.index}}">
+    <div class="container">
+      <h2>{{item.title}}</h2>
+      <figure>
+        <img src="{{item.src}}" alt="{{item.title}}" />
+      </figure>
+      <p>{{item.caption}}</p>
+    </div>
+  </div>
+  {% endfor %}
+</section>
+{% else %}
+<script>window.location.replace('{{base_url}}/#{{meta.slug}}');</script>
+{% endif %}

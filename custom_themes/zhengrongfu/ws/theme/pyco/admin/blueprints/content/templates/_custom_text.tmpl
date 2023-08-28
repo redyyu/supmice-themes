@@ -1,0 +1,23 @@
+{% set _text = meta[key] or '' %}
+<div class="card custom-form"
+     data-key="{{key}}"
+     data-type="text">
+  <div class="card-header d-flex">
+    <h4>
+      {{_(opts.label)|title}}
+    </h4>
+    <small class="text-muted ml-auto">
+      {{key}}
+    </small>
+  </div>
+  <div class="card-body">
+    <div class="form-group">
+      <label>{{_('Text')}}</label>
+      <input class="form-control"
+             type="text"
+             name="text"
+             maxlength="360"
+             value="{{_text}}">
+    </div>
+  </div>
+</div>

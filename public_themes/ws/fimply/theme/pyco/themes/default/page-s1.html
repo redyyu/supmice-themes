@@ -1,0 +1,28 @@
+{% if g and page %}
+<section id="{{page.slug}}"
+         class="common">
+  <div class="container">
+    <header>
+      <h2>{{page.title}}</h2>
+      <p>{{page.description}}</p>
+    </header>
+    <div class="row">
+      <div class="col-md-7">
+        <article class="content">
+          {{page.content}}
+        </article>
+      </div>
+      <div class="col-md-5">
+        <aside>
+          <figure>
+            <img src="{{page.featured_img.src or g.default_img}}"
+                 alt="{{page.featured_img.title}}"/>
+          </figure>
+        </aside>
+      </div>
+    </div>
+  </div>
+</section>
+{% else %}
+<script>window.location.replace('{{base_url}}/#{{meta.slug}}');</script>
+{% endif %}

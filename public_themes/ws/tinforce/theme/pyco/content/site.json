@@ -1,0 +1,42 @@
+{
+  "content_types": {
+    "page": "Static Pages",
+    "post": "Posts"
+  },
+  "menus": {
+    "primary": [
+      {
+        "name": "Home",
+        "meta": {},
+        "link": "/"
+      },
+      {
+        "name": "Services",
+        "meta": {},
+        "link": "/services"
+      },
+      {
+        "name": "Portfolio",
+        "meta": {},
+        "link": "/portfolio"
+      },
+      {
+        "name": "About",
+        "meta": {},
+        "link": "/about"
+      }
+    ]
+  },
+  "locale": "en_US",
+  "meta": {
+    "copyright": "2015 Made by Pyco.",
+    "license": "MIT",
+    "description": "",
+    "title": "tin.",
+    "languages": [
+      {"key": "en_US", "name": "English", "url": "#"},
+      {"key": "zh_CN", "name": "汉语", "url": "#"}
+    ]
+  },
+  "terms": {}
+}

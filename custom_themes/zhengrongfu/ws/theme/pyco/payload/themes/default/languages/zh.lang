@@ -1,0 +1,159 @@
+[
+	{"language":"zh"},
+	{
+		"msgid": "Toggle navigation",
+		"msgstr": "切换导航"
+	},
+	{
+		"msgid": "Online Store",
+		"msgstr": "在线商城"
+	},
+	{
+		"msgid": "List Articles",
+		"msgstr": "文章列表"
+	},
+	{
+		"msgid": "Recent Articles",
+		"msgstr": "近期文章"
+	},
+	{
+		"msgid": "Pagination",
+		"msgstr": "翻页"
+	},
+	{
+		"msgid": "Next Page",
+		"msgstr": "下一页"
+	},
+	{
+		"msgid": "Previous Page",
+		"msgstr": "上一页"
+	},
+	{
+		"msgid": "All",
+		"msgstr": "全部"
+	},
+	{
+		"msgid": "Read Detail",
+		"msgstr": "阅读详情"
+	},
+	{
+		"msgid": "View Detail",
+		"msgstr": "查看详情"
+	},
+	{
+		"msgid": "Articles",
+		"msgstr": "文章"
+	},
+	{
+		"msgid": "Categories",
+		"msgstr": "分类"
+	},
+	{
+		"msgid": "There is no post yet.",
+		"msgstr": "还没有任何文章"
+	},
+	{
+		"msgid": "Back to home",
+		"msgstr": "返回首页"
+	},
+	{
+		"msgid": "Back to articles",
+		"msgstr": "返回文章列表"
+	},
+	{
+		"msgid": "Title",
+		"msgstr": "标题"
+	},
+	{
+		"msgid": "Description text here",
+		"msgstr": "在这里填写简介文字"
+	},
+	{
+		"msgid": "More",
+		"msgstr": "更多"
+	},
+	{
+		"msgid": "Create New Feature",
+		"msgstr": "添加新特点"
+	},
+	{
+		"msgid": "Create New Artcile",
+		"msgstr": "添加新文章"
+	},
+	{
+		"msgid": "Inverted",
+		"msgstr": "反色"
+	},
+	{
+		"msgid": "Parallax",
+		"msgstr": "视差"
+	},
+	{
+		"msgid": "Glassy",
+		"msgstr": "通透"
+	},
+	{
+		"msgid": "Languages",
+		"msgstr": "语言"
+	},
+	{
+		"msgid": "Primary Text",
+		"msgstr": "主要文本"
+	},
+	{
+		"msgid": "Secondary Text",
+		"msgstr": "次要文本"
+	},
+	{
+		"msgid": "Danger Text",
+		"msgstr": "警告文本"
+	},
+	{
+		"msgid": "Spec Title|Spec text is here",
+		"msgstr": "规格名称|在竖线后面写规格参数文本"
+	},
+	{
+		"msgid": "WeChat Buzz",
+		"msgstr": "微信公众号"
+	},
+	{
+		"msgid": "Add New QR",
+		"msgstr": "添加二维码"
+	},
+	{
+		"msgid": "Notice Text is here.",
+		"msgstr": "在这里写说明文字"
+	},
+	{
+		"msgid": "Contact Info.",
+		"msgstr": "联系方式"
+	},
+	{
+		"msgid": "Add New Contact",
+		"msgstr": "添加联系方式"
+	},
+	{
+		"msgid": "Add New Feature",
+		"msgstr": "添加新特点"
+	},
+	{
+		"msgid": "Product name",
+		"msgstr": "产品名称"
+	},
+	{
+		"msgid": "Add Product",
+		"msgstr": "添加产品"
+	},
+	{
+		"msgid": "No video",
+		"msgstr": "没有视频"
+	},
+	{
+		"msgid": "Your browser does not support HTML5 video.",
+		"msgstr": "您的浏览器不支持HTML5视频播放"
+	},
+	{
+		"msgid": "$_CONTENT",
+		"msgstr": "<p>这一段是默认的富文本内容，你可以按照自己的需要重新填写。进入富文本编辑状态以后，将出现一个输入工具条（它通常会在画面顶部或是富文本区域的上方），使用工具条可以插入、更换或者删除图片和链接。</p>"
+	}
+]

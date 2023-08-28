@@ -1,0 +1,170 @@
+<wxs src="../../translator.wxs" module="_"></wxs>
+<wxs src="../../filters.wxs" module="f"></wxs>
+{{_('$set', store.locale)}}
+
+<block wx:if="{{logged}}">
+<!-- shopping address -->
+<view class="container padding"
+      wx:if="{{items.length}}">
+  <view class="flex-row"
+        wx:if="{{!consignee}}">
+    <button class="flex"
+            bind:tap="get_shipping_address"
+            type="accent"
+            plain>
+      {{_('Select Shipping Address')}}
+    </button>
+  </view>
+  <view wx:else>
+    <view class="well caption"
+          bind:tap="get_shipping_address">
+      {{consignee.recipient}}
+    </view>
+  </view>
+  <view class="margin">
+    <text class="hint">{{_('* The address will be encrypted.')}}</text>
+  </view>
+</view>
+
+<!-- shopping cart -->
+<view class="container"
+      wx:if="{{is_empty}}">
+  <view class="holder-md flex-row align-center justify-center">
+    <text class="draft subhead">{{_('It is Empty')}}</text>
+  </view>
+</view>
+
+<view class="container padding"
+      wx:if="{{items.length}}">
+  <view class="padding">
+    <text class="label">{{_('%s items need to pay.', items.length)}}</text>
+  </view>
+  <view class="flex-row"
+        wx:for="{{items}}"
+        wx:key="index">
+    <view>
+      <image class="thumbnail"
+             src="{{item.figure||image.cart}}"
+             background-size="cover"
+             background-position="center center" />
+    </view>
+    <view class="flex padding text-nowrap">
+      <text class="block text-nowrap">{{item.name}}</text>
+      <text class="block caption text-nowrap">{{item.detail || '-'}}</text>
+      <text class="block caption accent">¥ {{f.price(item.price)}} x {{item.amount}}</text>
+      <!-- discounts -->
+      <view>
+        <view class="tag accent"
+              wx:if="{{item.coupon}}">{{item.coupon}}</view>
+        <view class="tag accent"
+              wx:for="{{item.vouchers}}"
+              wx:for-item="voucher"
+              wx:key="index">{{voucher}}</view>
+      </view>
+      <view class="divider"></view>
+    </view>
+  </view>
+</view>
+
+
+<view class="container padding"
+      wx:if="{{items.length}}">
+  <view class="padding">
+    <text class="label">{{_('Note')}}</text>
+    <textarea bindinput="input_note"
+              maxlength="600"
+              auto-height
+              placeholder="{{_('* Type additional needs or specify invoice information here.')}}" />
+  </view>
+</view>
+
+
+<!-- checkout -->
+<view class="container padding"
+      wx:if="{{items.length}}">
+  <view class="padding flex-row">
+    <view class="flex">
+      <block wx:if="{{spent_credit && exchange_payment}}">
+        <view>
+          <text class="label">{{_('Points')}}</text>
+          <checkbox-group bindchange="toggle_use_credit">
+            <label class="checkbox caption">
+              <checkbox value="on"
+                        checked="{{use_credit}}"/>{{_('Use %s Points', f.credit(spent_credit))}}
+            </label>
+          </checkbox-group>
+        </view>
+        <view class="space-padding">
+          <text class="block caption">{{_('To Save %s', f.price(exchange_payment))}}</text>
+        </view>
+      </block>
+    </view>
+    <view class="flex text-right">
+      <view>
+        <text class="label">{{_('Payment')}}</text>
+        <text class="block subhead accent"
+              wx:if="{{payment}}">¥ {{f.price(payment)}}</text>
+        <text class="block accent"
+              wx:else>{{_('Free')}}</text>
+      </view>
+      <view>
+        <text class="block caption"
+              wx:if="{{total_price}}">{{_('Total Price')}} {{f.price(total_price)}}</text>
+        <text class="block caption"
+              wx:else>{{_('Free')}}</text>
+      </view>
+      <view>
+        <text class="block caption"
+              wx:if="{{courier_fee}}">{{_('Courier Fee')}} {{f.price(courier_fee)}}</text>
+        <text class="block caption"
+              wx:else>{{_('Free Shipping')}}</text>
+      </view>
+    </view>
+  </view>
+</view>
+
+
+<!-- expires -->
+<view class="container padding"
+      wx:if="{{expired_list.length}}">
+  <view class="padding">
+    <text class="hint warn">{{_('%s items have been expired.', expired_list.length)}}</text>
+  </view>
+  <view class="flex-row"
+        wx:for="{{expired_list}}"
+        wx:key="index">
+    <view class="flex padding text-nowrap">
+      <text class="block caption text-nowrap">{{item.name}}</text>
+      <text class="block caption text-nowrap">{{item.detail || '-'}}</text>
+      <view class="divider"></view>
+    </view>
+  </view>
+</view>
+
+<!-- bottombar -->
+<view class="bottombar-holder"></view>
+
+<view class="bottombar flex-row">
+  <button class="flex raised"
+          type="{{pay_error?'warn':'accent'}}"
+          bind:tap="purchase"
+          data-err-title="{{_('Purchase failed')}}"
+          data-err-content="{{_('Some items in the order have expired, please re-purchase.')}}"
+          disabled="{{is_empty || !consignee}}">
+    {{pay_error?_('Payment failed, Please retry'):_('Pay')}}
+  </button>
+</view>
+</block>
+
+<block wx:if="{{logged && paid}}">
+<view class="container text-center layout-padding layout-margin">
+  <view class="holder-md flex-row align-center justify-center">
+    <text class="draft subhead">{{_('Payment Successful')}}</text>
+  </view>
+  <button class="block raised"
+          type="accent"
+          bind:tap="goback">
+    {{_('Go Back')}}
+  </button>
+</view>
+</block>

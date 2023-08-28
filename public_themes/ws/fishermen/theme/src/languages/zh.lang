@@ -1,0 +1,84 @@
+[
+  {"Language": "zh"},
+
+  {
+    "msgid": "Learn More",
+    "msgstr": "了解更多"
+  },
+  {
+    "msgid": "Languages",
+    "msgstr": "语言"
+  },
+  {
+    "msgid": "Features",
+    "msgstr": "特性"
+  },
+  {
+    "msgid": "Error 404",
+    "msgstr": "错误404"
+  },
+  {
+    "msgid": "Title",
+    "msgstr": "标题"
+  },
+  {
+    "msgid": "Get Link",
+    "msgstr": "获取链接"
+  },
+  {
+    "msgid": "Email Address",
+    "msgstr": "邮箱地址"
+  },
+  {
+    "msgid": "Button Text",
+    "msgstr": "按钮文字"
+  },
+  {
+    "msgid": "Hidden",
+    "msgstr": "隐藏"
+  },
+  {
+    "msgid": "Email Subject",
+    "msgstr": "邮件标题"
+  },
+  {
+    "msgid": "Email subject here",
+    "msgstr": "在这里写邮件标题"
+  },
+  {
+    "msgid": "Subtitle text here",
+    "msgstr": "在这里填写副标题文字"
+  },
+  {
+    "msgid": "Description text here",
+    "msgstr": "在这里填写简述内容"
+  },
+  {
+    "msgid": "Email Address here",
+    "msgstr": "在这里填写电子邮件地址"
+  },
+  {
+    "msgid": "Column Title",
+    "msgstr": "栏目标题"
+  },
+  {
+    "msgid": "Item Title",
+    "msgstr": "小标题"
+  },
+  {
+    "msgid": "Click here to edit this item.",
+    "msgstr": "点这里编辑这条内容。"
+  },
+  {
+    "msgid": "Add New Item",
+    "msgstr": "添加新条目"
+  },
+  {
+    "msgid": "Click here to add a item.",
+    "msgstr": "点击这里添加新条目。"
+  },
+  {
+    "msgid": "$_CONTENT",
+    "msgstr": "<p>这一段是默认的富文本内容，你可以按照自己的需要重新填写。进入富文本编辑状态以后，将出现一个输入工具条（它通常会在画面顶部或是富文本区域的上方），使用工具条可以插入、更换或者删除图片和链接。</p>"
+  }
+]

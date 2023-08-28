@@ -1,0 +1,11 @@
+/*
+picture:%base_url%/uploads/feature_4.png
+markdown:False
+author:None
+title:无需添加好友
+draft:
+template:feature_center
+date:2014/09/23
+order:40
+*/
+<p>使用Fisherman，无需添加好友。我们会自动将与您互为手机联系人的Fisherman用户添加为好友，轻点姓名即可通话。同时，您手机通讯录上的号码经过不可逆运算再存储和传输，通话过程加密，通话内容在服务器上不留记录。</p>

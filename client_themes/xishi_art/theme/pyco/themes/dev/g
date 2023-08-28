@@ -1,0 +1,5 @@
+{% set default_logo = theme_url+'/styles/logo.png' %}
+{% set default_favicon = theme_url+'/styles/favicon.png' %}
+{% set default_qr = theme_url+'/styles/qr.jpg' %}
+
+{% set ver = theme_meta.version %}

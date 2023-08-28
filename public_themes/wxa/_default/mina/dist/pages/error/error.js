@@ -1,0 +1,1 @@
+(function(){var n;n=getApp();Page({data:{status:null},onLoad:function(n){var t;return t=this},onPullDownRefresh:function(){return wx.stopPullDownRefresh()},back:function(){return n.re_launch()}})}).call(this);

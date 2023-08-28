@@ -1,0 +1,133 @@
+{% import "g" as g with context %}
+<!DOCTYPE html>
+<html lang="{{ lang }}">
+{% include "_head.html" %}
+<body>
+  <header class="fixed-top">
+    <nav class="navbar affix">
+      <a class="navbar-brand"
+         href="{{base_url}}">
+        {{site_meta.title}}
+      </a>
+      <div class="d-flex flex-fill justify-content-end">
+        <ul class="navbar-nav flex-row">
+          <li class="nav-item">
+            <a class="nav-link history-back"
+               href="{{base_url}}">
+              <svg width="24" height="24" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"/><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link"
+               href="{{base_url}}/portfolio">
+              <svg width="24" height="24" viewBox="0 0 24 24"><path d="M4 11h5V5H4v6zm0 7h5v-6H4v6zm6 0h5v-6h-5v6zm6 0h5v-6h-5v6zm-6-7h5V5h-5v6zm6-6v6h5V5h-5z"/><path d="M0 0h24v24H0z" fill="none"/></svg>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <div class="container my-5 pt-5">
+  	<div class="row">
+      <article class="col-md-6 mb-4 offset-md-1">
+        <header>
+          <h1>{{meta.title}}</h1>
+        </header>
+        <div class="mb-2">
+          <p class="caption">{{meta.description}}</p>
+        </div>
+        <hr>
+        <div class="content mb-2">
+          {{ content }}
+        </div>
+      </article>
+
+      <aside class="col-md-4 mb-4">
+        <figure>
+          <img class="w-100"
+               src="{{meta.featured_img.src or g.default_img}}"
+               alt="{{meta.featured_img.title}}" />
+        </figure>
+        <div class="my-2">
+          <div class="tags">
+            {% for tag in meta.tags %}
+            <div class="d-inline">
+              <span class="tag">{{tag|capitalize}}</span>
+              {{'/' if not loop.last}}
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+
+        <hr>
+        <div class="my-2">
+          <p class="caption">
+            <b>{{_('Creator')}}</b>
+            <span class="hl">&rang;</span>
+            <span>{{ meta.task.creator}}</span>
+          </p>
+          <p class="caption">
+            <b>{{_('Time of Creation')}}</b>
+            <span class="hl">&rang;</span>
+            <span>{{ meta.task.creation}}</span>
+          </p>
+          {% if meta.task.status %}
+          <p class="caption">
+            <b>{{_('Task Status')}}</b>
+            <span class="hl">&rang;</span>
+            <span>{{ meta.task.status }}</span>
+          </p>
+          {% endif %}
+        </div>
+
+        {% if meta.referrer.link %}
+        <hr>
+        <div class="my-2">
+          <p class="caption text-break">
+            <a href="{{ meta.referrer.link | url }}"
+               target="{{ meta.referrer.target or '_blank' }}">
+              {{ meta.referrer.name or meta.referrer.link }}
+            </a>
+          </p>
+        </div>
+        {% endif %}
+
+        <hr>
+
+        <div class="row media-gallery">
+          {% for item in meta.series %}
+          <figure class="col-4">
+            <a class="open-image"
+               href="{{item.src}}"
+               title="{{item.title}}"
+               data-effect="mfp-slide-bottom"
+               data-error="{{meta.title}}">
+              <div class="flip">
+                <svg width="24" height="24" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/><path fill="none" d="M0 0h24v24H0V0z"/><path d="M12 10h-2v2H9v-2H7V9h2V7h1v2h2v1z"/></svg>
+              </div>
+              <img class="{{item.class}}"
+                   src="{{g.trans}}"
+                   style="{{item.src|thumbnail|bg_img}}"
+                   alt="{{item.title}}" />
+            </a>
+          </figure>
+          {% endfor %}
+        </div>
+      </aside>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer container">
+    <hr>
+    <div class="text-center">
+      <span>{{site_meta.copyright}}</span>
+      <span>{{site_meta.license}}</span>
+    </div>
+  </footer>
+
+  {{g.scripts}}
+
+</body>
+</html>

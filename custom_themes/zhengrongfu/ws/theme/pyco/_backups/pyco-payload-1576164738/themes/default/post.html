@@ -1,0 +1,65 @@
+{% import "g" as g with context %}
+
+<!DOCTYPE html>
+<html lang="{{lang}}">
+
+<head>
+{% include '_head_.html' %}
+</head>
+
+<body>
+  {% include '_nav.html' %}
+  <header>
+    <h1>{{meta.title}}</h1>
+    <h3>
+      {% set category = categorize(meta.terms) %}
+      {% for term in category.terms %}
+        {{term.meta.name}},
+      {% endfor %}
+    </h3>
+    <h4>
+      {{meta.description or meta.excerpt}}
+    </h4>
+    <div>
+      <img src="{{meta.featured_img.src}}"
+           alt="{{ meta.featured_img.title }}" />
+    </div>
+    <h5>
+      {{_('Posted by %s on %s', meta.author, meta.date|date_formatted)}}
+    </h5>
+  </header>
+
+  <!-- content -->
+  <section>
+    <article>
+      {{content}}
+    </article>
+    {% if slot.comment %}
+    <hr>
+    <aside>
+      {{slot.comment.script}}
+    </aside>
+    {% endif %}
+  </section>
+
+  <!-- paginator -->
+  {% if meta.prevpage or meta.mextpage %}
+  <hr>
+  <div class="paginator">
+    {% if meta.prevpage %}
+      <a href="{{meta.prevpage.link|url}}">{{_('Previous page')}}</a>
+    {% endif %}
+    &nbsp;/&nbsp;
+    {% if meta.nextpage %}
+      <a href="{{meta.nextpage.link|url}}">{{_('Next page')}}</a>
+    {% endif %}
+    </div>
+  </div>
+  {% endif %}
+
+  <hr>
+  <a href="{{base_url}}/post/index">{{_('Return to post index')}}</a>
+
+  {% include '_footer.html'%}
+</body>
+</html>

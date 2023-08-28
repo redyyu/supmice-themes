@@ -1,0 +1,68 @@
+<!-- search form -->
+<view class="container">
+  <form class="form"
+        bind:submit="search">
+    <view class="form-field">
+      <view class="field-inner">
+        <input name="keyword"
+               placeholder="在这里输入商品名"
+               placeholder-class="placeholder"
+               confirm-type="search"
+               bind:confirm="search"
+               maxlength="120"/>
+        <button class="icon-btn"
+                type="accent"
+                form-type="submit">
+          <image class="ico"
+                 src="{{image.search}}" />
+        </button>
+      </view>
+    </view>
+  </form>
+</view>
+
+<!-- commodities -->
+<view class="grid-list">
+  <view class="grid"
+        wx:for="{{commodities}}"
+        wx:key="index">
+    <view class="card"
+          bind:tap="enter"
+          data-item="{{item}}">
+      <image src="{{item.src}}" mode="aspectFill" lazy-load/>
+      <view class="card-text">
+        <text class="title">{{item.title}}</text>
+        <view class="info {{item.is_extra ? 'dark' : ''}}">
+          <text class="coupon">{{item.coupon}}</text>
+          <text class="price">¥ {{item.price}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<!-- help -->
+<view class="flex-row centered holder-lg"
+      wx:if="{{commodities.length == 0}}">
+  <view class="flex-66 flex-column centered layout-margin">
+    <view class="draft">
+      <icon type="search" size="96"/>
+    </view>
+    <view class="text-center"
+          wx:if="{{has_more == false}}">
+      <text class="warn">啥也没找到...</text>
+    </view>
+    <view class="text-center draft">
+      <text>请输入关键词，多个关键词用空格分开，</text>
+      <text>或者直接输入完整的商品名字开始搜索。</text>
+      <text>运气好就能找到优惠券了哇！</text>
+    </view>
+  </view>
+</view>
+
+<!-- footer -->
+<view class="footer"
+      wx:if="{{commodities.length > 0}}">
+  <import src="/widgets/loadmore.wxml"/>
+  <template is="loadmore" data="{{loading: is_loading, more: has_more}}"/>
+</view>

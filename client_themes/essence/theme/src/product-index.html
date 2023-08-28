@@ -1,0 +1,98 @@
+{% import 'g' as g with context %}
+<!DOCTYPE html>
+<html lang="{{lang}}">
+{% include '_head_.html' %}
+<body>
+{% include '_header_.html' %}
+
+<!-- carousel begin -->
+<div class="container-full">
+    <div id="carousel"
+         class="carousel slide"
+         data-ride="carousel">
+      <ol class="carousel-indicators">
+        {% for item in meta.carousels %}
+        <li data-target="#carousel"
+            data-slide-to="{{loop.index0}}"
+            class="{{'active' if loop.first}}">
+        </li>
+        {% endfor %}
+      </ol>
+      <div class="carousel-inner" role="listbox">
+        {% for item in meta.carousels %}
+        <div class="item {{'active' if loop.first}}">
+          <a href="#">
+            <img class="thumbnail-img {{item.class}}"
+                 target="{{item.target}}"
+                 src="{{item.src}}"></a>
+        </div>
+        {% endfor %}
+      </div>
+      <a class="left carousel-control"
+         href="#carousel"
+         role="button"
+         data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left"
+              aria-hidden="true"></span>
+        <span class="sr-only"></span>
+      </a>
+      <a class="right carousel-control"
+         href="#carousel"
+         role="button"
+         data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right"
+              aria-hidden="true"></span>
+        <span class="sr-only"></span>
+      </a>
+    </div>
+</div>
+<!-- carousel end -->
+
+<div class="container">
+  <div class="wrap-products">
+    <div class="row">
+      {% set product = query('product', args.paged)%}
+      {% for p in product.contents %}
+      <div class="col-sm-6 col-md-3 products">
+        <a href="{{p.url}}">
+          <img class="thumbnail-img"
+               src="{{p.featured_img.src|thumbnail}}">
+          <div class="product-text">
+            <p>{{p.title}}</p>
+            <p>
+              <span>{{p.tip}}</span>
+              <span class="product-price">{{p.price}}</span>
+            </p>
+          </div>
+        </a>
+      </div>
+      {% endfor %}
+    </div>
+    {% if products.total_pages > 1 %}
+    <ul class="pager">
+    	{% set has_next_page = products.paged < products.total_pages %}
+    	{% set has_prev_page = products.paged > 1 %}
+
+      {% if has_prev_page %}
+      <li class="previous">
+        <a href="{{ glue({'paged': products.paged-1}) }}">
+          &larr; {{_('Previous')}}
+        </a>
+      </li>
+      {% endif %}
+      {% if has_next_page %}
+      <li class="next">
+        <a href="{{ glue({'paged': products.paged+1}) }}">
+          {{_('Next')}} &rarr;
+        </a>
+      </li>
+      {% endif %}
+    </ul>
+    {% endif %}
+  </div>
+</div>
+
+{% include '_footer_.html' %}
+{% include '_js_.html' %}
+</body>
+</html>

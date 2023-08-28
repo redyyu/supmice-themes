@@ -1,0 +1,19 @@
+{% if g and page %}
+<div class="container">
+  <div class="row">
+    <article class="col-md mb-4">
+      <header>
+        <h2>{{page.title}}</h2>
+      </header>
+      {{page.content}}
+    </article>
+    <div class="col-md mb-4 text-center">
+      <figure>
+        <img src="{{page.featured_img.src or g.default_img}}" />
+      </figure>
+    </div>
+  </div>
+</div>
+{% else %}
+<script>window.location.replace('{{base_url}}/#{{meta.slug}}');</script>
+{% endif %}

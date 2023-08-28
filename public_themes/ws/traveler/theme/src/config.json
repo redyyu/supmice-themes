@@ -1,0 +1,32 @@
+{
+  "version": "1.8.1",
+  "slug": "traveler",
+  "author": "Redy",
+  "license": "MIT",
+  "title": "Traveler",
+  "type": "ws",
+  "capability": 0,
+  "icon": "icon.png",
+  "poster": "poster.jpg",
+  "previews": ["preview1.jpg",
+               "preview2.jpg",
+               "preview3.jpg",
+               "preview4.jpg"],
+  "menus": {
+    "primary": {
+      "title": "Primary menu",
+      "level": 2
+    }
+  },
+  "templates": [
+    "page",
+    "team",
+    "services",
+    "products",
+    "index"
+  ],
+  "slots": ["banner"],
+  "options":{
+    "sortby": "date"
+  }
+}

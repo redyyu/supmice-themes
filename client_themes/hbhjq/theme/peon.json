@@ -1,0 +1,60 @@
+{
+  "watch":{
+    "src": "src",
+    "dest": "pyco/themes/default",
+    "pyco": "pyco",
+    "skip_includes":"html",
+    "server": true,
+    "clean": true
+  },
+  "packing":{
+    "zip":{
+      "cwd":"src",
+      "dest":".",
+      "file":"hjq.zip",
+      "include_hidden":false,
+      "include_peon_config":false,
+      "excludes":[]
+    },
+    "upload":{
+      "cwd":".",
+      "file":"hjq.zip",
+      "headers":{
+        "SecretKey":"hbhjq-db391b3a9a6d40bcaf58b1c7bd62bfec"
+      },
+      "url":"http://api.soopro.com/ws/website/develop_theme",
+      "data":null,
+      "params":null,
+      "delete":true
+    }
+  },
+  "transport":{
+    "upload":{
+      "cwd":"pyco/content",
+      "replace": [
+        {
+          "pattern":"[%uploads%]", 
+          "replacement":"http://static.soopro.com/apps/hbhjq/website/uploads"
+        }
+      ],
+      "headers":{
+        "content-type": "application/json",
+        "SecretKey":"hbhjq-db391b3a9a6d40bcaf58b1c7bd62bfec"
+      },
+      "url":"http://api.soopro.com/ws/website/develop_sync_sitedata"
+    },
+    "download":{
+      "dest":"pyco/content",
+      "replace": [
+        {
+          "pattern":"http://static.soopro.com/apps/hbhjq/website/uploads", 
+          "replacement":"[%uploads%]"
+        }
+      ],
+      "headers":{
+        "SecretKey":"hbhjq-db391b3a9a6d40bcaf58b1c7bd62bfec"
+      },
+      "url":"http://api.soopro.com/ws/website/develop_sync_sitedata"
+    }
+  }
+}

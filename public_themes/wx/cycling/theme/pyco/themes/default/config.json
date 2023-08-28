@@ -1,0 +1,19 @@
+{
+	"slug":"wx",
+  "version": "1.2.8",
+  "author":"Redy",
+  "license": "MIT",
+	"title": {
+	  "en": "Default Wechat Theme",
+    "zh": "默认微信主题"
+	},
+  "type": "wx",
+	"description": {
+	  "en":"This is a simple default theme for wechat article, you will experience write a wechat article with custom template.",
+    "zh":"这是一个默认的微信主题，您可以随便写点儿什么，体验如何编写微信的文章。"
+	},
+  "templates": ["article"],
+  "content_types": {
+    "article": {"title": "Articles"}
+  }
+}

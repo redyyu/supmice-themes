@@ -1,0 +1,41 @@
+{% import "g" as g with context %}
+<!doctype html>
+<html lang="{{lang}}">
+{% include '_head.html' %}
+
+<body data-spy="scroll" data-target="#main-navbar">
+
+<div class="page-loader"></div>
+<div class="body">
+    {% include '_header.html' %}
+
+    <section id="text-carousel-intro-section"
+     class="parallax {{meta.background.class}}"
+     data-stellar-background-ratio="0.5"
+     style="{{meta.background.style or site_meta.bg.style}}">
+        <div class="container">
+            <div class="caption text-center text-white" data-stellar-ratio="0.7">
+                <div id="owl-intro-text" class="owl-carousel">
+                    {% for c in meta.carousel %}
+                    <div class="item">
+                        <h1>{{c.name}}</h1>
+                        <p>{{c.value}}</p>
+                        <div class="extra-space-l"></div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {% for page in pages | type('page') if page.template not in [meta.template, 'page'] %}
+      {% include page.template+'.html' ignore missing %}
+    {% endfor %}
+
+    {% include '_footer.html' %}
+    <a href="#" class="scrolltotop"><i class="fa fa-arrow-up"></i></a>
+</div>
+    
+{% include '_js_.html' %}
+</body>     
+</html>

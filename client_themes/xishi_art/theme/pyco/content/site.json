@@ -1,0 +1,23 @@
+{
+  "content_types": {
+    "article": "Articles"
+  },
+  "meta": {
+    "id": "5709f177f596b13019041892",
+    "slug":"sunstone",
+    "title": "Sunston Art WeChat Buzz",
+    "description": "This is a simple studio theme for wechat article...",
+    "logo": "",
+    "favicon": "[%uploads%]/favicon.png",
+    "copyright": "2015 Made by Pyco.",
+    "license": "MIT",
+    "locale": "zh_CN",
+    "visit":{
+      "pv": 100,
+      "vs": 100,
+      "uv": 100,
+      "ip": 100,
+      "page": 100
+    }
+  }
+}

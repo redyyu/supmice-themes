@@ -1,0 +1,57 @@
+{
+  "params": {
+    "paged": 1,
+    "total_pages": 5,
+    "total_count": 60,
+    "page_range": [1,2,3,4,5],
+    "has_prev": false,
+    "has_next": true
+  },
+
+  "contents": [
+    {
+      "meta": {
+        "title": "Title #1",
+        "description": "Description here is text #1"
+      },
+      "content_type": "post",
+      "date": "2018-12-12",
+      "price": 0,
+      "tags": [],
+      "content": ""
+    },
+    {
+      "meta": {
+        "title": "Title #2",
+        "description": "Description here is text #2"
+      },
+      "content_type": "post",
+      "date": "2018-12-12",
+      "price": 0,
+      "tags": [],
+      "content": ""
+    },
+    {
+      "meta": {
+        "title": "Title #3",
+        "description": "Description here is text #3"
+      },
+      "content_type": "post",
+      "date": "2018-12-12",
+      "price": 0,
+      "tags": [],
+      "content": ""
+    },
+    {
+      "meta": {
+        "title": "Title #4",
+        "description": "Description here is text #4"
+      },
+      "content_type": "post",
+      "date": "2018-12-12",
+      "price": 0,
+      "tags": [],
+      "content": ""
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{% if g and page %}
+<h2 class="major">{{page.title}}</h2>
+<div class="row">
+  <div>
+    <div class="content">
+      {{page.content}}
+    </div>
+  </div>
+  <div>
+    <form class="mailform"
+          action="mailto:{{page.contact_form.address}}">
+      <input type="hidden"
+             name="subject"
+             value="{{page.contact_form.subject
+                      or _('Contact&nbsp;Aeroluxus')}}">
+      <div class="fields">
+        <div class="field">
+          <label for="name">{{_('Name')}}</label>
+          <input type="text" name="name" />
+        </div>
+        <div class="field">
+          <label for="message">{{_('Message')}}</label>
+          <textarea name="message" rows="4"></textarea>
+        </div>
+      </div>
+      <ul class="actions">
+        <li>
+          <input class="primary"
+                 type="submit" value="{{_('Send E-mail')}}" />
+        </li>
+        <li>
+          <input type="reset" value="{{_('Reset')}}" />
+        </li>
+      </ul>
+    </form>
+  </div>
+</div>
+{% elif not meta.is_front %}
+<script>window.location.replace('{{base_url}}/#{{meta.slug}}');</script>
+{% endif %}

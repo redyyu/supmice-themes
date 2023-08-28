@@ -1,0 +1,381 @@
+module.exports = [
+
+  {"Language": "zh"},
+  {
+    "msgid": "Add to Cart",
+    "msgstr": "放入购物车"
+  },
+  {
+    "msgid": "Buy Now",
+    "msgstr": "立即购买"
+  },
+  {
+    "msgid": "Free Shipping",
+    "msgstr": "包邮"
+  },
+  {
+    "msgid": "Join Membership",
+    "msgstr": "加入会员"
+  },
+  {
+    "msgid": "Cannot use points",
+    "msgstr": "不用会员点数"
+  },
+  {
+    "msgid": "Points",
+    "msgstr": "积分"
+  },
+  {
+    "msgid": "Points %s",
+    "msgstr": "积分 %s"
+  },
+  {
+    "msgid": "Use Member Points",
+    "msgstr": "使用会员积分"
+  },
+  {
+    "msgid": "Use points to save %s",
+    "msgstr": "使用积分节省了%s"
+  },
+  {
+    "msgid": "To Save %s",
+    "msgstr": "省%s元"
+  },
+  {
+    "msgid": "Cannot use Member points",
+    "msgstr": "不能使用会员点数"
+  },
+  {
+    "msgid": "%s% Off",
+    "msgstr": "立减 %s%"
+  },
+  {
+    "msgid": "Points %s",
+    "msgstr": "积分 %s"
+  },
+  {
+    "msgid": "Not So Good",
+    "msgstr": "不怎么样"
+  },
+  {
+    "msgid": "Just Ok",
+    "msgstr": "一般般啦"
+  },
+  {
+    "msgid": "Better",
+    "msgstr": "好些啦"
+  },
+  {
+    "msgid": "Pretty good",
+    "msgstr": "非常好"
+  },
+  {
+    "msgid": "Incredible",
+    "msgstr": "难以置信"
+  },
+  {
+    "msgid": "Share for bargain",
+    "msgstr": "分享得优惠"
+  },
+  {
+    "msgid": "(%s Hours left)",
+    "msgstr": "（还剩%s小时）"
+  },
+  {
+    "msgid": "Check the rules",
+    "msgstr": "查看规则"
+  },
+  {
+    "msgid": "RULES: You can start `Share for bargain` one at time. After you started, you will able to get 1 unit discount when purchase in limited time (about 24h). The discount may increase If other people open it form your shared card. If you are lucky, you can get a very good discount by only shared once.",
+    "msgstr": "规则：你只能同时开启一个「分享得优惠」，对不同的商品开启分享优惠将会取消已经获得的折扣。只要在限定时间内（大约24小时）购买这个商品，其中1件就能获得折扣。每当其他人打开你的分享卡就有机会增大你的折扣额度。分享优惠的折扣额度不会累加，仅记录最高值。同一件商品每个微信用户每天最多帮你优惠一次。换句话说，重复转发同一个好友毫无意义，转发人次多得到大额优惠的机会固然更大，但是运气好时仅仅分享一次也能令你十分满意。"
+  }
+  {
+    "msgid": "Free",
+    "msgstr": "免费"
+  },
+  {
+    "msgid": "Buy",
+    "msgstr": "购买"
+  },
+  {
+    "msgid": "Pay",
+    "msgstr": "付款"
+  },
+  {
+    "msgid": "Scroll down for more",
+    "msgstr": "向下滚屏加载更多"
+  },
+  {
+    "msgid": "Select All",
+    "msgstr": "全选"
+  },
+  {
+    "msgid": "Edit",
+    "msgstr": "编辑"
+  },
+  {
+    "msgid": "Done",
+    "msgstr": "完成"
+  },
+  {
+    "msgid": "Product name",
+    "msgstr": "产品名称"
+  },
+  {
+    "msgid": "Amount",
+    "msgstr": "数量"
+  },
+  {
+    "msgid": "Price",
+    "msgstr": "售价"
+  },
+  {
+    "msgid": "Unit Price",
+    "msgstr": "单价"
+  },
+  {
+    "msgid": "Total Price:",
+    "msgstr": "总价："
+  },
+  {
+    "msgid": "Promotion Cut:",
+    "msgstr": "促销优惠："
+  },
+  {
+    "msgid": "Share Bargain:",
+    "msgstr": "分享优惠："
+  },
+  {
+    "msgid": "Payment:",
+    "msgstr": "付款："
+  },
+  {
+    "msgid": "Total estimated:",
+    "msgstr": "预估合计："
+  },
+  {
+    "msgid": "Use Redeem",
+    "msgstr": "使用兑换码"
+  },
+  {
+    "msgid": "Submit",
+    "msgstr": "提交"
+  },
+  {
+    "msgid": "Courier fee not included",
+    "msgstr": "不含运费"
+  },
+  {
+    "msgid": "Bill, please",
+    "msgstr": "请，结账"
+  },
+  {
+    "msgid": "Error",
+    "msgstr": "出错了"
+  },
+  {
+    "msgid": "Go Back",
+    "msgstr": "返回"
+  },
+  {
+    "msgid": "Invoice",
+    "msgstr": "发票"
+  },
+  {
+    "msgid": "Note",
+    "msgstr": "备注"
+  },
+  {
+    "msgid": "Trade ID",
+    "msgstr": "订单号"
+  },
+  {
+    "msgid": "Transaction ID",
+    "msgstr": "交易编号"
+  },
+  {
+    "msgid": "Order Detail",
+    "msgstr": "订单详情"
+  },
+  {
+    "msgid": "Order Items",
+    "msgstr": "订单物品"
+  },
+  {
+    "msgid": "Courier Fee",
+    "msgstr": "运费"
+  },
+  {
+    "msgid": "With Courier Fee",
+    "msgstr": "含运费"
+  },
+  {
+    "msgid": "Payment",
+    "msgstr": "付款"
+  },
+  {
+    "msgid": "Close",
+    "msgstr": "关闭"
+  },
+  {
+    "msgid": "Status",
+    "msgstr": "状态"
+  },
+  {
+    "msgid": "Pending",
+    "msgstr": "待处理"
+  },
+  {
+    "msgid": "Paid",
+    "msgstr": "已支付"
+  },
+  {
+    "msgid": "Payment not confirmed",
+    "msgstr": "付款尚未被确认"
+  },
+  {
+    "msgid": "No delivery number",
+    "msgstr": "没有快递单号"
+  },
+  {
+    "msgid": "Delivery Number",
+    "msgstr": "快递单号"
+  },
+  {
+    "msgid": "Delivered",
+    "msgstr": "已发货"
+  },
+  {
+    "msgid": "Finished",
+    "msgstr": "已结束"
+  },
+  {
+    "msgid": "Refunded",
+    "msgstr": "已退款"
+  },
+  {
+    "msgid": "Refund ID",
+    "msgstr": "退款号"
+  },
+  {
+    "msgid": "Confirm receipt",
+    "msgstr": "确认收货"
+  },
+  {
+    "msgid": "Error, contact customer service",
+    "msgstr": "出错了，快联系客服"
+  },
+  {
+    "msgid": "Preparing delivery ...",
+    "msgstr": "正在准备发货 ..."
+  },
+  {
+    "msgid": "Order finished",
+    "msgstr": "订单已结束"
+  },
+  {
+    "msgid": "Order refunded",
+    "msgstr": "订单已退款"
+  },
+  {
+    "msgid": "Did the package arrive?",
+    "msgstr": "货到了吗？"
+  },
+  {
+    "msgid": "Click here authorize profile",
+    "msgstr": "点击这里授权个人信息"
+  },
+  {
+    "msgid": "Sorry! This order may have problem. Please DO NOT make purchase repeatedly. Contact customer service as soon as you can.",
+    "msgstr": "很抱歉！这个订单出现了问题，请不要重复购买，赶快联系客服。"
+  },
+  {
+    "msgid": "Shipping Address",
+    "msgstr": "收货地址"
+  },
+  {
+    "msgid": "In order to protect the customer information, the shipping address will store only during necessary periods.",
+    "msgstr": "为了保护顾客们的个人信息，我们只在必要的时间内存储收货人信息。"
+  },
+  {
+    "msgid": "Authorize Shipping Address",
+    "msgstr": "授权收货地址"
+  },
+  {
+    "msgid": "Please Open Address Authorization",
+    "msgstr": "请开启地址授权"
+  },
+  {
+    "msgid": "Commodity is offline",
+    "msgstr": "商品已经下架"
+  },
+  {
+    "msgid": "Commodity is sold out",
+    "msgstr": "商品已经售罄"
+  },
+  {
+    "msgid": "Shopping Cart is Empty",
+    "msgstr": "购物车是空的"
+  },
+  {
+    "msgid": "Nothing to buy",
+    "msgstr": "没东西可买"
+  },
+  {
+    "msgid": "No orders",
+    "msgstr": "还没有订单"
+  },
+  {
+    "msgid": "%s items in shopping cart have been expired.",
+    "msgstr": "购物车中有 %s 个商品已失效。"
+  },
+  {
+    "msgid": "Payment failed",
+    "msgstr": "支付失败"
+  },
+  {
+    "msgid": "Payment failed, Please retry",
+    "msgstr": "支付失败，请重试"
+  },
+  {
+    "msgid": "Go Buy Something",
+    "msgstr": "快去买点什么"
+  },
+  {
+    "msgid": "Click here to Relaunch",
+    "msgstr": "点击这里重载"
+  },
+  {
+    "msgid": "Okay, got it.",
+    "msgstr": "好的，知道了。"
+  },
+  {
+    "msgid": "Thanks for your purchasing",
+    "msgstr": "谢谢老板"
+  },
+  {
+    "msgid": "Return and Refund",
+    "msgstr": "退货和退款"
+  },
+  {
+    "msgid": "If you need to return goods, please contact customer service.",
+    "msgstr": "如果您需要退货，请直接联系客服。"
+  },
+  {
+    "msgid": "$_CONTENT",
+    "msgstr": "<p>这一段是默认的富文本内容，你可以按照自己的需要重新填写。进入富文本编辑状态以后，将出现一个输入工具条（它通常会在画面顶部或是富文本区域的上方），使用工具条可以插入、更换或者删除图片和链接。</p>"
+  }
+
+  {
+    "msgid": "* Type additional needs or specify invoice information here.",
+    "msgstr": "* 在此处输入其他需求或指定发票信息。"
+  },
+  {
+    "msgid": "* Items are kept in the shopping cart for one week top. The price also will be recalculated at the time of payment.",
+    "msgstr": "* 物品最多在购物车中存放一周，价格也将在付款时重新校准。"
+  },
+  {
+    "msgid": "* The address will be encrypted.",
+    "msgstr": "* 收货地址将被加密存储。"
+  }
+]

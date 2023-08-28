@@ -1,0 +1,139 @@
+[
+    {"language":"zh"},
+    {
+        "msgid": "Tagline goes here",
+        "msgstr": "在这里写宣传标语"
+    },
+    {
+        "msgid": "Title",
+        "msgstr": "标题"
+    },
+    {
+        "msgid": "Description text here",
+        "msgstr": "在这里填写简介文字"
+    },
+    {
+        "msgid": "Button title",
+        "msgstr": "按钮标题"
+    },
+  	{
+  		"msgid": "Learn More",
+  		"msgstr": "了解更多"
+  	},
+  	{
+  		"msgid": "Item Title",
+  		"msgstr": "子标题"
+  	},
+  	{
+  		"msgid": "Why choose us?",
+  		"msgstr": "为什么选择我们？"
+  	},
+  	{
+  		"msgid": "We are the only option you have",
+  		"msgstr": "我们是您唯一的选择，别无他路"
+  	},
+  	{
+  		"msgid": "Our Clients",
+  		"msgstr": "我们的客户"
+  	},
+  	{
+  		"msgid": "Highlight Title",
+  		"msgstr": "热点标题"
+  	},
+  	{
+  		"msgid": "Click here to edit the highlight.",
+  		"msgstr": "点击这里编辑热点内容"
+  	},
+  	{
+  		"msgid": "Create New Highlight",
+  		"msgstr": "添加新热点"
+  	},
+  	{
+  		"msgid": "Click here to add a new highlight.",
+  		"msgstr": "点击这里添加新热点内容"
+  	},
+  	{
+  		"msgid": "Team Member",
+  		"msgstr": "团队成员"
+  	},
+  	{
+  		"msgid": "Click here to edit the team member.",
+  		"msgstr": "点击这里编辑团队成员"
+  	},
+  	{
+  		"msgid": "Create New Member",
+  		"msgstr": "添加新成员"
+  	},
+  	{
+  		"msgid": "Click here to add a new team member.",
+  		"msgstr": "点击这里添加新团队成员"
+  	},
+  	{
+  		"msgid": "Skill Title",
+  		"msgstr": "技能标题"
+  	},
+  	{
+  		"msgid": "Click here to edit the skill.",
+  		"msgstr": "点击这里编辑技能内容"
+  	},
+  	{
+  		"msgid": "Create New Skill",
+  		"msgstr": "添加新技能"
+  	},
+  	{
+  		"msgid": "Click here to add a new skill.",
+  		"msgstr": "点击这里添加新技能内容"
+  	},
+  	{
+  		"msgid": "Service Title",
+  		"msgstr": "服务标题"
+  	},
+  	{
+  		"msgid": "Click here to edit the service.",
+  		"msgstr": "点击这里编辑服务内容"
+  	},
+  	{
+  		"msgid": "Create New Service",
+  		"msgstr": "添加新服务"
+  	},
+  	{
+  		"msgid": "Click here to add a new service.",
+  		"msgstr": "点击这里添加新服务内容"
+  	},
+  	{
+  		"msgid": "Works Title",
+  		"msgstr": "作品标题"
+  	},
+  	{
+  		"msgid": "Click here to edit the works.",
+  		"msgstr": "点击这里编辑作品内容"
+  	},
+  	{
+  		"msgid": "Create New Works",
+  		"msgstr": "添加新作品"
+  	},
+  	{
+  		"msgid": "Click here to add a new works.",
+  		"msgstr": "点击这里添加新作品内容"
+  	},
+    {
+      "msgid": "View",
+      "msgstr": "查看"
+    },
+    {
+        "msgid": "$_CAPTION",
+        "msgstr": "这是默认的说明文本内容，您可以编辑这段文本来撰写真实的说明文字。但是需要注意，这并不是一个富文本输入区域，通常您只能够输入一个段落，并且无法修改这段文字的样式、排版等等。"
+    },
+    {
+        "msgid": "$_CONTENT",
+        "msgstr": "<p>这是默认的富文本内容，你可以按照自己的需要重新填写。进入富文本编辑状态以后，将出现一个输入工具条（它通常会在画面顶部或是富文本区域的上方），使用工具条可以插入、更换或者删除图片和链接。</p>"
+    },
+    {
+      "msgid": "Error 404",
+      "msgstr": "出错了 404"
+    },
+    {
+      "msgid": "$_ERROR404",
+      "msgstr": "<p>糟糕！没办法找到您要打开的页面，或许是搞错了网址，也可能是这个页面已经失效了。</p>"
+    }
+]

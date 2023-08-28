@@ -1,0 +1,40 @@
+{% if g and page %}
+<section id="{{page.slug}}"
+         class="segment-wrapper no-padding">
+
+  <aside class="aside-bar">
+    <div class="container text-center">
+      <h2 class="section-heading">{{page.title}}</h2>
+      <hr class="divider">
+    </div>
+  </aside>
+
+  <div class="container-fluid">
+    <div class="row no-gutter img-gallery">
+      {% for item in page.series %}
+      <div class="col-lg-4 col-sm-6">
+        <a href="{{item.src}}" class="img-popup portfolio-box">
+          <img src="{{theme_url}}/styles/trans.png"
+               class="img-responsive thumbnail-img"
+               style="{{item.src|bg_img}}"
+               alt="{{item.title}}">
+          <div class="portfolio-box-caption">
+            <div class="portfolio-box-caption-content">
+              <div class="project-name text-nowrap">
+                {{item.title or '&nbsp;'}}
+              </div>
+              <div class="project-caption caption">
+                {{item.caption or '&nbsp;'}}
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+
+</section>
+{% elif not meta.is_front %}
+<script>window.location.replace('{{base_url}}/#{{meta.slug}}');</script>
+{% endif %}

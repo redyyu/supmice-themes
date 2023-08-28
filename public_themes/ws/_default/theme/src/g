@@ -1,0 +1,3 @@
+{% set opts = theme_meta.options %}
+
+{% set favicon = theme_url+'/styles/favicon.png' %}

@@ -1,0 +1,82 @@
+{
+  "app_id":"pyco_app",
+  "slug":"pyco",
+  "locale": "en_US",
+  "content_types": {
+    "post": "Posts",
+    "page": "Pages",
+    "work": "Works",
+    "product": "Products"
+  },
+  "menus": {
+    "primary": [
+      {
+        "key": "index",
+        "meta": {},
+        "nodes": [],
+        "name": "Home",
+        "link": "/"
+      },
+      {
+        "key": "posts",
+        "meta": {},
+        "nodes": [],
+        "name": "Posts",
+        "link": "/post/index"
+      },
+      {
+        "key": "works",
+        "meta": {},
+        "nodes": [],
+        "name": "Portfolio",
+        "link": "/works/index"
+      },
+      {
+        "key": "category",
+        "meta": {},
+        "nodes": [],
+        "name": "Category",
+        "link": "/category"
+      },
+      {
+        "key": "about",
+        "meta": {},
+        "nodes": [],
+        "name": "About",
+        "link": "/about"
+      }
+    ]
+  },
+  "categories": {
+    "name": "Categories",
+    "content_types":["post"],
+    "terms": [
+      {"key":"daily", "meta":{"name": "Daily"}},
+      {"key":"food", "meta":{"name": "Food"}},
+      {"key":"daily-2", "meta":{"name": "Daily2"}, "parent":"daily"},
+      {"key":"food-2", "meta":{"name": "Food2"}, "parent":"food"}
+    ]
+  },
+  "slots": {
+    "event": {"script": "<div style='background:#ccc;max-width:200px;padding:16px;'>This is EVENT wdiget slot.</div>"}
+  },
+  "meta": {
+    "favicon": "",
+    "logo": "",
+    "bg": "",
+    "contact": "redy",
+    "copyright": "2015 Made by Pyco.",
+    "description": "...",
+    "license": "MIT",
+    "title": "Sample",
+    "socials":[
+      {"key": "facebook", "name": "Facebook", "url": "#", "code": "facebook"},
+      {"key": "twitter", "name": "Twitter", "url": "#", "code": "twitter"}
+    ],
+    "languages": [
+       {"key": "zh_CN", "name":"汉语", "url":"http://....."},
+       {"key": "en_US", "name":"English", "url":"http://....."}
+    ]
+  }
+
+}

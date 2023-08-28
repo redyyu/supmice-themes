@@ -1,0 +1,116 @@
+{% import 'g' as g with context %}
+<!DOCTYPE html>
+<html lang="{{lang}}">
+{% include '_head.html' %}
+<body>
+
+{% include '_header.html' %}
+
+<section id="{{meta.slug}}"
+         class="hero {{meta.hero.class}}"
+         style="{{meta.hero.style}}">
+  <div class="header-content">
+    <div class="header-content-inner">
+      <h1>{{meta.title}}</h1>
+      <hr>
+      <p>{{meta.description}}</p>
+      <a href="{{meta.entrance.link|url}}"
+         class="btn btn-primary btn-xl page-scroll {{meta.entrance.class}}"
+         target="{{meta.entrance.target}}">
+         {{meta.entrance.name or _('Learn More')}}
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="no-padding no-border">
+
+  <div class="container-fluid">
+    <div class="row no-gutter">
+      {% set posts = query('post', 0, 12).contents %}
+      {% for item in posts %}
+      <div class="col-lg-4 col-sm-6">
+        <a href="{{item.url}}"
+           class="portfolio-box">
+          <img src="{{theme_url}}/styles/trans.png"
+               class="img-responsive thumbnail-img"
+               style="background-image:
+                      url('{{item.featured_img.src|thumbnail}}');"
+               alt="{{item.title}}">
+          <div class="portfolio-box-caption">
+            <div class="portfolio-box-caption-content">
+              <div class="project-name text-nowrap">
+                {{item.title}}
+              </div>
+              <div class="project-caption faded">
+                {{item.description}}
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+
+</section>
+
+<section>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 text-center">
+        <h2 class="section-heading">
+          {{meta.subject}}
+        </h2>
+        <hr class="primary">
+      </div>
+    </div>
+    <div class="row">
+      {% for item in meta.series %}
+      <div class="col-lg-3 col-md-6 text-center">
+        <div class="service-box">
+          <img src="{{theme_url}}/styles/trans.png"
+               class="img-responsive thumbnail-img"
+               style="background-image:url('{{item.src|thumbnail}}')"
+               alt="{{item.title}}">
+          <h3 class="text-nowrap">
+            {{item.title}}
+          </h3>
+          <p class="text-muted text-clamp-2">
+            {{item.caption}}
+          </p>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="tagline">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2 text-center">
+        <h2>{{meta.tagline}}</h2>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% if content|striptags|trim %}
+<section>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2">
+        <div class="content">
+          {{content}}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endif %}
+
+{% include '_footer.html' %}
+
+</body>
+</html>

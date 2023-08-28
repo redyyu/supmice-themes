@@ -1,0 +1,14 @@
+{% if g and page %}
+<div class="container">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2">
+      <h3 class="sec-title">{{page.title}}</h3>
+      <div class="content">
+        {{page.content}}
+      </div>
+    </div>
+  </div>
+</div>
+{% elif not meta.is_front %}
+<script>window.location.replace('{{base_url}}/#{{meta.slug}}');</script>
+{% endif %}

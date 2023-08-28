@@ -1,0 +1,54 @@
+{
+    "version": "1.2.0",
+    "slug": "unika",
+    "author": "cheney",
+    "license": "MIT",
+    "title": {
+        "en":"Unika",
+        "zh":"尤尼卡"
+    },
+    "capability": ["ws"],
+    "thumbnail": "thumbnail.png",
+    "poster": "poster.jpg",
+    "previews": ["preview.png"],
+    "description": {
+        "en":"A simple photography theme.",
+        "zh":"一个简单的摄影主题。"
+    },
+    "gfw": true,
+    "mode": 1,
+
+    "templates": {
+        "index": {
+            "en":"HOME",
+            "zh":"首页"
+        },
+        "about": {
+            "en":"ABOUT",
+            "zh":"关于我们"
+        },
+        "services": {
+            "en":"WORKS",
+            "zh":"作品"
+        },
+        "contact": {
+            "en":"CONTACT",
+            "zh":"联系我们"
+        },
+        "page": {
+            "en":"PAGE",
+            "zh":"静态页面"
+        },
+        "error_404":"404"
+    },
+    "content_types":{
+        "work": {"title": "works","status": 1}
+    },
+    "options":{
+        "sortby": "date",
+        "excerpt_length": 162,
+        "excerpt_ellipsis": "&hellip;",
+        "date_format": "%B %d, %Y",
+        "perpage": 6
+    }
+}

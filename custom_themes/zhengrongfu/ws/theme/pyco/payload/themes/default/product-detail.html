@@ -1,0 +1,173 @@
+{% import 'g' as g with context %}
+<!DOCTYPE html>
+<html lang="{{lang}}">
+{% include '_head.html' %}
+<body class="parallax-major"
+      style="{{meta.hero.style}}">
+  {% set in_product = True %}
+  {% include '_header.html' %}
+  <section class="hero {{meta.hero.class}}"></section>
+
+  <!-- endorsement -->
+  <section class="segment">
+    <div class="compact">
+      <div class="container">
+        <div class="row">
+          {% for item in meta.features %}
+          <div class="col-md-4 mb-4">
+            <div class="text-center {{item.class}}">
+              <figure class="m-auto px-lg-3 py-3">
+                <img class="thumbnail minify bg-contain"
+                     src="{{g.trans_4x7}}"
+                     style="{{item.src|bg_img}}"
+                     alt="{{item.title}}"/>
+              </figure>
+              <h6 class="px-5">{{item.caption}}</h6>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- scenes -->
+  <section class="segment">
+    <div id="PRD-GALLERY-CAROUSEL"
+         class="carousel slide"
+         data-ride="carousel"
+         data-interval="6000">
+      <div class="carousel-inner">
+        {% for pic in meta.gallery %}
+        <div class="carousel-item {{'active' if loop.first}}">
+          <img class="w-100 bg-cover"
+               src="{{g.trans_2x5}}"
+               style="{{pic.src|bg_img}}"
+               alt="{{pic.title}}"/>
+        </div>
+        {% endfor %}
+      </div>
+      <a class="carousel-control-prev"
+         href="#PRD-GALLERY-CAROUSEL"
+         role="button"
+         data-slide="prev">
+        <span class="carousel-control-prev-icon"
+              aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next"
+         href="#PRD-GALLERY-CAROUSEL"
+         role="button"
+         data-slide="next">
+        <span class="carousel-control-next-icon"
+              aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- spec -->
+  <section class="segment {{meta.specbg.class}}"
+           style="{{meta.specbg.style}}">
+    <div class="compact">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 listbox mb-5 mb-md-0">
+            <ul>
+              {% for sp in meta.spec %}
+              {% set _text = sp.text.split('|') %}
+              <li>
+                <div class="row">
+                  <div class="col-md-4">
+                    <b>{{_text[0]}}</b>
+                  </div>
+                  <div class="col-md-8">
+                    <span>{{_text[1]}}</span>
+                  </div>
+                </div>
+              </li>
+              {% endfor %}
+            </ul>
+          </div>
+          <div class="col-md-6 d-flex align-items-center">
+            <figure class="m-auto">
+              {% if meta.spec_img.src %}
+              <img src="{{meta.spec_img.src}}"
+                   alt="{{meta.spec_img.title}}"/>
+              {% endif %}
+            </figure>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- spotlight -->
+  <section class="segment {{meta.spotlightbg.class}}"
+           style="{{meta.spotlightbg.style}}">
+    <div class="compact bg-glassy">
+      <div class="container text-brighten">
+        <div class="row">
+          <div class="col-md-6 offset-md-6 frame d-flex align-items-center">
+            <div class="content">
+              {{meta.spotlight}}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- factory -->
+  <section class="segment">
+    <div>
+      <div class="container">
+        <header class="divide">
+          <h2 class="text-truncate">
+            {{meta.factory_title or _('Title')}}
+          </h2>
+        </header>
+        <div class="row">
+          <div class="col-md-6 content mb-5 mb-md-0">
+            {{meta.factory_content}}
+          </div>
+          <div class="col-md-6">
+            <div class="d-block d-md-flex flex-row">
+            {% for fpic in meta.factory_gallery %}
+              <figure class="p-2 w-100 text-center">
+                <img class="thumbnail"
+                     src="{{g.trans_4x7}}"
+                     style="{{fpic.src|bg_img}}"
+                     alt="{{fpic.title}}"/>
+              </figure>
+            {% endfor %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- delivery -->
+  <section class="segment {{meta.deliverybg.class}}"
+           style="{{meta.deliverybg.style}}">
+    <div class="bg-glassy">
+      <div class="container text-brighten">
+        <header class="divide">
+          <h2 class="text-truncate">
+            {{meta.delivery_title or _('Title')}}
+          </h2>
+        </header>
+        <div class="content">
+          {{meta.delivery_content}}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {% include '_footer.html' %}
+
+{{g.scripts}}
+
+</body>
+</html>

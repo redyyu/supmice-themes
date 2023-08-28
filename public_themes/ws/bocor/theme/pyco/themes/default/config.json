@@ -1,0 +1,28 @@
+{
+  "version": "1.6.6",
+  "slug": "bocor",
+  "author": "Cheney",
+  "license": "MIT",
+  "title": "BOCOR",
+  "type": "ws",
+  "capability": 0,
+  "icon": "icon.png",
+  "poster": "poster.jpg",
+  "previews": ["preview.jpg"],
+
+  "templates": [
+    "^page",
+    "^page-s1",
+    "^page-s2",
+    "^services",
+    "^portfolio",
+    "index"
+  ],
+
+  "segments": 24,
+
+  "options": {
+    "sortby": "date",
+    "palette": "default"
+  }
+}

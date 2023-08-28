@@ -1,0 +1,25 @@
+{% import "g" as g with context %}
+<!DOCTYPE html>
+<html lang="{{lang}}"
+      palette="{{g.opts.palette}}">
+
+{% include '_head_.html' %}
+
+<body>
+  <section>
+    <article class="container paper">
+      <header class="upper">
+        <h1>{{meta.title or _('Error 404')}}</h1>
+      </header>
+      <hr class="row">
+      <!-- content -->
+      <div class="content">
+        {{content or _('$_ERROR404')}}
+      </div>
+      <!-- #content -->
+      <hr class="row">
+    </article>
+    {% include '_cr_.html' %}
+  </section>
+</body>
+</html>

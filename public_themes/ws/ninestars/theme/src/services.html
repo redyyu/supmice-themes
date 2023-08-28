@@ -1,0 +1,34 @@
+{% if g and page %}
+<div class="container text-center">
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2">
+      <div class="section-heading marginbot-50">
+        <h2>{{page.title}}</h2>
+        <p>{{page.description}}</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container text-center">
+  <div class="row">
+    {% for item in page.series %}
+    <div class="col-sm-6 col-md-3 service-box">
+      <div>
+        <div class="service-icon">
+          <img src="{{g.img_holder}}"
+           class="img-responsive thumbnail-img"
+           style="{{item.src|thumbnail|bg_img}}" />
+        </div>
+        <div class="service-desc">
+          <h5 class="text-nowrap">{{item.title}}</h5>
+          <p class="text-clamp-4">{{item.caption}}</p>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+{% elif not meta.is_front %}
+<script>window.location.replace('{{base_url}}/#{{meta.slug}}');</script>
+{% endif %}

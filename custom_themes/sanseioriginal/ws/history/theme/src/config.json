@@ -1,0 +1,26 @@
+{
+  "slug": "sansei-original",
+  "version": "1.2.1",
+  "author": "Redy",
+  "license": "MIT",
+  "title": "Sansei Original",
+  "type": "ws",
+  "capability": 0,
+  "icon": "icon.jpg",
+  "poster": "poster.jpg",
+  "previews": ["preview.jpg"],
+
+  "templates": [
+    "^page",
+    "^page-s1",
+    "^page-s2",
+    "^product",
+    "^product-s1",
+    "share",
+    "index"
+  ],
+
+  "options":{
+      "sortby": "+date"
+  }
+}

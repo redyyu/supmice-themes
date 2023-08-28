@@ -1,0 +1,37 @@
+{
+	"slug": "kataklimt",
+	"author": "cheney",
+	"license": "MIT",
+	"title": "Kataklimt",
+	"capability": ["ws"],
+	"thumbnail": "preview.png",
+	"previews": ["preview.png"],
+	"description": {
+    "en":"A content-rich website. You can demonstration your works, blogs and more.",
+    "zh":"一个内容丰富的主题，你可以在你的网站上展示你的作品，博客等。"
+	},
+	"gfw": true,
+
+	"mode": 1,
+
+	"templates": {
+		"index":"Index",
+		"services":"Services",
+		"folio":"Portfolio",
+		"contact":"Contact",
+		"page":"Page",
+		"error_404":"404"
+	},
+	"content_tpyes":{
+		"product": {"title": "Product","status": 0},
+		"post": {"title": "Post","status": 0},
+		"works": {"title": "Portfolio","status": 0}
+	},
+	"options":{
+		"sortby": "date",
+		"excerpt_length": 162,
+		"excerpt_ellipsis": "&hellip;",
+		"date_format": "%B %d, %Y",
+		"perpage": 12
+	}
+}

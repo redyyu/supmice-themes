@@ -1,0 +1,79 @@
+[
+	{"language":"zh"},
+	{
+		"msgid": "Toggle navigation",
+		"msgstr": "切换导航"
+	},
+	{
+		"msgid": "Button Title",
+		"msgstr": "按钮标题"
+	},
+	{
+		"msgid": "Title",
+		"msgstr": "标题"
+	},
+	{
+		"msgid": "Description text here",
+		"msgstr": "在这里填写简介文字"
+	},
+	{
+		"msgid": "Learn More",
+		"msgstr": "了解更多"
+	},
+	{
+		"msgid": "Client Title",
+		"msgstr": "客户标题"
+	},
+	{
+		"msgid": "Click here to edit the client.",
+		"msgstr": "点击这里编辑客户内容。"
+	},
+	{
+		"msgid": "Add a tagline here",
+		"msgstr": "在这里添加标语"
+	},
+	{
+		"msgid": "Works Title",
+		"msgstr": "作品标题"
+	},
+	{
+		"msgid": "New Works",
+		"msgstr": "添加新作品"
+	},
+	{
+		"msgid": "Service Title",
+		"msgstr": "服务标题"
+	},
+	{
+		"msgid": "Click here to edit the service.",
+		"msgstr": "点击这里编辑服务内容。"
+	},
+	{
+		"msgid": "New Service",
+		"msgstr": "添加新服务"
+	},
+	{
+		"msgid": "Click here to add a new service.",
+		"msgstr": "点击这里添加新服务内容。"
+	},
+	{
+		"msgid": "Carousel Title",
+		"msgstr": "轮播内容标题"
+	},
+	{
+		"msgid": "Click here to edit carousel content",
+		"msgstr": "点击这里编辑轮播内容"
+	},
+	{
+		"msgid": "Previous",
+		"msgstr": "向前"
+	},
+	{
+		"msgid": "Next",
+		"msgstr": "向后"
+	},
+	{
+		"msgid": "$_CONTENT",
+		"msgstr": "<p>这一段是默认的富文本内容，你可以按照自己的需要重新填写。进入富文本编辑状态以后，将出现一个输入工具条（它通常会在画面顶部或是富文本区域的上方），使用工具条可以插入、更换或者删除图片和链接。</p>"
+	}
+]

@@ -1,0 +1,38 @@
+{% if g and page %}
+<section id="{{page.slug}}"
+  class="primary-section text-center album
+         {{loop.cycle('bg-white','bg-gray')}}">
+  <div class="container">
+    <header class="section-header">
+      <div class="wow bounceInDown"
+           data-wow-delay="0.2s">
+        <h2>{{page.title}}</h2>
+      </div>
+      <p class="wow bounceInUp"
+         data-wow-delay="0.3s">
+        {{page.description}}
+      </p>
+    </header>
+    <div class="row wow bounceInUp gallery"
+         data-wow-delay="0.4s">
+
+      {% for item in page.series %}
+      <div class="col-sm-6 col-md-3 text-center item">
+        <div>
+          <a href="{{item.src}}"
+             title="{{item.title}}"
+             data-lightbox-gallery="gallery">
+            <img src="{{g.img_holder}}"
+                 class="img-responsive thumbnail-img"
+                 style="{{item.src|thumbnail|bg_img}}"/>
+          </a>
+        </div>
+      </div>
+      {% endfor %}
+
+    </div>
+  </div>
+</section>
+{% elif not meta.is_front %}
+<script>window.location.replace('{{base_url}}/#{{meta.slug}}');</script>
+{% endif %}

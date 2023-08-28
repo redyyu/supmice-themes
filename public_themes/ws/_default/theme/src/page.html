@@ -1,0 +1,43 @@
+{% import "g" as g with context %}
+
+<!DOCTYPE html>
+<html lang="{{lang}}">
+{% include '_head_.html' %}
+<body>
+  <!-- Navigation -->
+  {% include '_nav_.html' %}
+
+  <!-- Page Header -->
+  <header class="intro-header page-kv {{meta.hero.class}}"
+          style="{{meta.hero.style}}">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+          <div class="site-heading">
+            <h1>{{meta.title or _('Title')}}</h1>
+            <hr class="small">
+            <span class="subheading">
+              {{meta.description or _('Description text here')}}
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- Main Content -->
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="content">
+          {{content or _('$_CONTENT')}}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr>
+
+<!-- Footer -->
+{% include '_footer_.html'%}
+</body>
+</html>

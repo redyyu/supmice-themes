@@ -1,0 +1,22 @@
+{% if g and page %}
+<!-- Section -->
+<section id="{{page.alias}}" class="contact dark">
+  <div class="container">
+    <article class="center-block text-center">
+      <header>
+        <h4 class="title-label">{{page.title}}</h4>
+        <h2 class="title">{{page.subtitle}}</h2>
+      </header>
+      <div class="content text-center">
+        {{page.content}}
+      </div>
+    </article>
+    <div class="pic-frame">
+      <img src="{{page.pic.src or g.default_img}}" alt="{{page.pic.title}}" />
+    </div>
+  </div>
+</section>
+<!-- #Section -->
+{% else %}
+  <script>window.location.replace('{{base_url}}/#/{{meta.alias}}');</script>
+{% endif %}

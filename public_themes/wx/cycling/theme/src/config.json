@@ -1,0 +1,20 @@
+{
+  "slug":"cycling-wx",
+  "version": "1.0.14",
+  "author":"Redy",
+  "license": "MIT",
+	"title": "Cycling WeChat Theme",
+  "type": "wx",
+
+  "templates": ["article"],
+  "stylesheets": {
+    "hr": "border: 1px solid rgba(0,0,0,0.1);",
+    "ul, ol": "@: list-paddingleft-2",
+    "p": "font-size:16px;margin-bottom:1em;",
+    "h2": "font-size:1.8em;",
+    "h3": "font-size:1.5em;",
+    "h4": "font-size:1.2em;",
+    "h5": "font-size:1em;",
+    "@text-center": "text-align:center;"
+  }
+}

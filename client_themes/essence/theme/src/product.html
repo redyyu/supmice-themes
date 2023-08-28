@@ -1,0 +1,34 @@
+{% import 'g' as g with context %}
+<!DOCTYPE html>
+<html lang="{{lang}}">
+{% include '_head_.html' %}
+<body>
+{% include '_header_.html' %}
+
+<!-- carousel begin -->
+<div class="container product">
+  <div class="col-md-4">
+    <img class="thumbnail-img {{meta.feautred_img.class}}"
+         src="{{theme_url}}/img/foliobg.png"
+         style="{{meta.featured_img.src|bg_img}}">
+  </div>
+  <div class="col-md-7 col-md-offset-1 product-detail">
+    <h1>{{meta.title}}</h1>
+    <h4>{{meta.price}}</h4>
+    <p class="line-clamp">{{meta.description}}</p>
+  </div>
+</div>
+<!-- carousel end -->
+
+<div class="product-content">
+  <div class="container">
+    <div class="content">
+      {{content}}
+    </div>
+  </div>
+</div>
+
+{% include '_footer_.html' %}
+{% include '_js_.html' %}
+</body>
+</html>

@@ -1,0 +1,21 @@
+{
+  "slug":"wxs",
+  "version": "1.0.2",
+  "author":"Redy",
+  "license": "MIT",
+	"title": "SanseiOirginal Store",
+  "type": "wxs",
+
+  "templates": [
+    "index",
+    "product",
+    "splash"
+  ],
+  "reserves": {
+    "splash": true
+  },
+  "category": {"content_types": ["product"]},
+  "options": {
+    "sortby": "date"
+  }
+}

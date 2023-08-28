@@ -1,0 +1,15 @@
+{% import 'g' as g with context %}
+<!DOCTYPE html>
+<html lang="{{lang}}">
+{% include '_head_.html' %}
+<body>
+{% include '_header_.html' %}
+
+<div class="container text-center wrap-error">
+    <h1>{{meta.title or _('Error 404')}}</h1>
+    <h2>{{meta.description or _('Can not find the page.')}}</h2>
+</div>
+
+{% include '_js_.html' %}
+</body>
+</html>

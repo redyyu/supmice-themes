@@ -1,0 +1,17 @@
+{% set favicon = theme_url+"/assets/favicon.png" %}
+{% set trans = theme_url+"/assets/trans.png" %}
+{% set trans2x1 = theme_url+"/assets/trans2x1.png" %}
+{% set trans10x3 = theme_url+"/assets/trans10x3.png" %}
+{% set logo = theme_url+"/assets/logo.png" %}
+{% set logo_minify = theme_url+"/assets/logo-s.png" %}
+{% set default_ribbon = theme_url+"/assets/ribbon.jpg" %}
+{% set default = theme_url+"/assets/default.jpg" %}
+
+
+{% set scripts %}
+<script src="{{theme_url}}/assets/jquery.min.js"></script>
+<script src="{{theme_url}}/assets/jquery.easing.min.js"></script>
+<script src="{{theme_url}}/assets/jquery.magnific-popup.min.js"></script>
+<script src="{{theme_url}}/assets/bootstrap.min.js"></script>
+<script src="{{theme_url}}/assets/main.js"></script>
+{% endset %}

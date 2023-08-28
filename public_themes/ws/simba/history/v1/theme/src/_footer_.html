@@ -1,0 +1,31 @@
+<footer id="footer" class="hide" layout-gt-md="row"
+        layout-align="space-between">
+  <div id="channel"
+       layout="row"
+       layout-align="center"
+       layout-align-gt-md="start">
+    <div class="links">
+      {% for item in menu.secondary %}
+      <div class="link">
+        <a href="{{item.url}}"
+           target="{{item.target}}"
+           class="{{item.meta.class}}"
+         rel="parallax-anchor">{{ item.title }}</a>
+      </div>
+      {% endfor %}
+    </div>
+    {% if translates %}
+    <div class="languages">
+			{% for trans in translates %}
+				<a href="{{trans.url}}" class="{{'active' if trans.active}}">
+          {{trans.name}}
+        </a>
+			{% endfor %}
+    </div>
+    {% endif %}
+  </div>
+  <div id="copyright" layout="row"
+   layout-align="center" layout-align-gt-md="start">
+     {{site_meta.copyright}}&nbsp;&nbsp;{{site_meta.license}}
+  </div>
+</footer>

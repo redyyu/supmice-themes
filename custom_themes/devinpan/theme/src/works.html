@@ -1,0 +1,58 @@
+{% import "g" as g with context %}
+<!DOCTYPE html>
+<html>
+{% include '_head.html' %}
+<body>
+{% include '_header.html' %}
+<div class="bg-content">
+	<div id="content">
+		<div class="ic"></div>
+		<div class="container">
+			<div class="row">
+				<article class="span12">
+					<div class="inner-1">
+						<ul class="list-blog">
+							<li>
+								<h3>{{meta.title}}</h3>
+								<time datetime="{{meta.date}}" class="date-1">
+					                  {{meta.date|date_formatted}}
+					                </time>
+								<div class="name-author">by <mark>{{meta.author}}</mark></div>
+								<div class="clear"></div>
+								<div class="row">
+									<div class="span7">{{content}}</div>
+									<div class="span4">
+										<img src="{{meta.featured_img.src}}">
+									</div>
+									<div class="clear"></div>
+								</div>
+							</li>
+						</ul>
+					</div>
+					{% if meta.attachments %}
+					<div class="attachments">
+						<h5>Attachments</h5>
+						<ul class="list-photo">
+							{% for item in meta.attachments %}
+							<li>
+								<a class="magnifier" href="{{item.src}}">
+									<img class="thumbnail-img"
+					             src="{{theme_url}}/img/bg120x87.png"
+					             style="background-image:url('{{item.src}}')"/>
+								</a>
+							</li>
+							{% endfor %}
+						</ul>
+					</div>
+					{% endif %}
+					<ul class="pmenu">
+						<li><a href="{{base_url}}/works/index/">Back</a></li>
+					</ul>
+				</article>
+			</div>
+		</div>
+	</div>
+</div>
+{% include '_footer.html' %}
+</body>
+</html>

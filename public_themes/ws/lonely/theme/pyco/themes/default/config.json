@@ -1,0 +1,28 @@
+{
+  "version": "1.6.6",
+  "slug": "lonely",
+  "author": "Cheney",
+  "license": "MIT",
+  "title": "LONELY",
+  "type": "ws",
+  "capability": 0,
+  "icon": "icon.png",
+  "poster": "poster.jpg",
+  "previews": ["preview.jpg"],
+
+  "templates": [
+    "^page",
+    "^page-s1",
+    "^page-s2",
+    "^album",
+    "^features",
+    "index"
+  ],
+
+  "segments": 24,
+
+  "options":{
+    "sortby": "date",
+    "animate": true
+  }
+}

@@ -1,0 +1,93 @@
+{% import 'g' as g with context %}
+<!DOCTYPE html>
+<html lang="{{lang}}">
+{% include '_head.html' %}
+
+<body class="is-preload">
+  <!-- language -->
+  {% if languages %}
+  <div class="language-switcher">
+    {% for trans in languages %}
+    <a href="{{trans.url}}"
+       class="{{'active' if trans.active}}">
+      {{trans.name}}
+    </a>
+    {% endfor %}
+  </div>
+  {% endif %}
+
+   <!-- overlay menu -->
+  <div class="overlay-menu"></div>
+
+  <!-- Wrapper -->
+  <div class="wrapper">
+    <!-- Header -->
+    <header class="primary-header">
+
+      <div class="logo">
+        {{g.logo}}
+      </div>
+      <div class="tagline">
+        {{g.logo_max}}
+      </div>
+
+      <div class="content">
+        <div class="inner">
+          <div class="slogan">
+            {{content}}
+          </div>
+        </div>
+      </div>
+      <nav>
+        <ul>
+          {% for m in menu.primary %}
+          <li class="{{m.class}}">
+            <a href="{{m.hash or m.url}}"
+               target="{{m.target}}">{{m.name}}</a>
+          </li>
+          {% endfor %}
+        </ul>
+      </nav>
+    </header>
+
+    {% set pages = query('page', with_content=True).contents %}
+    <!-- Main -->
+    <div class="main-body">
+      {% for page in pages %}
+      <article id="{{page.slug}}">
+        <header>
+          <div class="logo">{{g.logo}}</div>
+          <div class="tagline">{{g.logo_max}}</div>
+        </header>
+        {% include page.template+'.html' ignore missing %}
+      </article>
+      {% endfor %}
+    </div>
+
+    <!-- Footer -->
+    <footer class="primary-footer">
+      <a class="{{meta.button.class}}"
+         href="{{meta.button.link|url}}">
+        {{meta.button.name}}
+      </a>
+      <p class="copyright">
+        <span>{{site_meta.copyright}}</span>
+        <span>{{site_meta.license}}</span>
+      </p>
+    </footer>
+  </div>
+
+  <!-- BG -->
+  <div class="primary-bg">
+    <div class="primary-bg-before"></div>
+    {% for item in meta.carousel %}
+    <div class="primary-bg-slide"
+         style="{{item.src|bg_img}}"></div>
+    {% endfor %}
+    <div class="primary-bg-after"></div>
+  </div>
+
+{{g.scripts}}
+
+</body>
+</html>

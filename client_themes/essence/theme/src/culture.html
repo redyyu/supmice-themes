@@ -1,0 +1,34 @@
+{% import 'g' as g with context %}
+<!DOCTYPE html>
+<html lang="{{lang}}">
+{% include '_head_.html' %}
+<body>
+{% include '_header_.html' %}
+
+<div class="jumbotron {{meta.bg.class}}"
+     style="{{meta.bg.style or site_meta.bg.style}}"></div>
+
+<div class="container wrap-box">
+  <div class="row">
+    {% set post = query('post') %}
+    {% for p in post.contents %}
+    <div class="post-box text-center">
+      <h2>{{p.title}}</h2>
+      <hr class="post-hr" />
+      <p>{{p.description}}</p>
+      <img class="thumbnail-img" src="{{p.featured_img.src}}">
+      <div class="clearfix">
+        <a class="btn-bluegrey pull-right"
+           href="{{p.url}}">
+          {{_('More')}}
+        </a>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+
+{% include '_footer_.html' %}
+{% include '_js_.html' %}
+</body>
+</html>

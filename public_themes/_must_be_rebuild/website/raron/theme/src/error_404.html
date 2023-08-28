@@ -1,0 +1,12 @@
+{% import "g" as g with context %}
+<!DOCTYPE HTML>
+<html lang="{{lang}}">
+{% include "_head.html" %}
+<body class="error-404">
+	<div class="error-content">
+		{{content or _('$_CONTENT')}}
+	</div>
+</body>
+</html>
+<script src="{{theme_url}}/js/jquery-latest.min.js"></script>
+<script src="{{theme_url}}/js/error_404.js"></script>

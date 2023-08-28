@@ -1,0 +1,32 @@
+<!-- Header -->
+<nav id="primary-nav" class="navbar navbar-default navbar-static-top">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed"
+       data-toggle="collapse" data-target="#nav-menu"
+       aria-expanded="false" aria-controls="navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">
+        <img class="logo"  alt="Logo"
+         src="{{site_meta.logo or g.default_logo}}" />
+      </a>
+    </div>
+    <div id="nav-menu" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav navbar-right">
+        {% for menu in menu.primary %}
+        <li class="{{'active' if loop.first}}">
+          <a href="{{menu.link | url}}"
+           class="parallax-link {{menu.meta.class}}">
+            {{menu.title}}
+          </a>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+</nav>
+<!-- #Header -->

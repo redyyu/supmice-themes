@@ -1,0 +1,136 @@
+{% extends "layout.html" %}
+
+{% block header %}
+<div class="section-header-back">
+  <a class="btn btn-icon"
+     href="{{url_as('.index')}}">
+    <i class="fas fa-arrow-left"></i>
+  </a>
+</div>
+<h1>{{_('Category')}}</h1>
+{% endblock %}
+
+{% block main %}
+<h2 class="section-title">
+  {{term.meta.name}}
+</h2>
+<p class="section-lead">
+  {{term.key}}
+</p>
+
+<form class="prevent-enter-key"
+      action="{{url_as('.update_term', term_key=term.key)}}"
+      method="POST">
+<div class="row">
+  <div class="col-lg-8">
+    <div class="card">
+      <div class="card-header">
+        <h4>{{_('Edit Category Term')}}</h4>
+      </div>
+      <div class="card-body">
+        <div class="form-group">
+          <label>{{_('Name')}}</label>
+          <input class="form-control"
+                 type="text"
+                 name="name"
+                 maxlength="60"
+                 value="{{term.meta.name}}">
+        </div>
+        <div class="form-group">
+          <label>{{_('Caption')}}</label>
+          <textarea class="form-control"
+                    placeholder="{{_('Type caption here.')}}"
+                    rows="6"
+                    name="caption"
+                    maxlength="1200">{{term.meta.caption}}</textarea>
+        </div>
+        <div class="form-group">
+          <label>{{_('Parent Term')}}</label>
+          <input class="form-control"
+                 type="text"
+                 name="parent"
+                 value="{{term.parent}}">
+          <small class="form-text text-muted">
+            {{_('* Use parent term key.')}}
+          </small>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+  <div class="col-lg-4">
+    <div class="card">
+      <div class="card-header">
+        <h4>{{_('Properties')}}</h4>
+      </div>
+      <div class="card-body">
+        <div class="d-flex">
+          <button class="btn btn-primary btn-lg">
+            {{_('Save and exit')}}
+          </button>
+          <a class="btn btn-danger btn-lg btn-icon ml-auto"
+             aria-label="{{_('Delete')}}"
+             href="{{url_as('.remove_term', term_key=term.key)}}">
+            <i class="fas fa-trash"></i>
+          </a>
+        </div>
+        <hr>
+        <div class="form-group">
+          <label>{{_('Publish Status')}}</label>
+          <select class="form-control"
+                  name="status">
+            <option value="0"
+                    {{'selected' if term.status==0}}>
+              {{_('Draft')}}
+            </option>
+            <option value="1"
+                    {{'selected' if term.status==1}}>
+              {{_('Published')}}
+            </option>
+          </select>
+        </div>
+
+        <div class="form-group media-preview-field">
+          <label>{{_('Poster')}}</label>
+          <div class="input-group">
+            <div class="input-group-append media-preview">
+              <a href="#" target="_blank"></a>
+            </div>
+            <input class="form-control media-input"
+                   type="text"
+                   name="figure"
+                   value="{{term.meta.figure}}">
+            <div class="input-group-append">
+              <button class="btn btn-secondary"
+                      aria-lable="{{_('Select Image')}}"
+                      data-toggle="modal"
+                      data-target="#MODAL-MEDIAREPO"
+                      data-input="figure"
+                      type="button">
+                <i class="fas fa-image"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>{{_('Priority')}}</label>
+          <input class="form-control"
+                 type="text"
+                 name="priority"
+                 value="{{term.priority}}">
+          <small class="form-text text-muted">
+            {{_('* The priority of the term when sorting.')}}
+          </small>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+</form>
+{% endblock %}
+{% block page_scripts %}
+{% endblock %}

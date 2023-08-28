@@ -1,0 +1,101 @@
+{
+  "content_types": {
+    "page": "Pages",
+    "works": "Portfolio"
+  },
+  "menus": {
+    "primary": [
+      {
+        "alias": "index",
+        "class": "",
+        "id": "",
+        "link": "/",
+        "meta": {},
+        "nodes": [],
+        "related_type": "",
+        "status": 1,
+        "target": "",
+        "title": "Home"
+      },
+      {
+        "alias": "services",
+        "class": "",
+        "id": "",
+        "link": "/services",
+        "meta": {},
+        "nodes": [],
+        "related_type": "",
+        "status": 1,
+        "target": "",
+        "title": "Services"
+      },
+      {
+        "alias": "portfolio",
+        "class": "",
+        "id": "",
+        "link": "/portfolio",
+        "meta": {},
+        "nodes": [],
+        "related_type": "works",
+        "status": 1,
+        "target": "",
+        "title": "Portfolio"
+      },
+      {
+        "alias": "contact",
+        "class": "",
+        "id": "",
+        "link": "/contact",
+        "meta": {},
+        "nodes": [],
+        "related_type": "",
+        "status": 1,
+        "target": "",
+        "title": "Contact"
+      }
+    ]
+  },
+  "meta": {
+    "alias": "pyco",
+    "analytics": "",
+    "author": "redy",
+    "contacts": "",
+    "copyright": "2016 Devinpan photography.",
+    "description": "DevinPan professional photography.",
+    "favicon": "",
+    "keywords": "",
+    "license": "MIT",
+    "locale": "en_US",
+    "logo": "[%uploads%]/logo.png",
+    "seo": "",
+    "socials": {
+      "facebook": {
+        "code": "facebook",
+        "name": "Facebook",
+        "url": "#"
+      },
+      "google": {
+        "code": "google",
+        "name": "Google",
+        "url": "#"
+      },
+      "twitter": {
+        "code": "twitter",
+        "name": "Twitter",
+        "url": "#"
+      }
+    },
+    "title": "DavinPan",
+    "translates": {},
+    "type": "davinpan"
+  },
+  "taxonomies": {
+    "category": {
+      "content_types": [
+        "post"
+      ],
+      "terms": [],
+      "title": "Categories"
+    }
+  }
+}

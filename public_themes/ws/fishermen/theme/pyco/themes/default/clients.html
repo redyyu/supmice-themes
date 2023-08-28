@@ -1,0 +1,35 @@
+{% if g and page %}
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <header class="text-center">
+        <h2>{{page.title}}</h2>
+      </header>
+    </div>
+  </div>
+  <div class="row">
+
+    {% set col_client = "col-sm-3"
+       if page.series|length >= 4 else "col-sm-4" %}
+    {% set col_client_offset = page.series|col_offset('col-sm-offset-', 4) %}
+
+    {% for item in page.series if item.src %}
+    <div class="{{col_client}} {{col_client_offset if loop.first}}
+                item {{item.class}}">
+      <div>
+        <a class="client {{'disabled' if not item.link}}"
+           href="{{item.link | url}}"
+           target="{{item.target}}">
+          <img src="{{g.img_holder}}"
+               class="img-holder"
+               style="{{item.src|bg_img}}"
+               alt="{{item.title}}" />
+        </a>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+{% elif not meta.is_front %}
+<script>window.location.replace('{{base_url}}/#/{{meta.slug}}');</script>
+{% endif %}

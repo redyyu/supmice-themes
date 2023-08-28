@@ -1,0 +1,36 @@
+{
+	"alias": "davinpan",
+	"author": "cheney",
+	"license": "MIT",
+	"title": "DavinPan",
+	"capability": ["ws"],
+	"thumbnail": "preview.png",
+	"previews": ["preview.png"],
+	"description": "davinpan theme",
+	"gfw": true,
+
+	"mode": 1,
+
+	"templates": {
+		"index":"Index",
+		"services":"Services",
+    "folio-full":"Portfolio",
+    "folio-lite":"Portfolio-Lite",
+		"contact":"Contact",
+		"page":"Page",
+    "works":"Works",
+		"error_404":"404"
+	},
+
+	"content_types":{
+		"product": {"title": "Product","status": 0},
+		"works": {"title": "Portfolio","status": 1}
+	},
+	"options":{
+		"sortby": "date",
+		"excerpt_length": 162,
+		"excerpt_ellipsis": "&hellip;",
+		"date_format": "%B %d, %Y",
+		"perpage": 12
+	}
+}

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="{{lang}}" modern-browser>
+{% include "_head_.html" %}
+<body svg-sprites-render
+ data-url="{{ site_meta.svg_sprites or theme_url+'/styles/svgdefs.svg' }}"
+ data-name="base">
+  <!-- Pages -->
+  <div id="pages">
+    <!-- 404 -->
+    <section class="error-404 {{meta.bg.class}}">
+      <div layout="column" layout-align="center center">
+        <div id="logo">
+          <svg svg-sprite="base:ico-logo"></svg>
+        </div>
+        <article class="text-center">
+          <header>
+            <h2>{{meta.title}}</h2>
+          </header>
+          {{content}}
+        </article>
+        <div class="goback">
+          <a href="{{base_url}}">{{_('Go Back')}}</a>
+        </div>
+        <div id="copyright">
+          {{site_meta.copyright}}
+        </div>
+      </div>
+    </section>
+  </div>
+  <!-- Javascripts -->
+  <script src="http://libs.soopro.com/browser-detector/browser-detector.js?md5=null">
+  </script>
+  <script src="http://libs.soopro.com/svg-sprites-render.min.js?md5=null">
+  </script>
+</body>
+</html>

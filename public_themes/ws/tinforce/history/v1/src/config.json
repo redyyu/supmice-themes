@@ -1,0 +1,25 @@
+{
+  "version": "1.5.12",
+  "slug": "tinforce",
+	"title": "Tinforce",
+  "author": "Redy Ru",
+  "type": "ws",
+  "capability": 0,
+	"icon": "icon.png",
+  "poster": "poster.jpg",
+	"previews": ["preview1.jpg", "preview2.jpg", "preview3.jpg"],
+
+  "templates": [
+    "index",
+    "page",
+    "works"
+  ],
+
+  "content_types": {
+    "works": {"title": "Portfolio"}
+  },
+
+	"options": {
+		"sortby": "date"
+  }
+}

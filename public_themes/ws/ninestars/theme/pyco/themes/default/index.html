@@ -1,0 +1,34 @@
+{% import 'g' as g with context %}
+<!DOCTYPE html>
+<html lang="{{lang}}">
+{% include '_head.html' %}
+
+<body data-spy="scroll">
+
+  {% include '_header.html' %}
+
+  <section id="{{meta.slug}}"
+           class="intro {{meta.hero.class}}"
+           style="{{meta.hero.style}}">
+    <div class="slogan">
+      <h1>{{meta.title}}</h1>
+      <p>{{meta.description}}</p>
+      <a href="{{meta.entrance.link|url}}"
+         class="btn btn-skin scroll {{meta.entrance.class}}"
+         target="{{meta.entrance.target}}">
+        {{meta.entrance.name or _('Learn More')}}
+      </a>
+    </div>
+  </section>
+
+  {% for page in segments %}
+    <section id="{{page.slug}}"
+             class="primary-section {{loop.cycle('', 'palette-gray')}}">
+    {% include page.template+'.html' ignore missing %}
+    </section>
+  {% endfor %}
+
+  {% include '_footer.html' %}
+  {% include '_js_.html' %}
+</body>
+</html>

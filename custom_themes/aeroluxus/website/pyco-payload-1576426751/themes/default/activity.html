@@ -1,0 +1,28 @@
+{% if doc %}
+<div class="image main">
+  {% if doc.featured_img and doc.featured_img.src %}
+  <img src="{{doc.featured_img.src}}"
+       alt="{{doc.featured_img.title}}" />
+  {% endif %}
+</div>
+<h2 class="major">{{doc.title}}</h2>
+{% if not doc.attrs.hide_content %}
+<div class="content">
+  {{doc.content}}
+</div>
+{% endif %}
+<hr>
+{% for item in doc.series %}
+<div>
+  <figure><img src="{{item.src}}" /></figure>
+  <div>
+    <h3>{{item.title}}</h3>
+    <h4>{{item.subtitle}}</h4>
+    <div>{{item.caption}}</div>
+  </div>
+</div>
+<hr>
+{% endfor %}
+{% elif not meta.is_front %}
+<script>window.location.replace('{{base_url}}/');</script>
+{% endif %}

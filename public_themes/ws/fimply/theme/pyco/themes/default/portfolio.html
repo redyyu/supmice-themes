@@ -1,0 +1,43 @@
+{% if g and page %}
+<section id="{{page.slug}}"
+         class="complex">
+  <div class="container">
+    <header>
+      <h2>{{page.title}}</h2>
+      <p>{{page.description}}</p>
+    </header>
+
+    <div class="row">
+      {% for item in page.series %}
+      <div class="folio col-md-3 col-sm-6">
+        <div>
+          <div class="folio-wrapper">
+            <a href="{{item.src}}"
+               title="{{item.caption}}"
+               class="img-popup">
+              <img class="thumbnail-img"
+                   src="{{theme_url}}/styles/trans_cover.png"
+                   alt="{{item.title}}"
+                   style="background-image: url('{{item.src|thumbnail}}');" />
+            </a>
+            <div class="label">
+              <div class="label-text text-nowrap">
+                {{item.title}}
+              </div>
+              <div class="label-bg"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+  <div class="tagline">
+    <div class="container">
+      <h2>{{page.tagline}}</h2>
+    </div>
+  </div>
+</section>
+{% else %}
+<script>window.location.replace('{{base_url}}/#{{meta.slug}}');</script>
+{% endif %}

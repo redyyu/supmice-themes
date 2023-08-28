@@ -1,0 +1,32 @@
+{% if g and page %}
+
+<div class="about" id="about">
+  <div class="wrap">
+    <h2>{{page.title or _('Title')}}</h2>
+    <h4>{{page.subtitle or _('SubTitle')}}</h4>
+    <p class="para_a">{{page.description or _('Description text here')}}</p>
+    <!---strat-top-grids -->
+    <div class="top-grids">
+      {% for item in page.spotlights %}
+      <div class="top-grid">
+        <img src="{{item.src}}" alt="" />
+        <a href="#"><span>{{item.title}}</span></a>
+        <p>{{item.caption}}</p>
+      </div>
+      {% endfor %}
+      <div class="clear"> </div>
+    </div>
+    <!---End-top-grids -->
+  </div>
+  <div class="clients">
+    <div class="bg_mask1">
+      <div class="wrap">
+        {{page.content}}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% else %}
+  <script>window.location.replace('{{base_url}}/#/{{meta.slug}}');</script>
+{% endif %}

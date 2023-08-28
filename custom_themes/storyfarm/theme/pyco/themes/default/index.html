@@ -1,0 +1,110 @@
+{% import 'g' as g with context %}
+<!DOCTYPE html>
+<html lang="{{lang}}">
+{% include '_head.html' %}
+<body>
+
+{% include '_header.html' %}
+
+<div id="{{meta.slug}}"
+     class="carousel slide"
+     data-ride="carousel"
+     data-interval="6000">
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    {% for item in meta.carousel %}
+    <li data-target="#{{meta.slug}}"
+        data-slide-to="{{loop.index0}}"
+        class="{{'active' if loop.first }}">
+    </li>
+    {% endfor %}
+  </ol>
+
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner">
+    {% for item in meta.carousel %}
+    <div class="item {{item.class}} {{'active' if loop.first}}"
+         style="{{item.src|bg_img}}">
+      <div class="item-inner">
+        <h1 class="title">{{item.title}}</h1>
+        <h4 class="caption">{{item.caption}}</h4>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+
+  <!-- Controls -->
+  <a class="left carousel-control"
+     href="#{{meta.slug}}"
+     role="button"
+     data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left"
+          aria-hidden="true"></span>
+    <span class="sr-only">{{_('Previous')}}</span>
+  </a>
+  <a class="right carousel-control"
+     href="#{{meta.slug}}"
+     role="button"
+     data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right"
+          aria-hidden="true"></span>
+    <span class="sr-only">{{_('Next')}}</span>
+  </a>
+</div>
+
+<section>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 text-center">
+        {% if site_meta.logo %}
+        <img src="{{site_meta.logo}}">
+        {% endif %}
+        <h3>{{meta.title}}</h3>
+        <hr>
+        <p>{{meta.description}}</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2">
+        <div class="content">
+          {{content}}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="no-padding no-border">
+  {% set works = query('works', 0, 6).contents %}
+  <div class="container-fluid">
+    <div class="row no-gutter">
+      {% for item in works %}
+      <div class="col-md-4 col-sm-6">
+        <a href="{{item.url}}"
+           class="portfolio-box">
+          <img src="{{theme_url}}/styles/trans_16x10.png"
+               class="img-responsive"
+               style="{{(item.featured_img.src or g.default_img)
+                         |thumbnail|bg_img}}"
+               alt="{{item.title}}">
+          <div class="portfolio-box-caption">
+            <div class="portfolio-box-caption-content">
+              <div class="project-name text-nowrap">
+                {{item.title}}
+              </div>
+              <div class="project-caption faded">
+                {{item.description}}
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% include '_footer.html' %}
+
+</body>
+</html>

@@ -1,0 +1,23 @@
+{% if g and page %}
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <header class="text-center">
+        <h2>{{page.title}}</h2>
+      </header>
+    </div>
+    <div class="col-md-12">
+      <div class="content textbox text-center">
+        {{page.content}}
+      </div>
+      <div class="imgbox">
+        <img src="{{page.featured_img.src or g.default_img}}"
+             alt="{{page.title}}"
+             class="{{page.featured_img.class}}" />
+      </div>
+    </div>
+  </div>
+</div>
+{% elif not meta.is_front %}
+<script>window.location.replace('{{base_url}}/#/{{meta.slug}}');</script>
+{% endif %}

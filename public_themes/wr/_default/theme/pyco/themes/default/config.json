@@ -1,0 +1,32 @@
+{
+  "version": "1.1.0",
+  "slug": "wa",
+  "author": "Redy",
+  "license": "MIT",
+  "title": {
+    "en":"Default Mobile Showreel",
+    "zh":"默认H5移动展示主题"
+  },
+  "type": "wa",
+  "previews": [
+    "preview_index.jpg",
+    "preview_page.jpg",
+    "preview_showreel.jpg",
+    "preview_free.jpg"
+  ],
+  "description": {
+    "en":"This is a default Mobile Showreel theme, you can try to write something fun.",
+    "zh":"一个默认的H5移动端展示主题，您可以在这里随便写点儿有趣的东西。"
+  },
+
+  "templates": [
+    "index",
+    "^page",
+    "^showreel",
+    "^free"
+  ],
+
+  "options": {
+      "sortby": "date"
+  }
+}

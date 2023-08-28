@@ -1,0 +1,72 @@
+{
+  "content_types": {
+    "page": "Pages"
+  },
+  "menus": {
+    "primary": [
+      {
+        "key": "home",
+        "meta": {},
+        "nodes": [],
+        "title": "首页",
+        "link": "/"
+      },
+      {
+        "key": "posts",
+        "meta": {},
+        "nodes": [],
+        "title": "文章",
+        "link": "/post/index"
+      },
+      {
+        "key": "try",
+        "meta": {},
+        "nodes": [],
+        "title": "试睡体验",
+        "link": "/try"
+      },
+      {
+        "key": "about",
+        "meta": {},
+        "nodes": [],
+        "title": "关于我们",
+        "link": "/about"
+      },
+      {
+        "key": "contact",
+        "meta": {},
+        "nodes": [],
+        "title": "联系我们",
+        "link": "mailto:redy@tinforce.com"
+      }
+    ]
+
+  },
+  "meta": {
+    "slug":"pyco",
+    "type":"creative",
+    "logo":"[%uploads%]/logo.png",
+    "favicon": "[%uploads%]/favicon.png",
+    "author": "redy",
+    "copyright": "2015 Made by Pyco.",
+    "description": "It doesn't take a rocket scientist ...",
+    "license": "MIT",
+    "locale": "zh_CN",
+    "title": "Creative",
+    "socials":{
+      "facebook":{"name":"Facebook","url":"#","code":"facebook"},
+      "twitter":{"name":"Twitter","url":"#","code":"twitter"}
+    },
+    "translates":{
+      "en_US": {
+        "name": "Engligh",
+        "url": "#"
+      },
+      "zh_CN": {
+        "name": "中文",
+        "url": "#"
+      }
+    }
+  }
+
+}

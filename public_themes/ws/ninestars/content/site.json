@@ -1,0 +1,68 @@
+{
+  "content_types": {
+    "post": "Posts",
+    "page": "Pages",
+    "work": "Works"
+  },
+  "menus": {
+    "primary": [
+      {
+        "key": "index",
+        "meta": {},
+        "nodes": [],
+        "title": "Home",
+        "link": "#index"
+      },
+      {
+        "key": "about",
+        "meta": {},
+        "nodes": [],
+        "title": "About",
+        "link": "#about"
+      },
+      {
+        "key": "service",
+        "meta": {},
+        "nodes": [],
+        "title": "Service",
+        "link": "#service"
+      },
+      {
+        "key": "portfolio",
+        "meta": {},
+        "nodes": [],
+        "title": "Works",
+        "link": "#works"
+      },
+      {
+        "key": "contact",
+        "meta": {},
+        "nodes": [],
+        "title": "Contact",
+        "link": "#contact"
+      }
+    ]
+  },
+  "translates":{
+    "en_US":{
+      "name": "English",
+      "url": "#"
+    },
+    "zh_CN":{
+      "name": "中文",
+      "url": "#"
+    }
+  },
+  "meta": {
+    "slug":"ninestars",
+    "type":"ws",
+    "logo":null,
+    "author": "redy",
+    "copyright": "2015 Made by Pyco.",
+    "description": "A simple example of Pyco side ...",
+    "license": "MIT",
+    "locale": "en_US",
+    "title": "Ninestars"
+  },
+  "segments": ["about", "portfolio", "services", "contact"]
+}

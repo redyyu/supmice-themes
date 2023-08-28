@@ -1,0 +1,63 @@
+{% set _field = meta[key] or {} %}
+<div class="card custom-form"
+     data-key="{{key}}"
+     data-type="bg">
+  <div class="card-header d-flex">
+    <h4>
+      {{_(opts.label)|title}}
+    </h4>
+    <small class="text-muted ml-auto">
+      {{key}}
+    </small>
+  </div>
+  <div class="card-body">
+    <div class="form-row">
+      {% if display_field('src', opts.hidden) %}
+      <div class="form-group media-preview-field col-md-8">
+        <label>{{_('Image URL')}}</label>
+        <div class="input-group">
+          <div class="input-group-append media-preview">
+            <a href="#" target="_blank"></a>
+          </div>
+          <input class="form-control media-input"
+                 type="text"
+                 name="src"
+                 value="{{_field.src or ''}}">
+          <div class="input-group-append">
+            <button class="btn btn-secondary"
+                    aria-lable="{{_('Select Image')}}"
+                    data-toggle="modal"
+                    data-target="#MODAL-MEDIAREPO"
+                    data-input="src"
+                    type="button">
+              <i class="fas fa-image"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+      {% endif %}
+      {% if display_field('class', opts.hidden) %}
+      <div class="form-group col-md-4">
+        <label>{{_('CSS Class')}}</label>
+        <input class="form-control"
+               type="text"
+               name="class"
+               maxlength="360"
+               placeholder="primary-bg, transparent-bg"
+               value="{{_field.class}}">
+      </div>
+      {% endif %}
+      {% if display_field('style', opts.hidden) %}
+      <div class="form-group col-12">
+        <label>{{_('CSS Styles')}}</label>
+        <input class="form-control"
+               type="text"
+               name="style"
+               maxlength="600"
+               placeholder="background-color: #fff;"
+               value="{{_field.style}}">
+      </div>
+      {% endif %}
+    </div>
+  </div>
+</div>

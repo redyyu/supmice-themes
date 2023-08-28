@@ -1,0 +1,32 @@
+{
+  "slug": "westwillow",
+  "version": "1.8.0",
+  "author": "Cheney",
+  "license": "MIT",
+  "title": "West Willow",
+  "type": "ws",
+  "capability": 0,
+  "icon": "icon.png",
+  "poster": "poster.jpg",
+  "previews": ["preview1.jpg", "preview2.jpg", "preview3.jpg"],
+
+  "templates": [
+    "category",
+    "page",
+    "product",
+    "index"
+  ],
+  "category": {
+    "name": "Categories",
+    "content_types": ["product"]
+  },
+  "content_types":{
+    "product": {"title": "Products"}
+  },
+  "reserves": {
+    "category": true
+  },
+  "options":{
+    "sortby": "date"
+  }
+}

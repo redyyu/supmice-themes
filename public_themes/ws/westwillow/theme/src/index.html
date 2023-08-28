@@ -1,0 +1,70 @@
+{% import 'g' as g with context %}
+<!DOCTYPE html>
+<html lang="{{lang}}">
+{% include '_head.html' %}
+<body>
+<div class="wrapper">
+  {% include '_header.html' %}
+
+  <!-- banner -->
+  {% if meta.carousel %}
+  <div class="container">
+    <div id="carousel" class="carousel slide">
+      <!-- Indicators -->
+      <ol class="carousel-indicators">
+        {% for item in meta.carousel %}
+        <li data-target="#carousel"
+            data-slide-to="{{loop.index0}}"
+            class="{{'active' if loop.first}}"></li>
+        {% endfor %}
+      </ol>
+      <!-- /Indicators -->
+       <!-- carousel -->
+       <div class="carousel-inner">
+         {% for item in meta.carousel %}
+         <div class="item {{'active' if loop.first}}">
+           <img src="{{g.img_holder_cover}}"
+                class="img-holder carousel-holder"
+                style="{{item.src|bg_img}}"/>
+         </div>
+         {% endfor %}
+       </div>
+       <!-- /carousel -->
+       <a class="carousel-control left"
+          href="#carousel"
+          data-slide="prev">
+         <span class="glyphicon glyphicon-chevron-left"
+               aria-hidden="true"></span>
+       </a>
+       <a class="carousel-control right"
+          href="#carousel"
+          data-slide="next">
+         <span class="glyphicon glyphicon-chevron-right"
+               aria-hidden="true"></span>
+       </a>
+    </div>
+  </div>
+  {% endif %}
+  <!-- /banner -->
+
+  <!-- channel -->
+  <div class="container prd-container">
+    <div class="row">
+      {% set booklet = query('product', perpage=6) %}
+      {% for prd in booklet.contents %}
+      <div class="col-md-4 col-sm-6 col-xs-12 prd">
+        <div>
+          <a href="{{prd.url}}">
+    		    <img src="{{g.img_holder}}"
+                 class="img-holder"
+                 style="{{(prd.featured_img.src or g.default_img)|bg_img}}"/>
+    	    </a>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+{% include '_footer.html' %}
+</body>
+</html>

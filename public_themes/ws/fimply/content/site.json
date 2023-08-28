@@ -1,0 +1,82 @@
+{
+  "content_types": {
+    "post": "Posts",
+    "page": "Pages",
+    "work": "Work",
+    "product": "Products"
+  },
+  "menus": {
+    "primary": [
+      {
+        "key": "index",
+        "meta": {},
+        "nodes": [],
+        "title": "Home",
+        "link": "#index"
+      },
+      {
+        "key": "service",
+        "meta": {},
+        "nodes": [],
+        "title": "Service",
+        "link": "#service"
+      },
+      {
+        "key": "portfolio",
+        "meta": {},
+        "nodes": [],
+        "title": "Portfolio",
+        "link": "#portfolio"
+      },
+      {
+        "key": "client",
+        "meta": {},
+        "nodes": [],
+        "title": "Client",
+        "link": "#client"
+      },
+      {
+        "key": "contact",
+        "meta": {},
+        "nodes": [],
+        "title": "Contact",
+        "link": "#contact"
+      }
+    ]
+  },
+  "meta": {
+    "slug":"pyco",
+    "type":"fimply",
+    "favicon": "",
+    "author": "redy",
+    "copyright": "2015 Made by Pyco.",
+    "description": "It doesn't take a rocket scientist ...",
+    "license": "MIT",
+    "locale": "en_US",
+    "title": "Fimply"
+  },
+  "taxonomies":{
+    "category": {
+      "title":"Categories",
+      "content_types":["work","post","product"],
+      "terms": [
+        {"slug":"app","title":"App"},
+        {"slug":"card","title":"Card"},
+        {"slug":"icon","title":"Icon"},
+        {"slug":"logos","title":"Logo"},
+        {"slug":"web","title":"Web"}
+      ]
+    }
+  },
+  "translates":{
+    "en_US":{
+      "name": "English",
+      "url": "#"
+    },
+    "zh_CN":{
+      "name": "中文",
+      "url": "#"
+    }
+  },
+  "segments": ["services", "portfolio", "clients", "contact"]
+}

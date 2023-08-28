@@ -1,0 +1,36 @@
+{% import 'g' as g with context %}
+<!DOCTYPE html>
+<html lang="{{lang}}">
+{% include '_head.html' %}
+<body>
+
+{% include '_header.html' %}
+
+<section class="ribbon">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 text-center">
+        <h2>
+          {{meta.title or _('Error 404')}}
+        </h2>
+      </div>
+    </div>
+  </div>
+</section>
+<section>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2 text-center">
+        <div class="content">
+          {{content or _('$_ERROR404')}}
+        </div>
+        <hr>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% include '_footer.html' %}
+
+</body>
+</html>

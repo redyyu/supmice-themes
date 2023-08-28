@@ -1,0 +1,14 @@
+<header id="header" layout="row" layout-align="space-between center">
+  <div id="logo">
+    {% if site_meta.logo %}
+    <img src="{{site_meta.logo}}" alt="{{site_meta.title}}"/>
+    {% else %}
+    <svg svg-sprite="base:ico-logo"></svg>
+    {% endif %}
+  </div>
+  <button type="button" id="menu">
+    <svg class="btn-menu" svg-sprite="base:ico-menu"></svg>
+    <svg class="btn-close" svg-sprite="base:ico-close"></svg>
+    <svg class="btn-collapse" svg-sprite="base:ico-collapse"></svg>
+  </button>
+</header>

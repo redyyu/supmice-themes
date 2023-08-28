@@ -1,0 +1,27 @@
+<!--============================== footer =================================-->
+<footer>
+	<div class="container clearfix">
+		<ul class="list-social pull-right">
+			{% for item in socials %}
+			<li>
+				<a class="icon-{{item.code if item.code in g.allowed_icons else 'default'}}"
+			 	 href="{{item.url}}">{{item.title}}</a>
+			</li>
+			{% endfor %}
+		</ul>
+		<div class="privacy pull-left">
+			<p>{{site_meta.copyright}}</p>
+		</div>
+	</div>
+</footer>
+
+<script src="{{theme_url}}/js/jquery.js"></script>
+<script src="{{theme_url}}/js/superfish.js"></script>
+<script src="{{theme_url}}/js/jquery.flexslider-min.js"></script>
+<script src="{{theme_url}}/js/jquery.kwicks-1.5.1.js"></script>
+<script src="{{theme_url}}/js/jquery.easing.1.3.js"></script>
+<script src="{{theme_url}}/js/jquery.cookie.js"></script>
+<script src='{{theme_url}}/js/jquery.preloader.js'></script>
+<script src="{{theme_url}}/js/touchTouch.jquery.js"></script>
+<script src="{{theme_url}}/js/bootstrap.min.js"></script>
+<script src="{{theme_url}}/js/function.js"></script>

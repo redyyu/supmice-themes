@@ -1,0 +1,17 @@
+{% import "g" as g with context %}
+<!DOCTYPE html>
+<html lang="{{lang}}">
+{% include '_head.html' %}
+<body>
+
+{% include '_header.html' %}
+
+<div class="wrapper">
+
+  {% block wrapper %}
+  {% endblock %}
+
+  {% include '_footer.html' %}
+</div>
+</body>
+</html>

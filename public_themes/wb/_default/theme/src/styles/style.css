@@ -1,0 +1,222 @@
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial,
+               "Lucida Grande", sans-serif;
+  color: #333;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+img,
+video,
+audio {
+  max-width: 100%;
+}
+
+h1 {
+  margin: 15px 0;
+	font-size: 48px;
+  line-height: 1.2em;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+h2 {
+	font-size: 36px;
+  margin: 10px 0;
+}
+h3 {
+	font-size: 24px;
+  margin: 5px 0 10px 0;
+}
+h4 {
+  font-size: 18px;
+  margin: 5px 0 10px 0;
+}
+p {
+	font-size: 16px;
+  line-height: 1.4em;
+  padding-bottom: 10px;
+}
+a,
+a:link,
+a:visited {
+  color: inherit;
+  text-decoration: underline;
+}
+a:hover {
+  text-decoration: none;
+}
+
+section {
+  overflow: hidden;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+article {
+  padding: 15px;
+}
+hr {
+  border: 0;
+  border-top: 1px #aaa solid;
+}
+hr.dashed {
+  border-style: dashed;
+}
+
+.outer {
+  position: relative;
+  padding: 0;
+  margin: 0;
+  height: auto;
+  min-height: 100%;
+  padding-bottom: 60px;
+}
+.bottom {
+  bottom: 0;
+  position: absolute;
+  width: 100%;
+  height: 60px;
+  padding: 15px;
+}
+
+.container {
+	position: relative;
+  padding: 15px;
+}
+.cover {
+  color: #f2f2f2;
+  background-color: #3F51B5;
+}
+.cover a,
+.chapters a {
+  text-decoration: none;
+}
+.cover a:hover,
+.chapters a:hover {
+  text-decoration: underline;
+}
+.date {
+  color: #fff;
+  text-align: center;
+  font-size: 14px;
+}
+.caption {
+  padding: 0 15px;
+}
+.chapters {
+  margin: 0;
+  padding: 15px 48px;
+  list-style: decimal;
+}
+.chapters li {
+  margin: 0;
+  padding: 12px;
+  font-size: 20px;
+}
+
+.centered {
+  text-align: center;
+  margin: 0 auto;
+}
+
+.header-article {
+  color: #fff;
+  background-color: #FFB300;
+}
+.masthead {
+  padding: 10px 15px;
+  background-color: #666;
+  text-align: right;
+}
+
+.masthead a,
+.masthead a:link,
+.masthead a:visited {
+  color: #fff;
+  text-decoration: none;
+}
+
+.readbox {
+  padding: 15px 0;
+}
+.read,
+.read:link,
+.read:visited {
+  line-height: 24px;
+  font-size: 18px;
+  font-weight: 700;
+  text-decoration: none;
+}
+.read:hover {
+  color: #FFB300;
+  text-decoration: none;
+}
+
+.returnbox {
+  padding: 15px;
+}
+.return,
+.return:link,
+.return:visited {
+  color: #3F51B5;
+  line-height: 28px;
+  font-size: 24px;
+  font-weight: 700;
+  text-decoration: none;
+}
+.return:hover {
+  color: #FFB300;
+  text-decoration: none;
+}
+
+.cr {
+  text-align: center;
+  font-size: 14px;
+}
+
+/* pagination */
+.paginator:after {
+  display: table;
+  content: '';
+  clear: both;
+}
+.paginator li {
+  padding: 15px;
+}
+.paginator a {
+  padding: 12px;
+  background-color: #3F51B5;
+  border-radius: 6px;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 700;
+  text-decoration: none;
+}
+.paginator li.previous {
+  float: left;
+}
+.paginator li.previous a {
+  background-color: #aaa;
+}
+.paginator li.next {
+  float: right;
+}
+
+/* content */
+.content:after {
+  display: table;
+  content: '';
+  clear: both;
+}
+
+/* languages */
+html[lang^="zh"],
+html[lang^="zh"] body {
+  font-family: 'Helvetica Neue', Helvetica, Arial,
+               'Source Han Sans CN', 'Source Han Sans SC',
+               'Hiragino Sans GB', 'PingFang SC', 'STHeiti', 'SimHei',
+               'Lucida Grande', sans-serif;
+}

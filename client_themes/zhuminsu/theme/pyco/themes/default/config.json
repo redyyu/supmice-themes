@@ -1,0 +1,44 @@
+{
+	"slug": "default",
+  "license": "MIT",
+  "author": "Redy",
+	"title": "Default Theme",
+  "description": "This is a simple default theme for pyco.",
+  "capability": "ws",
+  "thumbnail": "thumbnail.png",
+	"previews": ["preview.png"],
+	"poster": "poster.png",
+
+  "form_mode": true,
+
+  "templates":{
+      "index": "Homepage",
+      "page": "Static Page",
+      "post": "Posts",
+      "error_404": "404"
+  },
+
+  "taxonomies":{
+    "category": {
+      "title":"Categories",
+      "content_types":["works"]
+    }
+  },
+
+  "content_types":{
+    "post":{"title": "Posts", "status": 1},
+    "works":{"title": "Portfolio", "status": 1}
+  },
+
+  "reserved_contents": {
+    "post/index": "posts-index",
+    "error-404": true
+  },
+
+  "allowed_slots":["comment"],
+
+	"options":{
+		"sortby": "date",
+		"perpage": 6
+	}
+}

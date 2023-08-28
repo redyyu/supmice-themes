@@ -1,0 +1,60 @@
+{% if g and page %}
+<div class="container">
+  <div class="row prd-group">
+    <div class="col-md-4 col-md-push-4">
+      <figure>
+        {% if page.featured_img.link %}
+        <a class="prd-link"
+           href="{{page.featured_img.link|url}}"
+           target="{{page.featured_img.target}}">
+          <img src="{{page.featured_img.src or g.item_logo}}"
+               class="{{page.featured_img.class}}">
+        </a>
+        {% else %}
+        <img src="{{page.featured_img.src or g.item_logo}}"
+             class="{{page.featured_img.class}}">
+        {% endif %}
+      </figure>
+    </div>
+
+    <div class="col-md-4 col-md-pull-4">
+      <h3 class="sec-title">{{page.left_title}}</h3>
+      <h4 class="sec-subtitle">{{page.left_subtitle}}</h4>
+      <figure class="padding">
+        {% if page.item_left.link %}
+        <a class="prd-link"
+           href="{{page.item_left.link|url}}"
+           target="{{page.item_left.target}}">
+          <img src="{{page.item_left.src or g.default_img}}"
+               class="{{page.item_left.class}}">
+        </a>
+        {% else %}
+        <img src="{{page.item_left.src or g.default_img}}"
+             class="{{page.item_left.class}}">
+        {% endif %}
+      </figure>
+    </div>
+
+    <div class="col-md-4">
+      <h3 class="sec-title">{{page.right_title}}</h3>
+      <h4 class="sec-subtitle">{{page.right_subtitle}}</h4>
+      <figure class="padding">
+        {% if page.item_right.link %}
+        <a class="prd-link"
+           href="{{page.item_right.link|url}}"
+           target="{{page.item_right.target}}">
+          <img src="{{page.item_right.src or g.default_img}}"
+               class="{{page.item_right.class}}">
+        </a>
+        {% else %}
+        <img src="{{page.item_right.src or g.default_img}}"
+             class="{{page.item_right.class}}">
+        {% endif %}
+      </figure>
+    </div>
+
+  </div>
+</div>
+{% elif not meta.is_front %}
+<script>window.location.replace('{{base_url}}/#{{meta.slug}}');</script>
+{% endif %}

@@ -1,0 +1,36 @@
+{% if g and page %}
+<section id="{{page.slug}}"
+         class="primary-section parallax features {{page.bg.class}}"
+         style="{{page.bg.style}}"
+         data-stellar-background-ratio="0.5">
+  <div class="container">
+    <header class="section-header">
+      <div class="wow bounceInDown"
+           data-wow-delay="0.2s">
+        <h2>{{page.title}}</h2>
+      </div>
+      <p class="wow bounceInUp"
+         data-wow-delay="0.3s">
+        {{page.description}}
+      </p>
+    </header>
+    <div class="row wow bounceInUp"
+         data-wow-delay="0.2s">
+      {% for item in page.series %}
+      <div class="col-xs-6 col-sm-3 text-center item">
+        <figure>
+          <img class="icon img-responsive"
+               src="{{g.img_holder}}"
+               style="{{item.src|thumbnail|bg_img}}">
+          <figcaption class="info text-clamp-2">
+            <p>{{item.title}}</p>
+          </figcaption>
+        </figure>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% elif not meta.is_front %}
+<script>window.location.replace('{{base_url}}/#{{meta.slug}}');</script>
+{% endif %}

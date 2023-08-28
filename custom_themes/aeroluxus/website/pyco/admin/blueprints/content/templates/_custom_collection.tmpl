@@ -1,0 +1,229 @@
+{% set _collection = meta[key] or [] %}
+<div class="card multientry-form custom-form"
+     data-key="{{key}}"
+     data-type="collection">
+  <div class="card-header d-flex">
+    <h4>
+      {{_(opts.label)|title}}
+    </h4>
+    <small class="text-muted ml-auto">
+      {{key}}
+    </small>
+  </div>
+  <div class="card-body">
+    <div class="fields">
+      {% for item in _collection %}
+      <div class="field-entry">
+        <div class="mb-3 d-flex">
+          <button class="btn btn-secondary btn-icon move-field-up mr-1"
+                  aria-label="{{_('Move Up')}}"
+                  type="button">
+            <i class="fas fa-chevron-up"></i>
+          </button>
+          <button class="btn btn-secondary btn-icon move-field-down mr-1"
+                  aria-label="{{_('Move Down')}}"
+                  type="button">
+            <i class="fas fa-chevron-down"></i>
+          </button>
+          <div class="btn btn-outline-secondary mr-1" disabled>
+            #{{loop.index0}}
+          </div>
+          <button class="btn btn-outline-danger btn-icon remove-field ml-auto"
+                  aria-label="{{_('Remove')}}"
+                  type="button">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+        <div class="form-row">
+          {% if display_field('title', opts.hidden) %}
+          <div class="form-group col-md-6">
+            <label>{{_('Title')}}</label>
+            <div class="input-group">
+              <input class="form-control"
+                     type="text"
+                     name="title"
+                     maxlength="60"
+                     value="{{item.title}}">
+            </div>
+          </div>
+          {% endif %}
+          {% if display_field('subtitle', opts.hidden) %}
+          <div class="form-group col-md-6">
+            <label>{{_('Subtitle')}}</label>
+            <div class="input-group">
+              <input class="form-control"
+                     type="text"
+                     name="subtitle"
+                     maxlength="120"
+                     value="{{item.subtitle}}">
+            </div>
+          </div>
+          {% endif %}
+          {% if display_field('src', opts.hidden) %}
+          <div class="form-group media-preview-field col-md-6">
+            <label>{{_('Image URL')}}</label>
+            <div class="input-group">
+              <div class="input-group-append media-preview">
+                <a href="#" target="_blank"></a>
+              </div>
+              <input class="form-control media-input"
+                     type="text"
+                     name="src"
+                     value="{{item.src}}">
+              <div class="input-group-append">
+                <button class="btn btn-secondary"
+                        aria-lable="{{_('Select Image')}}"
+                        data-toggle="modal"
+                        data-target="#MODAL-MEDIAREPO"
+                        data-input="src"
+                        type="button">
+                  <i class="fas fa-image"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+          {% endif %}
+          {% if display_field('link', opts.hidden) %}
+          <div class="form-group col-md-6">
+            <label>{{_('Link to URL')}}</label>
+            <div class="input-group">
+              <input class="form-control"
+                     type="text"
+                     name="link"
+                     maxlength="360"
+                     placeholder="URL, http://somesite.com"
+                     value="{{item.link}}">
+              <input class="form-control col-md-3 col-4"
+                     type="text"
+                     name="target"
+                     maxlength="60"
+                     placeholder="_self"
+                     value="{{item.target}}">
+            </div>
+          </div>
+          {% endif %}
+          {% if display_field('caption', opts.hidden) %}
+          <div class="form-group col-12">
+            <label>{{_('Caption')}}</label>
+            <textarea class="form-control"
+                        name="caption"
+                        rows="4"
+                        maxlength="1200">{{item.caption}}</textarea>
+          </div>
+          {% endif %}
+        </div>
+
+        <hr>
+      </div>
+      {% endfor %}
+    </div>
+
+    <div class="TMPL d-none">
+      <div class="field-entry">
+        <div class="mb-3 d-flex">
+          <button class="btn btn-secondary btn-icon move-field-up mr-1"
+                  aria-label="{{_('Move Up')}}"
+                  type="button">
+            <i class="fas fa-chevron-up"></i>
+          </button>
+          <button class="btn btn-secondary btn-icon move-field-down mr-1"
+                  aria-label="{{_('Move Down')}}"
+                  type="button">
+            <i class="fas fa-chevron-down"></i>
+          </button>
+          <button class="btn btn-outline-danger btn-icon remove-field ml-auto"
+                  aria-label="{{_('Remove')}}"
+                  type="button">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+        <div class="form-row">
+          {% if display_field('title', opts.hidden) %}
+          <div class="form-group col-md-6">
+            <label>{{_('Title')}}</label>
+            <div class="input-group">
+              <input class="form-control"
+                     type="text"
+                     name="title"
+                     maxlength="60">
+            </div>
+          </div>
+          {% endif %}
+          {% if display_field('subtitle', opts.hidden) %}
+          <div class="form-group col-md-6">
+            <label>{{_('Subtitle')}}</label>
+            <div class="input-group">
+              <input class="form-control"
+                   type="text"
+                   name="subtitle"
+                   maxlength="120">
+            </div>
+          </div>
+          {% endif %}
+          {% if display_field('src', opts.hidden) %}
+          <div class="form-group media-preview-field col-md-6">
+            <label>{{_('Image URL')}}</label>
+            <div class="input-group">
+              <div class="input-group-append media-preview">
+                <a href="#" target="_blank"></a>
+              </div>
+              <input class="form-control media-input"
+                     type="text"
+                     name="src">
+              <div class="input-group-append">
+                <button class="btn btn-secondary"
+                        aria-lable="{{_('Select Image')}}"
+                        data-toggle="modal"
+                        data-target="#MODAL-MEDIAREPO"
+                        data-input="src"
+                        type="button">
+                  <i class="fas fa-image"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+          {% endif %}
+          {% if display_field('link', opts.hidden) %}
+          <div class="form-group col-md-6">
+            <label>{{_('Link to URL')}}</label>
+            <div class="input-group">
+              <input class="form-control"
+                     type="text"
+                     name="link"
+                     maxlength="360"
+                     placeholder="URL, http://somesite.com">
+              <input class="form-control col-md-3 col-4"
+                     type="text"
+                     name="target"
+                     maxlength="60"
+                     placeholder="_self">
+            </div>
+          </div>
+          {% endif %}
+
+          {% if display_field('caption', opts.hidden) %}
+          <div class="form-group col-12">
+            <label>{{_('Caption')}}</label>
+            <textarea class="form-control"
+                        name="caption"
+                        rows="4"
+                        maxlength="1200"></textarea>
+          </div>
+          {% endif %}
+        </div>
+
+        <hr>
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="card-footer d-flex">
+    <button class="btn btn-outline-primary btn-icon add-field"
+            aria-label="{{_('Add')}}"
+            type="button">
+      <i class="fas fa-plus"></i>
+    </button>
+  </div>
+</div>

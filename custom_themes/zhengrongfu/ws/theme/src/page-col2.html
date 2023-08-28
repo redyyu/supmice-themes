@@ -1,0 +1,60 @@
+{% if g and page %}
+<div>
+<div class="container">
+  <header class="divide">
+    <h2>{{page.title or _('Title')}}</h2>
+  </header>
+  <div class="row">
+    <div class="col-md-6">
+      <div class="content px-4">
+        {{page.content}}
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="row">
+        {% for item in page.qrcodes %}
+        <div class="col-sm-6">
+          <div class="text-center {{item.class}}">
+            <figure class="m-auto px-5">
+              <img src="{{item.src}}"
+                   alt="{{item.title}}"/>
+            </figure>
+            <div class="p-2 text-primary">
+              <h5 class="caption">{{item.title}}</h5>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+      <hr>
+      <p class="caption">{{page.notice}}</p>
+      <div class="row">
+        {% for item in page.contacts %}
+        <div class="col-lg-4 text-truncate tags">
+          {% if item.link %}
+          <a class="btn icon-btn"
+             href="{{item.link|url}}"
+             target="{{item.target}}">
+            <img class="icon"
+                 src="{{item.src}}"
+                 alt="{{item.title}}"/>
+            <span class="tag">{{item.title}}</span>
+          </a>
+          {% else %}
+          <div class="dummy-btn">
+            <img class="icon"
+                 src="{{item.src}}"
+                 alt="{{item.title}}"/>
+            <span class="tag">{{item.title}}</span>
+          </div>
+          {% endif %}
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+{% elif not meta.is_front %}
+<script>window.location.replace('{{base_url}}/#{{meta.slug}}');</script>
+{% endif %}

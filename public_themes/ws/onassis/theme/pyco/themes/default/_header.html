@@ -1,0 +1,22 @@
+<nav class="menu primary-menu">
+	<div class="menu-wrap">
+		<div class="logo">
+      <a href="{{base_url}}">{{site_meta.title}}</a>
+    </div>
+		<i class="fa fa-remove menu-close"></i>
+    <ul class="nav">
+      {% for menu in menu.primary %}
+      <li>
+    		<a href="{{menu.url}}"
+           class="smoothScroll {{menu.class}}"
+           target="{{menu.target}}">
+          {{menu.name}}
+        </a>
+      </li>
+      {% endfor %}
+    </ul>
+	</div>
+
+	<!-- Menu button -->
+	<div class="menu-toggle"><i class="fa fa-reorder"></i></div>
+</nav>

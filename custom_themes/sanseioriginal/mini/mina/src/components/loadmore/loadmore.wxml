@@ -1,0 +1,10 @@
+<view class="loadmore">
+  <view wx:if="{{loading}}">
+    <view class="icon spin"></view>
+  </view>
+  <view wx:else>
+    <view class="more-text" wx:if="{{hasMore == true}}">
+      <slot></slot>
+    </view>
+  </view>
+</view>

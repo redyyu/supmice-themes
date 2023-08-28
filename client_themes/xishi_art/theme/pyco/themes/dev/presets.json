@@ -1,0 +1,26 @@
+[
+  {
+    "name": {
+      "en":"Title Bar",
+      "zh": "标题栏"
+    },
+    "preview": "presets/ps_titlebar.png",
+    "code": "<div class='title'><h2>{{_('Subtitle')}}</h2><img src='{{theme_url}}/styles/bar.jpg'/></div>"
+  },
+  {
+    "name": {
+      "en":"Horizontal Figure",
+      "zh": "图文内容"
+    },
+    "preview": "presets/ps_figure_hori.png",
+    "code": "<table class='figure-hori'><tr><td width='30%' class='img-box'><img src='{{theme_url}}/styles/default_img.png' /></td><td width='60%'><p>{{_('$_PERSET_CAPTION')}}</p></td></tr></table>"
+  },
+  {
+    "name": {
+      "en":"Vertical Figure",
+      "zh": "纵向图文内容"
+    },
+    "preview": "presets/ps_figure_vert.png",
+    "code": "<table class='figure-vert'><tr><td class='img-box'><img src='{{theme_url}}/styles/default_cover.png' /></td></tr><tr><td><p>{{_('$_PERSET_CAPTION')}}</p></td></tr></table>"
+  }
+]

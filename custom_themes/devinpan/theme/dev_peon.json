@@ -1,0 +1,55 @@
+{
+  "watch":{
+    "src": "src",
+    "dest": "pyco/themes/dev",
+    "clean": true,
+    "server": true,
+    "pyco": "pyco",
+    "skip_includes": "html"
+  },
+  "packing":{
+    "zip":{
+      "cwd":"src",
+      "dest":".",
+      "file":"devinpan.zip"
+    },
+    "upload":{
+      "cwd":".",
+      "file":"devinpan.zip",
+      "headers":{
+        "SecretKey":"redy-875fdcb70d35452588b7cc8e9a96ca99"
+      },
+      "url":"http://localhost:5000/app/devinpan/develop/theme",
+      "delete": true
+    }
+  },
+  "transport":{
+    "upload":{
+      "cwd":"pyco/content",
+      "replace": [
+        {
+          "pattern":"[%uploads%]",
+          "replacement":"http://media.soopro.com/devin/dp"
+        }
+      ],
+      "headers":{
+        "content-type": "application/json",
+        "SecretKey":"redy-875fdcb70d35452588b7cc8e9a96ca99"
+      },
+      "url":"http://localhost:5000/app/devinpan/develop/sitedata"
+    },
+    "download":{
+      "dest":"pyco/content",
+      "replace": [
+        {
+          "pattern":"http://media.soopro.com/devin/dp",
+          "replacement":"[%uploads%]"
+        }
+      ],
+      "headers":{
+        "SecretKey":"redy-875fdcb70d35452588b7cc8e9a96ca99"
+      },
+      "url":"http://localhost:5000/app/devinpan/develop/sitedata"
+    }
+  }
+}

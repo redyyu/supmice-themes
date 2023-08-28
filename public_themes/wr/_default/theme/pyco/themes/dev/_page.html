@@ -1,0 +1,12 @@
+<div class="container">
+  <h2>{{page.title}}</h2>
+  {% if page.featured_img.src %}
+  <figure>
+    <img src="{{page.featured_img.src}}"
+         alt="{{page.featured_img.title}}" />
+  </figure>
+  {% endif %}
+  <div class="content">
+    {{page.content}}
+  </div>
+</div>

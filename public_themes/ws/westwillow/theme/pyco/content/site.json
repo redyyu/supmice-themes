@@ -1,0 +1,84 @@
+{
+  "content_types": {
+    "page": "Pages"
+  },
+  "menus": {
+    "primary": [
+      {
+        "key": "home",
+        "meta": {},
+        "nodes": [],
+        "name": "HOME",
+        "link": "/"
+      },
+      {
+        "key": "homedeco",
+        "meta": {},
+        "nodes": [],
+        "name": "All Category",
+        "link": "/category"
+      },
+      {
+        "key": "food",
+        "meta": {},
+        "nodes": [],
+        "name": "Food Category",
+        "link": "/category/food"
+      },
+      {
+        "key": "book",
+        "meta": {},
+        "nodes": [],
+        "name": "Coffee",
+        "link": "/category/coffee"
+      },
+      {
+        "key": "contact",
+        "meta": {},
+        "nodes": {},
+        "name": "CONTACT",
+        "link": "/contact"
+      }
+    ]
+
+  },
+  "categories": {
+    "title":"Category",
+    "content_types": ["products"],
+    "terms": [
+      {
+        "key":"food",
+        "title":"Food",
+        "meta":{"figure":"[%uploads%]/banner1.jpg"}
+      },
+      {
+        "key":"book",
+        "title":"Book",
+        "meta":{"figure":"[%uploads%]/banner2.jpg"}
+      },
+      {
+        "key":"drink",
+        "title":"Drink",
+        "meta":{"figure":"[%uploads%]/banner3.jpg"}
+      },
+      {
+        "key":"coffee",
+        "title":"Coffee",
+        "meta":{"figure":"[%uploads%]/banner4.jpg"}
+      }
+    ]
+  },
+  "meta": {
+    "slug": "pyco",
+    "type": "ws",
+    "logo": "[%uploads%]/logo.png",
+    "favicon": "[%uploads%]/favicon.png",
+    "author": "redy",
+    "copyright": "2015 Made by Pyco.",
+    "description": "A simple example of Pyco side ...",
+    "license": "MIT",
+    "locale": "en_US",
+    "title": "Pyco"
+  }
+
+}

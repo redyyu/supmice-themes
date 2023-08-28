@@ -1,0 +1,45 @@
+{% import 'g' as g with context %}
+<!DOCTYPE html>
+<html lang="{{lang}}" palette="{{g.opts.palette}}">
+{% include '_head.html' %}
+<body data-spy="scroll" data-target=".navbar-custom">
+
+<section id="id-{{meta.slug}}"
+         class="hero {{meta.hero.class}}"
+         style="{{meta.hero.style}}"
+         data-stellar-background-ratio="0.5">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 text-right navicon">
+        <a id="nav-toggle" class="nav_slide_button" href="#"><span></span></a>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2 text-center inner">
+        <h1>
+          {{meta.title}}
+        </h1>
+        <p>
+          {{meta.description}}
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% include '_header.html' %}
+
+{% for page in segments if page.template != meta.template %}
+<div>
+  <section id="id-{{page.slug}}"
+           class="segment {{loop.cycle('bg-white','bg-gray')}}">
+    <div>
+      {% include page.template+'.html' ignore missing %}
+    </div>
+  </section>
+</div>
+{% endfor %}
+
+{% include '_footer.html' %}
+</body>
+</html>

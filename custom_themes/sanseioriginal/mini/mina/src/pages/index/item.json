@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "component-bottomsheet": "../../components/bottomsheet/bottomsheet",
+    "component-modal": "../../components/modal/modal"
+  }
+}

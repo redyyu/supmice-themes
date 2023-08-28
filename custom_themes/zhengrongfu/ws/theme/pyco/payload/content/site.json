@@ -1,0 +1,66 @@
+{
+  "app_id":"pyco_app",
+  "slug":"pyco",
+  "locale": "zh_CN",
+  "content_types": {
+    "post": "Posts",
+    "page": "Pages",
+    "work": "Works",
+    "product": "Products"
+  },
+  "menus": {
+    "primary": [
+      {
+        "key": "index",
+        "meta": {},
+        "nodes": [],
+        "name": "首 页",
+        "link": "/"
+      },
+      {
+        "key": "articles",
+        "meta": {},
+        "nodes": [],
+        "name": "酱香酒文化",
+        "link": "/articles"
+      },
+      {
+        "key": "products",
+        "meta": {},
+        "nodes": [],
+        "name": "产品介绍",
+        "link": "/products"
+      },
+      {
+        "key": "brand",
+        "meta": {},
+        "nodes": [],
+        "name": "品牌故事",
+        "link": "/brand-story"
+      },
+      {
+        "key": "about",
+        "meta": {},
+        "nodes": [],
+        "name": "关于我们",
+        "link": "/about-us"
+      }
+    ]
+  },
+  "slots": {
+    "ministore": {
+      "route": "",
+      "src": "[%uploads%]/ministore.jpg"
+    }
+  },
+  "meta": {
+    "favicon": "",
+    "logo": "",
+    "contact": "redy",
+    "copyright": "2019 © 贵州正荣府酒业销售有限公司",
+    "description": "...",
+    "license": "<a href=http://www.beian.miit.gov.cn/publish/query/indexFirst.action target=_blank>黔ICP备19007758号</a> | <a target=_blank href=http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=31011002000058>沪公网安备 31011002000058号</a>",
+    "title": "正荣府"
+  }
+
+}

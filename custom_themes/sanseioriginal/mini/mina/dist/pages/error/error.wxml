@@ -1,0 +1,20 @@
+<wxs src="../../translator.wxs" module="_"></wxs>
+{{_('$set', locale)}}
+
+<view class="container draft">
+  <view class="holder flex-column centered">
+    <view class="ico ico-warn warn xxl"/>
+    <view class="subhead warn">
+      {{_('Error')}}
+    </view>
+    <view class="layout-margin">
+      <view>
+        <button class="raised"
+                type="accent"
+                bind:tap="back">
+          {{_('Click here to Relaunch')}}
+        </button>
+      </view>
+    </view>
+  </view>
+</view>

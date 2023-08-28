@@ -1,0 +1,1 @@
+(function(){Component({properties:{loading:{type:Boolean,value:false},hasMore:{type:Boolean,value:false}},ready:function(){var self;return self=this;}});}).call(this);

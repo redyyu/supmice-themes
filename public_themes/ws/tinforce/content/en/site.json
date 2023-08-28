@@ -1,0 +1,34 @@
+{
+  "content_types": {
+    "page": "Static Pages",
+    "post": "Posts"
+  },
+  "menus": {
+    "primary": [
+      {
+        "key": "works",
+        "name": "Works",
+        "meta": {},
+        "link": "/"
+      },
+      {
+        "key": "about",
+        "name": "About",
+        "meta": {},
+        "link": "/about-us"
+      }
+    ]
+  },
+  "meta": {
+    "copyright": "2015 Made by Pyco.",
+    "license": "MIT",
+    "description": "",
+    "locale": "en_US",
+    "title": "Tinforce",
+    "languages": [
+      {"key": "en_US", "name": "English", "url": "#"},
+      {"key": "zh_CN", "name": "汉语", "url": "#"}
+    ]
+  },
+  "terms": {}
+}

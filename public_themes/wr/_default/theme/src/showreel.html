@@ -1,0 +1,19 @@
+{% if g and page %}
+<section id="{{page.slug}}"
+         data-anchor="{{page.slug}}"
+         class="section showreel {{page.hero.class}}"
+         style="{{page.hero.style}}">
+  {% for item in page.carousel %}
+  <div class="slide"
+       data-anchor="slide-{{page.slug}}-{{loop.index}}"
+       style="background-image: url('{{item.src}}');">
+    <div class="container">
+      <h4>{{item.title}}</h4>
+      <p>{{item.caption}}</p>
+    </div>
+  </div>
+  {% endfor %}
+</section>
+{% elif not meta.is_front %}
+<script>window.location.replace('{{base_url}}/#{{meta.slug}}');</script>
+{% endif %}

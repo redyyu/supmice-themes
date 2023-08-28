@@ -1,0 +1,35 @@
+{% import 'g' as g with context %}
+<!DOCTYPE html>
+<html lang="{{lang}}">
+{% include '_head.html' %}
+
+<body>
+  {% include '_header.html' %}
+
+  <section class="ribbon {{meta.ribbon.class}}"
+           style="{{(meta.ribbon.src or g.default_ribbon)|bg_img}}">
+    <header>
+      <h2>{{meta.title or _('Title')}}</h2>
+      <p class="lead">{{meta.date|date_formatted}}</p>
+    </header>
+  </section>
+
+  <section class="page">
+    <div class="container">
+      <main>
+        <article class="py-5 col-12 col-md-8 offset-md-2">
+          <figure class="text-center">
+            <img src="{{meta.featured_img.src or g.default}}"
+                 title="{{meta.title}}"
+                 alt="{{meta.title}}">
+          </figure>
+          <div class="content">{{content}}</div>
+        </article>
+      </main>
+    </div>
+  </section>
+  {% include '_footer.html' %}
+
+{{g.scripts}}
+</body>
+</html>

@@ -1,0 +1,7 @@
+[
+	{"language":"en"},
+  {
+    "msgid": "$_CONTENT",
+    "msgstr": "<p>This section is the default rich text content, you can re-fill their own needs. After entering rich text edit mode, an input toolbar will appear (it is usually at top of the screen or above the rich text field), using the toolbar to insert, replace or remove images and links.</p>"
+  }
+]
